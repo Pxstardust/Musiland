@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: a8fda2f3daf1c404d80ba96d6f5727b8
+timeCreated: 1484573426
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Megaman Sprite Sheets_0
+    21300002: Megaman Sprite Sheets_1
+    21300004: Megaman Sprite Sheets_2
+    21300006: Megaman Sprite Sheets_3
+    21300008: Megaman Sprite Sheets_4
+    21300010: Megaman Sprite Sheets_5
+    21300012: Megaman Sprite Sheets_6
+    21300014: Megaman Sprite Sheets_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Megaman Sprite Sheets_0
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 83
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Megaman Sprite Sheets_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 131
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Megaman Sprite Sheets_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 62
+        width: 54
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: -25}
+        - {x: 22, y: -25}
+        - {x: 26, y: -23}
+        - {x: 27, y: -19}
+        - {x: 27, y: 44}
+        - {x: 26, y: 48}
+        - {x: 22, y: 49}
+        - {x: 8, y: 49}
+        - {x: 3, y: 39}
+        - {x: 2, y: 31}
+        - {x: 3, y: 37}
+        - {x: 3, y: 40}
+        - {x: 1, y: 45}
+        - {x: -6, y: 49}
+        - {x: -21, y: 49}
+        - {x: -27, y: 43}
+        - {x: -27, y: -49}
+        - {x: 27, y: -49}
+        - {x: 27, y: -30}
+        - {x: 18, y: -25}
+    - name: Megaman Sprite Sheets_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 100
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Megaman Sprite Sheets_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 33.5}
+        - {x: -22, y: 32.5}
+        - {x: -27, y: 22.5}
+        - {x: -27, y: -33.5}
+        - {x: 22, y: -33.5}
+        - {x: 27, y: -24.5}
+        - {x: 27, y: 33.5}
+    - name: Megaman Sprite Sheets_5
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 30}
+        - {x: -26.5, y: -30}
+        - {x: 26.5, y: -30}
+        - {x: 26.5, y: 30}
+    - name: Megaman Sprite Sheets_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: 19.5}
+        - {x: -3.5, y: 15.5}
+        - {x: -2.5, y: 18.5}
+        - {x: -2.5, y: 19.5}
+        - {x: -18.5, y: 19.5}
+        - {x: -18.5, y: -18.5}
+        - {x: -17.5, y: -19.5}
+        - {x: 18.5, y: -19.5}
+        - {x: 18.5, y: 11.5}
+        - {x: 11.5, y: 19.5}
+    - name: Megaman Sprite Sheets_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 15
+        width: 52
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
