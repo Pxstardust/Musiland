@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity_Musiland", "Unity_Musiland.csproj", "{74956CC7-0FF2-CBCE-338A-AEFB0DD95290}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74956CC7-0FF2-CBCE-338A-AEFB0DD95290}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74956CC7-0FF2-CBCE-338A-AEFB0DD95290}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74956CC7-0FF2-CBCE-338A-AEFB0DD95290}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74956CC7-0FF2-CBCE-338A-AEFB0DD95290}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

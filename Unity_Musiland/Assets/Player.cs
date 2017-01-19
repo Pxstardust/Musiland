@@ -57,10 +57,7 @@ public class Player : MonoBehaviour {
     private GameObject newone;
     private Component currentscript;
 
-    //public GroundTry groundtrytab[];
 
-
-    
     // ===================================================== Use this for initialization
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
@@ -77,17 +74,30 @@ public class Player : MonoBehaviour {
     // ===================================================== Update is called once per frame
     void Update () {
 
+        // ================================================================================ //
+        // =============================== CONTROLS ======================================= //
+        // ================================================================================ //
+        
+        // =========================== //
+        // ========== MUSIC ========== //
+        // ===== NEXT MUSIC ===== //
         if (Input.GetButton("ChangeMusicPlus")) {
+            
+            // ===== CHANGEMENT DES TILES + BCKG ===== //
             GroundTry[] tabmagik = (GroundTry[])FindObjectsOfType(typeof(GroundTry));
             foreach (GroundTry themetile in tabmagik)
             {
                 GroundTry script = (GroundTry)themetile.GetComponent(typeof(GroundTry));
                 script.ChangetoNext();
             }
+            
+            
         }
 
+        // ===== PREVIOUS MUSIC ===== //
         if (Input.GetButton("ChangeMusicMinus"))
         {
+            // ===== CHANGEMENT DES TILES + BCKG ===== //
             GroundTry[] tabmagik = (GroundTry[])FindObjectsOfType(typeof(GroundTry));
             foreach (GroundTry themetile in tabmagik)
             {
@@ -95,13 +105,10 @@ public class Player : MonoBehaviour {
                 script.ChangetoPrevious();
             }
         }
-
-        // ===== Controller ===== //
-        KeyShoot = Input.GetButton("Fire1");
-        KeyDown = Input.GetButton("Down");
         
+        // ================= //
         // ===== Death ===== //
-        if (sprite.transform.position.y < deathheight) hp = 0;
+        if (sprite.transform.position.y < deathheight) hp = 0; // Mort si en dessous certaine hauteur
 
         if (hp == 0)
         {
@@ -111,8 +118,8 @@ public class Player : MonoBehaviour {
         }
         // ================= //
 
-        // ========================================
-        // ============= Mouvement ================
+        // ======================================== //
+        // ============= Mouvement ================ //
        
         // ===== Left/right ===== //
         if (Input.GetButton("Horizontal"))
@@ -120,30 +127,25 @@ public class Player : MonoBehaviour {
         if (Input.GetAxis("Horizontal") == 0) {
             if (!bInAir) anim.SetBool("isrunning", false);
         } else if (!bInAir) { anim.SetBool("isrunning", true); }
+        // ====================== //
+    
 
-
-
-        // ===== Jump 
+        // ===== Jump  ===== //
         if (Input.GetButton("Jump") && !bInAir && (Time.time > timelastjump+mintimejump))
         {
             bInAir = true;
             rigid.AddForce(new Vector3(0, jumpslowFactor*300, 0));
             timelastjump = Time.time;
         }
+        // ================= //
 
-        // ===== Down
+        // ===== Down ===== //
         if (Input.GetButton("Down"))
         {
             rigid.AddForce(new Vector3(0, -30, 0));
         }
+        // =============== //
 
-        // ===== Shoot
-        if (Input.GetButton("Fire1"))
-        {
-            anim.SetBool("isshooting", true);
-        }
-        else anim.SetBool("isshooting", false);
-        if (Input.GetButtonUp("Fire1")) anim.SetBool("isshooting", false);
 
         maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
 
