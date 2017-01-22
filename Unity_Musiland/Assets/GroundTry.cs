@@ -16,7 +16,7 @@ public class GroundTry : MonoBehaviour{
     // ===== Things to add to each style ===== //
 
     // ===== VAR ===== //
-    public int currentthemeid = 1;
+    public EnumList.StyleMusic currentstyle = EnumList.StyleMusic.Hell;
     float changeTime=1;
     float lastchange=0;
 
@@ -29,45 +29,25 @@ public class GroundTry : MonoBehaviour{
 
 
     // Update is called once per frame
-    void Update () {
-	
-	}
+    void Update () { }
 
-    public void ChangetoNext()
+    // =========================================================================== //
+    // =========================================================================== //
+    // === NOTE : PAS DE PRINT ICI, LIMITER CE QU'ON MET POUR EVITER LE FREEZE === //
+    // =========================================================================== //
+    // =========================================================================== //
+
+    public void ChangeTheme(EnumList.StyleMusic playerstyle)
     {
-        if (Time.time > lastchange + changeTime)
+        switch (playerstyle)
         {
-            lastchange = Time.time;
-            currentthemeid++;
-            if (currentthemeid > 3) currentthemeid = 1;
-            ChangeTheme();
-        }
-
-    }
-
-    public void ChangetoPrevious()
-    {
-        if (Time.time > lastchange+ changeTime)
-        {
-            lastchange = Time.time;
-            currentthemeid--;
-            if (currentthemeid < 1) currentthemeid = 3;
-            ChangeTheme();
-        }
-
-    }
-
-    void ChangeTheme()
-    {
-        switch (currentthemeid)
-        {
-            case 1:
+            case EnumList.StyleMusic.Hell:
                 spriterenderer.sprite = HellTile;
                 break;
-            case 2:
+            case EnumList.StyleMusic.Fest:
                 spriterenderer.sprite = FestTile;
                 break;
-            case 3:
+            case EnumList.StyleMusic.Calm:
                 spriterenderer.sprite = CalmTile;
                 break;
 
