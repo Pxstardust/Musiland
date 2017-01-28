@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     Camera maincamera;
     Vector3 decalCamOrigine;
+    Vector3 CurrentRespawnPoint;
 
     // ===================== //
     // ===== VARIABLES ===== //
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour {
     float timelastjump; // Date du dernier saut
     float doubletapcooldown = 0.5f;
     float tapcount = 0;
+    bool bIsGrabbingWall = false;
 
     // =============== //
     // ===== HUD ===== //
@@ -60,26 +62,38 @@ public class Player : MonoBehaviour {
     [SerializeField]
     public GameObject victoiretextgameobject;
 
-    // ===================================================== Use this for initialization
+    // ========================================================================================================= //
+    // ============================================= START ===================================================== //
+    // ========================================================================================================= //
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         hp = 5;
         decalCamOrigine = maincamera.transform.position - transform.position;
         anim = GetComponent<Animator>();
-        anim.enabled = true;    
+        anim.enabled = true;
+        CurrentRespawnPoint = sprite.transform.position;
     }
 
-    // ===================================================== Update is called once per frame
+    // ========================================================================================================= //
+    // =========================================== UPDATE ====================================================== //
+    // ========================================================================================================= //
     void Update () {
         if (doubletapcooldown > 0) { doubletapcooldown -= Time.deltaTime; }
-
+        
+        // == DEBUG == //
+        if (Input.GetButton("DebugKey"))
+        {
+            PlayerRespawn();
+        }
+        // == DEBUG == //
+        
         // ================================================================================ //
-        // =============================== CONTROLS ======================================= //
+        // ============================== I. CONTROLS ===================================== //
         // ================================================================================ //
 
         // =========================================================================== //
-        // ================================ MUSIC ==================================== //
+        // ============================= I.1 MUSIC =================================== //
         // === NOTE : PAS DE PRINT ICI, LIMITER CE QU'ON MET POUR EVITER LE FREEZE === //
         // =========================================================================== //
 
@@ -114,19 +128,19 @@ public class Player : MonoBehaviour {
         }
        
         // =========================================================================== //
-        // ============================== MOUVEMENT ================================== //
+        // ============================ I.2 MOUVEMENT ================================ //
         // =========================================================================== //
         // ===== Left/right ===== //
         if (Input.GetButtonDown("Horizontal"))
         {
-            if (!bInAir) anim.SetBool("isrunning", true);
+            //if (!bInAir) anim.SetBool("isrunning", true);
+            // ========== RUN ========== //
             if (doubletapcooldown > 0 && tapcount == 1) // Double tap
             {
-                // ADD RUN FUNCTION OR THING
                 bRun = true;
                 print("RUN!");
             }
-            else
+            else // Premier coup pour le double tap :
             {
                 doubletapcooldown = 0.5f;
                 tapcount = 1;
@@ -140,10 +154,10 @@ public class Player : MonoBehaviour {
         }
 
         // ===== Jump  ===== //
-        if (Input.GetButton("Jump") && !bInAir && (Time.time > timelastjump+mintimejump))
+        if ( (Input.GetButton("Jump") && !bInAir && (Time.time > timelastjump+mintimejump)))
         {
             bInAir = true;
-            rigid.AddForce(new Vector3(0, 300, 0));
+            rigid.AddForce((new Vector3(0.0f,300,0)));
             timelastjump = Time.time;
         }
         // ================= //
@@ -151,10 +165,16 @@ public class Player : MonoBehaviour {
         // ===== Down ===== //
         if (Input.GetButton("Down"))
         {
-            if (bInAir)
+            if (bInAir) // Si on est en l'air
             {
                 rigid.gravityScale = 5f; // FAST FALL
 
+            } else // Si on est au sol
+            {
+                if (playercurrentstyle == EnumList.StyleMusic.Calm) 
+                {
+                    HideUnderSnow();
+                }
             }
         }
         // =============== //
@@ -178,17 +198,41 @@ public class Player : MonoBehaviour {
             Application.Quit();
         }
         // ================= //
-    }
+    } // ================================== FIN UPDATE ========================================================= //
 
-    // =========================================================================================================
+    // ========================================================================================================= //
+    // ===================================== FIXED UPDATE ====================================================== //
+    // ========================================================================================================= //
     void FixedUpdate()
     {
-        if (!bRun)
+        
+        if (Input.GetButton("Horizontal")) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
         {
-            rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * 300f * Time.deltaTime));
-        } else
-        {
-            rigid.AddForce( (new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * 600f * Time.deltaTime) );
+
+            switch (playercurrentstyle)
+            {
+                case EnumList.StyleMusic.Hell:
+                    if (!bRun) // S'il n'as pas double tap,
+                    {
+                        rigid.velocity = new Vector2((Input.GetAxis("Horizontal") * 6), rigid.velocity.y); // Déplacement direct
+                    } else // S'il a double tap
+                    {
+                        print("Dash!");
+                        // ========================================== 
+                        // Mécanique de dash sur une distance prévue/qui s'incrémente si le joueur laisse appuyer
+                        // ==========================================
+                    }
+
+                    break;
+
+                case EnumList.StyleMusic.Fest:
+                    rigid.velocity = new Vector2((Input.GetAxis("Horizontal") * 6), rigid.velocity.y); // Déplacement direct
+                    break;
+
+                case EnumList.StyleMusic.Calm:
+                    rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * 300f * Time.deltaTime)); // Déplacement avec force, lent et flottant
+                    break;
+            }
         }
 
        // sprite.transform.position += new Vector3(Input.GetAxis("Horizontal") * slowFactor * vitesse * Time.deltaTime,0,0); // Position
@@ -197,6 +241,9 @@ public class Player : MonoBehaviour {
     }
 
 
+    // ========================================================================================================= //
+    // ================================== Collisions & TRIGGER ================================================= //
+    // ========================================================================================================= //
     // ======================================== //
     // ============= Collision ================ //
     // ======================================== //
@@ -206,6 +253,11 @@ public class Player : MonoBehaviour {
             bInAir = false;
             anim.SetBool("isjump", false);
             rigid.gravityScale = initialgravity; // Disable Fast Fall
+            
+            if(playercurrentstyle == EnumList.StyleMusic.Fest)
+            {
+                bIsGrabbingWall = true;
+            }
         }
     }
     
@@ -225,18 +277,32 @@ public class Player : MonoBehaviour {
     // =========================================
     void OnCollisionExit2D (Collision2D collision)
     {
-        if ((collision.gameObject.tag == "Sol")) // A MODIFIER : Lorsque passe d'une tile sol à l'autre, on "est en l'air"
-        {
-            bInAir = true;
-            anim.SetBool("isjump", true);      
-        }
+    }
+
+    // ======================================== //
+    // ============== Trigger= ================ //
+    // ======================================== //
+    void OnTriggerEnter2D(Collision2D collision)
+    {
+    }
+
+    // =======================================
+    void OnTriggerStay2D(Collision2D collision)
+    {
+    }
+
+    // =======================================
+    void OnTriggerExit2D(Collision2D collision)
+    {
     }
 
 
-    // ======================================== //
-    // ============= FONCTIONS ================ //
-    // ======================================== //
+    // ========================================================================================================= //
+    // ======================================== Fonctions ====================================================== //
+    // ========================================================================================================= //
 
+    // ===================================== //
+    // ===== Changement de musique (+) ===== //
     public void ChangeMusictoNext()
     {
         if (Time.time > lastchange + changeTime)
@@ -245,9 +311,10 @@ public class Player : MonoBehaviour {
             if (playercurrentstyle == EnumList.StyleMusic.Calm)playercurrentstyle = EnumList.StyleMusic.Hell;
             else { playercurrentstyle++; }
         }
-
     }
 
+    // ===================================== //
+    // ===== Changement de musique (-) ===== //
     public void ChangeMusictoPrevious()
     {
         if (Time.time > lastchange + changeTime)
@@ -256,10 +323,17 @@ public class Player : MonoBehaviour {
             if (playercurrentstyle == EnumList.StyleMusic.Hell) playercurrentstyle = EnumList.StyleMusic.Calm;
             else {playercurrentstyle--; }
         }
-
+    }
+    
+    // ================================== //
+    // ===== Se cache sous la neige ===== //
+    public void HideUnderSnow()
+    {
+        print("Je suis caché sous la neige");
     }
 
-    // FONCTION QUI PERMET D'APPLIQUER DIFFÉRENTS EFFETS AU PERSONNAGE EN FONCTION DU SYLE DE MUSIQUE
+    // =========================================================================== //
+    // ===== Fonction qui applique différents effets au perso selon le style ===== //
     void ApplyStyleCarac (EnumList.StyleMusic newstyle)  
     {
         switch (newstyle)
@@ -267,6 +341,7 @@ public class Player : MonoBehaviour {
             case EnumList.StyleMusic.Hell:
                 initialgravity = 1f; // -- Gravité (Hover/Not)      
                 rigid.gravityScale = initialgravity;
+                bIsGrabbingWall = false;
                 break;
             case EnumList.StyleMusic.Fest:
                 initialgravity = 1f; // -- Gravité (Hover/Not)
@@ -275,9 +350,27 @@ public class Player : MonoBehaviour {
             case EnumList.StyleMusic.Calm:
                 initialgravity = 0.5f; // -- Gravité (Hover/Not)
                 rigid.gravityScale = initialgravity;
+                bIsGrabbingWall = false;
                 break;
 
         }
+    }
+
+    // ==================================================== //
+    // ===== Fonction qui permet au joueur de respawn ===== //
+    public void PlayerRespawn()
+    {
+        // ==== Ajouter mise en scène : son, anim... ===== //
+        rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu
+        transform.position = CurrentRespawnPoint;
+    }
+
+    // =========================================================================== //
+    // ===== Fonction qui pemret de téléporter le joueur à un endroit précis ===== //
+    public void PlayerTeleport(Vector3 destination, bool keepforce)
+    {
+        if (keepforce) rigid.velocity = new Vector2(0, 0);
+        transform.position = destination;
     }
 
 }
