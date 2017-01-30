@@ -48,11 +48,12 @@ public class Player : MonoBehaviour {
     float lastchange = 0; // Date du dernier changement
     float initialgravity = 1; // Gravity Scale 
     float deathheight = -10; // Hauteur avant de mourir
-    float mintimejump = 1f; // Durée entre deux sauts
+    float mintimejump = 0.5f; // Durée entre deux sauts
     float timelastjump; // Date du dernier saut
     float doubletapcooldown = 0.5f;
     float tapcount = 0;
     bool bIsGrabbingWall = false;
+	bool canMove = true;
 
 
 	float maxSpeedFest = 5;
@@ -162,14 +163,30 @@ public class Player : MonoBehaviour {
 
         // ===== Jump  ===== //
 		//&& (Time.time > timelastjump+mintimejump)  === that was in the following condition
-		if ( Input.GetButton("Jump") && !bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
+		if ( Input.GetButton("Jump") && !bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")) && (Time.time > timelastjump+mintimejump))
         {
             //bInAir = true; === Problème with colliders
 			StartCoroutine(setJump());
             rigid.AddForce((new Vector3(0.0f,300,0)));
-            //timelastjump = Time.time;
+            timelastjump = Time.time;
         }
         // ================= //
+
+		// ===== Up ===== //
+		if (Input.GetButton ("Up")) {
+			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
+				rigid.gravityScale = 0.1f;
+				rigid.AddForce ((new Vector3(0.0f,0.7f,0)));
+			} else { // Si on est au sol
+				
+			}
+		} else {
+			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm) { // Si on est en l'air
+				rigid.gravityScale = 0.75f;
+			} 
+		}
+		// =============== //
+
 
         // ===== Down ===== //
         if (Input.GetButton("Down"))
@@ -215,9 +232,9 @@ public class Player : MonoBehaviour {
     void FixedUpdate()
     {
 		float h = Input.GetAxis ("Horizontal");  
-		print (rigid.velocity.x);
+		print (rigid.velocity.y);
 
-        if (Input.GetButton("Horizontal")) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
+        if (Input.GetButton("Horizontal") && canMove) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
         {
 
             switch (playercurrentstyle)
@@ -227,13 +244,13 @@ public class Player : MonoBehaviour {
                 {
 					rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedHell, rigid.velocity.y); // Déplacement direct
                 } 
-				else if(!bRun && bInAir){
-					//rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * 400f * Time.deltaTime));
+				else if(!bRun && bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedHell){
+					rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedHell * 100 * Time.deltaTime));
 				}
 				else // S'il a double tap
                     {
                         print("Dash!");
-						rigid.velocity = new Vector2((Input.GetAxis("Horizontal") * 6), rigid.velocity.y);
+						rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedHell, rigid.velocity.y);
                         // ========================================== 
                         // Mécanique de dash sur une distance prévue/qui s'incrémente si le joueur laisse appuyer
                         // ==========================================
@@ -374,7 +391,7 @@ public class Player : MonoBehaviour {
                 rigid.gravityScale = initialgravity;
                 break;
             case EnumList.StyleMusic.Calm:
-                initialgravity = 0.5f; // -- Gravité (Hover/Not)
+                initialgravity = 0.75f; // -- Gravité (Hover/Not)
                 rigid.gravityScale = initialgravity;
                 bIsGrabbingWall = false;
                 break;
@@ -400,7 +417,7 @@ public class Player : MonoBehaviour {
     }
 
 	IEnumerator setJump(){
-		yield return new WaitForSeconds (0.25f);
+		yield return new WaitForSeconds (0.1f);
 		bInAir = true;
 	}
 

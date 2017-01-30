@@ -4,7 +4,7 @@
     <Files>
       <File FileName="Assets\GroundTry.cs" Line="1" Column="1" />
       <File FileName="Assets\Enum.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player.cs" Line="228" Column="95" />
+      <File FileName="Assets\Player.cs" Line="177" Column="88" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
