@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
     Rigidbody2D rigid;
     SpriteRenderer sprite;
     Animator anim;
+	public Transform groundCheck;
 
     // ================== //
     // ===== Camera ===== //
@@ -52,6 +53,12 @@ public class Player : MonoBehaviour {
     float doubletapcooldown = 0.5f;
     float tapcount = 0;
     bool bIsGrabbingWall = false;
+
+
+	float maxSpeedFest = 5;
+	float maxSpeedHell = 6;
+
+	float moveForceHell = 30f;
 
     // =============== //
     // ===== HUD ===== //
@@ -154,11 +161,13 @@ public class Player : MonoBehaviour {
         }
 
         // ===== Jump  ===== //
-        if ( (Input.GetButton("Jump") && !bInAir && (Time.time > timelastjump+mintimejump)))
+		//&& (Time.time > timelastjump+mintimejump)  === that was in the following condition
+		if ( Input.GetButton("Jump") && !bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
         {
-            bInAir = true;
+            //bInAir = true; === Problème with colliders
+			StartCoroutine(setJump());
             rigid.AddForce((new Vector3(0.0f,300,0)));
-            timelastjump = Time.time;
+            //timelastjump = Time.time;
         }
         // ================= //
 
@@ -205,19 +214,26 @@ public class Player : MonoBehaviour {
     // ========================================================================================================= //
     void FixedUpdate()
     {
-        
+		float h = Input.GetAxis ("Horizontal");  
+		print (rigid.velocity.x);
+
         if (Input.GetButton("Horizontal")) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
         {
 
             switch (playercurrentstyle)
             {
                 case EnumList.StyleMusic.Hell:
-                    if (!bRun) // S'il n'as pas double tap,
-                    {
-                        rigid.velocity = new Vector2((Input.GetAxis("Horizontal") * 6), rigid.velocity.y); // Déplacement direct
-                    } else // S'il a double tap
+				if (!bRun && !bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
+                {
+					rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedHell, rigid.velocity.y); // Déplacement direct
+                } 
+				else if(!bRun && bInAir){
+					//rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * 400f * Time.deltaTime));
+				}
+				else // S'il a double tap
                     {
                         print("Dash!");
+						rigid.velocity = new Vector2((Input.GetAxis("Horizontal") * 6), rigid.velocity.y);
                         // ========================================== 
                         // Mécanique de dash sur une distance prévue/qui s'incrémente si le joueur laisse appuyer
                         // ==========================================
@@ -226,7 +242,11 @@ public class Player : MonoBehaviour {
                     break;
 
                 case EnumList.StyleMusic.Fest:
-                    rigid.velocity = new Vector2((Input.GetAxis("Horizontal") * 6), rigid.velocity.y); // Déplacement direct
+                    rigid.velocity = new Vector2((Input.GetAxis("Horizontal") * 6), rigid.velocity.y);// Déplacement direct
+
+					if (Input.GetButtonUp ("Horizontal") && !bInAir) {
+						rigid.velocity = new Vector2 (0, rigid.velocity.y);
+					}
                     break;
 
                 case EnumList.StyleMusic.Calm:
@@ -234,6 +254,11 @@ public class Player : MonoBehaviour {
                     break;
             }
         }
+
+		//On frene le personange si on navance plus sauf pour le mode calme
+		if (!Input.GetButton ("Horizontal") && !bInAir && playercurrentstyle != EnumList.StyleMusic.Calm) {
+			rigid.velocity = new Vector2 (0, rigid.velocity.y);
+		}
 
        // sprite.transform.position += new Vector3(Input.GetAxis("Horizontal") * slowFactor * vitesse * Time.deltaTime,0,0); // Position
         if (Input.GetAxis("Horizontal") > 0) sprite.flipX = false;
@@ -264,7 +289,8 @@ public class Player : MonoBehaviour {
     // =========================================
     void OnCollisionStay2D(Collision2D collision) // Empêche de ne plus pouvoir jump si atterrissage alors que bouton Jump maintenu
     {
-        if ((collision.gameObject.tag == "Sol")) { bInAir = false; anim.SetBool("isjump", false); }
+		//=== Cela provoque un bug avec le jump (collision stay better than condition)
+        //if ((collision.gameObject.tag == "Sol")) { bInAir = false; anim.SetBool("isjump", false); }
         if (collision.gameObject.tag == "Damage" && (Time.time > lastDamage + recoveryTime))
         {
             hp--;
@@ -282,17 +308,17 @@ public class Player : MonoBehaviour {
     // ======================================== //
     // ============== Trigger= ================ //
     // ======================================== //
-    void OnTriggerEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
     }
 
     // =======================================
-    void OnTriggerStay2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
     }
 
     // =======================================
-    void OnTriggerExit2D(Collision2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
     }
 
@@ -372,5 +398,10 @@ public class Player : MonoBehaviour {
         if (keepforce) rigid.velocity = new Vector2(0, 0);
         transform.position = destination;
     }
+
+	IEnumerator setJump(){
+		yield return new WaitForSeconds (0.25f);
+		bInAir = true;
+	}
 
 }
