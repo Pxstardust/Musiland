@@ -69,6 +69,10 @@ public class Player : MonoBehaviour {
     public Text victoiretext;
     [SerializeField]
     public GameObject victoiretextgameobject;
+    [SerializeField]
+    public GameObject backgroundsplash;
+    [SerializeField]
+    public GameObject particlesplash;
 
     // ========================================================================================================= //
     // ============================================= START ===================================================== //
@@ -79,7 +83,7 @@ public class Player : MonoBehaviour {
         hp = 5;
         decalCamOrigine = maincamera.transform.position - transform.position;
         anim = GetComponent<Animator>();
-        anim.enabled = true;
+       // anim.enabled = true;
         CurrentRespawnPoint = sprite.transform.position;
     }
 
@@ -110,10 +114,10 @@ public class Player : MonoBehaviour {
             ChangeMusictoNext();
             
             // ===== CHANGEMENT DES TILES + BCKG ===== //
-            GroundTry[] tabmagik = (GroundTry[])FindObjectsOfType(typeof(GroundTry)); // Recup' tout les items avec le script de changement
-            foreach (GroundTry themetile in tabmagik) // Parcours
+            MusicSwitcher[] tabmagik = (MusicSwitcher[])FindObjectsOfType(typeof(MusicSwitcher)); // Recup' tout les items avec le script de changement
+            foreach (MusicSwitcher themetile in tabmagik) // Parcours
             {
-                GroundTry script = (GroundTry)themetile.GetComponent(typeof(GroundTry)); // Recup' leur script
+                MusicSwitcher script = (MusicSwitcher)themetile.GetComponent(typeof(MusicSwitcher)); // Recup' leur script
                 script.ChangeTheme(playercurrentstyle); // Modif'
             }
 
@@ -125,10 +129,10 @@ public class Player : MonoBehaviour {
         {
             ChangeMusictoPrevious();
             // ===== CHANGEMENT DES TILES + BCKG ===== //
-            GroundTry[] tabmagik = (GroundTry[])FindObjectsOfType(typeof(GroundTry)); // Recup' tout les items avec le script de changement
-            foreach (GroundTry themetile in tabmagik) // Parcours
+            MusicSwitcher[] tabmagik = (MusicSwitcher[])FindObjectsOfType(typeof(MusicSwitcher)); // Recup' tout les items avec le script de changement
+            foreach (MusicSwitcher themetile in tabmagik) // Parcours
             {
-                GroundTry script = (GroundTry)themetile.GetComponent(typeof(GroundTry)); // Recup' leur script
+                MusicSwitcher script = (MusicSwitcher)themetile.GetComponent(typeof(MusicSwitcher)); // Recup' leur script
                 script.ChangeTheme(playercurrentstyle);  // Modif'
 
             }
@@ -146,7 +150,7 @@ public class Player : MonoBehaviour {
             if (doubletapcooldown > 0 && tapcount == 1) // Double tap
             {
                 bRun = true;
-                print("RUN!");
+                
             }
             else // Premier coup pour le double tap :
             {
@@ -162,10 +166,11 @@ public class Player : MonoBehaviour {
         }
 
         // ===== Jump  ===== //
-		//&& (Time.time > timelastjump+mintimejump)  === that was in the following condition
+        //&& (Time.time > timelastjump+mintimejump)  === that was in the following condition
 		if ( Input.GetButton("Jump") && !bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")) && (Time.time > timelastjump+mintimejump))
         {
             //bInAir = true; === Problème with colliders
+            print("jump");
 			StartCoroutine(setJump());
             rigid.AddForce((new Vector3(0.0f,300,0)));
             timelastjump = Time.time;
@@ -210,6 +215,8 @@ public class Player : MonoBehaviour {
         // =============================== HUD ======================================= //
         // =========================================================================== //
         maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
+        backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
+        particlesplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
         playerpdv = playerpdvgameobject.GetComponent<Text>();
         playerpdv.text = "HP: " + hp + "/"+hpmax;
 
@@ -232,7 +239,7 @@ public class Player : MonoBehaviour {
     void FixedUpdate()
     {
 		float h = Input.GetAxis ("Horizontal");  
-		print (rigid.velocity.y);
+		//print (rigid.velocity.y);
 
         if (Input.GetButton("Horizontal") && canMove) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
         {

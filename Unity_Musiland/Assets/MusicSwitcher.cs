@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class GroundTry : MonoBehaviour{
+public class MusicSwitcher : MonoBehaviour{
 
     // ===== Les 3 sprites ===== //
     [SerializeField]
