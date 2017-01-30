@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Enum.cs" />
-     <Compile Include="Assets\GroundTry.cs" />
+     <Compile Include="Assets\MusicSwitcher.cs" />
      <Compile Include="Assets\Player.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

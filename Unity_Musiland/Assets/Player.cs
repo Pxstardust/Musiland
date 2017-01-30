@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
     bool bIsGrabbingWall = false;
 	bool canMove = true;
 
-
+	float maxSpeedCalm = 4;
 	float maxSpeedFest = 5;
 	float maxSpeedHell = 6;
 
@@ -170,7 +170,6 @@ public class Player : MonoBehaviour {
 		if ( Input.GetButton("Jump") && !bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")) && (Time.time > timelastjump+mintimejump))
         {
             //bInAir = true; === Problème with colliders
-            print("jump");
 			StartCoroutine(setJump());
             rigid.AddForce((new Vector3(0.0f,300,0)));
             timelastjump = Time.time;
@@ -239,7 +238,7 @@ public class Player : MonoBehaviour {
     void FixedUpdate()
     {
 		float h = Input.GetAxis ("Horizontal");  
-		//print (rigid.velocity.y);
+
 
         if (Input.GetButton("Horizontal") && canMove) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
         {
@@ -266,16 +265,24 @@ public class Player : MonoBehaviour {
                     break;
 
                 case EnumList.StyleMusic.Fest:
-                    rigid.velocity = new Vector2((Input.GetAxis("Horizontal") * 6), rigid.velocity.y);// Déplacement direct
-
-					if (Input.GetButtonUp ("Horizontal") && !bInAir) {
-						rigid.velocity = new Vector2 (0, rigid.velocity.y);
+					if (!bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
+					{
+						rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedFest, rigid.velocity.y); // Déplacement direct
+					} 
+					else if(bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedFest){
+						rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedFest * 100 * Time.deltaTime));
 					}
                     break;
 
                 case EnumList.StyleMusic.Calm:
-                    rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * 300f * Time.deltaTime)); // Déplacement avec force, lent et flottant
-                    break;
+					if (!bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm) // S'il n'as pas double tap et qu'il n'est pas en l'air
+					{
+						rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime)); // Déplacement avec force, lent et flottant
+					}
+					else if(bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm){
+						rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime));
+					}
+					break;
             }
         }
 
