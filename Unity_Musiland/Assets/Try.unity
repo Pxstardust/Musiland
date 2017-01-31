@@ -4918,7 +4918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HellTile: {fileID: 21300000, guid: 953830727c0474443aa5b3c19dd849cc, type: 3}
-  FestTile: {fileID: 21300000, guid: d7c26012748bde240a56be989a3c98ba, type: 3}
+  FestTile: {fileID: 21300000, guid: 8215a41405a065540bc96d8b4445e083, type: 3}
   CalmTile: {fileID: 21300000, guid: 112db5f546f68204facf8ba12cfd5214, type: 3}
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
@@ -17484,7 +17484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HellTile: {fileID: 21300000, guid: 2bbc8c9e8e2b7d244bf8d4e0b0d4e4c1, type: 3}
-  FestTile: {fileID: 21300000, guid: 46ae4590c74437844972886d73e06c0c, type: 3}
+  FestTile: {fileID: 21300000, guid: 337423ea4bedc0c4aaf70aea397cd5d3, type: 3}
   CalmTile: {fileID: 21300000, guid: 46ae4590c74437844972886d73e06c0c, type: 3}
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}

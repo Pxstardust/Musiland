@@ -37,6 +37,10 @@ public class Player : MonoBehaviour {
     // === Style Var === //
     public EnumList.StyleMusic playercurrentstyle = EnumList.StyleMusic.Hell;
     float changeTime = 1; // Cooldown pour le changement de style
+    bool istransiting = false;
+    float transitime = 0;
+    float departtransi;
+    float farleft, farright;
 
     // === Keys === //
     private bool KeyShoot;
@@ -92,11 +96,37 @@ public class Player : MonoBehaviour {
     // ========================================================================================================= //
     void Update () {
         if (doubletapcooldown > 0) { doubletapcooldown -= Time.deltaTime; }
+
+        if (transitime > 0)
+        {
+            transitime -= Time.deltaTime;
+    
+            float cap = Mathf.Lerp(farleft, farright, 1 - (transitime / 0.5f));
+            print("cap" + cap);
+            MusicSwitcher[] tabmagik = (MusicSwitcher[])FindObjectsOfType(typeof(MusicSwitcher)); // Recup' tout les items avec le script de changement
+            int tak = 0;
+            foreach (MusicSwitcher themetile in tabmagik) // Parcours
+            {
+                MusicSwitcher script = (MusicSwitcher)themetile.GetComponent(typeof(MusicSwitcher)); // Recup' leur script
+       
+                
+                if (themetile.gameObject.transform.position.x <= cap)
+                {
+                    tak++;
+                    script.ChangeTheme(playercurrentstyle);
+                }
+               
+
+               // script.ChangeTheme(playercurrentstyle);  // Modif'
+
+            }
+            print("Current" + tak);
+        }
         
         // == DEBUG == //
         if (Input.GetButton("DebugKey"))
         {
-            PlayerRespawn();
+           
         }
         // == DEBUG == //
         
@@ -127,15 +157,23 @@ public class Player : MonoBehaviour {
         // ===== PREVIOUS MUSIC ===== //
         if (Input.GetButton("ChangeMusicMinus"))
         {
+            farleft = 10;farright = -10; transitime = 0.5f;
             ChangeMusictoPrevious();
             // ===== CHANGEMENT DES TILES + BCKG ===== //
             MusicSwitcher[] tabmagik = (MusicSwitcher[])FindObjectsOfType(typeof(MusicSwitcher)); // Recup' tout les items avec le script de changement
             foreach (MusicSwitcher themetile in tabmagik) // Parcours
             {
-                MusicSwitcher script = (MusicSwitcher)themetile.GetComponent(typeof(MusicSwitcher)); // Recup' leur script
-                script.ChangeTheme(playercurrentstyle);  // Modif'
+                
+                if (themetile.gameObject.transform.position.x <= farleft) farleft = themetile.gameObject.transform.position.x; // Objet le plus à gauche 
+                if (themetile.gameObject.transform.position.x >= farright) farright = themetile.gameObject.transform.position.x; // Objet le plus à droite
+                
+
+             //   MusicSwitcher script = (MusicSwitcher)themetile.GetComponent(typeof(MusicSwitcher)); // Recup' leur script
+              //  script.ChangeTheme(playercurrentstyle);  // Modif'
 
             }
+            transitime = 0.5f;
+            
             ApplyStyleCarac(playercurrentstyle);
         }
        
