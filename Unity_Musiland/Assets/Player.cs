@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
     GameObject playerprefab;
     GameObject player0;
     Rigidbody2D rigid;
-    SpriteRenderer sprite;
+    public SpriteRenderer sprite;
     Animator anim;
 	public Transform groundCheck;
 
@@ -37,10 +37,9 @@ public class Player : MonoBehaviour {
     // === Style Var === //
     public EnumList.StyleMusic playercurrentstyle = EnumList.StyleMusic.Hell;
     float changeTime = 1; // Cooldown pour le changement de style
-    bool istransiting = false;
+    public bool istransiting = false;
     float transitime = 0;
-    float departtransi;
-    float farleft, farright, starttransipoint, farest;
+
 
     // === Keys === //
     private bool KeyShoot;
@@ -81,7 +80,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     public GameObject backgroundsplash;
     [SerializeField]
-    public GameObject particlesplash;
+    public GameObject HUDManagerGO;
+    public HUDManager HUDManager;
 
     // ========================================================================================================= //
     // ============================================= START ===================================================== //
@@ -94,6 +94,7 @@ public class Player : MonoBehaviour {
         anim = GetComponent<Animator>();
        // anim.enabled = true;
         CurrentRespawnPoint = sprite.transform.position;
+        HUDManager = (HUDManager)HUDManagerGO.GetComponent(typeof(HUDManager));
     }
 
     // ========================================================================================================= //
@@ -102,14 +103,7 @@ public class Player : MonoBehaviour {
     void Update () {
         if (doubletapcooldown > 0) { doubletapcooldown -= Time.deltaTime; }
 
-        if (transitime > 0)
-        {
-            TransitionChangement();
-        } else
-        {
-            istransiting = false;
-            particlesplash.SetActive(false);
-        }
+
         
         // == DEBUG == //
         if (Input.GetButton("DebugKey"))
@@ -128,46 +122,19 @@ public class Player : MonoBehaviour {
         // =========================================================================== //
 
         if (Input.GetButton("ChangeMusicPlus")) {
-
-            starttransipoint = sprite.transform.position.x;
-            farleft = 10; farright = -10; transitime = 0.5f;
             ChangeMusictoNext();
-            
-            // ===== CHANGEMENT DES TILES + BCKG ===== //
-            MusicSwitcher[] tabmagik = (MusicSwitcher[])FindObjectsOfType(typeof(MusicSwitcher)); // Recup' tout les items avec le script de changement
-            foreach (MusicSwitcher themetile in tabmagik) // Parcours
-            {
-                if (themetile.gameObject.transform.position.x <= farleft) farleft = themetile.gameObject.transform.position.x; // Objet le plus à gauche 
-                if (themetile.gameObject.transform.position.x >= farright) farright = themetile.gameObject.transform.position.x; // Objet le plus à droite
-            }
-
-            if (Mathf.Abs(starttransipoint - farleft) > Mathf.Abs(starttransipoint - farright)) farest = farleft;
-            else farest = farright;
-            transitime = 2f;
-
+            HUDManager.ChangeAllTiles();
             ApplyStyleCarac(playercurrentstyle);
         }
 
         // ===== PREVIOUS MUSIC ===== //
         if (Input.GetButton("ChangeMusicMinus"))
         {
-            starttransipoint = sprite.transform.position.x;
-            farleft = 10;farright = -10; transitime = 0.5f;
+
             ChangeMusictoPrevious();
-
-            // ===== CHANGEMENT DES TILES + BCKG ===== //
-            MusicSwitcher[] tabmagik = (MusicSwitcher[])FindObjectsOfType(typeof(MusicSwitcher)); // Recup' tout les items avec le script de changement
-            foreach (MusicSwitcher themetile in tabmagik) // Parcours
-            {                
-                if (themetile.gameObject.transform.position.x <= farleft) farleft = themetile.gameObject.transform.position.x; // Objet le plus à gauche 
-                if (themetile.gameObject.transform.position.x >= farright) farright = themetile.gameObject.transform.position.x; // Objet le plus à droite
-            }
-
-            if (Mathf.Abs(starttransipoint - farleft) > Mathf.Abs(starttransipoint - farright)) farest = farleft;
-            else farest = farright;
-            transitime = 2f;
-            
+            HUDManager.ChangeAllTiles();
             ApplyStyleCarac(playercurrentstyle);
+ 
         }
        
         // =========================================================================== //
@@ -257,7 +224,7 @@ public class Player : MonoBehaviour {
         // =========================================================================== //
         maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
         backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
-        particlesplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
+        //particlesplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
         playerpdv = playerpdvgameobject.GetComponent<Text>();
         playerpdv.text = "HP: " + hp + "/"+hpmax;
 
@@ -287,6 +254,7 @@ public class Player : MonoBehaviour {
 
             switch (playercurrentstyle)
             {
+                // =============================================================================================================
                 case EnumList.StyleMusic.Hell:
 				if (!bRun && !bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
                 {
@@ -306,6 +274,7 @@ public class Player : MonoBehaviour {
 
                     break;
 
+                // =============================================================================================================
                 case EnumList.StyleMusic.Fest:
 					if (!bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
 					{
@@ -316,6 +285,7 @@ public class Player : MonoBehaviour {
 					}
                     break;
 
+                // =============================================================================================================
                 case EnumList.StyleMusic.Calm:
 					if (!bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm) // S'il n'as pas double tap et qu'il n'est pas en l'air
 					{
@@ -410,6 +380,7 @@ public class Player : MonoBehaviour {
             lastchange = Time.time;
             if (playercurrentstyle == EnumList.StyleMusic.Calm)playercurrentstyle = EnumList.StyleMusic.Hell;
             else { playercurrentstyle++; }
+            HUDManager.ScaleCircleTransition(25);
         }
     }
 
@@ -419,10 +390,13 @@ public class Player : MonoBehaviour {
     {
         if ((Time.time > lastchange + changeTime) && (!istransiting))
         {
+            HUDManager.ScaleCircleTransition(25);
             lastchange = Time.time;
             if (playercurrentstyle == EnumList.StyleMusic.Hell) playercurrentstyle = EnumList.StyleMusic.Calm;
             else {playercurrentstyle--; }
+            
         }
+
     }
     
 	// ================================== //
@@ -493,31 +467,5 @@ public class Player : MonoBehaviour {
 		yield return new WaitForSeconds (0.1f);
 		bInAir = true;
 	}
-
-    // ======================================================================================================== //
-    // ===== Fonction qui permet d'avoir une transformation des tiles en forme de cercle depuis le joueur ===== //
-    public void TransitionChangement()
-    {
-        particlesplash.SetActive(true);
-       transitime -= Time.deltaTime;
-
-        float cap = Mathf.Lerp(0, (farright - farleft), 1 - (transitime));
-       // print("cap" + cap);
-        MusicSwitcher[] tabmagik = (MusicSwitcher[])FindObjectsOfType(typeof(MusicSwitcher)); // Recup' tout les items avec le script de changement
-        foreach (MusicSwitcher themetile in tabmagik) // Parcours
-        {
-            MusicSwitcher script = (MusicSwitcher)themetile.GetComponent(typeof(MusicSwitcher)); // Recup' leur script
-
-            if (
-                (themetile.gameObject.transform.position.x > (sprite.transform.position.x - cap)) &&
-                (themetile.gameObject.transform.position.x < (sprite.transform.position.x + cap)) &&
-                (themetile.gameObject.transform.position.y > (sprite.transform.position.y - cap)) &&
-                (themetile.gameObject.transform.position.y < (sprite.transform.position.y + cap))
-                )
-            {
-                script.ChangeTheme(playercurrentstyle);
-            }
-        }
-    }
 
 }

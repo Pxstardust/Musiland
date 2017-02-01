@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class MusicSwitcher : MonoBehaviour{
 
@@ -12,7 +13,7 @@ public class MusicSwitcher : MonoBehaviour{
     [SerializeField]
     Sprite CalmTile;
     SpriteRenderer spriterenderer;
-
+    Image ImageSRC;
     [SerializeField]
     PhysicsMaterial2D PhysicHell;
     [SerializeField]
@@ -35,6 +36,7 @@ public class MusicSwitcher : MonoBehaviour{
     void Start () {
         spriterenderer = GetComponent<SpriteRenderer>();
         boxcollider = GetComponent<BoxCollider2D>();
+        ImageSRC = GetComponent<Image>();
     }
 
 
@@ -69,5 +71,28 @@ public class MusicSwitcher : MonoBehaviour{
 
         }
         boxcollider.sharedMaterial = CurrentPhysic;
+    }
+
+    public void ChangeImageSrc(EnumList.StyleMusic playerstyle)
+    {
+        switch (playerstyle)
+        {
+            case EnumList.StyleMusic.Hell:
+                ImageSRC.sprite = HellTile;
+                if (PhysicHell != null) CurrentPhysic = PhysicHell; // Si il y a une physique particulière à appliquer
+                else CurrentPhysic = null; // Sinon la met à nulle
+                break;
+            case EnumList.StyleMusic.Fest:
+                ImageSRC.sprite = FestTile; // Change le sprite
+                if (PhysicFest != null) CurrentPhysic = PhysicFest;// Si il y a une physique particulière à appliquer
+                else CurrentPhysic = null; // Sinon la met à nulle
+                break;
+            case EnumList.StyleMusic.Calm:
+               ImageSRC.sprite = CalmTile; // Change le sprite
+                if (PhysicCalm != null) CurrentPhysic = PhysicCalm;// Si il y a une physique particulière à appliquer
+                else CurrentPhysic = null; // Sinon la met à nulle
+                break;
+
+        }
     }
 }
