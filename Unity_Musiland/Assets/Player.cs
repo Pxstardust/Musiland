@@ -14,7 +14,12 @@ public class Player : MonoBehaviour {
     Rigidbody2D rigid;
     public SpriteRenderer sprite;
     Animator anim;
+
+    // ============================ //
+    // ===== Collider Checker ===== //
 	public Transform groundCheck;
+    public Transform leftCheck;
+    public Transform rightCheck;
 
     // ================== //
     // ===== Camera ===== //
@@ -40,6 +45,16 @@ public class Player : MonoBehaviour {
     public bool istransiting = false;
     float transitime = 0;
 
+    float maxSpeedCalm = 4; // Vitesse max Calm
+    float maxSpeedFest = 5; // Vitesse max Fest
+    float maxSpeedHell = 6; // Vitesse max Hell
+
+    float gravityScaleCalm = 0.75f;
+    float gravityScaleFest = 1f;
+    float gravityScaleHell = 1f;
+
+    float moveForceHell = 30f;
+
 
     // === Keys === //
     private bool KeyShoot;
@@ -59,15 +74,7 @@ public class Player : MonoBehaviour {
 	bool canMove = true;
 	bool hideUnderSnow = false;
 
-	float maxSpeedCalm = 4;
-	float maxSpeedFest = 5;
-	float maxSpeedHell = 6;
 
-	float gravityScaleCalm = 0.75f;
-	float gravityScaleFest = 1f;
-	float gravityScaleHell = 1f;
-
-	float moveForceHell = 30f;
 
     // =============== //
     // ===== HUD ===== //
@@ -103,7 +110,23 @@ public class Player : MonoBehaviour {
     void Update () {
         if (doubletapcooldown > 0) { doubletapcooldown -= Time.deltaTime; }
 
+        // == WALL JUMP == //
+        bool isWallSliding = false;
 
+        if (playercurrentstyle == EnumList.StyleMusic.Fest)
+        {
+            // ----- Si il y a un mur à gauche/droite et rien en dessous et qu'on est pas en train de monter ---- 
+            if ((Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")) ||
+            Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"))) &&
+            !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")) && rigid.velocity.y < 0
+            ) 
+            {
+                isWallSliding = true;
+            }
+        }
+
+
+        // == WALL JUMP == //
         
         // == DEBUG == //
         if (Input.GetButton("DebugKey"))
@@ -171,6 +194,21 @@ public class Player : MonoBehaviour {
 			StartCoroutine(setJump());
             rigid.AddForce((new Vector3(0.0f,300,0)));
             timelastjump = Time.time;
+        }
+
+        if (Input.GetButton("Jump") && isWallSliding)
+        {
+            bool wallatleft = false;
+            if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"))) wallatleft = true;
+            if (wallatleft)
+            {
+                rigid.AddForce((new Vector3(300, 300, 0)));
+                print("Walljump right!");
+            } else
+            {
+                rigid.AddForce((new Vector3(-300, 300, 0)));
+                print("Walljump left!");
+            }
         }
         // ================= //
 
@@ -265,7 +303,7 @@ public class Player : MonoBehaviour {
 				}
 				else // S'il a double tap
                     {
-                        print("Dash!");
+                       // print("Dash!");
 						rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedHell, rigid.velocity.y);
                         // ========================================== 
                         // Mécanique de dash sur une distance prévue/qui s'incrémente si le joueur laisse appuyer
