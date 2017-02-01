@@ -58,10 +58,15 @@ public class Player : MonoBehaviour {
     float tapcount = 0;
     bool bIsGrabbingWall = false;
 	bool canMove = true;
+	bool hideUnderSnow = false;
 
 	float maxSpeedCalm = 4;
 	float maxSpeedFest = 5;
 	float maxSpeedHell = 6;
+
+	float gravityScaleCalm = 0.75f;
+	float gravityScaleFest = 1f;
+	float gravityScaleHell = 1f;
 
 	float moveForceHell = 30f;
 
@@ -206,13 +211,13 @@ public class Player : MonoBehaviour {
 		if (Input.GetButton ("Up")) {
 			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
 				rigid.gravityScale = 0.1f;
-				rigid.AddForce ((new Vector3(0.0f,0.7f,0)));
+				rigid.AddForce ((new Vector3(0.0f,0.6f,0)));
 			} else { // Si on est au sol
-				
+
 			}
 		} else {
 			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm) { // Si on est en l'air
-				rigid.gravityScale = 0.75f;
+				rigid.gravityScale = gravityScaleCalm;
 			} 
 		}
 		// =============== //
@@ -227,12 +232,23 @@ public class Player : MonoBehaviour {
 
             } else // Si on est au sol
             {
-                if (playercurrentstyle == EnumList.StyleMusic.Calm) 
-                {
-                    HideUnderSnow();
-                }
+                
             }
         }
+
+		if (Input.GetButtonDown ("Down")) {
+			if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir) 
+			{
+				HideUnderSnow();
+			}
+		}
+
+		if (Input.GetButtonUp ("Down")) {
+			if (hideUnderSnow == true) 
+			{
+				UnhideUnderSnow();
+			}
+		}
         // =============== //
 
 
@@ -327,21 +343,22 @@ public class Player : MonoBehaviour {
     // ================================== Collisions & TRIGGER ================================================= //
     // ========================================================================================================= //
     // ======================================== //
-    // ============= Collision ================ //
-    // ======================================== //
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if ((collision.gameObject.tag == "Sol")) {
-            bInAir = false;
-            anim.SetBool("isjump", false);
-            rigid.gravityScale = initialgravity; // Disable Fast Fall
-            
-            if(playercurrentstyle == EnumList.StyleMusic.Fest)
-            {
-                bIsGrabbingWall = true;
-            }
-        }
-    }
+	// ============= Collision ================ //
+	// ======================================== //
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if ((collision.gameObject.tag == "Sol") && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))) {
+			bInAir = false;
+			anim.SetBool("isjump", false);
+			rigid.gravityScale = initialgravity; // Disable Fast Fall
+
+			if(playercurrentstyle == EnumList.StyleMusic.Fest)
+			{
+				bIsGrabbingWall = true;
+			}
+		}
+	}
+
     
     // =========================================
     void OnCollisionStay2D(Collision2D collision) // Empêche de ne plus pouvoir jump si atterrissage alors que bouton Jump maintenu
@@ -408,36 +425,50 @@ public class Player : MonoBehaviour {
         }
     }
     
-    // ================================== //
-    // ===== Se cache sous la neige ===== //
-    public void HideUnderSnow()
-    {
-        print("Je suis caché sous la neige");
-    }
+	// ================================== //
+	// ===== Se cache sous la neige ===== //
+	public void HideUnderSnow()
+	{
+		rigid.velocity = new Vector2(0,0);
+		hideUnderSnow = true;
+		canMove = false;
+		GetComponent<Collider2D> ().enabled = false;
+		rigid.gravityScale = 0;
+	}
 
-    // =========================================================================== //
-    // ===== Fonction qui applique différents effets au perso selon le style ===== //
-    void ApplyStyleCarac (EnumList.StyleMusic newstyle)  
-    {
-        switch (newstyle)
-        {
-            case EnumList.StyleMusic.Hell:
-                initialgravity = 1f; // -- Gravité (Hover/Not)      
-                rigid.gravityScale = initialgravity;
-                bIsGrabbingWall = false;
-                break;
-            case EnumList.StyleMusic.Fest:
-                initialgravity = 1f; // -- Gravité (Hover/Not)
-                rigid.gravityScale = initialgravity;
-                break;
-            case EnumList.StyleMusic.Calm:
-                initialgravity = 0.75f; // -- Gravité (Hover/Not)
-                rigid.gravityScale = initialgravity;
-                bIsGrabbingWall = false;
-                break;
+	// ================================== //
+	// ===== Sort de sous la neige ===== //
+	public void UnhideUnderSnow()
+	{
+		hideUnderSnow = false;				
+		canMove = true;
+		GetComponent<Collider2D> ().enabled = true;
+		rigid.gravityScale = gravityScaleCalm;
+	}
 
-        }
-    }
+	// =========================================================================== //
+	// ===== Fonction qui applique différents effets au perso selon le style ===== //
+	void ApplyStyleCarac (EnumList.StyleMusic newstyle)  
+	{
+		switch (newstyle)
+		{
+		case EnumList.StyleMusic.Hell:
+			initialgravity = gravityScaleHell; // -- Gravité (Hover/Not)      
+			rigid.gravityScale = initialgravity;
+			bIsGrabbingWall = false;
+			break;
+		case EnumList.StyleMusic.Fest:
+			initialgravity = gravityScaleFest; // -- Gravité (Hover/Not)
+			rigid.gravityScale = initialgravity;
+			break;
+		case EnumList.StyleMusic.Calm:
+			initialgravity = gravityScaleCalm; // -- Gravité (Hover/Not)
+			rigid.gravityScale = initialgravity;
+			bIsGrabbingWall = false;
+			break;
+
+		}
+	}
 
     // ==================================================== //
     // ===== Fonction qui permet au joueur de respawn ===== //
