@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class HUDManager : MonoBehaviour {
     public GameObject cercletransition;
     [SerializeField]
     public GameObject particlesplash;
+    Image particlesplashimage;
     [SerializeField]
     public Player Theplayer;
 
@@ -20,15 +22,18 @@ public class HUDManager : MonoBehaviour {
 
     // ===== Ornement ===== //
     MusicSwitcher OrnementScript;
+    float OrnOpacity;
     // Use this for initialization
     void Start () {
-		
+        particlesplashimage = particlesplash.GetComponent<Image>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        //print("transitime="+transitime);
 		if (circletransitingtimer > 0)
         {
+            
             circletransitingtimer -= Time.deltaTime;
             float initscale = cercletransition.transform.localScale.x;
             float Currentscale = Mathf.Lerp(cercletransition.transform.localScale.x, circletransitingscale, 1-(circletransitingtimer/9f));
@@ -37,21 +42,27 @@ public class HUDManager : MonoBehaviour {
 
         if (transitime > 0)
         {
+            float opacity = Mathf.Lerp(1, 0, 1 - (transitime -8));
+
+            particlesplashimage.color = new Color(255, 255,255, opacity);
+          
             TransitionChangement();
         }
         else
         {
             //Theplayer.istransiting = false;
             particlesplash.SetActive(false);
+           
         }
     }
 
     // ===== Scale the circle ===== //
-    public void ScaleCircleTransition(float scalefinale)
+    public void ScaleCircleTransition(float scalefinale, Vector3 PlayerPos)
     {
+        cercletransition.transform.position = PlayerPos;
         cercletransition.transform.localScale = new Vector3(0,0,0);
         circletransitingscale = scalefinale;
-        circletransitingtimer = 9f;
+        circletransitingtimer = 9.1f;
        
     }
 

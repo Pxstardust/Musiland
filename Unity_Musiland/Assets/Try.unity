@@ -31381,6 +31381,7 @@ MonoBehaviour:
   leftCheck: {fileID: 765027068}
   rightCheck: {fileID: 1381689356}
   maincamera: {fileID: 78953055}
+  PlayerScreenPos: {x: 0, y: 0, z: 0}
   playercurrentstyle: 1
   istransiting: 0
   playerpdv: {fileID: 1491043386}
