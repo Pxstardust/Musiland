@@ -20,6 +20,9 @@ public class Player : MonoBehaviour {
 	public Transform groundCheck;
     public Transform leftCheck;
     public Transform rightCheck;
+    public Vector2 InitialHitbox = new Vector2(0.21f, 0.6f);
+    public Vector2 SlideHitbox = new Vector2(0.21f, 0.2f);
+    public CapsuleCollider2D characollider;
 
     // ================== //
     // ===== Camera ===== //
@@ -64,6 +67,7 @@ public class Player : MonoBehaviour {
     // === Controller Var === //
     bool bInAir;
     bool bRun;
+    bool IsHoldingDown = false;
     float lastchange = 0; // Date du dernier changement
     float initialgravity = 1; // Gravity Scale 
     float deathheight = -10; // Hauteur avant de mourir
@@ -75,18 +79,24 @@ public class Player : MonoBehaviour {
     // -- WalLSlide -- //
     float WallSlideSpeed = -2;
     // -- H Dash -- //
-    float doubletapCDDash = 0.5f;
-    float HorizontalTapCount = 0;
-    float DashCD = 2;
-    float LastDashEnd, LastDashStart;
-    float DureeDash = 0.25f;
+    float doubletapCDDash = 0.5f; // Durée max entre deux tap pour un double tap
+    float HorizontalTapCount = 0; // Nb de tap pour le double tap 
+    float DashCD = 2; // CD entre deux dash
+    float LastDashEnd, LastDashStart; // Moments clé du dernier dash
+    float DureeDash = 0.25f; // Durée du dash
     // -- V Dash -- //
-    float doubletapCDVDash = 0.5f;
-    float VerticalTapCount = 0;
-    float LastVDashStart, LastVDashEnd;
-    bool IsVDashDone = false;
-    bool bVDash = false;
-    float DureeVDash = 1f;
+    float doubletapCDVDash = 0.5f; // Durée max entre deux tap pour un double tap
+    float VerticalTapCount = 0; // Nb de tap pour le double tap
+    float LastVDashStart, LastVDashEnd; // Moments clé du dernier Vdash
+    bool IsVDashDone = false; // Si le joueur a déjà fait un VDash durant son saut1
+    bool bVDash = false; // Si le joueur est en train de Vdash 
+    float DureeVDash = 1f; // Durée du Vdash
+    // -- Slide -- //
+    bool IsSliding; // Si le joueur est en train de slide
+    float SlideDestination; // Distance d'arrivée théorique du slide
+    float SlideTimeStart; // Moment où le joueur débute son slide
+    float SlideLength = 3; // Longueur du slide
+    float SlideStartY;
 
     // =============== //
     // ===== HUD ===== //
@@ -114,6 +124,7 @@ public class Player : MonoBehaviour {
        // anim.enabled = true;
         CurrentRespawnPoint = sprite.transform.position;
         HUDManager = (HUDManager)HUDManagerGO.GetComponent(typeof(HUDManager));
+        characollider = GetComponent<CapsuleCollider2D>();
     }
 
     // ========================================================================================================= //
@@ -121,6 +132,28 @@ public class Player : MonoBehaviour {
     // ========================================================================================================= //
     void Update () {
         PlayerScreenPos = maincamera.WorldToScreenPoint(this.transform.position);
+        if (IsSliding)
+        {
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, Time.time-SlideTimeStart), SlideStartY, 0);
+            // ----- Si on rencontre un mur ou que le joueur ne touche plus le sol, on stop la glissade ---- 
+            if ((Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")) ||
+            Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"))) ||
+            !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))
+            )
+            {
+                ChangeHitbox(false);
+                IsSliding = false;
+                // = Remettre la hitbox correctement
+            }
+           
+            if (Time.time - SlideTimeStart >= 0.45f)
+            {
+                IsSliding = false;
+                ChangeHitbox(false);
+                // = Remettre la hitbox correctement
+            }
+
+        }
         if (doubletapCDDash > 0) { doubletapCDDash -= Time.deltaTime; }
         if (doubletapCDVDash > 0) { doubletapCDVDash -= Time.deltaTime; }
         if (bRun && Time.time > LastDashStart + DureeDash) { bRun = false;  rigid.velocity = new Vector2(0, 0); } // Si on est en dash horizontal dpeuis un certain temps : stop
@@ -228,29 +261,53 @@ public class Player : MonoBehaviour {
         }
 
         // ===== Jump  ===== //
-		if ( Input.GetButton("Jump") && !bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")) && (Time.time > timelastjump+mintimejump))
+        if (Input.GetButtonDown("Jump"))
         {
-            //bInAir = true; === Problème with colliders
-            IsVDashDone = false;
-			StartCoroutine(setJump());
-            rigid.AddForce((new Vector3(0.0f,300,0)));
-            timelastjump = Time.time;
-        }
-
-        if (Input.GetButton("Jump") && isWallSliding)
-        {
-            bool wallatleft = false;
-            if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"))) wallatleft = true;
-            if (wallatleft)
+            // Si on est au sol
+            if (!bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
             {
-                rigid.AddForce((new Vector3(300, 300, 0)));
-
-            } else
-            {
-                rigid.AddForce((new Vector3(-300, 300, 0)));
-
+                if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) // SLIDE
+                {
+                    IsSliding = true;
+                    if (sprite.flipX) SlideDestination = transform.position.x - SlideLength;
+                    else SlideDestination = transform.position.x + 5;
+                    SlideTimeStart = Time.time;
+                    SlideStartY = transform.position.y;
+                    ChangeHitbox(true);
+                    //transform.position = new Vector3(Mathf.Lerp(transform.position.x, transform.position.x + 5, Time.time), transform.position.y, 0);
+                    // ============================= //
+                    // == CHANGEMENT DE LA HITBOX == //
+                    
+                    
+                    
+                } else if (Time.time > timelastjump + mintimejump){ // Jump
+                    //bInAir = true; === Problème with colliders
+                    IsVDashDone = false;
+                    StartCoroutine(setJump());
+                    rigid.AddForce((new Vector3(0.0f, 300, 0)));
+                    timelastjump = Time.time;
+                }
             }
+
+
+            if (isWallSliding)
+            {
+                bool wallatleft = false;
+                if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"))) wallatleft = true;
+                if (wallatleft)
+                {
+                    rigid.AddForce((new Vector3(300, 300, 0)));
+
+                }
+                else
+                {
+                    rigid.AddForce((new Vector3(-300, 300, 0)));
+
+                }
+            }
+
         }
+
         // ================= //
 
 		// ===== Up ===== //
@@ -280,6 +337,7 @@ public class Player : MonoBehaviour {
         }
 
 		if (Input.GetButtonDown ("Down")) {
+            IsHoldingDown = true;
 			if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir) 
 			{
 				HideUnderSnow();
@@ -287,6 +345,7 @@ public class Player : MonoBehaviour {
         }
 
 		if (Input.GetButtonUp ("Down")) {
+            IsHoldingDown = false;
 			if (hideUnderSnow == true) 
 			{
 				UnhideUnderSnow();
@@ -566,6 +625,23 @@ public class Player : MonoBehaviour {
     // ===== DASH ===== //
     public void FDash()
     {
+
+    }
+
+    // ==== Changement Hitbox ===== //
+    public void ChangeHitbox(bool onoff)
+    {
+        if (onoff)
+        {
+            characollider.size = SlideHitbox;
+            characollider.offset = new Vector2(0, 0.19f);
+                
+        } else
+        {
+            characollider.size = InitialHitbox;
+            characollider.offset = new Vector2(0, 0);
+        }
+
 
     }
 
