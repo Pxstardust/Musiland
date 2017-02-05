@@ -20,9 +20,11 @@ public class Player : MonoBehaviour {
 	public Transform groundCheck;
     public Transform leftCheck;
     public Transform rightCheck;
+    public Transform topCheck;
     public Vector2 InitialHitbox = new Vector2(0.21f, 0.6f);
     public Vector2 SlideHitbox = new Vector2(0.21f, 0.2f);
     public CapsuleCollider2D characollider;
+    RaycastHit2D Hit;
 
     // ================== //
     // ===== Camera ===== //
@@ -66,7 +68,7 @@ public class Player : MonoBehaviour {
 
     // === Controller Var === //
     bool bInAir;
-    bool bRun;
+    public bool bRun;
     bool IsHoldingDown = false;
     float lastchange = 0; // Date du dernier changement
     float initialgravity = 1; // Gravity Scale 
@@ -89,13 +91,13 @@ public class Player : MonoBehaviour {
     float VerticalTapCount = 0; // Nb de tap pour le double tap
     float LastVDashStart, LastVDashEnd; // Moments clé du dernier Vdash
     bool IsVDashDone = false; // Si le joueur a déjà fait un VDash durant son saut1
-    bool bVDash = false; // Si le joueur est en train de Vdash 
+    public bool bVDash = false; // Si le joueur est en train de Vdash 
     float DureeVDash = 1f; // Durée du Vdash
     // -- Slide -- //
     bool IsSliding; // Si le joueur est en train de slide
     float SlideDestination; // Distance d'arrivée théorique du slide
     float SlideTimeStart; // Moment où le joueur débute son slide
-    float SlideLength = 3; // Longueur du slide
+    float SlideLength = 3f; // Longueur du slide
     float SlideStartY;
 
     // =============== //
@@ -132,28 +134,50 @@ public class Player : MonoBehaviour {
     // ========================================================================================================= //
     void Update () {
         PlayerScreenPos = maincamera.WorldToScreenPoint(this.transform.position);
+        
+        // ===================================== //
+        // =============== Slide =============== //
         if (IsSliding)
         {
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, Time.time-SlideTimeStart), SlideStartY, 0);
+            if (TestColliderTop()) // ----- Permet d'avoir une glissade plus fluide sous les objets ----- 
+            {
+                if (sprite.flipX) SlideDestination -= 0.1f;
+                else SlideDestination += 0.1f;  
+            }
             // ----- Si on rencontre un mur ou que le joueur ne touche plus le sol, on stop la glissade ---- 
             if ((Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")) ||
             Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"))) ||
             !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))
             )
             {
-                ChangeHitbox(false);
-                IsSliding = false;
-                // = Remettre la hitbox correctement
+                if (!TestColliderTop())
+                {
+                    ChangeHitbox(false);
+                    IsSliding = false;
+                } else
+                {
+                    DoSlide();
+                }
+
             }
            
             if (Time.time - SlideTimeStart >= 0.45f)
             {
-                IsSliding = false;
-                ChangeHitbox(false);
-                // = Remettre la hitbox correctement
+                if (!TestColliderTop())
+                {
+                    ChangeHitbox(false);
+                    IsSliding = false;
+                } else
+                {
+                    DoSlide();
+                }
             }
 
         }
+
+        // ========================================= //
+        // =============== DASHES ================== //
         if (doubletapCDDash > 0) { doubletapCDDash -= Time.deltaTime; }
         if (doubletapCDVDash > 0) { doubletapCDVDash -= Time.deltaTime; }
         if (bRun && Time.time > LastDashStart + DureeDash) { bRun = false;  rigid.velocity = new Vector2(0, 0); } // Si on est en dash horizontal dpeuis un certain temps : stop
@@ -168,13 +192,22 @@ public class Player : MonoBehaviour {
             sprite.color = new Color32(0,255, 0,255);
         }
 
-        if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
+        if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))) // Si les pieds du joueur touchent quelque chose
         {
-            bVDash = false;
+            if (bVDash) // Si on est en VDash
+            {
+                Hit = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"));
+                Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
+                if (Testdestruct) // Si l'objet touché est destructible 
+                {
+                    Testdestruct.Destruction(); // On le détruit
+                } else { bVDash = false; }
+
+            }
         }
 
-
-        // == WALL JUMP == //
+        // =========================================== //
+        // ================ WALL JUMP ================ //
             bool isWallSliding = false;
 
         if (playercurrentstyle == EnumList.StyleMusic.Fest)
@@ -189,9 +222,6 @@ public class Player : MonoBehaviour {
                 rigid.velocity = new Vector2 (0, WallSlideSpeed);
             }
         }
-
-
-        // == WALL JUMP == //
         
         // == DEBUG == //
         if (Input.GetButton("DebugKey"))
@@ -263,23 +293,19 @@ public class Player : MonoBehaviour {
         // ===== Jump  ===== //
         if (Input.GetButtonDown("Jump"))
         {
+            if (IsSliding)
+            {   
+                // ==== Fonction pour changer de direction de slide ==== //
+                sprite.flipX = !sprite.flipX;
+                DoSlide();
+            }
             // Si on est au sol
             if (!bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
             {
                 if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) // SLIDE
                 {
-                    IsSliding = true;
-                    if (sprite.flipX) SlideDestination = transform.position.x - SlideLength;
-                    else SlideDestination = transform.position.x + 5;
-                    SlideTimeStart = Time.time;
-                    SlideStartY = transform.position.y;
-                    ChangeHitbox(true);
-                    //transform.position = new Vector3(Mathf.Lerp(transform.position.x, transform.position.x + 5, Time.time), transform.position.y, 0);
-                    // ============================= //
-                    // == CHANGEMENT DE LA HITBOX == //
-                    
-                    
-                    
+                    DoSlide();
+                      
                 } else if (Time.time > timelastjump + mintimejump){ // Jump
                     //bInAir = true; === Problème with colliders
                     IsVDashDone = false;
@@ -496,6 +522,7 @@ public class Player : MonoBehaviour {
             rigid.AddForce(new Vector3(0, 200, 0));
             lastDamage = Time.time;
         }
+        
     }
 
     // =========================================
@@ -508,11 +535,13 @@ public class Player : MonoBehaviour {
     // ======================================== //
     void OnTriggerEnter2D(Collider2D collision)
     {
+        
     }
 
     // =======================================
     void OnTriggerStay2D(Collider2D collision)
     {
+        
     }
 
     // =======================================
@@ -628,6 +657,16 @@ public class Player : MonoBehaviour {
 
     }
 
+    public void DoSlide()
+    {
+        IsSliding = true;
+        if (sprite.flipX) SlideDestination = transform.position.x - SlideLength;
+        else SlideDestination = transform.position.x + SlideLength;
+        SlideTimeStart = Time.time;
+        SlideStartY = transform.position.y;
+        ChangeHitbox(true);
+    }
+
     // ==== Changement Hitbox ===== //
     public void ChangeHitbox(bool onoff)
     {
@@ -642,6 +681,19 @@ public class Player : MonoBehaviour {
             characollider.offset = new Vector2(0, 0);
         }
 
+
+    }
+
+    public bool TestColliderTop()
+    {
+        if (Physics2D.Linecast(transform.position,topCheck.position, 1 << LayerMask.NameToLayer("ground")))
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+       
 
     }
 
