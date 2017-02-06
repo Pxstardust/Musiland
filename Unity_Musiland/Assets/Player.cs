@@ -387,6 +387,7 @@ public class Player : MonoBehaviour {
         {
             if (bInAir) // Si on est en l'air
             {
+				bInAir = false;
                 rigid.gravityScale = 5f; // FAST FALL
             }
 
@@ -455,7 +456,7 @@ public class Player : MonoBehaviour {
 				}
 				if (bRun) // DASH
                     {
-                        rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * moveForceHell, rigid.velocity.y);
+					rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * moveForceHell, rigid.velocity.y);
                         
                         // ========================================== 
                         // Mécanique de dash sur une distance prévue
