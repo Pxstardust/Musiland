@@ -8,10 +8,17 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+
+    SpriteRenderer spriterenderer;
+    BoxCollider2D boxcollider;
+    Animator anim;
+    // Use this for initialization
+    void Start () {
+        spriterenderer = GetComponent<SpriteRenderer>();
+        boxcollider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();    
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,7 +47,11 @@ public class Destructible : MonoBehaviour {
     // ===== Fonction qui détruit l'objet ===== //
     public void Destruction()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        spriterenderer.enabled = false;
+        boxcollider.enabled = false;
+        // anim.SetBool("playdestruction", true);
+        print("destroy");
         // -- Jouer un son -- //
         // -- Jouer une anim'/particule -- //
     }
