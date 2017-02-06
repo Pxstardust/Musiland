@@ -27,7 +27,7 @@ public class Destructible : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-
+        /*
         if ((collision.gameObject.tag == "Player"))
         {
             GameObject goplayer = collision.gameObject; // Recup' GO de l'objet collider (player)
@@ -41,7 +41,7 @@ public class Destructible : MonoBehaviour {
             }
             
         }
-
+        */
     }
 
     // ===== Fonction qui détruit l'objet ===== //

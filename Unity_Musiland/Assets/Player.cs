@@ -192,6 +192,31 @@ public class Player : MonoBehaviour {
             sprite.color = new Color32(0,255, 0,255);
         }
 
+        if (bRun && playercurrentstyle == EnumList.StyleMusic.Hell)
+        {
+            if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")))
+            {
+                Hit = Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"));
+                Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
+                if (Testdestruct) // Si l'objet touché est destructible 
+                {
+                    Testdestruct.Destruction(); // On le détruit
+                }
+            }
+
+            if (Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground")))
+            {
+                Hit = Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"));
+                Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
+                if (Testdestruct) // Si l'objet touché est destructible 
+                {
+                    Testdestruct.Destruction(); // On le détruit
+                }
+            }
+        }
+
+
+
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))) // Si les pieds du joueur touchent quelque chose
         {
             if (bVDash) // Si on est en VDash
