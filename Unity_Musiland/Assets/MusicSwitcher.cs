@@ -22,7 +22,7 @@ public class MusicSwitcher : MonoBehaviour{
     PhysicsMaterial2D PhysicCalm;
 
     PhysicsMaterial2D CurrentPhysic;
-    BoxCollider2D boxcollider;
+	Collider2D collider;
 
     // ===== Things to add to each style ===== //
 
@@ -35,7 +35,7 @@ public class MusicSwitcher : MonoBehaviour{
     // Use this for initialization
     void Start () {
         spriterenderer = GetComponent<SpriteRenderer>();
-        boxcollider = GetComponent<BoxCollider2D>();
+        collider = GetComponent<BoxCollider2D>();
         ImageSRC = GetComponent<Image>();
     }
 
@@ -70,7 +70,7 @@ public class MusicSwitcher : MonoBehaviour{
                 break;
 
         }
-        boxcollider.sharedMaterial = CurrentPhysic;
+        collider.sharedMaterial = CurrentPhysic;
     }
 
     public void ChangeImageSrc(EnumList.StyleMusic playerstyle)

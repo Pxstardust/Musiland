@@ -192,6 +192,11 @@ public class Player : MonoBehaviour {
             sprite.color = new Color32(0,255, 0,255);
         }
 
+		if (hideUnderSnow)
+		{
+			sprite.color = new Color32(0,0,255, 150) ;
+		} else sprite.color = Color.white;
+
         if (bRun && playercurrentstyle == EnumList.StyleMusic.Hell)
         {
             if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")))
@@ -316,7 +321,7 @@ public class Player : MonoBehaviour {
         }
 
         // ===== Jump  ===== //
-        if (Input.GetButtonDown("Jump"))
+		if (Input.GetButtonDown("Jump") && canMove)
         {
             if (IsSliding)
             {   
@@ -335,7 +340,7 @@ public class Player : MonoBehaviour {
                     //bInAir = true; === Problème with colliders
                     IsVDashDone = false;
                     StartCoroutine(setJump());
-                    rigid.AddForce((new Vector3(0.0f, 300, 0)));
+                    rigid.AddForce((new Vector3(0.0f, 550, 0)));
                     timelastjump = Time.time;
                 }
             }
@@ -362,7 +367,7 @@ public class Player : MonoBehaviour {
         // ================= //
 
 		// ===== Up ===== //
-		if (Input.GetButton ("Up")) {
+		if (Input.GetButton ("Jump")) {
 			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
 				rigid.gravityScale = 0.1f;
 				rigid.AddForce ((new Vector3(0.0f,0.6f,0)));
@@ -378,7 +383,7 @@ public class Player : MonoBehaviour {
 
 
         // ===== Down ===== //
-        if (Input.GetButton("Down"))
+		if (Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down"))
         {
             if (bInAir) // Si on est en l'air
             {
@@ -387,7 +392,7 @@ public class Player : MonoBehaviour {
 
         }
 
-		if (Input.GetButtonDown ("Down")) {
+		if (Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) {
             IsHoldingDown = true;
 			if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir) 
 			{
@@ -395,7 +400,7 @@ public class Player : MonoBehaviour {
 			}
         }
 
-		if (Input.GetButtonUp ("Down")) {
+		if (Input.GetAxis("Vertical") > -0.5f || Input.GetButtonUp("Down")) {
             IsHoldingDown = false;
 			if (hideUnderSnow == true) 
 			{
@@ -411,8 +416,8 @@ public class Player : MonoBehaviour {
         maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
         backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
         //particlesplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
-        playerpdv = playerpdvgameobject.GetComponent<Text>();
-        playerpdv.text = "HP: " + hp + "/"+hpmax;
+        //playerpdv = playerpdvgameobject.GetComponent<Text>();
+        //playerpdv.text = "HP: " + hp + "/"+hpmax;
 
         // ================= //
         // ===== Death ===== //
@@ -434,8 +439,7 @@ public class Player : MonoBehaviour {
     {
 		float h = Input.GetAxis ("Horizontal");  
 
-
-        if (Input.GetButton("Horizontal") && canMove) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
+		if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.5f && canMove) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
         {
 
             switch (playercurrentstyle)
@@ -485,7 +489,7 @@ public class Player : MonoBehaviour {
         }
 
 		//On frene le personange si on navance plus sauf pour le mode calme
-		if (!Input.GetButton ("Horizontal") && !bInAir && playercurrentstyle != EnumList.StyleMusic.Calm) {
+		if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5f && !bInAir && playercurrentstyle != EnumList.StyleMusic.Calm) {
 			rigid.velocity = new Vector2 (0, rigid.velocity.y);
 		}
 
@@ -494,7 +498,7 @@ public class Player : MonoBehaviour {
         if (Input.GetAxis("Horizontal") < 0) sprite.flipX = true;
 
 
-        if (Input.GetButtonDown("Down"))
+		if (Input.GetButtonDown("Down") || Input.GetAxis("Vertical") < -0.5f)
         {
             // ----- DOUBLE TAP ----- //
             if (doubletapCDVDash > 0 && VerticalTapCount == 1) // Double tap

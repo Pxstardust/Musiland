@@ -46,7 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Destructible.cs" />
      <Compile Include="Assets\Enum.cs" />
+     <Compile Include="Assets\HUDManager.cs" />
      <Compile Include="Assets\MusicSwitcher.cs" />
      <Compile Include="Assets\Player.cs" />
  <Reference Include="UnityEngine.UI">
