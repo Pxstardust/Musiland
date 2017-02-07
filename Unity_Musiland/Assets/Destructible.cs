@@ -8,15 +8,17 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour {
 
-
+    [SerializeField]
+    ParticleSystem particleemitterGO;
     SpriteRenderer spriterenderer;
     BoxCollider2D boxcollider;
     Animator anim;
+    ParticleSystem newparticle;
     // Use this for initialization
     void Start () {
         spriterenderer = GetComponent<SpriteRenderer>();
         boxcollider = GetComponent<BoxCollider2D>();
-        anim = GetComponent<Animator>();    
+        anim = GetComponent<Animator>();
 
     }
 	
@@ -50,6 +52,11 @@ public class Destructible : MonoBehaviour {
         //Destroy(gameObject);
         spriterenderer.enabled = false;
         boxcollider.enabled = false;
+        if (particleemitterGO)
+        {
+            newparticle = Instantiate(particleemitterGO, new Vector3(transform.position.x, transform.position.y, transform.position.y), Quaternion.identity);
+        }
+
         // anim.SetBool("playdestruction", true);
         print("destroy");
         // -- Jouer un son -- //

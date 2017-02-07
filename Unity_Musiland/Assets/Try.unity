@@ -188,6 +188,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &4755953
 GameObject:
@@ -237,6 +241,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &4755956
 BoxCollider2D:
@@ -384,6 +392,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &17529901
 GameObject:
@@ -433,6 +445,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &17529904
 BoxCollider2D:
@@ -531,6 +547,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &18514212
 BoxCollider2D:
@@ -678,6 +698,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &26050801
 GameObject:
@@ -776,6 +800,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &27071466
 GameObject:
@@ -902,6 +930,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &52276272
 GameObject:
@@ -1046,6 +1078,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &62022460
 GameObject:
@@ -1144,6 +1180,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &78953051
 GameObject:
@@ -1344,6 +1384,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &84093526
 GameObject:
@@ -1442,6 +1486,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &93699383
 GameObject:
@@ -1540,6 +1588,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &105787428
 GameObject:
@@ -1638,6 +1690,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &106372291
 GameObject:
@@ -1736,6 +1792,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &106471452
 GameObject:
@@ -1834,6 +1894,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &106858424
 GameObject:
@@ -1932,6 +1996,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &107073906
 GameObject:
@@ -2030,7 +2098,58 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
+--- !u!1001 &111824799
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502915833631876, guid: 9d2015669bc6a0c47adfbd340edd1542,
+        type: 2}
+      propertyPath: Maincollider
+      value: 
+      objectReference: {fileID: 1508800323}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &117872204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2247,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &122318174
 GameObject:
@@ -2145,7 +2268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &122318175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2294,6 +2417,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &128630800
 GameObject:
@@ -2392,6 +2519,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &128875635
 GameObject:
@@ -2490,6 +2621,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &139327346
 GameObject:
@@ -2588,6 +2723,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &142037176
 GameObject:
@@ -2686,6 +2825,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &153215733
 GameObject:
@@ -2784,6 +2927,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &158934710
 GameObject:
@@ -2882,6 +3029,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &161509312
 GameObject:
@@ -2980,6 +3131,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &167554075
 GameObject:
@@ -3078,6 +3233,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &177588375
 GameObject:
@@ -3176,6 +3335,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &179641221
 GameObject:
@@ -3274,6 +3437,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &184692102
 GameObject:
@@ -3373,6 +3540,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &184692107
 MonoBehaviour:
@@ -3385,6 +3556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &193933069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,6 +3654,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &199872508
 GameObject:
@@ -3580,6 +3756,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &221633926
 GameObject:
@@ -3679,6 +3859,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &221633931
 MonoBehaviour:
@@ -3691,6 +3875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &222510817
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,6 +3973,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &230094770
 GameObject:
@@ -3886,6 +4075,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &235220941
 GameObject:
@@ -3984,6 +4177,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &242820645
 GameObject:
@@ -4083,6 +4280,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &242820650
 MonoBehaviour:
@@ -4095,6 +4296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &245764970
 GameObject:
   m_ObjectHideFlags: 0
@@ -4192,6 +4394,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &248778961
 GameObject:
@@ -4290,6 +4496,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &250524516
 GameObject:
@@ -4388,6 +4598,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &263308856
 GameObject:
@@ -4437,6 +4651,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &263308859
 BoxCollider2D:
@@ -4584,6 +4802,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &284270862
 GameObject:
@@ -4682,6 +4904,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &293188484
 GameObject:
@@ -4780,6 +5006,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &297652181
 GameObject:
@@ -4843,6 +5073,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 0}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!212 &297652185
 SpriteRenderer:
@@ -4976,6 +5210,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &305435924
 GameObject:
@@ -5074,6 +5312,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &306735174
 GameObject:
@@ -5172,6 +5414,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &321362760
 GameObject:
@@ -5270,6 +5516,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &327821444
 GameObject:
@@ -5368,6 +5618,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &356045494
 GameObject:
@@ -5466,6 +5720,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &365341819
 GameObject:
@@ -5564,6 +5822,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &372465497
 GameObject:
@@ -5662,6 +5924,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &373894342
 GameObject:
@@ -5760,6 +6026,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &379698951
 GameObject:
@@ -5858,6 +6128,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &385802424
 GameObject:
@@ -5956,6 +6230,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &409403945
 GameObject:
@@ -6054,6 +6332,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &410013088
 GameObject:
@@ -6152,6 +6434,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &414233680
 GameObject:
@@ -6250,6 +6536,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &416689238
 GameObject:
@@ -6348,6 +6638,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &430776644
 GameObject:
@@ -6446,6 +6740,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &432817407
 GameObject:
@@ -6544,6 +6842,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &438222936
 GameObject:
@@ -6642,6 +6944,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &449234527
 GameObject:
@@ -6741,6 +7047,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &449234532
 MonoBehaviour:
@@ -6753,6 +7063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &456966090
 GameObject:
   m_ObjectHideFlags: 0
@@ -6850,6 +7161,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &457904554
 GameObject:
@@ -6948,6 +7263,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &458938860
 GameObject:
@@ -7046,6 +7365,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &459454468
 GameObject:
@@ -7144,6 +7467,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &464804098
 GameObject:
@@ -7242,6 +7569,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &472778087
 GameObject:
@@ -7340,6 +7671,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &473772657
 GameObject:
@@ -7438,6 +7773,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &484088983
 GameObject:
@@ -7536,6 +7875,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &491133182
 GameObject:
@@ -7634,6 +7977,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &494896132
 GameObject:
@@ -7732,6 +8079,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &497808822
 GameObject:
@@ -7776,6 +8127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!114 &497808825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7793,6 +8145,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &497808826
 BoxCollider2D:
@@ -7940,6 +8296,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &502719562
 GameObject:
@@ -8038,6 +8398,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &506085608
 GameObject:
@@ -8136,6 +8500,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &508092957
 GameObject:
@@ -8234,6 +8602,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &513164161
 GameObject:
@@ -8332,6 +8704,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &513910802
 GameObject:
@@ -8430,6 +8806,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &517423034
 GameObject:
@@ -8528,6 +8908,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &520118636
 GameObject:
@@ -8577,6 +8961,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &520118639
 BoxCollider2D:
@@ -8724,6 +9112,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &535817135
 GameObject:
@@ -8822,6 +9214,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &535912051
 GameObject:
@@ -8920,6 +9316,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &553278144
 GameObject:
@@ -9018,6 +9418,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &555111557
 GameObject:
@@ -9116,6 +9520,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &558247236
 GameObject:
@@ -9214,6 +9622,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &562710151
 GameObject:
@@ -9312,6 +9724,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &564913004
 GameObject:
@@ -9410,6 +9826,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &572408913
 GameObject:
@@ -9509,6 +9929,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &572408918
 MonoBehaviour:
@@ -9521,6 +9945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &584104655
 GameObject:
   m_ObjectHideFlags: 0
@@ -9618,6 +10043,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &587380980
 GameObject:
@@ -9716,6 +10145,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &599459580
 GameObject:
@@ -9814,6 +10247,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &601856030
 GameObject:
@@ -9898,6 +10335,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 0}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &601856034
 BoxCollider2D:
@@ -10010,6 +10451,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &616645384
 GameObject:
@@ -10108,6 +10553,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &625024380
 GameObject:
@@ -10206,6 +10655,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &626276813
 GameObject:
@@ -10304,6 +10757,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &634731688
 GameObject:
@@ -10402,6 +10859,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &642120860
 GameObject:
@@ -10500,6 +10961,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &646769395
 GameObject:
@@ -10599,6 +11064,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &646769400
 MonoBehaviour:
@@ -10611,6 +11080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &657664497
 GameObject:
   m_ObjectHideFlags: 0
@@ -10708,6 +11178,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &665154271
 GameObject:
@@ -10806,6 +11280,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &666538790
 GameObject:
@@ -10904,6 +11382,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &669391845
 GameObject:
@@ -11002,6 +11484,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &678760343
 GameObject:
@@ -11100,6 +11586,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &694710707
 GameObject:
@@ -11198,6 +11688,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &703068483
 GameObject:
@@ -11296,6 +11790,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &705286182
 GameObject:
@@ -11468,6 +11966,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &722964344
 GameObject:
@@ -11566,6 +12068,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &726333904
 GameObject:
@@ -11665,6 +12171,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &726333909
 MonoBehaviour:
@@ -11677,6 +12187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &736544200
 GameObject:
   m_ObjectHideFlags: 0
@@ -11774,7 +12285,43 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
+--- !u!1 &738259488 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1385980236338528, guid: 30475d637dd2ea34abd02e869d042ec1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1804250863}
+--- !u!114 &738259489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738259488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HellTile: {fileID: 0}
+  FestTile: {fileID: 0}
+  CalmTile: {fileID: 0}
+  PhysicHell: {fileID: 0}
+  PhysicFest: {fileID: 0}
+  PhysicCalm: {fileID: 0}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 9100000, guid: 35e3b30de34bd5b41a1ee9634b8f476f, type: 2}
+  Maincollider: {fileID: 738259490}
+  currentstyle: 1
+--- !u!68 &738259490 stripped
+EdgeCollider2D:
+  m_PrefabParentObject: {fileID: 68509926776906278, guid: 30475d637dd2ea34abd02e869d042ec1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1804250863}
 --- !u!1 &763909174
 GameObject:
   m_ObjectHideFlags: 0
@@ -11872,6 +12419,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &765027067
 GameObject:
@@ -11998,6 +12549,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &787592526
 GameObject:
@@ -12096,6 +12651,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &788949374
 GameObject:
@@ -12194,6 +12753,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &789028229
 GameObject:
@@ -12292,6 +12855,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &789083647
 GameObject:
@@ -12390,6 +12957,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &796687189
 GameObject:
@@ -12488,6 +13059,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &806385593
 GameObject:
@@ -12586,6 +13161,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &812716528
 GameObject:
@@ -12642,6 +13221,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 0}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &812716531
 MonoBehaviour:
@@ -12822,6 +13405,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &832586968
 GameObject:
@@ -12920,6 +13507,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &834141956
 GameObject:
@@ -13018,6 +13609,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &850002217
 GameObject:
@@ -13116,6 +13711,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &850266917
 GameObject:
@@ -13214,6 +13813,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &853044673
 GameObject:
@@ -13312,6 +13915,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &854724329
 GameObject:
@@ -13410,6 +14017,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &860196635
 GameObject:
@@ -13508,6 +14119,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &860749614
 GameObject:
@@ -13606,6 +14221,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &863088547
 GameObject:
@@ -13704,6 +14323,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &871201901
 GameObject:
@@ -13802,6 +14425,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &872805849
 GameObject:
@@ -13900,6 +14527,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &882535363
 GameObject:
@@ -13998,6 +14629,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &882847653
 GameObject:
@@ -14096,6 +14731,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &901881157
 GameObject:
@@ -14194,6 +14833,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &907490790
 GameObject:
@@ -14243,6 +14886,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &907490793
 BoxCollider2D:
@@ -14390,6 +15037,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &927431200
 GameObject:
@@ -14488,6 +15139,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &936035359
 GameObject:
@@ -14586,6 +15241,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &941157993
 GameObject:
@@ -14684,6 +15343,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &942004770
 GameObject:
@@ -14782,6 +15445,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &945064545
 GameObject:
@@ -14880,6 +15547,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &945147730
 GameObject:
@@ -14978,6 +15649,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &960065432
 GameObject:
@@ -15076,6 +15751,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &962422371
 GameObject:
@@ -15174,6 +15853,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &988065501
 GameObject:
@@ -15272,6 +15955,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &988385731
 GameObject:
@@ -15370,6 +16057,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &989243843
 GameObject:
@@ -15468,6 +16159,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &991338202
 GameObject:
@@ -15566,6 +16261,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1011810815
 GameObject:
@@ -15664,6 +16363,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1011885850
 GameObject:
@@ -15762,6 +16465,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1012768835
 GameObject:
@@ -15860,6 +16567,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1024986713
 GameObject:
@@ -15958,6 +16669,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1031767129
 GameObject:
@@ -16056,6 +16771,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1032403894
 GameObject:
@@ -16154,6 +16873,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1035593249
 GameObject:
@@ -16252,6 +16975,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1043488151
 GameObject:
@@ -16350,6 +17077,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1052466900
 GameObject:
@@ -16448,6 +17179,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1072059806
 GameObject:
@@ -16546,6 +17281,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1074347715
 GameObject:
@@ -16644,6 +17383,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1077235790
 GameObject:
@@ -16742,6 +17485,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1077541243
 GameObject:
@@ -16840,6 +17587,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1078537419
 GameObject:
@@ -16938,6 +17689,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1085038694
 GameObject:
@@ -17036,6 +17791,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1088808094
 GameObject:
@@ -17134,6 +17893,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1090944362
 GameObject:
@@ -17232,6 +17995,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1105663600
 GameObject:
@@ -17330,6 +18097,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1112269491
 GameObject:
@@ -17428,6 +18199,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1114212228
 GameObject:
@@ -17526,6 +18301,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1133183422
 GameObject:
@@ -17624,6 +18403,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1140448141
 GameObject:
@@ -17722,6 +18505,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1146592237
 GameObject:
@@ -17820,6 +18607,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1146655908
 GameObject:
@@ -17918,6 +18709,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1148121012
 GameObject:
@@ -18016,6 +18811,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1149339096
 GameObject:
@@ -18114,6 +18913,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1151863896
 GameObject:
@@ -18213,6 +19016,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &1151863901
 MonoBehaviour:
@@ -18225,6 +19032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &1159050645
 GameObject:
   m_ObjectHideFlags: 0
@@ -18322,6 +19130,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1166641524
 GameObject:
@@ -18420,6 +19232,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1174797422
 GameObject:
@@ -18518,6 +19334,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1192448679
 GameObject:
@@ -18616,6 +19436,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1200243869
 GameObject:
@@ -18714,6 +19538,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1226927561
 GameObject:
@@ -18812,6 +19640,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1239555714
 GameObject:
@@ -18910,6 +19742,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1251164009
 GameObject:
@@ -19008,6 +19844,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1255696511
 GameObject:
@@ -19106,6 +19946,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1257618041
 GameObject:
@@ -19204,6 +20048,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1261319482
 GameObject:
@@ -19302,6 +20150,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1267197876
 GameObject:
@@ -19400,6 +20252,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1271646866
 GameObject:
@@ -19498,6 +20354,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1272504228
 GameObject:
@@ -19596,6 +20456,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1275929666
 GameObject:
@@ -19694,6 +20558,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1275982663
 GameObject:
@@ -19792,6 +20660,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1282548603
 GameObject:
@@ -19841,6 +20713,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1282548606
 BoxCollider2D:
@@ -19939,6 +20815,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1282640095
 BoxCollider2D:
@@ -20086,6 +20966,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1288464396
 GameObject:
@@ -20184,6 +21068,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1294078465
 GameObject:
@@ -20282,6 +21170,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1295257889
 GameObject:
@@ -20380,6 +21272,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1299844203
 GameObject:
@@ -20478,6 +21374,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1318226684
 GameObject:
@@ -20527,6 +21427,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1318226687
 BoxCollider2D:
@@ -20675,6 +21579,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &1325180263
 MonoBehaviour:
@@ -20687,6 +21595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &1330437336
 GameObject:
   m_ObjectHideFlags: 0
@@ -20784,6 +21693,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1338675079
 GameObject:
@@ -20882,6 +21795,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1340277007
 GameObject:
@@ -20980,6 +21897,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1349962763
 GameObject:
@@ -21078,6 +21999,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1356506248
 GameObject:
@@ -21176,6 +22101,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1360230126
 GameObject:
@@ -21274,6 +22203,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1363775808
 GameObject:
@@ -21372,6 +22305,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1364249036
 GameObject:
@@ -21470,6 +22407,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1369348778
 GameObject:
@@ -21568,6 +22509,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1373496563
 GameObject:
@@ -21666,6 +22611,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1374126238
 GameObject:
@@ -21715,6 +22664,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1374126241
 BoxCollider2D:
@@ -21862,6 +22815,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1381689355
 GameObject:
@@ -22067,6 +23024,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1397380584
 GameObject:
@@ -22165,6 +23126,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1401268114
 GameObject:
@@ -22263,6 +23228,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1403118992
 GameObject:
@@ -22361,6 +23330,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1410547301
 GameObject:
@@ -22460,6 +23433,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &1410547306
 MonoBehaviour:
@@ -22472,6 +23449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &1425557880
 GameObject:
   m_ObjectHideFlags: 0
@@ -22569,6 +23547,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1432596739
 GameObject:
@@ -22667,6 +23649,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1433125365
 GameObject:
@@ -22765,6 +23751,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1436476064
 GameObject:
@@ -22863,6 +23853,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1439290349
 GameObject:
@@ -22961,6 +23955,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1442854533
 GameObject:
@@ -23059,6 +24057,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1443268533
 GameObject:
@@ -23157,6 +24159,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1443440896
 GameObject:
@@ -23334,6 +24340,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1447290708
 GameObject:
@@ -23432,6 +24442,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1451013584
 GameObject:
@@ -23481,6 +24495,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1451013587
 BoxCollider2D:
@@ -23628,6 +24646,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1458862030
 GameObject:
@@ -23726,6 +24748,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1466373480
 GameObject:
@@ -23775,6 +24801,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1466373483
 BoxCollider2D:
@@ -23873,6 +24903,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1467824420
 BoxCollider2D:
@@ -24020,6 +25054,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1472870017
 GameObject:
@@ -24118,6 +25156,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1486054267
 GameObject:
@@ -24216,6 +25258,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1491043384
 GameObject:
@@ -24339,6 +25385,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1498092317
 BoxCollider2D:
@@ -24486,6 +25536,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1500460524
 GameObject:
@@ -24584,6 +25638,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1504746102
 GameObject:
@@ -24683,6 +25741,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &1504746107
 MonoBehaviour:
@@ -24695,6 +25757,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
+--- !u!61 &1508800323 stripped
+BoxCollider2D:
+  m_PrefabParentObject: {fileID: 61990058941837336, guid: 9d2015669bc6a0c47adfbd340edd1542,
+    type: 2}
+  m_PrefabInternal: {fileID: 111824799}
 --- !u!1 &1511499583
 GameObject:
   m_ObjectHideFlags: 0
@@ -24792,6 +25860,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1511683806
 GameObject:
@@ -24890,6 +25962,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1516054447
 GameObject:
@@ -25367,6 +26443,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1529954152
 GameObject:
@@ -25465,6 +26545,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1542758072
 GameObject:
@@ -25563,6 +26647,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1548877458
 GameObject:
@@ -25689,6 +26777,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1549160415
 GameObject:
@@ -25883,6 +26975,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1561477049
 GameObject:
@@ -25981,6 +27077,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1568959808
 GameObject:
@@ -26079,6 +27179,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1574729781
 GameObject:
@@ -26177,6 +27281,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1577661450
 GameObject:
@@ -26275,6 +27383,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1583877177
 GameObject:
@@ -26373,6 +27485,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1587619951
 GameObject:
@@ -26422,6 +27538,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1587619954
 BoxCollider2D:
@@ -26569,6 +27689,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1598364798
 GameObject:
@@ -26667,6 +27791,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1600147315
 GameObject:
@@ -26765,6 +27893,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1619496408
 GameObject:
@@ -26863,6 +27995,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1629491825
 GameObject:
@@ -26961,6 +28097,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1630506701
 GameObject:
@@ -27059,6 +28199,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1637010649
 GameObject:
@@ -27157,6 +28301,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1637014099
 GameObject:
@@ -27255,6 +28403,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1640233222
 GameObject:
@@ -27353,6 +28505,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1652371023
 GameObject:
@@ -27451,6 +28607,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1655659971
 GameObject:
@@ -27549,6 +28709,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1661176545
 GameObject:
@@ -27647,6 +28811,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1663508727
 GameObject:
@@ -27745,6 +28913,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1685360760
 GameObject:
@@ -27794,6 +28966,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1685360763
 BoxCollider2D:
@@ -27941,6 +29117,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1694479387
 GameObject:
@@ -28039,6 +29219,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1707980779
 GameObject:
@@ -28137,6 +29321,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1714692583
 GameObject:
@@ -28235,6 +29423,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1716332180
 GameObject:
@@ -28333,6 +29525,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1731852047
 GameObject:
@@ -28431,6 +29627,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1734060196
 GameObject:
@@ -28529,6 +29729,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1751599208
 GameObject:
@@ -28627,6 +29831,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1773958286
 GameObject:
@@ -28725,6 +29933,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1790849323
 GameObject:
@@ -28823,6 +30035,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1799856731
 GameObject:
@@ -28921,6 +30137,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1800520359
 GameObject:
@@ -29019,6 +30239,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1801298072
 GameObject:
@@ -29117,7 +30341,63 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
+--- !u!1001 &1804250863
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4161569376858426, guid: 30475d637dd2ea34abd02e869d042ec1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161569376858426, guid: 30475d637dd2ea34abd02e869d042ec1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161569376858426, guid: 30475d637dd2ea34abd02e869d042ec1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161569376858426, guid: 30475d637dd2ea34abd02e869d042ec1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161569376858426, guid: 30475d637dd2ea34abd02e869d042ec1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161569376858426, guid: 30475d637dd2ea34abd02e869d042ec1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161569376858426, guid: 30475d637dd2ea34abd02e869d042ec1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161569376858426, guid: 30475d637dd2ea34abd02e869d042ec1, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 95531172028578096, guid: 30475d637dd2ea34abd02e869d042ec1,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 35e3b30de34bd5b41a1ee9634b8f476f, type: 2}
+    - target: {fileID: 212024238348395632, guid: 30475d637dd2ea34abd02e869d042ec1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 30475d637dd2ea34abd02e869d042ec1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1812496606
 GameObject:
   m_ObjectHideFlags: 0
@@ -29215,6 +30495,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1820619673
 GameObject:
@@ -29313,6 +30597,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1827365632
 GameObject:
@@ -29411,6 +30699,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1830368507
 GameObject:
@@ -29509,6 +30801,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1833682319
 GameObject:
@@ -29607,6 +30903,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1836684921
 GameObject:
@@ -29705,6 +31005,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1849031492
 GameObject:
@@ -29803,6 +31107,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1855132475
 GameObject:
@@ -29901,6 +31209,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1858584838
 GameObject:
@@ -29999,6 +31311,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1859308969
 GameObject:
@@ -30097,6 +31413,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1863854326
 GameObject:
@@ -30195,6 +31515,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1866941017
 GameObject:
@@ -30293,6 +31617,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1871455433
 GameObject:
@@ -30391,6 +31719,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1874731222
 GameObject:
@@ -30489,6 +31821,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1876002175
 GameObject:
@@ -30587,6 +31923,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1898594578
 GameObject:
@@ -30685,6 +32025,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1909145623
 GameObject:
@@ -30783,6 +32127,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1911193412
 GameObject:
@@ -30943,6 +32291,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1931068842
 GameObject:
@@ -31041,6 +32393,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1950371227
 GameObject:
@@ -31139,6 +32495,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1952256007
 GameObject:
@@ -31237,6 +32597,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1962332182
 GameObject:
@@ -31335,6 +32699,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1971542531
 GameObject:
@@ -31433,6 +32801,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1975215976
 GameObject:
@@ -31531,6 +32903,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1975270208
 GameObject:
@@ -31580,6 +32956,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &1975270211
 BoxCollider2D:
@@ -31727,6 +33107,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1978538583
 GameObject:
@@ -31825,6 +33209,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1994944265
 GameObject:
@@ -31923,6 +33311,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &1997356666
 GameObject:
@@ -32113,6 +33505,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 0}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2000661437
 GameObject:
@@ -32211,6 +33607,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2003465049
 GameObject:
@@ -32309,6 +33709,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2006848611
 GameObject:
@@ -32407,6 +33811,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2012926287
 GameObject:
@@ -32505,6 +33913,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2024710321
 GameObject:
@@ -32603,6 +34015,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2029823355
 GameObject:
@@ -32701,6 +34117,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2030273034
 GameObject:
@@ -32799,6 +34219,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2033869388
 GameObject:
@@ -32897,6 +34321,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2049287689
 GameObject:
@@ -32995,6 +34423,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2049715617
 GameObject:
@@ -33093,6 +34525,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2051866157
 GameObject:
@@ -33191,6 +34627,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2059202961
 GameObject:
@@ -33289,6 +34729,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2061262079
 GameObject:
@@ -33387,6 +34831,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2064088004
 GameObject:
@@ -33485,6 +34933,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2064968940
 GameObject:
@@ -33584,6 +35036,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!114 &2064968945
 MonoBehaviour:
@@ -33596,6 +35052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54727718b3492147bb0a5b0234be324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleemitterGO: {fileID: 0}
 --- !u!1 &2067113586
 GameObject:
   m_ObjectHideFlags: 0
@@ -33693,6 +35150,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2068204408
 GameObject:
@@ -33791,6 +35252,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2074149725
 GameObject:
@@ -33889,6 +35354,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2076521283
 GameObject:
@@ -33987,6 +35456,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2087382079
 GameObject:
@@ -34085,6 +35558,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2093644464
 GameObject:
@@ -34183,6 +35660,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2096021363
 GameObject:
@@ -34281,6 +35762,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2099862126
 GameObject:
@@ -34379,6 +35864,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 6200000, guid: a30f74be50c7f784bab062e43f45d7bb, type: 2}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2114757444
 GameObject:
@@ -34477,6 +35966,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2121268354
 GameObject:
@@ -34575,6 +36068,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2128496090
 GameObject:
@@ -34673,6 +36170,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!1 &2136428905
 GameObject:
@@ -34722,6 +36223,10 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1
 --- !u!61 &2136428908
 BoxCollider2D:
@@ -34869,4 +36374,8 @@ MonoBehaviour:
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 6200000, guid: 90ac51efe84693442a700a5943e5da00, type: 2}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 0}
+  Maincollider: {fileID: 0}
   currentstyle: 1

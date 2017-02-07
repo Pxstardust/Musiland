@@ -135,6 +135,7 @@ public class Player : MonoBehaviour {
     // =========================================== UPDATE ====================================================== //
     // ========================================================================================================= //
     void Update () {
+
         PlayerScreenPos = maincamera.WorldToScreenPoint(this.transform.position);
         
         // ===================================== //
@@ -187,18 +188,18 @@ public class Player : MonoBehaviour {
         if (bVDash && Time.time > LastVDashStart + DureeVDash) { bVDash = false; } // Si on est en V Dash depuis un certain temps :stop
         if (bRun)
         {
-            sprite.color = new Color32(0,255,0, 255) ;
-        } else sprite.color = Color.white;
-
-        if (bVDash)
-        {
-            sprite.color = new Color32(0,255, 0,255);
+            sprite.color = new Color32(0, 255, 0, 255);
         }
+        else if (bVDash)
+        {
+            sprite.color = new Color32(0, 255, 0, 255);
+        }
+        else if (hideUnderSnow)
+        {
+            sprite.color = new Color32(0, 0, 255, 255);
+        }
+        else sprite.color = new Color32(255,255,255, 255); ;
 
-		if (hideUnderSnow)
-		{
-			sprite.color = new Color32(0,0,255, 150) ;
-		} else sprite.color = Color.white;
 
         if (bRun && playercurrentstyle == EnumList.StyleMusic.Hell)
         {
@@ -229,8 +230,10 @@ public class Player : MonoBehaviour {
         {
             if (bVDash) // Si on est en VDash
             {
+
                 Hit = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"));
                 Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
+                
                 if (Testdestruct) // Si l'objet touché est destructible 
                 {
                     Testdestruct.Destruction(); // On le détruit
@@ -239,7 +242,13 @@ public class Player : MonoBehaviour {
             }
         }
 
-		if (bRun) { // DASH
+       
+        if (bVDash)  // ====== V DASH ====== //
+        {
+            rigid.velocity = new Vector2(0, -moveForceHell);
+        }
+
+		if (bRun) { // ====== DASH HORIZONTAL ====== //
 			rigid.gravityScale = 0;
 			LastDashEnd = Time.time;
 			if (sprite.flipX)
@@ -247,9 +256,6 @@ public class Player : MonoBehaviour {
 			else
 				rigid.velocity = new Vector2 (moveForceHell, 0);
 
-			// ========================================== 
-			// Mécanique de dash sur une distance prévue
-			// ==========================================
 		} else {
 			rigid.gravityScale = gravityScaleHell;
 		}
@@ -297,7 +303,6 @@ public class Player : MonoBehaviour {
         // ===== PREVIOUS MUSIC ===== //
         if (Input.GetButton("ChangeMusicMinus"))
         {
-
             ChangeMusictoPrevious();
             HUDManager.ChangeAllTiles();
             ApplyStyleCarac(playercurrentstyle);
@@ -308,28 +313,6 @@ public class Player : MonoBehaviour {
         // ============================ I.2 MOUVEMENT ================================ //
         // =========================================================================== //
         // ===== Left/right ===== //
-        /*if (Input.GetButtonDown("Horizontal"))
-        {
-            //if (!bInAir) anim.SetBool("isrunning", true);
-            // ========== RUN ========== //
-            if (doubletapCDDash > 0 && HorizontalTapCount == 1) // Double tap
-            {
-                if (Time.time > LastDashEnd + DashCD)
-                {
-                    bRun = true;
-                    LastDashStart = Time.time;
-					print ("dash");
-                }
-            }
-            else // Premier coup pour le double tap :
-            {
-                doubletapCDDash = 0.5f;
-                HorizontalTapCount = 1;
-            }
-        }*/
-
-       
-
         if (Input.GetButtonUp("Horizontal"))
         {
             if (bRun)
@@ -340,16 +323,13 @@ public class Player : MonoBehaviour {
             anim.SetBool("isrunning", false);
         }
 
-        // ===== Jump  ===== //
+        // ==================================== //
+        // =============== Jump  ============== //
+
+        // ========== BUTTON DOWN ============ //
 		if (Input.GetButtonDown("Jump") && canMove)
         {
-            /*if (IsSliding)
-            {   
-                // ==== Fonction pour changer de direction de slide ==== //
-                sprite.flipX = !sprite.flipX;
-                DoSlide();
-            }*/
-            // Si on est au sol
+            // ----- (F) SLIDE -----
             if (!bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
             {
                 if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) // SLIDE
@@ -365,7 +345,7 @@ public class Player : MonoBehaviour {
                 }
             }
 
-
+            // ----- (F) WALLJUMP -----
             if (isWallSliding)
             {
                 bool wallatleft = false;
@@ -373,79 +353,85 @@ public class Player : MonoBehaviour {
                 if (wallatleft)
                 {
                     rigid.AddForce((new Vector3(300, 300, 0)));
-
+                    // Jouer son
+                    // ANim
                 }
                 else
                 {
                     rigid.AddForce((new Vector3(-300, 300, 0)));
-
+                    // Jouer son
+                    // ANim
                 }
-            }
+            } // ---------- 
 
+            // ----- (H) V DASH -----
 			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Hell) {
-				bVDash = true;
-				rigid.gravityScale = 7f;
+               
+                LastVDashStart = Time.time;
+                bVDash = true;
 			}
 
-        }
+        } // ========== FIN BUTTON DOWN ========== //
 
-        // ================= //
-
-		// ===== Up ===== //
+        // =========== BUTTON JUMP HOLDING =========== //
 		if (Input.GetButton ("Jump")) {
-			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
+
+            // ----- (C) PLANER ----- 
+            if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
 				rigid.gravityScale = 0.1f;
 				rigid.AddForce ((new Vector3(0.0f,0.6f,0)));
-			} else { // Si on est au sol
-
 			}
 		} else {
+            
 			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm) { // Si on est en l'air
 				rigid.gravityScale = gravityScaleCalm;
 			} 
 		}
-		// =============== //
+        // ========== FIN HOLDING JUMP ============ //
 
+        // ==================================== //
+        // =============== FIN JUMP  ========== //
+        // ==================================== //
 
-        // ===== Down ===== //
-		if (Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down"))
+        // ========================== //
+        // ========== Down ========== //
+        if (Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down"))
         {
-            if (bInAir) // Si on est en l'air
+
+            IsHoldingDown = true; // HOlding down
+
+            // ----- FAST FALL -----
+            if (bInAir) rigid.gravityScale = 5f; // FAST FALL
+
+            // ----- (C) SE CACHER SOUS LA NEIGE ------
+            if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir)   HideUnderSnow();
+
+            // ----- (F) SLIDE -----
+            if (playercurrentstyle == EnumList.StyleMusic.Fest && !bInAir && !IsSliding)
             {
-                rigid.gravityScale = 5f; // FAST FALL
+                if (Time.time > LastSlideEnd + SlideCD)
+                {
+                    DoSlide();
+                }
+            }
+
+            // ----- (H) DASH SOL ----- 
+            if (playercurrentstyle == EnumList.StyleMusic.Hell && !bInAir)
+            {
+                if (Time.time > LastDashEnd + DashCD)
+                {
+                    bRun = true;
+                    LastDashStart = Time.time;
+                }
             }
 
         }
 
-		if (Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) {
-            IsHoldingDown = true;
-			if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir) 
-			{
-				HideUnderSnow();
-			}
-
-			if (playercurrentstyle == EnumList.StyleMusic.Fest && !bInAir && !IsSliding) {
-				if (Time.time > LastSlideEnd + SlideCD) {
-					DoSlide ();
-				}
-			}
-
-			if (playercurrentstyle == EnumList.StyleMusic.Hell && !bInAir) {
-				if (Time.time > LastDashEnd + DashCD)
-				{
-					bRun = true;
-					LastDashStart = Time.time;
-					print ("dash");
-				}
-			}
-        }
-
-		if (Input.GetAxis("Vertical") > -0.5f || Input.GetButtonUp("Down")) {
+        // ============================= //
+        // ========== UP JUMP ========== //
+        if (Input.GetAxis("Vertical") < -0.5f || Input.GetButtonUp("Down")) {
             IsHoldingDown = false;
-			if (hideUnderSnow == true) 
-			{
-				UnhideUnderSnow();
-			}
+			if (hideUnderSnow) UnhideUnderSnow();
 		}
         // =============== //
 
@@ -528,27 +514,6 @@ public class Player : MonoBehaviour {
        // sprite.transform.position += new Vector3(Input.GetAxis("Horizontal") * slowFactor * vitesse * Time.deltaTime,0,0); // Position
         if (Input.GetAxis("Horizontal") > 0) sprite.flipX = false;
         if (Input.GetAxis("Horizontal") < 0) sprite.flipX = true;
-
-
-		/*if (Input.GetButtonDown("Down") || Input.GetAxis("Vertical") < -0.5f)
-        {
-            // ----- DOUBLE TAP ----- //
-            if (doubletapCDVDash > 0 && VerticalTapCount == 1) // Double tap
-            {
-                if (!IsVDashDone && bInAir && playercurrentstyle == EnumList.StyleMusic.Hell) // Si on a pas encore fait de dash aérien
-                {
-                    bVDash = true; // On passe en mode dash vertical
-                    rigid.velocity = new Vector2(0, Input.GetAxis("Vertical") * 150); // DASH VERTICAL
-                    
-                    LastVDashStart = Time.time; // Note le début du dash vertical
-                }
-            }
-            else // Premier coup pour le double tap :
-            {
-                doubletapCDVDash = 0.5f;
-                VerticalTapCount = 1;
-            }
-        }*/
     }
 
 
@@ -648,8 +613,10 @@ public class Player : MonoBehaviour {
 	// ===== Se cache sous la neige ===== //
 	public void HideUnderSnow()
 	{
+        print("jemecache");
 		rigid.velocity = new Vector2(0,0);
 		hideUnderSnow = true;
+        print("==" + hideUnderSnow);
 		canMove = false;
 		GetComponent<Collider2D> ().enabled = false;
 		rigid.gravityScale = 0;
