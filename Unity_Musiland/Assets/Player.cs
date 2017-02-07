@@ -59,7 +59,7 @@ public class Player : MonoBehaviour {
     float gravityScaleFest = 1f;
     float gravityScaleHell = 1f;
 
-    float moveForceHell = 30f;
+    float moveForceHell = 20f;
 
 
     // === Keys === //
@@ -85,7 +85,7 @@ public class Player : MonoBehaviour {
     float HorizontalTapCount = 0; // Nb de tap pour le double tap 
     float DashCD = 2; // CD entre deux dash
     float LastDashEnd, LastDashStart; // Moments clé du dernier dash
-    float DureeDash = 0.25f; // Durée du dash
+    float DureeDash = 0.12f; // Durée du dash
     // -- V Dash -- //
     float doubletapCDVDash = 0.5f; // Durée max entre deux tap pour un double tap
     float VerticalTapCount = 0; // Nb de tap pour le double tap
@@ -99,6 +99,8 @@ public class Player : MonoBehaviour {
     float SlideTimeStart; // Moment où le joueur débute son slide
     float SlideLength = 3f; // Longueur du slide
     float SlideStartY;
+	float SlideCD = 1.5f;
+	float LastSlideEnd;
 
     // =============== //
     // ===== HUD ===== //
@@ -139,6 +141,7 @@ public class Player : MonoBehaviour {
         // =============== Slide =============== //
         if (IsSliding)
         {
+			LastSlideEnd = Time.time;
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, Time.time-SlideTimeStart), SlideStartY, 0);
             if (TestColliderTop()) // ----- Permet d'avoir une glissade plus fluide sous les objets ----- 
             {
@@ -236,6 +239,22 @@ public class Player : MonoBehaviour {
             }
         }
 
+		if (bRun) { // DASH
+			rigid.gravityScale = 0;
+			LastDashEnd = Time.time;
+			if (sprite.flipX)
+				rigid.velocity = new Vector2 (-moveForceHell, 0);
+			else
+				rigid.velocity = new Vector2 (moveForceHell, 0);
+
+			// ========================================== 
+			// Mécanique de dash sur une distance prévue
+			// ==========================================
+		} else {
+			rigid.gravityScale = gravityScaleHell;
+		}
+
+
         // =========================================== //
         // ================ WALL JUMP ================ //
             bool isWallSliding = false;
@@ -289,7 +308,7 @@ public class Player : MonoBehaviour {
         // ============================ I.2 MOUVEMENT ================================ //
         // =========================================================================== //
         // ===== Left/right ===== //
-        if (Input.GetButtonDown("Horizontal"))
+        /*if (Input.GetButtonDown("Horizontal"))
         {
             //if (!bInAir) anim.SetBool("isrunning", true);
             // ========== RUN ========== //
@@ -299,6 +318,7 @@ public class Player : MonoBehaviour {
                 {
                     bRun = true;
                     LastDashStart = Time.time;
+					print ("dash");
                 }
             }
             else // Premier coup pour le double tap :
@@ -306,7 +326,7 @@ public class Player : MonoBehaviour {
                 doubletapCDDash = 0.5f;
                 HorizontalTapCount = 1;
             }
-        }
+        }*/
 
        
 
@@ -323,12 +343,12 @@ public class Player : MonoBehaviour {
         // ===== Jump  ===== //
 		if (Input.GetButtonDown("Jump") && canMove)
         {
-            if (IsSliding)
+            /*if (IsSliding)
             {   
                 // ==== Fonction pour changer de direction de slide ==== //
                 sprite.flipX = !sprite.flipX;
                 DoSlide();
-            }
+            }*/
             // Si on est au sol
             if (!bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
             {
@@ -362,6 +382,11 @@ public class Player : MonoBehaviour {
                 }
             }
 
+			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Hell) {
+				bVDash = true;
+				rigid.gravityScale = 7f;
+			}
+
         }
 
         // ================= //
@@ -387,7 +412,6 @@ public class Player : MonoBehaviour {
         {
             if (bInAir) // Si on est en l'air
             {
-				bInAir = false;
                 rigid.gravityScale = 5f; // FAST FALL
             }
 
@@ -398,6 +422,21 @@ public class Player : MonoBehaviour {
 			if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir) 
 			{
 				HideUnderSnow();
+			}
+
+			if (playercurrentstyle == EnumList.StyleMusic.Fest && !bInAir && !IsSliding) {
+				if (Time.time > LastSlideEnd + SlideCD) {
+					DoSlide ();
+				}
+			}
+
+			if (playercurrentstyle == EnumList.StyleMusic.Hell && !bInAir) {
+				if (Time.time > LastDashEnd + DashCD)
+				{
+					bRun = true;
+					LastDashStart = Time.time;
+					print ("dash");
+				}
 			}
         }
 
@@ -454,14 +493,6 @@ public class Player : MonoBehaviour {
 				else if(!bRun && bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedHell){
 					rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedHell * 100 * Time.deltaTime));
 				}
-				if (bRun) // DASH
-                    {
-					rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * moveForceHell, rigid.velocity.y);
-                        
-                        // ========================================== 
-                        // Mécanique de dash sur une distance prévue
-                        // ==========================================
-                    }
 
                     break;
 
@@ -490,7 +521,7 @@ public class Player : MonoBehaviour {
         }
 
 		//On frene le personange si on navance plus sauf pour le mode calme
-		if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5f && !bInAir && playercurrentstyle != EnumList.StyleMusic.Calm) {
+		if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5f && !bInAir && ! bRun && playercurrentstyle != EnumList.StyleMusic.Calm) {
 			rigid.velocity = new Vector2 (0, rigid.velocity.y);
 		}
 
@@ -499,7 +530,7 @@ public class Player : MonoBehaviour {
         if (Input.GetAxis("Horizontal") < 0) sprite.flipX = true;
 
 
-		if (Input.GetButtonDown("Down") || Input.GetAxis("Vertical") < -0.5f)
+		/*if (Input.GetButtonDown("Down") || Input.GetAxis("Vertical") < -0.5f)
         {
             // ----- DOUBLE TAP ----- //
             if (doubletapCDVDash > 0 && VerticalTapCount == 1) // Double tap
@@ -508,7 +539,7 @@ public class Player : MonoBehaviour {
                 {
                     bVDash = true; // On passe en mode dash vertical
                     rigid.velocity = new Vector2(0, Input.GetAxis("Vertical") * 150); // DASH VERTICAL
-                    print("VDash");
+                    
                     LastVDashStart = Time.time; // Note le début du dash vertical
                 }
             }
@@ -517,7 +548,7 @@ public class Player : MonoBehaviour {
                 doubletapCDVDash = 0.5f;
                 VerticalTapCount = 1;
             }
-        }
+        }*/
     }
 
 
@@ -682,9 +713,15 @@ public class Player : MonoBehaviour {
 
     // ================ //
     // ===== DASH ===== //
-    public void FDash()
+	IEnumerator Dash()
     {
-
+		if (Time.time > LastDashEnd + DashCD)
+		{
+			bRun = true;
+			LastDashStart = Time.time;
+		}
+		yield return new WaitForSeconds (0.5f);
+		//bRun = false;
     }
 
     public void DoSlide()
