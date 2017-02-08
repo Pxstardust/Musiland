@@ -51,15 +51,20 @@ public class Player : MonoBehaviour {
     public bool istransiting = false;
     float transitime = 0;
 
-    float maxSpeedCalm = 4; // Vitesse max Calm
-    float maxSpeedFest = 5; // Vitesse max Fest
-    float maxSpeedHell = 6; // Vitesse max Hell
+    float maxSpeedCalm = 5; // Vitesse max Calm
+    float maxSpeedFest = 6; // Vitesse max Fest
+	float maxSpeedHell = 7; // Vitesse max Hell
 
-    float gravityScaleCalm = 0.75f;
-    float gravityScaleFest = 1f;
-    float gravityScaleHell = 1f;
+    float gravityScaleCalm = 1.2f;
+    float gravityScaleFest = 1.5f;
+    float gravityScaleHell = 1.5f;
 
     float moveForceHell = 20f;
+
+	float jumpForceHell = 600;
+	float jumpForceFest = 650;
+	float jumpForceCalm = 700;
+	float wallJumpForceFest = 550;
 
 
     // === Keys === //
@@ -129,6 +134,11 @@ public class Player : MonoBehaviour {
         CurrentRespawnPoint = sprite.transform.position;
         HUDManager = (HUDManager)HUDManagerGO.GetComponent(typeof(HUDManager));
         characollider = GetComponent<CapsuleCollider2D>();
+
+		//On commence en mode calme
+		playercurrentstyle = EnumList.StyleMusic.Calm;
+		HUDManager.ChangeAllTiles();
+		ApplyStyleCarac(playercurrentstyle);
     }
 
     // ========================================================================================================= //
@@ -294,15 +304,17 @@ public class Player : MonoBehaviour {
         // === NOTE : PAS DE PRINT ICI, LIMITER CE QU'ON MET POUR EVITER LE FREEZE === //
         // =========================================================================== //
 
-        if (Input.GetButton("ChangeMusicPlus")) {
+        if (Input.GetButtonDown("ChangeMusicPlus") && canMove) {
+			StartCoroutine (Freeze());
             ChangeMusictoNext();
             HUDManager.ChangeAllTiles();
             ApplyStyleCarac(playercurrentstyle);
         }
 
         // ===== PREVIOUS MUSIC ===== //
-        if (Input.GetButton("ChangeMusicMinus"))
+        if (Input.GetButtonDown("ChangeMusicMinus") && canMove)
         {
+			StartCoroutine (Freeze());
             ChangeMusictoPrevious();
             HUDManager.ChangeAllTiles();
             ApplyStyleCarac(playercurrentstyle);
@@ -340,7 +352,20 @@ public class Player : MonoBehaviour {
                     //bInAir = true; === Problème with colliders
                     IsVDashDone = false;
                     StartCoroutine(setJump());
-                    rigid.AddForce((new Vector3(0.0f, 550, 0)));
+					switch (playercurrentstyle) {
+					case EnumList.StyleMusic.Calm:
+						rigid.AddForce ((new Vector3 (0.0f, jumpForceCalm, 0)));
+						break;
+
+					case EnumList.StyleMusic.Fest:
+						rigid.AddForce ((new Vector3 (0.0f, jumpForceFest, 0)));
+						break;
+
+					case EnumList.StyleMusic.Hell:
+						rigid.AddForce ((new Vector3 (0.0f, jumpForceHell, 0)));
+						break;
+					}
+                   
                     timelastjump = Time.time;
                 }
             }
@@ -352,13 +377,13 @@ public class Player : MonoBehaviour {
                 if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"))) wallatleft = true;
                 if (wallatleft)
                 {
-                    rigid.AddForce((new Vector3(300, 300, 0)));
+					rigid.AddForce((new Vector3(400, wallJumpForceFest, 0)));
                     // Jouer son
                     // ANim
                 }
                 else
                 {
-                    rigid.AddForce((new Vector3(-300, 300, 0)));
+					rigid.AddForce((new Vector3(-400, wallJumpForceFest, 0)));
                     // Jouer son
                     // ANim
                 }
@@ -374,7 +399,7 @@ public class Player : MonoBehaviour {
         } // ========== FIN BUTTON DOWN ========== //
 
         // =========== BUTTON JUMP HOLDING =========== //
-		if (Input.GetButton ("Jump")) {
+		if (Input.GetButton ("Jump") && canMove) {
 
             // ----- (C) PLANER ----- 
             if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
@@ -395,13 +420,13 @@ public class Player : MonoBehaviour {
 
         // ========================== //
         // ========== Down ========== //
-        if (Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down"))
+		if ((Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) && canMove)
         {
 
             IsHoldingDown = true; // HOlding down
 
             // ----- FAST FALL -----
-            if (bInAir) rigid.gravityScale = 5f; // FAST FALL
+            if (bInAir) rigid.gravityScale = 3f; // FAST FALL
 
             // ----- (C) SE CACHER SOUS LA NEIGE ------
             if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir)   HideUnderSnow();
@@ -439,8 +464,12 @@ public class Player : MonoBehaviour {
         // =========================================================================== //
         // =============================== HUD ======================================= //
         // =========================================================================== //
-        maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
-        backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
+		/*if(rigid.velocity.y < -0.1f)
+			maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine + new Vector3( 0, -3, 0), Time.deltaTime*3);
+		else*/
+			maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
+
+		backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
         //particlesplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
         //playerpdv = playerpdvgameobject.GetComponent<Text>();
         //playerpdv.text = "HP: " + hp + "/"+hpmax;
@@ -613,10 +642,8 @@ public class Player : MonoBehaviour {
 	// ===== Se cache sous la neige ===== //
 	public void HideUnderSnow()
 	{
-        print("jemecache");
 		rigid.velocity = new Vector2(0,0);
 		hideUnderSnow = true;
-        print("==" + hideUnderSnow);
 		canMove = false;
 		GetComponent<Collider2D> ().enabled = false;
 		rigid.gravityScale = 0;
@@ -717,6 +744,15 @@ public class Player : MonoBehaviour {
 
 
     }
+
+	// ==== Freeze du joueur lors des transitions musicales ==== //
+	IEnumerator Freeze(){
+		rigid.constraints = RigidbodyConstraints2D.FreezeAll;
+		canMove = false;
+		yield return new WaitForSeconds (0.5f);
+		rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+		canMove = true;
+	}
 
     public bool TestColliderTop()
     {
