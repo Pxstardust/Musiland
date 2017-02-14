@@ -576,12 +576,13 @@ public class Player : MonoBehaviour {
     {
 		//=== Cela provoque un bug avec le jump (collision stay better than condition)
         //if ((collision.gameObject.tag == "Sol")) { bInAir = false; anim.SetBool("isjump", false); }
-        if (collision.gameObject.tag == "Damage" && (Time.time > lastDamage + recoveryTime))
+		if (collision.gameObject.tag == "Damage")// && (Time.time > lastDamage + recoveryTime))
         {
-            hp--;
+            /*hp--;
             bInAir = true;
             rigid.AddForce(new Vector3(0, 200, 0));
-            lastDamage = Time.time;
+            lastDamage = Time.time;*/
+			PlayerRespawn ();
         }
         
     }
@@ -652,7 +653,7 @@ public class Player : MonoBehaviour {
 		hideUnderSnow = true;
 		canMove = false;
 		GetComponent<Collider2D> ().enabled = false;
-		rigid.gravityScale = 0;
+		rigid.constraints = RigidbodyConstraints2D.FreezeAll;
 	}
 
 	// ================================== //
@@ -662,7 +663,7 @@ public class Player : MonoBehaviour {
 		hideUnderSnow = false;				
 		canMove = true;
 		GetComponent<Collider2D> ().enabled = true;
-		rigid.gravityScale = gravityScaleCalm;
+		rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 
 	// =========================================================================== //
@@ -694,6 +695,7 @@ public class Player : MonoBehaviour {
         // ==== Ajouter mise en scène : son, anim... ===== //
         rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu
         transform.position = CurrentRespawnPoint;
+		maincamera.transform.position = CurrentRespawnPoint + decalCamOrigine;
     }
 
     // =========================================================================== //
