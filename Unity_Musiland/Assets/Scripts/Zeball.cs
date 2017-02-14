@@ -20,9 +20,13 @@ public class Zeball : Entity
     [SerializeField]
     GameObject target;
 
+    MusicSwitcher ThisMusicSwitcher;
+
+
     // Use this for initialization
     void Start()
     {
+        ThisMusicSwitcher = GetComponent<MusicSwitcher>();
         speed = newspeed;
         rotaspeed = newrotaspeed;
         //Entity_Follow(target);
@@ -38,14 +42,28 @@ public class Zeball : Entity
 
         base.Update();
  
-        if (Input.anyKeyDown)
+        switch (ThisMusicSwitcher.currentstyle)
         {
-            
-            //Entity_Patrol(Position1, Position2);
-            //Entity_Rotate(Rota1);
+            case EnumList.StyleMusic.Hell:
+                Entity_Stop();
+                // + Bloquerses mouvements
+                break;
+            case EnumList.StyleMusic.Fest:
+                Entity_Stop();
+                // + Bloquerses mouvements
+                break;
+            case EnumList.StyleMusic.Calm:
+                if (!base.ispatrol)
+                {
+                    Entity_Patrol(Position1, Position2);
+
+                }
+
+
+                break;
         }
+
+
     }
-
-
 
 }

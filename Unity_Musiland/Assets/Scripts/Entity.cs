@@ -11,11 +11,11 @@ public class Entity : MonoBehaviour {
 
     // == GoTo
     public float speed;
-    bool isgoto=false;
+    public bool isgoto =false;
     Vector3 CurrentDestination;
 
     // == Patrol
-    bool ispatrol = false;
+    public bool ispatrol = false;
     Vector3 PatrolDest1, PatrolDest2;
     bool patrolphase;
 
@@ -153,6 +153,7 @@ public class Entity : MonoBehaviour {
     // ===== L'entité alterne entre deux endroits
     public void Entity_Patrol(Vector3 location1, Vector3 location2)
     {
+
         ispatrol = true; isfollowing = false; isfleeing = false;
         PatrolDest1 = location1;
         PatrolDest2 = location2;
@@ -193,6 +194,13 @@ public class Entity : MonoBehaviour {
     public void Entity_StopStay()
     {
         isstaying = false;
+    }
+
+    // ===== STOP TOUT
+    public void Entity_Stop()
+    {
+        ispatrol = false; isrotating = false; isgoto = false; isfollowing = false;
+        isfleeing = false; isstaying = false;
     }
 
 }

@@ -66,6 +66,7 @@ public class MusicSwitcher : MonoBehaviour{
 
     public void ChangeTheme(EnumList.StyleMusic playerstyle)
     {
+        currentstyle = playerstyle;
         spriterenderer.enabled = true;
         if (Maincollider) Maincollider.enabled = true;
 

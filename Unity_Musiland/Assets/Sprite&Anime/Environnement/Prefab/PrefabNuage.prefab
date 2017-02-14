@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 60824059885450552}
   - component: {fileID: 68509926776906278}
   - component: {fileID: 251143771303320116}
+  - component: {fileID: 114777782888861668}
   m_Layer: 8
   m_Name: PrefabNuage
   m_TagString: Sol
@@ -206,6 +207,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114777782888861668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385980236338528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HellTile: {fileID: 0}
+  FestTile: {fileID: 0}
+  CalmTile: {fileID: 0}
+  PhysicHell: {fileID: 0}
+  PhysicFest: {fileID: 0}
+  PhysicCalm: {fileID: 0}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 9100000, guid: 35e3b30de34bd5b41a1ee9634b8f476f, type: 2}
+  Maincollider: {fileID: 68509926776906278}
+  currentstyle: 1
 --- !u!212 &212024238348395632
 SpriteRenderer:
   m_ObjectHideFlags: 1

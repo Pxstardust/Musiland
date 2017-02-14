@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     Camera maincamera;
     Vector3 decalCamOrigine;
-    Vector3 CurrentRespawnPoint;
+    public Vector3 CurrentRespawnPoint;
     public Vector3 PlayerScreenPos;
 
     // ===================== //
