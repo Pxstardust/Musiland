@@ -342,16 +342,14 @@ public class Player : MonoBehaviour {
 		if (Input.GetButtonDown("Jump") && canMove)
         {
             // ----- (F) SLIDE -----
-            if (!bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
-            {
-                if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) // SLIDE
-                {
-                    DoSlide();
+			if (!bInAir && Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("ground"))) {
+				if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) { // SLIDE
+					DoSlide ();
                       
-                } else if (Time.time > timelastjump + mintimejump){ // Jump
-                    //bInAir = true; === Problème with colliders
-                    IsVDashDone = false;
-                    StartCoroutine(setJump());
+				} else if (Time.time > timelastjump + mintimejump) { // Jump
+					//bInAir = true; === Problème with colliders
+					IsVDashDone = false;
+					StartCoroutine (setJump ());
 					switch (playercurrentstyle) {
 					case EnumList.StyleMusic.Calm:
 						rigid.AddForce ((new Vector3 (0.0f, jumpForceCalm, 0)));
@@ -366,9 +364,11 @@ public class Player : MonoBehaviour {
 						break;
 					}
                    
-                    timelastjump = Time.time;
-                }
-            }
+					timelastjump = Time.time;
+				}
+			} else if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm) { // On ralenti le joueur dans sa chute s'il commence à planner
+				rigid.velocity = new Vector2(rigid.velocity.x, 0);
+			}
 
             // ----- (F) WALLJUMP -----
             if (isWallSliding)
@@ -467,7 +467,7 @@ public class Player : MonoBehaviour {
 		/*if(rigid.velocity.y < -0.1f)
 			maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine + new Vector3( 0, -3, 0), Time.deltaTime*3);
 		else*/
-			maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
+			//maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
 
 		backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
         //particlesplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
@@ -492,7 +492,13 @@ public class Player : MonoBehaviour {
     // ========================================================================================================= //
     void FixedUpdate()
     {
-		float h = Input.GetAxis ("Horizontal");  
+		float h = Input.GetAxis ("Horizontal"); 
+
+		// =============================== MainCamera ======================================= //
+		if(rigid.velocity.y < -0.1f)
+			maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine + new Vector3( 0, -5, 0), Time.deltaTime);
+		else
+			maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
 
 		if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.5f && canMove) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
         {
