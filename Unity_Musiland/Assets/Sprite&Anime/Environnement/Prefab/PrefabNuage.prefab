@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 60824059885450552}
   - component: {fileID: 68509926776906278}
   - component: {fileID: 251143771303320116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PrefabNuage
-  m_TagString: Untagged
+  m_TagString: Sol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
