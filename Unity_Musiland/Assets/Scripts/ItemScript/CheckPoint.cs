@@ -28,10 +28,14 @@ public class CheckPoint : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!IsUsed)
+        if (collision.tag == "Player")
         {
-            player.CurrentRespawnPoint = PositionSave;
-            spriterenderer.sprite = UsedSprite;
+            if (!IsUsed)
+            {
+                player.CurrentRespawnPoint = PositionSave;
+                spriterenderer.sprite = UsedSprite;
+            }
         }
+
     }
 }

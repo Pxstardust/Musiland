@@ -47,6 +47,9 @@ public class Player : MonoBehaviour {
 
     // === Style Var === //
     public EnumList.StyleMusic playercurrentstyle = EnumList.StyleMusic.Hell;
+    public bool IsHellActivable = true;
+    public bool IsCalmActivable = true;
+    public bool IsFestActivable = true;
     float changeTime = 1; // Cooldown pour le changement de style
     public bool istransiting = false;
     float transitime = 0;
@@ -291,7 +294,7 @@ public class Player : MonoBehaviour {
         // == DEBUG == //
         if (Input.GetButton("DebugKey"))
         {
-           
+            IsHellActivable = true;
         }
         // == DEBUG == //
         
@@ -480,7 +483,6 @@ public class Player : MonoBehaviour {
 
         if (hp == 0)
         {
-            print("Death");
             UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit();
         }
@@ -625,6 +627,15 @@ public class Player : MonoBehaviour {
             lastchange = Time.time;
             if (playercurrentstyle == EnumList.StyleMusic.Calm)playercurrentstyle = EnumList.StyleMusic.Hell;
             else { playercurrentstyle++; }
+            bool test = false;
+            while (test == false)
+            {
+                if (playercurrentstyle == EnumList.StyleMusic.Calm && IsCalmActivable) test = true;
+                else if (playercurrentstyle == EnumList.StyleMusic.Fest && IsFestActivable) test = true;
+                else if (playercurrentstyle == EnumList.StyleMusic.Hell && IsHellActivable) test = true;
+                else if (playercurrentstyle == EnumList.StyleMusic.Calm) playercurrentstyle = EnumList.StyleMusic.Hell;
+                else { playercurrentstyle++; }
+            }
             
             HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
         }
@@ -636,11 +647,21 @@ public class Player : MonoBehaviour {
     {
         if ((Time.time > lastchange + changeTime) && (!istransiting))
         {
-            HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
+
             lastchange = Time.time;
             if (playercurrentstyle == EnumList.StyleMusic.Hell) playercurrentstyle = EnumList.StyleMusic.Calm;
             else {playercurrentstyle--; }
-            
+            bool test = false;
+            while (test == false)
+            {
+                if (playercurrentstyle == EnumList.StyleMusic.Calm && IsCalmActivable) test = true;
+                else if (playercurrentstyle == EnumList.StyleMusic.Fest && IsFestActivable) test = true;
+                else if (playercurrentstyle == EnumList.StyleMusic.Hell && IsHellActivable) test = true;
+                else if (playercurrentstyle == EnumList.StyleMusic.Calm) playercurrentstyle = EnumList.StyleMusic.Hell;
+                else { playercurrentstyle++; }
+            }
+
+            HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
         }
 
     }
