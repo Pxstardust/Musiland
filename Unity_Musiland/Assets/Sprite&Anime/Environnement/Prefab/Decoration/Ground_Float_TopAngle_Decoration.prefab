@@ -9,67 +9,52 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1738878463400714}
+  m_RootGameObject: {fileID: 1128051743687958}
   m_IsPrefabParent: 1
---- !u!1 &1738878463400714
+--- !u!1 &1128051743687958
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4767694553619264}
-  - component: {fileID: 212870841167056278}
-  - component: {fileID: 61642100772252706}
-  - component: {fileID: 114998359359392544}
+  - component: {fileID: 4161240670345170}
+  - component: {fileID: 212069352655716212}
+  - component: {fileID: 114554154017980628}
   m_Layer: 8
-  m_Name: CastleMid
-  m_TagString: Sol
+  m_Name: Ground_Float_TopAngle_Decoration
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4767694553619264
+--- !u!4 &4161240670345170
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738878463400714}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.2, y: -14.8, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_GameObject: {fileID: 1128051743687958}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 45.774395, y: 7.7539263, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61642100772252706
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738878463400714}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 10.8, y: 10.8}
---- !u!114 &114998359359392544
+--- !u!114 &114554154017980628
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738878463400714}
+  m_GameObject: {fileID: 1128051743687958}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HellTile: {fileID: 21300000, guid: ccedc81441358cb45b975d4b5b045a60, type: 3}
-  FestTile: {fileID: 21300000, guid: 1f9c53be402a5b9478678a773cfd3337, type: 3}
-  CalmTile: {fileID: 21300000, guid: 757869a23845ad7498f0977549bd8be0, type: 3}
+  HellTile: {fileID: 21300000, guid: 34266afec45750e4284f80d492197bbe, type: 3}
+  FestTile: {fileID: 21300000, guid: 8ff8733771860ee499535c5820d0be85, type: 3}
+  CalmTile: {fileID: 21300000, guid: ce93f92090b52eb4f86f95e729203870, type: 3}
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 0}
@@ -77,13 +62,13 @@ MonoBehaviour:
   Fest_Anim: {fileID: 0}
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
-  currentstyle: 1
---- !u!212 &212870841167056278
+  currentstyle: 3
+--- !u!212 &212069352655716212
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738878463400714}
+  m_GameObject: {fileID: 1128051743687958}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -108,8 +93,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 757869a23845ad7498f0977549bd8be0, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: ce93f92090b52eb4f86f95e729203870, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
