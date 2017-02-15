@@ -52,9 +52,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -70,9 +67,6 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
     </Reference>
@@ -86,6 +80,8 @@
     <Compile Include="Assets\Scripts\ItemScript\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\ItemScript\Destructible.cs" />
     <Compile Include="Assets\Scripts\ItemScript\Entity.cs" />
+    <Compile Include="Assets\Scripts\ItemScript\SpecificDestruct.cs" />
+    <Compile Include="Assets\Scripts\ItemScript\Trumpet.cs" />
     <Compile Include="Assets\Scripts\ItemScript\UnlockSphere.cs" />
     <Compile Include="Assets\Scripts\ItemScript\Zeball.cs" />
     <Compile Include="Assets\Scripts\LevelScript\FirstLevelScript.cs" />

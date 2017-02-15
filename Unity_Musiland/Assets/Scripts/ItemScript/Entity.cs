@@ -7,7 +7,8 @@ public class Entity : MonoBehaviour {
     Rigidbody2D rigid;
     SpriteRenderer sprite;
     float radius;
-    public float followdistance;
+    public float follow_porteemax;
+    public float follow_porteemin;
 
     // == GoTo
     public float speed;
@@ -26,15 +27,15 @@ public class Entity : MonoBehaviour {
     float PatrolRota1;
 
     // == Follow & Fleeing
-    bool isfollowing=false;
+    public bool isfollowing=false;
     GameObject CurrentFollowTarget;
     [SerializeField]
     bool isflying;
-    bool isfleeing = false;
+    public bool isfleeing = false;
 
     // == Stay
     Vector3 CurrentPointToGuard;
-    private bool isstaying;
+    public bool isstaying;
     public float TimeAllowedToStayAway;
     float Timeaway;
 
@@ -97,7 +98,8 @@ public class Entity : MonoBehaviour {
         if (isfollowing)
         {
 
-            if (Vector3.Distance(transform.position, CurrentFollowTarget.transform.position) < followdistance)
+            if (Vector3.Distance(transform.position, CurrentFollowTarget.transform.position) < follow_porteemax &&
+                Vector3.Distance(transform.position, CurrentFollowTarget.transform.position) > follow_porteemin)
             {
                 if (isflying) // Si l'entité n'a pas de rigidbody
                 {
@@ -116,7 +118,7 @@ public class Entity : MonoBehaviour {
         // ========== FLEE ========== 
         if (isfleeing)
         {
-            if (Vector3.Distance(transform.position, CurrentFollowTarget.transform.position) < followdistance)
+            if (Vector3.Distance(transform.position, CurrentFollowTarget.transform.position) < follow_porteemax)
             {
                 float dirx = transform.position.x - CurrentFollowTarget.transform.position.x;
                 Vector3 dir = new Vector3(dirx, 0,0);
