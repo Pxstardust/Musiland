@@ -142,6 +142,10 @@ public class Player : MonoBehaviour {
 		playercurrentstyle = EnumList.StyleMusic.Calm;
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
+
+		rigid.transform.position = new Vector2 (155,4);
+		IsHellActivable = true;
+		IsFestActivable = true;
     }
 
     // ========================================================================================================= //
@@ -457,7 +461,7 @@ public class Player : MonoBehaviour {
 
         // ============================= //
         // ========== UP JUMP ========== //
-        if (Input.GetAxis("Vertical") < -0.5f || Input.GetButtonUp("Down")) {
+        if (Input.GetAxis("Vertical") > -0.5f || Input.GetButtonUp("Down")) {
             IsHoldingDown = false;
 			if (hideUnderSnow) UnhideUnderSnow();
 		}

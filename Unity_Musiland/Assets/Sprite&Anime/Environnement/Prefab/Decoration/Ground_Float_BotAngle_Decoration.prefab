@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HellTile: {fileID: 21300000, guid: fa736b2eaf9835645bb4a0e69e053245, type: 3}
+  HellTile: {fileID: 21300000, guid: d1de92d92f1bd9b45a2ba75a2d137d94, type: 3}
   FestTile: {fileID: 21300000, guid: 51e2a9677800b0a498f3a05e1c86d52d, type: 3}
   CalmTile: {fileID: 21300000, guid: fa736b2eaf9835645bb4a0e69e053245, type: 3}
   PhysicHell: {fileID: 0}

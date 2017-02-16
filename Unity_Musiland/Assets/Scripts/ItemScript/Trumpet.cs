@@ -18,6 +18,9 @@ public class Trumpet : Entity
     Camera maincamera;
 
     MusicSwitcher ThisMusicSwitcher;
+	Rigidbody2D rigid2D;
+	public Transform groundCheck;
+	bool stopCrowd = false;
 
 
     // Use this for initialization
@@ -30,28 +33,32 @@ public class Trumpet : Entity
         //Entity_Flee(target);
         // Entity_Stay(Position1);
         //followradius = newfollowradius;
+		rigid2D = gameObject.GetComponent<Rigidbody2D>();
+		rigid2D.constraints = RigidbodyConstraints2D.FreezeAll;
 
     }
 
     // Update is called once per frame
     protected override void Update()
     {
+		
         Vector3 positioncamera = maincamera.WorldToViewportPoint(this.transform.position);
         base.Update();
         if (positioncamera.x > 0 && positioncamera.x < 1 && positioncamera.y > 0 && positioncamera.y < 1)
         {
             switch (ThisMusicSwitcher.currentstyle)
             {
-                case EnumList.StyleMusic.Hell:
-                    if (!base.isfleeing)
-                    {
-                        Entity_Stop();
-                        Entity_Flee(target);
-                    }
-                    break;
+			case EnumList.StyleMusic.Hell:
+					//if (!base.isfleeing)  Flee desactivé car on peut résoudre l'énigme d'une manière non prévue
+                    //{
+					Entity_Stop ();
+                        //Entity_Flee(target);
+                    //}
+               		break;
 
                 case EnumList.StyleMusic.Fest:
-                    if (!base.isfollowing)
+					//rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+				if (!base.isfollowing && !stopCrowd)
                     {
                         Entity_Stop();
                         Entity_Follow(target);
@@ -59,11 +66,19 @@ public class Trumpet : Entity
 
                     break;
                 case EnumList.StyleMusic.Calm:
-                    Entity_Stop();
+                	Entity_Stop();
                     break;
             }
         }
-
-
     }
+
+	// ============= Collision ================ //
+	// ======================================== //
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.name == "StopCrowd") {
+			stopCrowd = true;
+			Entity_Stop ();
+		}
+	}
 }

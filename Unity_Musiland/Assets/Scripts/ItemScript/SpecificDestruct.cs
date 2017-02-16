@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpecificDestruct : MonoBehaviour {
     [SerializeField]
     GameObject Tueur;
+	[SerializeField]
+	EnumList.StyleMusic styleNeeded;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +22,9 @@ public class SpecificDestruct : MonoBehaviour {
     {
         if (collision.gameObject == Tueur)
         {
-            Destroy(gameObject);
+			if (styleNeeded == EnumList.StyleMusic.Fest) {
+				Destroy(gameObject);
+			}
             // Ajouter animation
             // Ajouter son
         }
