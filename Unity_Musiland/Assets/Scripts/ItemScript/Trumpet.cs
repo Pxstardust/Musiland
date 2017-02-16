@@ -19,7 +19,6 @@ public class Trumpet : Entity
 
     MusicSwitcher ThisMusicSwitcher;
 	Rigidbody2D rigid2D;
-	public Transform groundCheck;
 	bool stopCrowd = false;
 
 

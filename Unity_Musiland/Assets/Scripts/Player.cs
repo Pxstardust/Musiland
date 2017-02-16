@@ -143,7 +143,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		rigid.transform.position = new Vector2 (155,100);
+		rigid.transform.position = new Vector2 (230,4);
 		IsHellActivable = true;
 		IsFestActivable = true;
     }
@@ -279,8 +279,8 @@ public class Player : MonoBehaviour {
 
 		// =========================================== //
 		// ================ FALL CHECK ================ //
-		if (rigid.velocity.y < -6 && Physics2D.Linecast (transform.position, transform.position + new Vector3 (0, -1, 0), 1 << LayerMask.NameToLayer ("ground"))) {
-			rigid.velocity = new Vector2 (rigid.velocity.x, 0);
+		if (rigid.velocity.y < -6 && Physics2D.Linecast (transform.position, transform.position + new Vector3 (0, -2, 0), 1 << LayerMask.NameToLayer ("ground"))) {
+			rigid.velocity = new Vector2 (rigid.velocity.x, rigid.velocity.y/1.1f);
 		}
 			
 

@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FallingRock.cs" />
      <Compile Include="Assets\Scripts\Enum.cs" />
      <Compile Include="Assets\Scripts\HUDManager.cs" />
      <Compile Include="Assets\Scripts\ItemScript\CheckPoint.cs" />
