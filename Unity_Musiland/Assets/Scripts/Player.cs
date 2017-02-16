@@ -143,7 +143,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		rigid.transform.position = new Vector2 (230,4);
+		rigid.transform.position = new Vector2 (160,4);
 		IsHellActivable = true;
 		IsFestActivable = true;
     }
@@ -435,7 +435,7 @@ public class Player : MonoBehaviour {
 
         // ========================== //
         // ========== Down ========== //
-		if ((Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) && canMove)
+		if ((Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) && canMove && ! bVDash)
         {
 
             IsHoldingDown = true; // HOlding down
@@ -455,8 +455,7 @@ public class Player : MonoBehaviour {
                 }
             }
 
-            // ----- (H) DASH SOL ----- 
-            if (playercurrentstyle == EnumList.StyleMusic.Hell && !bInAir)
+            if (playercurrentstyle == EnumList.StyleMusic.Hell && !bInAir && canMove)
             {
                 if (Time.time > LastDashEnd + DashCD)
                 {

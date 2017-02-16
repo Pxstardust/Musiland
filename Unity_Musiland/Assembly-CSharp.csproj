@@ -46,12 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FallingRock.cs" />
      <Compile Include="Assets\Scripts\Enum.cs" />
      <Compile Include="Assets\Scripts\HUDManager.cs" />
      <Compile Include="Assets\Scripts\ItemScript\CheckPoint.cs" />
      <Compile Include="Assets\Scripts\ItemScript\Destructible.cs" />
      <Compile Include="Assets\Scripts\ItemScript\Entity.cs" />
+     <Compile Include="Assets\Scripts\ItemScript\FallingRock.cs" />
      <Compile Include="Assets\Scripts\ItemScript\SpecificDestruct.cs" />
      <Compile Include="Assets\Scripts\ItemScript\Trumpet.cs" />
      <Compile Include="Assets\Scripts\ItemScript\UnlockSphere.cs" />

@@ -19,7 +19,7 @@ public class Trumpet : Entity
 
     MusicSwitcher ThisMusicSwitcher;
 	Rigidbody2D rigid2D;
-	bool stopCrowd = false;
+	public bool stopCrowd = false;
 
 
     // Use this for initialization
