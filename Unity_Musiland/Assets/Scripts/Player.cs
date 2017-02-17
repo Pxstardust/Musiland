@@ -148,7 +148,6 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-<<<<<<< HEAD
 		//rigid.transform.position = new Vector2 (130,50); // Déplacement initial
 
         // == AUDIO == //
@@ -156,11 +155,6 @@ public class Player : MonoBehaviour {
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
         // == AUDIO == //
 
-=======
-		rigid.transform.position = new Vector2 (314,4);
-		IsHellActivable = true;
-		IsFestActivable = true;
->>>>>>> origin/master
     }
 
     // ========================================================================================================= //
@@ -403,14 +397,9 @@ public class Player : MonoBehaviour {
                    
 					timelastjump = Time.time;
 				}
-<<<<<<< HEAD
 			} else if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm) { // On ralenti le joueur dans sa chute s'il commence à planner
                 audioManager.PlaySoundIfNoPlaying("Calm_Glide");
                 rigid.velocity = new Vector2(rigid.velocity.x, 0);
-=======
-			} else if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < -2) { // On ralenti le joueur dans sa chute s'il commence à planner
-				rigid.velocity = new Vector2(rigid.velocity.x, 0);
->>>>>>> origin/master
 			}
 
             // ----- (F) WALLJUMP -----
@@ -447,7 +436,7 @@ public class Player : MonoBehaviour {
 
             // ----- (C) PLANER ----- 
             if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
-				rigid.gravityScale = 0.15f;
+				rigid.gravityScale = 0.1f;
 				rigid.AddForce ((new Vector3(0.0f,0.6f,0)));
 			}
 		} else {
