@@ -46,8 +46,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Enum.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HUDManager.cs" />
+     <Compile Include="Assets\Scripts\ItemScript\AngryBridge.cs" />
      <Compile Include="Assets\Scripts\ItemScript\CheckPoint.cs" />
      <Compile Include="Assets\Scripts\ItemScript\Destructible.cs" />
      <Compile Include="Assets\Scripts\ItemScript\Entity.cs" />

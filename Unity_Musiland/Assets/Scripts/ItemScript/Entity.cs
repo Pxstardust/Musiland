@@ -81,7 +81,7 @@ public class Entity : MonoBehaviour {
         // ========== ROTATION ========== 
         if (isrotating)
         {
-            Vector3 to = new Vector3(0, 0, PatrolRota1);
+			Vector3 to = new Vector3(0, 0, CurrentDestinaRotation);
             if (Vector3.Distance(transform.eulerAngles, to) > 0.01f)
             {
                 transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, rotastep);
@@ -148,6 +148,7 @@ public class Entity : MonoBehaviour {
     public void Entity_GoTo(Vector3 location, float rotation)
     {
         isgoto = true;
+		isrotating = true;
         CurrentDestination = location;
         CurrentDestinaRotation = rotation;
     }

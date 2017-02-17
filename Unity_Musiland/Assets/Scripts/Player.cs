@@ -91,6 +91,7 @@ public class Player : MonoBehaviour {
 	bool canMove = true;
     // -- Hide -- //
 	bool hideUnderSnow = false;
+	bool hiddedByJoystick = false;
     // -- WalLSlide -- //
     float WallSlideSpeed = -2;
     // -- H Dash -- //
@@ -148,7 +149,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		//rigid.transform.position = new Vector2 (130,50); // Déplacement initial
+		//rigid.transform.position = new Vector2 (160,4); // Déplacement initial
 
         // == AUDIO == //
         audioManager = AudioManager.instance;
@@ -371,10 +372,11 @@ public class Player : MonoBehaviour {
         {
             // ----- (F) SLIDE -----
 			if (!bInAir && Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("ground"))) {
-				if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) { // SLIDE
-					DoSlide ();
+				//if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) { // SLIDE
+					//DoSlide ();
                       
-				} else if (Time.time > timelastjump + mintimejump) { // Jump
+				//} else if 
+				if(Time.time > timelastjump + mintimejump) { // Jump
 					//bInAir = true; === Problème with colliders
 					IsVDashDone = false;
 					StartCoroutine (setJump ());
@@ -397,7 +399,7 @@ public class Player : MonoBehaviour {
                    
 					timelastjump = Time.time;
 				}
-			} else if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm) { // On ralenti le joueur dans sa chute s'il commence à planner
+			} else if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < -4f) { // On ralenti le joueur dans sa chute s'il commence à planner
                 audioManager.PlaySoundIfNoPlaying("Calm_Glide");
                 rigid.velocity = new Vector2(rigid.velocity.x, 0);
 			}
@@ -436,7 +438,8 @@ public class Player : MonoBehaviour {
 
             // ----- (C) PLANER ----- 
             if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
-				rigid.gravityScale = 0.1f;
+				audioManager.PlaySoundIfNoPlaying("Calm_Glide");
+				rigid.gravityScale = 0.15f;
 				rigid.AddForce ((new Vector3(0.0f,0.6f,0)));
 			}
 		} else {
@@ -466,7 +469,11 @@ public class Player : MonoBehaviour {
             if (bInAir) rigid.gravityScale = 3f; // FAST FALL
 
             // ----- (C) SE CACHER SOUS LA NEIGE ------
-            if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir)   HideUnderSnow();
+			if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir) {
+				HideUnderSnow ();
+				if(Input.GetAxis("Vertical") < -0.5f)// On check la différence entre le joystick et l'axe pour qu'il n'y ait pas de prob
+					hiddedByJoystick = true;
+			}
 
             // ----- (F) SLIDE -----
             if (playercurrentstyle == EnumList.StyleMusic.Fest && !bInAir && !IsSliding)
@@ -490,8 +497,13 @@ public class Player : MonoBehaviour {
 
         // ============================= //
         // ========== UP JUMP ========== //
-        if (Input.GetAxis("Vertical") > -0.5f || Input.GetButtonUp("Down")) {
+        if (Input.GetButtonUp("Down")) {
             IsHoldingDown = false;
+			if (hideUnderSnow) UnhideUnderSnow();
+		}
+
+		if (Input.GetAxis ("Vertical") > -0.5f && hiddedByJoystick) {
+			hiddedByJoystick = false;
 			if (hideUnderSnow) UnhideUnderSnow();
 		}
         // =============== //
