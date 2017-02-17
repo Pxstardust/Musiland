@@ -34,6 +34,11 @@ public class Player : MonoBehaviour {
     public Vector3 CurrentRespawnPoint;
     public Vector3 PlayerScreenPos;
 
+
+    // ================= //
+    // ===== AUDIO ===== //
+    AudioManager audioManager;
+
     // ===================== //
     // ===== VARIABLES ===== //
     // ===================== //
@@ -143,9 +148,13 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		rigid.transform.position = new Vector2 (160,4);
-		IsHellActivable = true;
-		IsFestActivable = true;
+		//rigid.transform.position = new Vector2 (130,50); // Déplacement initial
+
+        // == AUDIO == //
+        audioManager = AudioManager.instance;
+        if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
+        // == AUDIO == //
+
     }
 
     // ========================================================================================================= //
@@ -159,6 +168,7 @@ public class Player : MonoBehaviour {
         // =============== Slide =============== //
         if (IsSliding)
         {
+            audioManager.PlaySoundIfNoPlaying("Fest_Glide");
 			LastSlideEnd = Time.time;
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, Time.time-SlideTimeStart), SlideStartY, 0);
             if (TestColliderTop()) // ----- Permet d'avoir une glissade plus fluide sous les objets ----- 
@@ -298,6 +308,7 @@ public class Player : MonoBehaviour {
             !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")) && rigid.velocity.y < 0
             ) 
             {
+                // Son slide frottement contre mur
                 isWallSliding = true;
                 rigid.velocity = new Vector2 (0, WallSlideSpeed);
             }
@@ -324,6 +335,7 @@ public class Player : MonoBehaviour {
             ChangeMusictoNext();
             HUDManager.ChangeAllTiles();
             ApplyStyleCarac(playercurrentstyle);
+            UpdateBGM(playercurrentstyle);
         }
 
         // ===== PREVIOUS MUSIC ===== //
@@ -333,7 +345,8 @@ public class Player : MonoBehaviour {
             ChangeMusictoPrevious();
             HUDManager.ChangeAllTiles();
             ApplyStyleCarac(playercurrentstyle);
- 
+            UpdateBGM(playercurrentstyle);
+
         }
        
         // =========================================================================== //
@@ -368,21 +381,25 @@ public class Player : MonoBehaviour {
 					switch (playercurrentstyle) {
 					case EnumList.StyleMusic.Calm:
 						rigid.AddForce ((new Vector3 (0.0f, jumpForceCalm, 0)));
-						break;
+                            audioManager.PlaySoundIfNoPlaying("Calm_Jump");
+                            break;
 
 					case EnumList.StyleMusic.Fest:
 						rigid.AddForce ((new Vector3 (0.0f, jumpForceFest, 0)));
-						break;
+                            audioManager.PlaySoundIfNoPlaying("Fest_Jump");
+                            break;
 
 					case EnumList.StyleMusic.Hell:
 						rigid.AddForce ((new Vector3 (0.0f, jumpForceHell, 0)));
-						break;
+                            audioManager.PlaySoundIfNoPlaying("Hell_Jump");
+                            break;
 					}
                    
 					timelastjump = Time.time;
 				}
 			} else if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm) { // On ralenti le joueur dans sa chute s'il commence à planner
-				rigid.velocity = new Vector2(rigid.velocity.x, 0);
+                audioManager.PlaySoundIfNoPlaying("Calm_Glide");
+                rigid.velocity = new Vector2(rigid.velocity.x, 0);
 			}
 
             // ----- (F) WALLJUMP -----
@@ -393,20 +410,21 @@ public class Player : MonoBehaviour {
                 if (wallatleft)
                 {
 					rigid.AddForce((new Vector3(400, wallJumpForceFest, 0)));
-                    // Jouer son
+                    audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
                     // ANim
+
                 }
                 else
                 {
 					rigid.AddForce((new Vector3(-400, wallJumpForceFest, 0)));
-                    // Jouer son
+                    audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
                     // ANim
                 }
             } // ---------- 
 
             // ----- (H) V DASH -----
 			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Hell) {
-               
+                audioManager.PlaySoundIfNoPlaying("Hell_Dash");
                 LastVDashStart = Time.time;
                 bVDash = true;
 			}
@@ -428,6 +446,10 @@ public class Player : MonoBehaviour {
 			} 
 		}
         // ========== FIN HOLDING JUMP ============ //
+        if (Input.GetButtonUp("Jump"))
+        {
+            audioManager.StopSoundIfPlaying("Calm_Glide");
+        }
 
         // ==================================== //
         // =============== FIN JUMP  ========== //
@@ -478,16 +500,9 @@ public class Player : MonoBehaviour {
         // =========================================================================== //
         // =============================== HUD ======================================= //
         // =========================================================================== //
-		/*if(rigid.velocity.y < -0.1f)
-			maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine + new Vector3( 0, -3, 0), Time.deltaTime*3);
-		else*/
-			//maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
-
 		backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
-        //particlesplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
-        //playerpdv = playerpdvgameobject.GetComponent<Text>();
-        //playerpdv.text = "HP: " + hp + "/"+hpmax;
 
+   
         // ================= //
         // ===== Death ===== //
         if (sprite.transform.position.y < deathheight) hp = 0; // Mort si en dessous certaine hauteur
@@ -523,6 +538,7 @@ public class Player : MonoBehaviour {
 				if (!bRun && !bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
                 {
 					rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedHell, rigid.velocity.y); // Déplacement direct
+                    audioManager.PlaySoundIfNoPlaying("Hell_Step");
                 } 
 				else if(!bRun && bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedHell){
 					rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedHell * 100 * Time.deltaTime));
@@ -535,7 +551,8 @@ public class Player : MonoBehaviour {
 					if (!bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
 					{
 						rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedFest, rigid.velocity.y); // Déplacement direct
-					} 
+                        audioManager.PlaySoundIfNoPlaying("Fest_Step");
+                    } 
 					else if(bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedFest){
 						rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedFest * 100 * Time.deltaTime));
 					}
@@ -545,7 +562,8 @@ public class Player : MonoBehaviour {
                 case EnumList.StyleMusic.Calm:
 					if (!bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm) // S'il n'as pas double tap et qu'il n'est pas en l'air
 					{
-						rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime)); // Déplacement avec force, lent et flottant
+                        audioManager.PlaySoundIfNoPlaying("Calm_Step");
+                        rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime)); // Déplacement avec force, lent et flottant
 					}
 					else if(bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm){
 						rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime));
@@ -596,6 +614,8 @@ public class Player : MonoBehaviour {
             rigid.AddForce(new Vector3(0, 200, 0));
             lastDamage = Time.time;*/
 			PlayerRespawn ();
+            audioManager.PlaySoundIfNoPlaying("Pain_Sound");
+            
         }
         
     }
@@ -676,6 +696,45 @@ public class Player : MonoBehaviour {
         }
 
     }
+
+    // ============================================= //
+    // ===== Mise à jour de la musique de fond ===== //
+    public void UpdateBGM(EnumList.StyleMusic newstyle)
+    {
+        audioManager.PlaySound("Transition");
+        switch(newstyle)
+        {
+		case EnumList.StyleMusic.Hell:
+                if (!audioManager.IsSoundPlaying("Hell_BGM"))
+                {
+                    audioManager.PlaySound("Hell_BGM");
+                    audioManager.StopSound("Calm_BGM");
+                    audioManager.StopSound("Fest_BGM");
+                }
+
+            break;
+		case EnumList.StyleMusic.Fest:
+                if (!audioManager.IsSoundPlaying("Fest_BGM"))
+                {
+                    audioManager.PlaySound("Fest_BGM");
+                    audioManager.StopSound("Calm_BGM");
+                    audioManager.StopSound("Hell_BGM");
+                }
+                break;
+		case EnumList.StyleMusic.Calm:
+                if (!audioManager.IsSoundPlaying("Calm_BGM"))
+                {
+                    audioManager.PlaySound("Calm_BGM");
+                    audioManager.StopSound("Fest_BGM");
+                    audioManager.StopSound("Hell_BGM");
+                }
+                break;
+        }
+    }
+
+
+
+
     
 	// ================================== //
 	// ===== Se cache sous la neige ===== //
@@ -686,7 +745,8 @@ public class Player : MonoBehaviour {
 		canMove = false;
 		GetComponent<Collider2D> ().enabled = false;
 		rigid.constraints = RigidbodyConstraints2D.FreezeAll;
-	}
+        audioManager.PlaySoundIfNoPlaying("Calm_Hide");
+    }
 
 	// ================================== //
 	// ===== Sort de sous la neige ===== //
@@ -696,7 +756,8 @@ public class Player : MonoBehaviour {
 		canMove = true;
 		GetComponent<Collider2D> ().enabled = true;
 		rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-	}
+        audioManager.PlaySoundIfNoPlaying("Calm_Unhide");
+    }
 
 	// =========================================================================== //
 	// ===== Fonction qui applique différents effets au perso selon le style ===== //
@@ -725,9 +786,9 @@ public class Player : MonoBehaviour {
     public void PlayerRespawn()
     {
         // ==== Ajouter mise en scène : son, anim... ===== //
-        rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu
-        transform.position = CurrentRespawnPoint;
-		maincamera.transform.position = CurrentRespawnPoint + decalCamOrigine;
+        sprite.enabled = false;
+        StartCoroutine(WaitingRespawn(1));
+
     }
 
     // =========================================================================== //
@@ -803,8 +864,17 @@ public class Player : MonoBehaviour {
         {
             return false;
         }
-       
+    }
 
+    IEnumerator WaitingRespawn(float time)
+    {
+        transform.position = CurrentRespawnPoint;
+        yield return new WaitForSeconds(time);
+        rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu
+        sprite.enabled = true;
+        
+        audioManager.PlaySoundIfNoPlaying("Respawn");
+        maincamera.transform.position = CurrentRespawnPoint + decalCamOrigine;
     }
 
 }

@@ -11,20 +11,30 @@ public class Destructible : MonoBehaviour {
     [SerializeField]
     ParticleSystem particleemitterGO;
     SpriteRenderer spriterenderer;
-    BoxCollider2D boxcollider;
+    [SerializeField]
+    Collider2D Maincollider;
     Animator anim;
     ParticleSystem newparticle;
+    AudioSource audio;
+    [SerializeField]
+    MusicSwitcher theMS;
+    public bool isdestroyed;
     // Use this for initialization
     void Start () {
         spriterenderer = GetComponent<SpriteRenderer>();
-        boxcollider = GetComponent<BoxCollider2D>();
-        anim = GetComponent<Animator>();
 
+        anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
+        isdestroyed = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (isdestroyed)
+        {
+            spriterenderer.enabled = false;
+            Maincollider.enabled = false;
+        }
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -50,16 +60,20 @@ public class Destructible : MonoBehaviour {
     public void Destruction()
     {
         //Destroy(gameObject);
-        spriterenderer.enabled = false;
-        boxcollider.enabled = false;
-        if (particleemitterGO)
+        if (!isdestroyed)
         {
-            newparticle = Instantiate(particleemitterGO, new Vector3(transform.position.x, transform.position.y, transform.position.y), Quaternion.identity);
+            Destroy(theMS);
+            spriterenderer.sprite = null;
+            Maincollider.enabled = false;
+            audio.Play();
+
+            if (particleemitterGO)
+            {
+                newparticle = Instantiate(particleemitterGO, new Vector3(transform.position.x, transform.position.y, transform.position.y), Quaternion.identity);
+            }
+            isdestroyed = true;
+
         }
 
-        // anim.SetBool("playdestruction", true);
-        print("destroy");
-        // -- Jouer un son -- //
-        // -- Jouer une anim'/particule -- //
     }
 }

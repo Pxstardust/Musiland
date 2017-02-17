@@ -8,8 +8,8 @@ public class FirstLevelScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player.IsFestActivable = false;
-        player.IsHellActivable = false;
+        //player.IsFestActivable = false;
+        //player.IsHellActivable = false;
         player.IsCalmActivable = true;
 	}
 	

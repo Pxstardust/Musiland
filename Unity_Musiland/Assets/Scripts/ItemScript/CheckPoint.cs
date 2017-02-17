@@ -10,14 +10,25 @@ public class CheckPoint : MonoBehaviour {
     SpriteRenderer spriterenderer;
     [SerializeField]
     Sprite UsedSprite;
+    Animator anim;
 
-	// Use this for initialization
-	void Start () {
+    // ================= //
+    // ===== AUDIO ===== //
+    AudioManager audioManager;
+
+    // Use this for initialization
+    void Start () {
         spriterenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+
+        // == AUDIO == //
+        audioManager = AudioManager.instance;
+        if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
+        // == AUDIO == //
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -32,8 +43,14 @@ public class CheckPoint : MonoBehaviour {
         {
             if (!IsUsed)
             {
+                audioManager.PlaySoundIfNoPlaying("Checkpoint_Sound");
+                //int hash = anim.StringToHash("Checkpointanim");
+                //anim.Play(hash, 0, 1.0f);
+                IsUsed = true;
+                anim.SetBool("IsActivated", true);
                 player.CurrentRespawnPoint = PositionSave;
-                spriterenderer.sprite = UsedSprite;
+                //spriterenderer.sprite = UsedSprite;
+                spriterenderer.sprite = null;
             }
         }
 

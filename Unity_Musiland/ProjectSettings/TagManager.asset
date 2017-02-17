@@ -8,6 +8,7 @@ TagManager:
   - Damage
   - Slow
   - Goal
+  - GM
   layers:
   - Default
   - TransparentFX

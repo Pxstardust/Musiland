@@ -8,10 +8,11 @@ public class UnlockSphere : MonoBehaviour {
     EnumList.StyleMusic UnlockedTheme;
     [SerializeField]
     Player player;
+    AudioSource audio;
     // Use this for initialization
     void Start () {
-		
-	}
+        audio = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -20,10 +21,11 @@ public class UnlockSphere : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        print("ding");
+
         if (collision.tag == "Player")
         {
-            print("dong");
+            //audio.Play();
+
             switch (UnlockedTheme)
             {
                 case EnumList.StyleMusic.Hell:
