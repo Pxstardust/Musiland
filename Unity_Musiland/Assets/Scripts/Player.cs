@@ -99,7 +99,7 @@ public class Player : MonoBehaviour {
     float HorizontalTapCount = 0; // Nb de tap pour le double tap 
     float DashCD = 2; // CD entre deux dash
     float LastDashEnd, LastDashStart; // Moments clé du dernier dash
-    float DureeDash = 0.12f; // Durée du dash
+    float DureeDash = 0.15f; // Durée du dash
     // -- V Dash -- //
     float doubletapCDVDash = 0.5f; // Durée max entre deux tap pour un double tap
     float VerticalTapCount = 0; // Nb de tap pour le double tap
