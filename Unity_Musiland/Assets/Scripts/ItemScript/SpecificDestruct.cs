@@ -7,10 +7,14 @@ public class SpecificDestruct : MonoBehaviour {
     GameObject Tueur;
 	[SerializeField]
 	EnumList.StyleMusic styleNeeded;
+	[SerializeField]
+	GameObject joueur;
+
+	MusicSwitcher ThisMusicSwitcher;
 
 	// Use this for initialization
 	void Start () {
-		
+		ThisMusicSwitcher = joueur.GetComponent<MusicSwitcher> ();
 	}
 	
 	// Update is called once per frame
@@ -22,7 +26,7 @@ public class SpecificDestruct : MonoBehaviour {
     {
         if (collision.gameObject == Tueur)
         {
-			if (styleNeeded == EnumList.StyleMusic.Fest) {
+			if (styleNeeded == ThisMusicSwitcher.currentstyle) {
 				Destroy(gameObject);
 			}
             // Ajouter animation

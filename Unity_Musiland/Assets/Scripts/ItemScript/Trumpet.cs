@@ -16,10 +16,17 @@ public class Trumpet : Entity
     GameObject target;
     [SerializeField]
     Camera maincamera;
+	[SerializeField]
+	Vector3 scarePoint1;
+	[SerializeField]
+	Vector3 scarePoint2;
 
     MusicSwitcher ThisMusicSwitcher;
 	Rigidbody2D rigid2D;
 	public bool stopCrowd = false;
+	public bool scared = false;
+	public bool fleeCloud = false;
+	Vector3 fleeingPoint;
 
 
     // Use this for initialization
@@ -43,32 +50,52 @@ public class Trumpet : Entity
 		
         Vector3 positioncamera = maincamera.WorldToViewportPoint(this.transform.position);
         base.Update();
-        if (positioncamera.x > 0 && positioncamera.x < 1 && positioncamera.y > 0 && positioncamera.y < 1)
-        {
-            switch (ThisMusicSwitcher.currentstyle)
-            {
-			case EnumList.StyleMusic.Hell:
-					//if (!base.isfleeing)  Flee desactivé car on peut résoudre l'énigme d'une manière non prévue
-                    //{
-					Entity_Stop ();
-                        //Entity_Flee(target);
-                    //}
-               		break;
+		if (!scared && !fleeCloud) {
+			if (positioncamera.x > 0 && positioncamera.x < 1 && positioncamera.y > 0 && positioncamera.y < 1) {
+				switch (ThisMusicSwitcher.currentstyle) {
+				case EnumList.StyleMusic.Hell:
+					if (!base.isfleeing && !base.isgoto) {  //Flee desactivé car on peut résoudre l'énigme d'une manière non prévue
+						Entity_Stop ();
+						Entity_Flee (target);
+					}
+					break;
 
-                case EnumList.StyleMusic.Fest:
+				case EnumList.StyleMusic.Fest:
 					//rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-				if (!base.isfollowing && !stopCrowd)
-                    {
-                        Entity_Stop();
-                        Entity_Follow(target);
-                    }
+					if (!base.isfollowing && !stopCrowd) {
+						Entity_Stop ();
+						Entity_Follow (target);
+					}
 
-                    break;
-                case EnumList.StyleMusic.Calm:
-                	Entity_Stop();
-                    break;
-            }
-        }
+					break;
+				case EnumList.StyleMusic.Calm:
+					Entity_Stop ();
+					break;
+				}
+			}
+		}
+
+		if (scared) {
+			if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm) {
+				StartCoroutine (CalmModeFocus ());
+			} else {
+				speed = 8;
+				if (!base.ispatrol) {  //Flee desactivé car on peut résoudre l'énigme d'une manière non prévue
+					Entity_Stop ();
+					Entity_Patrol (scarePoint1, scarePoint2);
+				}
+			}
+		}
+
+		if (fleeCloud) {
+			if (transform.position != fleeingPoint) {
+				Entity_Stop ();	
+				Entity_GoTo (fleeingPoint, 0);
+			}
+			else
+				fleeCloud = false;
+		}
+        
     }
 
 	// ============= Collision ================ //
@@ -79,5 +106,33 @@ public class Trumpet : Entity
 			stopCrowd = true;
 			Entity_Stop ();
 		}
+
+		if (collision.gameObject.name == "ScareCrowd") {
+			scared = true;
+
+			Destroy (collision.gameObject);
+		}
+
+		if (collision.gameObject.name == "YellowCloud1" && ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Hell) {
+			fleeCloud = true;
+			fleeingPoint = transform.position + new Vector3 (-5, 0, 0);
+		}
+	}
+
+	IEnumerator CalmModeFocus(){
+		yield return new WaitForSeconds (2);
+		if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm) {
+			speed = 5;
+			yield return new WaitForSeconds (2);
+			if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm) {
+				speed = 3;
+				yield return new WaitForSeconds (2);
+				if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm) {
+					scared = false;
+					speed = 5;
+				}
+			}
+		}
+
 	}
 }
