@@ -12,6 +12,8 @@ public class HUDManager : MonoBehaviour {
     Image particlesplashimage;
     [SerializeField]
     public Player Theplayer;
+	[SerializeField]
+	public Text score;
 
     // ===== CERCLE ===== //
     public float circletransitingtimer;
@@ -19,6 +21,8 @@ public class HUDManager : MonoBehaviour {
     public float transitime;
     float departtransi;
     float farleft, farright, starttransipoint, farest;
+
+	public int notesQuantity = 0;
 
     // ===== Ornement ===== //
     MusicSwitcher OrnementScript;
@@ -30,6 +34,8 @@ public class HUDManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		score.text = notesQuantity.ToString();
+
         //print("transitime="+transitime);
 		if (circletransitingtimer > 0)
         {
