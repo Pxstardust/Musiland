@@ -361,14 +361,20 @@ public class Player : MonoBehaviour {
                 bRun = false;
                 LastDashEnd = Time.time;
             }
-            anim.SetBool("isrunning", false);
+
+        }
+
+        if (bInAir && rigid.velocity.y < 0)
+        {
+            anim.SetBool("A_IsFalling", true);
+            anim.SetBool("A_IsJump", false);
         }
 
         // ==================================== //
         // =============== Jump  ============== //
 
         // ========== BUTTON DOWN ============ //
-		if (Input.GetButtonDown("Jump") && canMove)
+        if (Input.GetButtonDown("Jump") && canMove)
         {
             // ----- (F) SLIDE -----
 			if (!bInAir && Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("ground"))) {
@@ -384,16 +390,22 @@ public class Player : MonoBehaviour {
 					case EnumList.StyleMusic.Calm:
 						rigid.AddForce ((new Vector3 (0.0f, jumpForceCalm, 0)));
                             audioManager.PlaySoundIfNoPlaying("Calm_Jump");
+                            anim.SetBool("A_IsJump", true);
+                            anim.SetBool("A_IsInAir", true);
                             break;
 
 					case EnumList.StyleMusic.Fest:
 						rigid.AddForce ((new Vector3 (0.0f, jumpForceFest, 0)));
                             audioManager.PlaySoundIfNoPlaying("Fest_Jump");
+                            anim.SetBool("A_IsJump", true);
+                            anim.SetBool("A_IsInAir", true);
                             break;
 
 					case EnumList.StyleMusic.Hell:
 						rigid.AddForce ((new Vector3 (0.0f, jumpForceHell, 0)));
                             audioManager.PlaySoundIfNoPlaying("Hell_Jump");
+                            anim.SetBool("A_IsJump", true);
+                            anim.SetBool("A_IsInAir", true);
                             break;
 					}
                    
@@ -403,6 +415,8 @@ public class Player : MonoBehaviour {
                 audioManager.PlaySoundIfNoPlaying("Calm_Glide");
                 rigid.velocity = new Vector2(rigid.velocity.x, 0);
 			}
+
+
 
             // ----- (F) WALLJUMP -----
             if (isWallSliding)
@@ -439,6 +453,7 @@ public class Player : MonoBehaviour {
             // ----- (C) PLANER ----- 
             if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
 				audioManager.PlaySoundIfNoPlaying("Calm_Glide");
+                anim.SetBool("A_IsPlan",true);
 				rigid.gravityScale = 0.15f;
 				rigid.AddForce ((new Vector3(0.0f,0.6f,0)));
 			}
@@ -452,6 +467,8 @@ public class Player : MonoBehaviour {
         if (Input.GetButtonUp("Jump"))
         {
             audioManager.StopSoundIfPlaying("Calm_Glide");
+            anim.SetBool("A_IsPlan", false);
+            //anim.SetBool("A_IsJump", false);
         }
 
         // ==================================== //
@@ -466,7 +483,11 @@ public class Player : MonoBehaviour {
             IsHoldingDown = true; // HOlding down
 
             // ----- FAST FALL -----
-            if (bInAir) rigid.gravityScale = 3f; // FAST FALL
+            if (bInAir)
+            {
+                anim.SetBool("A_IsFalling", true);
+                rigid.gravityScale = 3f; // FAST FALL
+            }
 
             // ----- (C) SE CACHER SOUS LA NEIGE ------
 			if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir) {
@@ -550,7 +571,8 @@ public class Player : MonoBehaviour {
 				if (!bRun && !bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
                 {
 					rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedHell, rigid.velocity.y); // Déplacement direct
-                    audioManager.PlaySoundIfNoPlaying("Hell_Step");
+                        anim.SetBool("A_IsWalking", true);
+                        audioManager.PlaySoundIfNoPlaying("Hell_Step");
                 } 
 				else if(!bRun && bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedHell){
 					rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedHell * 100 * Time.deltaTime));
@@ -564,6 +586,7 @@ public class Player : MonoBehaviour {
 					{
 						rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedFest, rigid.velocity.y); // Déplacement direct
                         audioManager.PlaySoundIfNoPlaying("Fest_Step");
+                        anim.SetBool("A_IsWalking",true);
                     } 
 					else if(bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedFest){
 						rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedFest * 100 * Time.deltaTime));
@@ -575,6 +598,7 @@ public class Player : MonoBehaviour {
 					if (!bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm) // S'il n'as pas double tap et qu'il n'est pas en l'air
 					{
                         audioManager.PlaySoundIfNoPlaying("Calm_Step");
+                        anim.SetBool("A_IsWalking", true);
                         rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime)); // Déplacement avec force, lent et flottant
 					}
 					else if(bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm){
@@ -584,10 +608,14 @@ public class Player : MonoBehaviour {
             }
         }
 
-		//On frene le personange si on navance plus sauf pour le mode calme
-		if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5f && !bInAir && ! bRun && playercurrentstyle != EnumList.StyleMusic.Calm) {
-			rigid.velocity = new Vector2 (0, rigid.velocity.y);
-		}
+        if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5f && !bInAir && !bRun)
+        {
+            anim.SetBool("A_IsWalking", false);
+            if (playercurrentstyle != EnumList.StyleMusic.Calm)
+            {
+                rigid.velocity = new Vector2(0, rigid.velocity.y);  //On frene le personange si on navance plus sauf pour le mode calme
+            }
+        }
 
        // sprite.transform.position += new Vector3(Input.GetAxis("Horizontal") * slowFactor * vitesse * Time.deltaTime,0,0); // Position
         if (Input.GetAxis("Horizontal") > 0) sprite.flipX = false;
@@ -607,8 +635,9 @@ public class Player : MonoBehaviour {
         bVDash = false;
 		if ((collision.gameObject.tag == "Sol") && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))) {
 			bInAir = false;
-			anim.SetBool("isjump", false);
-			rigid.gravityScale = initialgravity; // Disable Fast Fall
+            anim.SetBool("A_IsInAir", false);
+            anim.SetBool("A_IsFalling", false);
+            rigid.gravityScale = initialgravity; // Disable Fast Fall
 
 		}
 	}
@@ -758,6 +787,7 @@ public class Player : MonoBehaviour {
 		GetComponent<Collider2D> ().enabled = false;
 		rigid.constraints = RigidbodyConstraints2D.FreezeAll;
         audioManager.PlaySoundIfNoPlaying("Calm_Hide");
+        anim.SetBool("A_IsHide", true);
     }
 
 	// ================================== //
@@ -769,6 +799,7 @@ public class Player : MonoBehaviour {
 		GetComponent<Collider2D> ().enabled = true;
 		rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
         audioManager.PlaySoundIfNoPlaying("Calm_Unhide");
+        anim.SetBool("A_IsHide", false);
     }
 
 	// =========================================================================== //

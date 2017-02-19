@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -81,6 +79,7 @@
     <Compile Include="Assets\Scripts\Enum.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HUDManager.cs" />
+    <Compile Include="Assets\Scripts\ItemScript\AngryBridge.cs" />
     <Compile Include="Assets\Scripts\ItemScript\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\ItemScript\Destructible.cs" />
     <Compile Include="Assets\Scripts\ItemScript\Entity.cs" />
@@ -90,6 +89,7 @@
     <Compile Include="Assets\Scripts\ItemScript\UnlockSphere.cs" />
     <Compile Include="Assets\Scripts\ItemScript\Zeball.cs" />
     <Compile Include="Assets\Scripts\LevelScript\FirstLevelScript.cs" />
+    <Compile Include="Assets\Scripts\LevelScript\endProto.cs" />
     <Compile Include="Assets\Scripts\MusicSwitcher.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
   </ItemGroup>
