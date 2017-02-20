@@ -23543,7 +23543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &909019434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34947,12 +34947,12 @@ Prefab:
         type: 2}
       propertyPath: Hell_Anim
       value: 
-      objectReference: {fileID: 9100000, guid: 083482c3cfbafee4eae5eb586feb7b36, type: 2}
+      objectReference: {fileID: 9100000, guid: c184703065bd25f46b9f2bf91bb96968, type: 2}
     - target: {fileID: 114056354944170284, guid: e305c2c90e580a74cbce669036b69a3a,
         type: 2}
       propertyPath: Fest_Anim
       value: 
-      objectReference: {fileID: 9100000, guid: 083482c3cfbafee4eae5eb586feb7b36, type: 2}
+      objectReference: {fileID: 9100000, guid: 6765a4d1ab280ac41a1fda2c783154b9, type: 2}
     - target: {fileID: 114056354944170284, guid: e305c2c90e580a74cbce669036b69a3a,
         type: 2}
       propertyPath: Calm_Anim
@@ -34976,17 +34976,20 @@ Prefab:
         type: 2}
       propertyPath: HellTile
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: ed53eac1ae915524ba19c5429d77d9b8,
+        type: 3}
     - target: {fileID: 114056354944170284, guid: e305c2c90e580a74cbce669036b69a3a,
         type: 2}
       propertyPath: FestTile
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: c40691fef00c10d4388df1fca40fd237,
+        type: 3}
     - target: {fileID: 114056354944170284, guid: e305c2c90e580a74cbce669036b69a3a,
         type: 2}
       propertyPath: CalmTile
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 1c10b8f02122e3f4fab1b6a1e15ebe8c,
+        type: 3}
     - target: {fileID: 4699068902747366, guid: e305c2c90e580a74cbce669036b69a3a, type: 2}
       propertyPath: m_LocalPosition.y
       value: -2.99
@@ -35040,6 +35043,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1224208622298858, guid: e305c2c90e580a74cbce669036b69a3a, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95399844059610456, guid: e305c2c90e580a74cbce669036b69a3a,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95399844059610456, guid: e305c2c90e580a74cbce669036b69a3a,
+        type: 2}
+      propertyPath: m_CullingMode
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

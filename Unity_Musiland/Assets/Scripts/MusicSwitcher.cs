@@ -77,6 +77,7 @@ public class MusicSwitcher : MonoBehaviour{
                 if (anim && Hell_Anim) // Si il y a une animation
                 {
                     anim.enabled = true;
+
                     anim.runtimeAnimatorController = Hell_Anim;
                 } else if (HellTile) // Sinon si ya un sprite
                 {
@@ -100,6 +101,7 @@ public class MusicSwitcher : MonoBehaviour{
                 {
                     anim.enabled = true;
                     anim.runtimeAnimatorController = Fest_Anim;
+
                 }
                 else if (FestTile) // Sinon si ya un sprite
                 {
@@ -123,6 +125,7 @@ public class MusicSwitcher : MonoBehaviour{
                 {
                     anim.enabled = true;
                     anim.runtimeAnimatorController = Calm_Anim;
+
                 }
                 else if (CalmTile) // Sinon si ya un sprite
                 {
