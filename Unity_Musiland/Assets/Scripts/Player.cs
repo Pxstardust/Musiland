@@ -33,6 +33,12 @@ public class Player : MonoBehaviour {
     Vector3 decalCamOrigine;
     public Vector3 CurrentRespawnPoint;
     public Vector3 PlayerScreenPos;
+    public Vector3 PlayerViewportPos;
+    bool outscreenx = false;
+    bool outscreeny = false;
+    float espacex = 0.1f;
+    float espacey = 0.1f ;
+    float verticaljumpview = 5;
 
 
     // ================= //
@@ -80,6 +86,7 @@ public class Player : MonoBehaviour {
     private bool KeyDown;
 
     // === Controller Var === //
+    bool ControlPause = false;
     bool bInAir;
     public bool bRun;
     bool IsHoldingDown = false;
@@ -130,6 +137,8 @@ public class Player : MonoBehaviour {
     public GameObject HUDManagerGO;
     public HUDManager HUDManager;
 
+    public bool IsFalling { get; private set; }
+
     // ========================================================================================================= //
     // ============================================= START ===================================================== //
     // ========================================================================================================= //
@@ -164,376 +173,402 @@ public class Player : MonoBehaviour {
     void Update () {
 
         PlayerScreenPos = maincamera.WorldToScreenPoint(this.transform.position);
+        PlayerViewportPos = maincamera.WorldToViewportPoint(this.transform.position);
         
-        // ===================================== //
-        // =============== Slide =============== //
-        if (IsSliding)
+        if (!ControlPause)
         {
-            audioManager.PlaySoundIfNoPlaying("Fest_Glide");
-			LastSlideEnd = Time.time;
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, Time.time-SlideTimeStart), SlideStartY, 0);
-            if (TestColliderTop()) // ----- Permet d'avoir une glissade plus fluide sous les objets ----- 
+            // ===================================== //
+            // =============== Slide =============== //
+            if (IsSliding)
             {
-                if (sprite.flipX) SlideDestination -= 0.1f;
-                else SlideDestination += 0.1f;  
-            }
-            // ----- Si on rencontre un mur ou que le joueur ne touche plus le sol, on stop la glissade ---- 
-            if ((Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")) ||
-            Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"))) ||
-            !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))
-            )
-            {
-                if (!TestColliderTop())
+                audioManager.PlaySoundIfNoPlaying("Fest_Glide");
+                LastSlideEnd = Time.time;
+                transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, Time.time - SlideTimeStart), SlideStartY, 0);
+                if (TestColliderTop()) // ----- Permet d'avoir une glissade plus fluide sous les objets ----- 
                 {
-                    ChangeHitbox(false);
-                    IsSliding = false;
-                } else
+                    if (sprite.flipX) SlideDestination -= 0.1f;
+                    else SlideDestination += 0.1f;
+                }
+                // ----- Si on rencontre un mur ou que le joueur ne touche plus le sol, on stop la glissade ---- 
+                if ((Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")) ||
+                Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"))) ||
+                !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))
+                )
                 {
-                    DoSlide();
+                    if (!TestColliderTop())
+                    {
+                        ChangeHitbox(false);
+                        IsSliding = false;
+                    }
+                    else
+                    {
+                        DoSlide();
+                    }
+
+                }
+
+                if (Time.time - SlideTimeStart >= 0.45f)
+                {
+                    if (!TestColliderTop())
+                    {
+                        ChangeHitbox(false);
+                        IsSliding = false;
+                    }
+                    else
+                    {
+                        DoSlide();
+                    }
                 }
 
             }
-           
-            if (Time.time - SlideTimeStart >= 0.45f)
-            {
-                if (!TestColliderTop())
-                {
-                    ChangeHitbox(false);
-                    IsSliding = false;
-                } else
-                {
-                    DoSlide();
-                }
-            }
 
-        }
-
-        // ========================================= //
-        // =============== DASHES ================== //
-        if (doubletapCDDash > 0) { doubletapCDDash -= Time.deltaTime; }
-        if (doubletapCDVDash > 0) { doubletapCDVDash -= Time.deltaTime; }
-        if (bRun && Time.time > LastDashStart + DureeDash) { bRun = false;  rigid.velocity = new Vector2(0, 0); } // Si on est en dash horizontal dpeuis un certain temps : stop
-        if (bVDash && Time.time > LastVDashStart + DureeVDash) { bVDash = false; } // Si on est en V Dash depuis un certain temps :stop
-        if (bRun)
-        {
-            sprite.color = new Color32(0, 255, 0, 255);
-        }
-        else if (bVDash)
-        {
-            sprite.color = new Color32(0, 255, 0, 255);
-        }
-        else if (hideUnderSnow)
-        {
-            sprite.color = new Color32(0, 0, 255, 255);
-        }
-        else sprite.color = new Color32(255,255,255, 255); ;
-
-
-        if (bRun && playercurrentstyle == EnumList.StyleMusic.Hell)
-        {
-            if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")))
-            {
-                Hit = Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"));
-                Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
-                if (Testdestruct) // Si l'objet touché est destructible 
-                {
-                    Testdestruct.Destruction(); // On le détruit
-                }
-            }
-
-            if (Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground")))
-            {
-                Hit = Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"));
-                Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
-                if (Testdestruct) // Si l'objet touché est destructible 
-                {
-                    Testdestruct.Destruction(); // On le détruit
-                }
-            }
-        }
-
-
-
-        if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))) // Si les pieds du joueur touchent quelque chose
-        {
-            if (bVDash) // Si on est en VDash
-            {
-
-                Hit = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"));
-                Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
-                
-                if (Testdestruct) // Si l'objet touché est destructible 
-                {
-                    Testdestruct.Destruction(); // On le détruit
-                } else { bVDash = false; }
-
-            }
-        }
-
-       
-        if (bVDash)  // ====== V DASH ====== //
-        {
-            rigid.velocity = new Vector2(0, -moveForceHell);
-        }
-
-		if (bRun) { // ====== DASH HORIZONTAL ====== //
-			rigid.gravityScale = 0;
-			LastDashEnd = Time.time;
-			if (sprite.flipX)
-				rigid.velocity = new Vector2 (-moveForceHell, 0);
-			else
-				rigid.velocity = new Vector2 (moveForceHell, 0);
-
-		} else {
-			rigid.gravityScale = gravityScaleHell;
-		}
-
-		// =========================================== //
-		// ================ FALL CHECK ================ //
-		if (rigid.velocity.y < -6 && Physics2D.Linecast (transform.position, transform.position + new Vector3 (0, -2, 0), 1 << LayerMask.NameToLayer ("ground"))) {
-			rigid.velocity = new Vector2 (rigid.velocity.x, rigid.velocity.y/1.1f);
-		}
-			
-
-
-
-        // =========================================== //
-        // ================ WALL JUMP ================ //
-            bool isWallSliding = false;
-
-        if (playercurrentstyle == EnumList.StyleMusic.Fest)
-        {
-            // ----- Si il y a un mur à gauche/droite et rien en dessous et qu'on est pas en train de monter ---- 
-            if ((Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")) ||
-            Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"))) &&
-            !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")) && rigid.velocity.y < 0
-            ) 
-            {
-                // Son slide frottement contre mur
-                isWallSliding = true;
-                rigid.velocity = new Vector2 (0, WallSlideSpeed);
-            }
-        }
-        
-        // == DEBUG == //
-        if (Input.GetButton("DebugKey"))
-        {
-            IsHellActivable = true;
-        }
-        // == DEBUG == //
-        
-        // ================================================================================ //
-        // ============================== I. CONTROLS ===================================== //
-        // ================================================================================ //
-
-        // =========================================================================== //
-        // ============================= I.1 MUSIC =================================== //
-        // === NOTE : PAS DE PRINT ICI, LIMITER CE QU'ON MET POUR EVITER LE FREEZE === //
-        // =========================================================================== //
-
-        if (Input.GetButtonDown("ChangeMusicPlus") && canMove) {
-			StartCoroutine (Freeze());
-            ChangeMusictoNext();
-            HUDManager.ChangeAllTiles();
-            ApplyStyleCarac(playercurrentstyle);
-            UpdateBGM(playercurrentstyle);
-        }
-
-        // ===== PREVIOUS MUSIC ===== //
-        if (Input.GetButtonDown("ChangeMusicMinus") && canMove)
-        {
-			StartCoroutine (Freeze());
-            ChangeMusictoPrevious();
-            HUDManager.ChangeAllTiles();
-            ApplyStyleCarac(playercurrentstyle);
-            UpdateBGM(playercurrentstyle);
-
-        }
-       
-        // =========================================================================== //
-        // ============================ I.2 MOUVEMENT ================================ //
-        // =========================================================================== //
-        // ===== Left/right ===== //
-        if (Input.GetButtonUp("Horizontal"))
-        {
+            // ========================================= //
+            // =============== DASHES ================== //
+            if (doubletapCDDash > 0) { doubletapCDDash -= Time.deltaTime; }
+            if (doubletapCDVDash > 0) { doubletapCDVDash -= Time.deltaTime; }
+            if (bRun && Time.time > LastDashStart + DureeDash) { bRun = false; rigid.velocity = new Vector2(0, 0); } // Si on est en dash horizontal dpeuis un certain temps : stop
+            if (bVDash && Time.time > LastVDashStart + DureeVDash) { bVDash = false; } // Si on est en V Dash depuis un certain temps :stop
             if (bRun)
             {
-                bRun = false;
+                sprite.color = new Color32(0, 255, 0, 255);
+            }
+            else if (bVDash)
+            {
+                sprite.color = new Color32(0, 255, 0, 255);
+            }
+            else if (hideUnderSnow)
+            {
+                sprite.color = new Color32(0, 0, 255, 255);
+            }
+            else sprite.color = new Color32(255, 255, 255, 255); ;
+
+
+            if (bRun && playercurrentstyle == EnumList.StyleMusic.Hell)
+            {
+                if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")))
+                {
+                    Hit = Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"));
+                    Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
+                    if (Testdestruct) // Si l'objet touché est destructible 
+                    {
+                        Testdestruct.Destruction(); // On le détruit
+                    }
+                }
+
+                if (Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground")))
+                {
+                    Hit = Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"));
+                    Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
+                    if (Testdestruct) // Si l'objet touché est destructible 
+                    {
+                        Testdestruct.Destruction(); // On le détruit
+                    }
+                }
+            }
+
+
+
+            if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))) // Si les pieds du joueur touchent quelque chose
+            {
+                if (bVDash) // Si on est en VDash
+                {
+
+                    Hit = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"));
+                    Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
+
+                    if (Testdestruct) // Si l'objet touché est destructible 
+                    {
+                        Testdestruct.Destruction(); // On le détruit
+                    }
+                    else { bVDash = false; }
+
+                }
+            }
+
+
+            if (bVDash)  // ====== V DASH ====== //
+            {
+                rigid.velocity = new Vector2(0, -moveForceHell);
+            }
+
+            if (bRun)
+            { // ====== DASH HORIZONTAL ====== //
+                rigid.gravityScale = 0;
                 LastDashEnd = Time.time;
-            }
-
-        }
-
-        if (bInAir && rigid.velocity.y < 0)
-        {
-            anim.SetBool("A_IsFalling", true);
-            anim.SetBool("A_IsJump", false);
-        }
-
-        // ==================================== //
-        // =============== Jump  ============== //
-
-        // ========== BUTTON DOWN ============ //
-        if (Input.GetButtonDown("Jump") && canMove)
-        {
-            // ----- (F) SLIDE -----
-			if (!bInAir && Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("ground"))) {
-				//if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) { // SLIDE
-					//DoSlide ();
-                      
-				//} else if 
-				if(Time.time > timelastjump + mintimejump) { // Jump
-					//bInAir = true; === Problème with colliders
-					IsVDashDone = false;
-					StartCoroutine (setJump ());
-					switch (playercurrentstyle) {
-					case EnumList.StyleMusic.Calm:
-						rigid.AddForce ((new Vector3 (0.0f, jumpForceCalm, 0)));
-                            audioManager.PlaySoundIfNoPlaying("Calm_Jump");
-                            anim.SetBool("A_IsJump", true);
-                            anim.SetBool("A_IsInAir", true);
-                            break;
-
-					case EnumList.StyleMusic.Fest:
-						rigid.AddForce ((new Vector3 (0.0f, jumpForceFest, 0)));
-                            audioManager.PlaySoundIfNoPlaying("Fest_Jump");
-                            anim.SetBool("A_IsJump", true);
-                            anim.SetBool("A_IsInAir", true);
-                            break;
-
-					case EnumList.StyleMusic.Hell:
-						rigid.AddForce ((new Vector3 (0.0f, jumpForceHell, 0)));
-                            audioManager.PlaySoundIfNoPlaying("Hell_Jump");
-                            anim.SetBool("A_IsJump", true);
-                            anim.SetBool("A_IsInAir", true);
-                            break;
-					}
-                   
-					timelastjump = Time.time;
-				}
-			} else if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < -4f) { // On ralenti le joueur dans sa chute s'il commence à planner
-                audioManager.PlaySoundIfNoPlaying("Calm_Glide");
-                rigid.velocity = new Vector2(rigid.velocity.x, 0);
-			}
-
-
-
-            // ----- (F) WALLJUMP -----
-            if (isWallSliding)
-            {
-                bool wallatleft = false;
-                if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"))) wallatleft = true;
-                if (wallatleft)
-                {
-					rigid.AddForce((new Vector3(400, wallJumpForceFest, 0)));
-                    audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
-                    // ANim
-
-                }
+                if (sprite.flipX)
+                    rigid.velocity = new Vector2(-moveForceHell, 0);
                 else
-                {
-					rigid.AddForce((new Vector3(-400, wallJumpForceFest, 0)));
-                    audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
-                    // ANim
-                }
-            } // ---------- 
+                    rigid.velocity = new Vector2(moveForceHell, 0);
 
-            // ----- (H) V DASH -----
-			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Hell) {
-                audioManager.PlaySoundIfNoPlaying("Hell_Dash");
-                LastVDashStart = Time.time;
-                bVDash = true;
-			}
+            }
+            else {
+                rigid.gravityScale = gravityScaleHell;
+            }
 
-        } // ========== FIN BUTTON DOWN ========== //
-
-        // =========== BUTTON JUMP HOLDING =========== //
-		if (Input.GetButton ("Jump") && canMove) {
-
-            // ----- (C) PLANER ----- 
-            if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0) { // Si on est en l'air
-				audioManager.PlaySoundIfNoPlaying("Calm_Glide");
-                anim.SetBool("A_IsPlan",true);
-				rigid.gravityScale = 0.15f;
-				rigid.AddForce ((new Vector3(0.0f,0.6f,0)));
-			}
-		} else {
-            
-			if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm) { // Si on est en l'air
-				rigid.gravityScale = gravityScaleCalm;
-			} 
-		}
-        // ========== FIN HOLDING JUMP ============ //
-        if (Input.GetButtonUp("Jump"))
-        {
-            audioManager.StopSoundIfPlaying("Calm_Glide");
-            anim.SetBool("A_IsPlan", false);
-            //anim.SetBool("A_IsJump", false);
-        }
-
-        // ==================================== //
-        // =============== FIN JUMP  ========== //
-        // ==================================== //
-
-        // ========================== //
-        // ========== Down ========== //
-		if ((Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) && canMove && ! bVDash)
-        {
-
-            IsHoldingDown = true; // HOlding down
-
-            // ----- FAST FALL -----
-            if (bInAir)
+            // =========================================== //
+            // ================ FALL CHECK ================ //
+            if (rigid.velocity.y < -6 && Physics2D.Linecast(transform.position, transform.position + new Vector3(0, -2, 0), 1 << LayerMask.NameToLayer("ground")))
             {
+                rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y / 1.1f);
+            }
+
+
+
+
+            // =========================================== //
+            // ================ WALL JUMP ================ //
+            bool isWallSliding = false;
+
+            if (playercurrentstyle == EnumList.StyleMusic.Fest)
+            {
+                // ----- Si il y a un mur à gauche/droite et rien en dessous et qu'on est pas en train de monter ---- 
+                if ((Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")) ||
+                Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"))) &&
+                !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")) && rigid.velocity.y < 0
+                )
+                {
+                    // Son slide frottement contre mur
+                    isWallSliding = true;
+                    rigid.velocity = new Vector2(0, WallSlideSpeed);
+                }
+            }
+
+            // == DEBUG == //
+            if (Input.GetButton("DebugKey"))
+            {
+                IsHellActivable = true;
+            }
+            // == DEBUG == //
+
+            // ================================================================================ //
+            // ============================== I. CONTROLS ===================================== //
+            // ================================================================================ //
+
+            // =========================================================================== //
+            // ============================= I.1 MUSIC =================================== //
+            // === NOTE : PAS DE PRINT ICI, LIMITER CE QU'ON MET POUR EVITER LE FREEZE === //
+            // =========================================================================== //
+
+            if (Input.GetButtonDown("ChangeMusicPlus") && canMove)
+            {
+                StartCoroutine(Freeze());
+                ChangeMusictoNext();
+                HUDManager.ChangeAllTiles();
+                ApplyStyleCarac(playercurrentstyle);
+                UpdateBGM(playercurrentstyle);
+            }
+
+            // ===== PREVIOUS MUSIC ===== //
+            if (Input.GetButtonDown("ChangeMusicMinus") && canMove)
+            {
+                StartCoroutine(Freeze());
+                ChangeMusictoPrevious();
+                HUDManager.ChangeAllTiles();
+                ApplyStyleCarac(playercurrentstyle);
+                UpdateBGM(playercurrentstyle);
+
+            }
+
+            // =========================================================================== //
+            // ============================ I.2 MOUVEMENT ================================ //
+            // =========================================================================== //
+            // ===== Left/right ===== //
+            if (Input.GetButtonUp("Horizontal"))
+            {
+                if (bRun)
+                {
+                    bRun = false;
+                    LastDashEnd = Time.time;
+                }
+
+            }
+
+            if (bInAir && rigid.velocity.y < 0)
+            {
+                IsFalling = true;
                 anim.SetBool("A_IsFalling", true);
-                rigid.gravityScale = 3f; // FAST FALL
+                anim.SetBool("A_IsJump", false);
             }
 
-            // ----- (C) SE CACHER SOUS LA NEIGE ------
-			if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir) {
-				HideUnderSnow ();
-				if(Input.GetAxis("Vertical") < -0.5f)// On check la différence entre le joystick et l'axe pour qu'il n'y ait pas de prob
-					hiddedByJoystick = true;
-			}
+            // ==================================== //
+            // =============== Jump  ============== //
 
-            // ----- (F) SLIDE -----
-            if (playercurrentstyle == EnumList.StyleMusic.Fest && !bInAir && !IsSliding)
+            // ========== BUTTON DOWN ============ //
+            if (Input.GetButtonDown("Jump") && canMove)
             {
-                if (Time.time > LastSlideEnd + SlideCD)
+                // ----- (F) SLIDE -----
+                if (!bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
                 {
-                    DoSlide();
+                    //if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) { // SLIDE
+                    //DoSlide ();
+
+                    //} else if 
+                    if (Time.time > timelastjump + mintimejump)
+                    { // Jump
+                      //bInAir = true; === Problème with colliders
+                        IsVDashDone = false;
+                        StartCoroutine(setJump());
+                        switch (playercurrentstyle)
+                        {
+                            case EnumList.StyleMusic.Calm:
+                                rigid.AddForce((new Vector3(0.0f, jumpForceCalm, 0)));
+                                audioManager.PlaySoundIfNoPlaying("Calm_Jump");
+                                anim.SetBool("A_IsJump", true);
+                                anim.SetBool("A_IsInAir", true);
+                                break;
+
+                            case EnumList.StyleMusic.Fest:
+                                rigid.AddForce((new Vector3(0.0f, jumpForceFest, 0)));
+                                audioManager.PlaySoundIfNoPlaying("Fest_Jump");
+                                anim.SetBool("A_IsJump", true);
+                                anim.SetBool("A_IsInAir", true);
+                                break;
+
+                            case EnumList.StyleMusic.Hell:
+                                rigid.AddForce((new Vector3(0.0f, jumpForceHell, 0)));
+                                audioManager.PlaySoundIfNoPlaying("Hell_Jump");
+                                anim.SetBool("A_IsJump", true);
+                                anim.SetBool("A_IsInAir", true);
+                                break;
+                        }
+
+                        timelastjump = Time.time;
+                    }
+                }
+                else if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < -4f)
+                { // On ralenti le joueur dans sa chute s'il commence à planner
+                    audioManager.PlaySoundIfNoPlaying("Calm_Glide");
+                    rigid.velocity = new Vector2(rigid.velocity.x, 0);
+                }
+
+
+
+                // ----- (F) WALLJUMP -----
+                if (isWallSliding)
+                {
+                    bool wallatleft = false;
+                    if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"))) wallatleft = true;
+                    if (wallatleft)
+                    {
+                        rigid.AddForce((new Vector3(400, wallJumpForceFest, 0)));
+                        audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
+                        // ANim
+
+                    }
+                    else
+                    {
+                        rigid.AddForce((new Vector3(-400, wallJumpForceFest, 0)));
+                        audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
+                        // ANim
+                    }
+                } // ---------- 
+
+                // ----- (H) V DASH -----
+                if (bInAir && playercurrentstyle == EnumList.StyleMusic.Hell)
+                {
+                    audioManager.PlaySoundIfNoPlaying("Hell_Dash");
+                    LastVDashStart = Time.time;
+                    bVDash = true;
+                }
+
+            } // ========== FIN BUTTON DOWN ========== //
+
+            // =========== BUTTON JUMP HOLDING =========== //
+            if (Input.GetButton("Jump") && canMove)
+            {
+
+                // ----- (C) PLANER ----- 
+                if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0)
+                { // Si on est en l'air
+                    audioManager.PlaySoundIfNoPlaying("Calm_Glide");
+                    anim.SetBool("A_IsPlan", true);
+                    rigid.gravityScale = 0.15f;
+                    rigid.AddForce((new Vector3(0.0f, 0.6f, 0)));
                 }
             }
+            else {
 
-            if (playercurrentstyle == EnumList.StyleMusic.Hell && !bInAir && canMove)
-            {
-                if (Time.time > LastDashEnd + DashCD)
-                {
-                    bRun = true;
-                    LastDashStart = Time.time;
+                if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm)
+                { // Si on est en l'air
+                    rigid.gravityScale = gravityScaleCalm;
                 }
             }
+            // ========== FIN HOLDING JUMP ============ //
+            if (Input.GetButtonUp("Jump"))
+            {
+                audioManager.StopSoundIfPlaying("Calm_Glide");
+                anim.SetBool("A_IsPlan", false);
+                //anim.SetBool("A_IsJump", false);
+            }
+
+            // ==================================== //
+            // =============== FIN JUMP  ========== //
+            // ==================================== //
+
+            // ========================== //
+            // ========== Down ========== //
+            if ((Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) && canMove && !bVDash)
+            {
+
+                IsHoldingDown = true; // HOlding down
+
+                // ----- FAST FALL -----
+                if (bInAir)
+                {
+                    anim.SetBool("A_IsFalling", true);
+                    rigid.gravityScale = 3f; // FAST FALL
+                }
+
+                // ----- (C) SE CACHER SOUS LA NEIGE ------
+                if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir)
+                {
+                    HideUnderSnow();
+                    if (Input.GetAxis("Vertical") < -0.5f)// On check la différence entre le joystick et l'axe pour qu'il n'y ait pas de prob
+                        hiddedByJoystick = true;
+                }
+
+                // ----- (F) SLIDE -----
+                if (playercurrentstyle == EnumList.StyleMusic.Fest && !bInAir && !IsSliding)
+                {
+                    if (Time.time > LastSlideEnd + SlideCD)
+                    {
+                        DoSlide();
+                    }
+                }
+
+                if (playercurrentstyle == EnumList.StyleMusic.Hell && !bInAir && canMove)
+                {
+                    if (Time.time > LastDashEnd + DashCD)
+                    {
+                        bRun = true;
+                        LastDashStart = Time.time;
+                    }
+                }
+
+            }
+
+            // ============================= //
+            // ========== UP JUMP ========== //
+            if (Input.GetButtonUp("Down"))
+            {
+                IsHoldingDown = false;
+                if (hideUnderSnow) UnhideUnderSnow();
+            }
+
+            if (Input.GetAxis("Vertical") > -0.5f && hiddedByJoystick)
+            {
+                hiddedByJoystick = false;
+                if (hideUnderSnow) UnhideUnderSnow();
+            }
+            // =============== //
 
         }
-
-        // ============================= //
-        // ========== UP JUMP ========== //
-        if (Input.GetButtonUp("Down")) {
-            IsHoldingDown = false;
-			if (hideUnderSnow) UnhideUnderSnow();
-		}
-
-		if (Input.GetAxis ("Vertical") > -0.5f && hiddedByJoystick) {
-			hiddedByJoystick = false;
-			if (hideUnderSnow) UnhideUnderSnow();
-		}
-        // =============== //
 
 
         // =========================================================================== //
         // =============================== HUD ======================================= //
         // =========================================================================== //
-		backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
+        backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
 
    
         // ================= //
@@ -553,73 +588,125 @@ public class Player : MonoBehaviour {
     // ========================================================================================================= //
     void FixedUpdate()
     {
-		float h = Input.GetAxis ("Horizontal"); 
-
-		// =============================== MainCamera ======================================= //
-		if(rigid.velocity.y < -0.1f)
-			maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine + new Vector3( 0, -5, 0), Time.deltaTime);
-		else
-			maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
-
-		if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.5f && canMove) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
+        if (!ControlPause)
         {
-
-            switch (playercurrentstyle)
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.5f && canMove) // Si le joueur se déplace latéralement : F() de déplacement différente selon theme en cours
             {
-                // =============================================================================================================
-                case EnumList.StyleMusic.Hell:
-				if (!bRun && !bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
+
+                switch (playercurrentstyle)
                 {
-					rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedHell, rigid.velocity.y); // Déplacement direct
-                        anim.SetBool("A_IsWalking", true);
-                        audioManager.PlaySoundIfNoPlaying("Hell_Step");
-                } 
-				else if(!bRun && bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedHell){
-					rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedHell * 100 * Time.deltaTime));
-				}
+                    // =============================================================================================================
+                    case EnumList.StyleMusic.Hell:
+                        if (!bRun && !bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
+                        {
+                            rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedHell, rigid.velocity.y); // Déplacement direct
+                            anim.SetBool("A_IsWalking", true);
+                            audioManager.PlaySoundIfNoPlaying("Hell_Step");
+                        }
+                        else if (!bRun && bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedHell)
+                        {
+                            rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedHell * 100 * Time.deltaTime));
+                        }
 
-                    break;
+                        break;
 
-                // =============================================================================================================
-                case EnumList.StyleMusic.Fest:
-					if (!bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
-					{
-						rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedFest, rigid.velocity.y); // Déplacement direct
-                        audioManager.PlaySoundIfNoPlaying("Fest_Step");
-                        anim.SetBool("A_IsWalking",true);
-                    } 
-					else if(bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedFest){
-						rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedFest * 100 * Time.deltaTime));
-					}
-                    break;
+                    // =============================================================================================================
+                    case EnumList.StyleMusic.Fest:
+                        if (!bInAir) // S'il n'as pas double tap et qu'il n'est pas en l'air
+                        {
+                            rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeedFest, rigid.velocity.y); // Déplacement direct
+                            audioManager.PlaySoundIfNoPlaying("Fest_Step");
+                            anim.SetBool("A_IsWalking", true);
+                        }
+                        else if (bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedFest)
+                        {
+                            rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedFest * 100 * Time.deltaTime));
+                        }
+                        break;
 
-                // =============================================================================================================
-                case EnumList.StyleMusic.Calm:
-					if (!bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm) // S'il n'as pas double tap et qu'il n'est pas en l'air
-					{
-                        audioManager.PlaySoundIfNoPlaying("Calm_Step");
-                        anim.SetBool("A_IsWalking", true);
-                        rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime)); // Déplacement avec force, lent et flottant
-					}
-					else if(bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm){
-						rigid.AddForce ((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime));
-					}
-					break;
+                    // =============================================================================================================
+                    case EnumList.StyleMusic.Calm:
+                        if (!bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm) // S'il n'as pas double tap et qu'il n'est pas en l'air
+                        {
+                            audioManager.PlaySoundIfNoPlaying("Calm_Step");
+                            anim.SetBool("A_IsWalking", true);
+                            rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime)); // Déplacement avec force, lent et flottant
+                        }
+                        else if (bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm)
+                        {
+                            rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime));
+                        }
+                        break;
+                }
             }
-        }
 
-        if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5f && !bInAir && !bRun)
-        {
-            anim.SetBool("A_IsWalking", false);
-            if (playercurrentstyle != EnumList.StyleMusic.Calm)
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5f && !bInAir && !bRun)
             {
-                rigid.velocity = new Vector2(0, rigid.velocity.y);  //On frene le personange si on navance plus sauf pour le mode calme
+                anim.SetBool("A_IsWalking", false);
+                if (playercurrentstyle != EnumList.StyleMusic.Calm)
+                {
+                    rigid.velocity = new Vector2(0, rigid.velocity.y);  //On frene le personange si on navance plus sauf pour le mode calme
+                }
             }
+
+            // sprite.transform.position += new Vector3(Input.GetAxis("Horizontal") * slowFactor * vitesse * Time.deltaTime,0,0); // Position
+            if (Input.GetAxis("Horizontal") > 0) sprite.flipX = false;
+            if (Input.GetAxis("Horizontal") < 0) sprite.flipX = true;
+        }
+		float h = Input.GetAxis ("Horizontal");
+
+        // ================================================================================== //
+        // =============================== MainCamera ======================================= //
+        //print(PlayerScreenPos);
+
+        if (!IsFalling)
+        {
+            if ((PlayerViewportPos.y > 0.4 + espacey) || (PlayerViewportPos.y < 0.4 - espacey)) outscreeny = true;
+            else outscreeny = false;
+        } else
+        {
+            if ((PlayerViewportPos.y > 0.4 + espacey) || (PlayerViewportPos.y < 0.4 - espacey)) outscreeny = true;
+            else outscreeny = false;
         }
 
-       // sprite.transform.position += new Vector3(Input.GetAxis("Horizontal") * slowFactor * vitesse * Time.deltaTime,0,0); // Position
-        if (Input.GetAxis("Horizontal") > 0) sprite.flipX = false;
-        if (Input.GetAxis("Horizontal") < 0) sprite.flipX = true;
+
+        if (PlayerScreenPos.x > 0.5 + espacex || PlayerScreenPos.x < 0.5 - espacex) outscreenx = true;
+        else outscreenx = false;
+        float translatx=0;
+        float translaty = 0;
+        if (outscreenx)
+        {
+
+           translatx = Mathf.Lerp(maincamera.transform.position.x, transform.position.x, Time.deltaTime);
+        }
+        if (outscreeny)
+        {
+             translaty = Mathf.Lerp(maincamera.transform.position.y, transform.position.y, Time.deltaTime);
+
+        }
+        
+        
+        if (outscreenx)
+        {
+            if (outscreeny)  maincamera.transform.position = new Vector3(translatx, translaty, -10);
+            else maincamera.transform.position = new Vector3(translatx, maincamera.transform.position.y, -10);
+        } else if (outscreeny) maincamera.transform.position = new Vector3(maincamera.transform.position.x, translaty, -10);
+
+
+        /*
+
+        if (rigid.velocity.y < -0.1f)
+
+                maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine + new Vector3(0, -5, 0), Time.deltaTime);
+            else
+                maincamera.transform.position = Vector3.Lerp(maincamera.transform.position, transform.position + decalCamOrigine, Time.deltaTime);
+*/
+
+        // =============================== MainCamera ======================================= //
+        // ================================================================================== //
+
+
+
     }
 
 
@@ -627,9 +714,9 @@ public class Player : MonoBehaviour {
     // ================================== Collisions & TRIGGER ================================================= //
     // ========================================================================================================= //
     // ======================================== //
-	// ============= Collision ================ //
-	// ======================================== //
-	void OnCollisionEnter2D(Collision2D collision)
+    // ============= Collision ================ //
+    // ======================================== //
+    void OnCollisionEnter2D(Collision2D collision)
 	{
 
         bVDash = false;
@@ -637,6 +724,7 @@ public class Player : MonoBehaviour {
 			bInAir = false;
             anim.SetBool("A_IsInAir", false);
             anim.SetBool("A_IsFalling", false);
+            IsFalling = false;
             rigid.gravityScale = initialgravity; // Disable Fast Fall
 
 		}
@@ -830,7 +918,7 @@ public class Player : MonoBehaviour {
     {
         // ==== Ajouter mise en scène : son, anim... ===== //
         sprite.enabled = false;
-        StartCoroutine(WaitingRespawn(1));
+        StartCoroutine(WaitingRespawn(2));
 
     }
 
@@ -911,9 +999,11 @@ public class Player : MonoBehaviour {
 
     IEnumerator WaitingRespawn(float time)
     {
+        ControlPause = true;
         transform.position = CurrentRespawnPoint;
         yield return new WaitForSeconds(time);
         rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu
+        ControlPause = false;
         sprite.enabled = true;
         
         audioManager.PlaySoundIfNoPlaying("Respawn");

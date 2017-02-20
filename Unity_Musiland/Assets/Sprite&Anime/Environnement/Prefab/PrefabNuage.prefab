@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 68509926776906278}
   - component: {fileID: 251143771303320116}
   - component: {fileID: 114777782888861668}
+  - component: {fileID: 114437704000769714}
   m_Layer: 8
   m_Name: PrefabNuage
   m_TagString: Sol
@@ -38,9 +39,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1385980236338528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.1, y: -3.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -45.28176, y: 10.599998, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -185,10 +186,11 @@ EdgeCollider2D:
   m_UsedByEffector: 1
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -4.723312, y: -1.3411373}
-  - {x: 2.979991, y: -1.3458036}
-  - {x: 3.389507, y: -1.3321255}
-  - {x: 3.7535698, y: -1.392424}
+  - {x: -4.9213657, y: -1.5475473}
+  - {x: -4.719843, y: -1.2761574}
+  - {x: 3.00243, y: -1.3327551}
+  - {x: 3.533043, y: -1.358223}
+  - {x: 4.053688, y: -1.5490084}
   - {x: 4.00458, y: -1.5678223}
 --- !u!95 &95531172028578096
 Animator:
@@ -207,6 +209,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114437704000769714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385980236338528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HellTile: {fileID: 0}
+  FestTile: {fileID: 0}
+  CalmTile: {fileID: 21300000, guid: c814bbb6297b462458b9b0f9b78fb2f3, type: 3}
+  PhysicHell: {fileID: 0}
+  PhysicFest: {fileID: 0}
+  PhysicCalm: {fileID: 0}
+  Hell_Anim: {fileID: 0}
+  Fest_Anim: {fileID: 0}
+  Calm_Anim: {fileID: 9100000, guid: 35e3b30de34bd5b41a1ee9634b8f476f, type: 2}
+  Maincollider: {fileID: 68509926776906278}
+  currentstyle: 3
 --- !u!114 &114777782888861668
 MonoBehaviour:
   m_ObjectHideFlags: 1
