@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\LevelScript\endProto.cs" />
     <Compile Include="Assets\Scripts\MusicSwitcher.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\musicNote.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
