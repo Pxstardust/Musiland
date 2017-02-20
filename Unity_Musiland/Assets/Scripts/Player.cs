@@ -638,7 +638,13 @@ public class Player : MonoBehaviour {
                         }
                         break;
                 }
+				//Accélère en peut le joueur en mode calme afin qu'il soit moins lent à démarrer
+				if (Mathf.Abs(rigid.velocity.x) < 0.1f && playercurrentstyle == EnumList.StyleMusic.Calm) {
+					rigid.velocity = new Vector3 (Mathf.Sign(Input.GetAxis ("Horizontal")) * 2, rigid.velocity.y, 0);
+				}
             }
+
+
 
             if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.5f && !bInAir && !bRun)
             {

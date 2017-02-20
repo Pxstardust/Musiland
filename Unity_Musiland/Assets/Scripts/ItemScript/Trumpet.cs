@@ -54,7 +54,7 @@ public class Trumpet : Entity
 			if (positioncamera.x > 0 && positioncamera.x < 1 && positioncamera.y > 0 && positioncamera.y < 1) {
 				switch (ThisMusicSwitcher.currentstyle) {
 				case EnumList.StyleMusic.Hell:
-					if (!base.isfleeing && !base.isgoto) {  //Flee desactivé car on peut résoudre l'énigme d'une manière non prévue
+					if (!base.isfleeing && !base.isgoto && !stopCrowd) {  //Flee desactivé car on peut résoudre l'énigme d'une manière non prévue
 						Entity_Stop ();
 						Entity_Flee (target);
 					}
