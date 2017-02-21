@@ -9,6 +9,9 @@ public class MusicSwitcher : MonoBehaviour{
     Image ImageSRC;
     Animator anim;
 
+    [SerializeField]
+    bool IsPlayer;
+
     // ===== Les 3 sprites ===== //
     [SerializeField]
     Sprite HellTile;
@@ -77,8 +80,7 @@ public class MusicSwitcher : MonoBehaviour{
                 if (anim && Hell_Anim) // Si il y a une animation
                 {
                     anim.enabled = true;
-
-                    anim.runtimeAnimatorController = Hell_Anim;
+                    anim.runtimeAnimatorController = Hell_Anim as RuntimeAnimatorController;
                 } else if (HellTile) // Sinon si ya un sprite
                 {
                     if (anim) anim.enabled = false;
@@ -99,8 +101,9 @@ public class MusicSwitcher : MonoBehaviour{
             case EnumList.StyleMusic.Fest:
                 if (anim && Fest_Anim) // Si il y a une animation
                 {
+                   
                     anim.enabled = true;
-                    anim.runtimeAnimatorController = Fest_Anim;
+                    anim.runtimeAnimatorController = Fest_Anim as RuntimeAnimatorController;
 
                 }
                 else if (FestTile) // Sinon si ya un sprite
@@ -123,8 +126,9 @@ public class MusicSwitcher : MonoBehaviour{
             case EnumList.StyleMusic.Calm:
                 if (anim && Calm_Anim) // Si il y a une animation
                 {
+
                     anim.enabled = true;
-                    anim.runtimeAnimatorController = Calm_Anim;
+                    anim.runtimeAnimatorController = Calm_Anim as RuntimeAnimatorController;
 
                 }
                 else if (CalmTile) // Sinon si ya un sprite

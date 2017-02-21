@@ -1844,6 +1844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -3014,6 +3015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -3418,6 +3420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -3972,6 +3975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -4632,6 +4636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -5543,6 +5548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -5782,6 +5788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -6063,6 +6070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -6416,6 +6424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -8103,6 +8112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -8269,6 +8279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -9001,6 +9012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -9699,6 +9711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -10292,6 +10305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -11202,6 +11216,8 @@ Transform:
   - {fileID: 120949287}
   - {fileID: 1059289851}
   - {fileID: 1088235220}
+  - {fileID: 1295267478}
+  - {fileID: 941500146}
   m_Father: {fileID: 1805653347}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11870,6 +11886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -12208,6 +12225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -12389,6 +12407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -14247,6 +14266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -15225,6 +15245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: 1a4d6c260bf5dd4488c2c8d25fbc4303, type: 3}
   FestTile: {fileID: 21300000, guid: d7c26012748bde240a56be989a3c98ba, type: 3}
   CalmTile: {fileID: 21300000, guid: d1c0e7c9e60d3af4d831c7e31c15ad3e, type: 3}
@@ -15724,6 +15745,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec4256059797b0b44a5d967c0983a12c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &618275007
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 449196560}
+    m_Modifications:
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10.601013
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.14000702
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_RootOrder
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635310373991710, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_Name
+      value: CastleBot (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &619561068
 Prefab:
   m_ObjectHideFlags: 0
@@ -15843,6 +15918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -16241,6 +16317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -17066,6 +17143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: 2bbc8c9e8e2b7d244bf8d4e0b0d4e4c1, type: 3}
   FestTile: {fileID: 21300000, guid: 337423ea4bedc0c4aaf70aea397cd5d3, type: 3}
   CalmTile: {fileID: 21300000, guid: 46ae4590c74437844972886d73e06c0c, type: 3}
@@ -17251,6 +17329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -18326,6 +18405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -19992,6 +20072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -20109,6 +20190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -20292,6 +20374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -20741,6 +20824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -20958,6 +21042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -21075,6 +21160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -22296,6 +22382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -22755,6 +22842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -22872,6 +22960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -23112,6 +23201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -23247,7 +23337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &909019434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23396,6 +23486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -23659,6 +23750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -23979,6 +24071,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4683582357143436, guid: 0fe2c6a98d1795a48bbcafdfc7de4c35,
     type: 2}
   m_PrefabInternal: {fileID: 939748179}
+--- !u!4 &941500146 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe,
+    type: 2}
+  m_PrefabInternal: {fileID: 1541562710}
 --- !u!4 &943720162 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4958593665707726, guid: ec4256059797b0b44a5d967c0983a12c,
@@ -24779,6 +24876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -25876,6 +25974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -26345,6 +26444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -26792,6 +26892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -28039,6 +28140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -29613,6 +29715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -29843,6 +29946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -30930,6 +31034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: 327679bb3e0db4e48ad6c746e29327bc, type: 3}
   FestTile: {fileID: 21300000, guid: 526d06f1d6e675e40b132e10f52c9f31, type: 3}
   CalmTile: {fileID: 21300000, guid: bfba79e36a037bc40818387f86ca4b98, type: 3}
@@ -31172,6 +31277,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4307006246578200, guid: bfe255a6028e9544b9399057beac55e3,
     type: 2}
   m_PrefabInternal: {fileID: 1293272344}
+--- !u!4 &1295267478 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe,
+    type: 2}
+  m_PrefabInternal: {fileID: 618275007}
 --- !u!4 &1296203569 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4056054920542490, guid: 7a41ede2700905e48980ab5eee663008,
@@ -31393,6 +31503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -31712,6 +31823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: 327679bb3e0db4e48ad6c746e29327bc, type: 3}
   FestTile: {fileID: 21300000, guid: 526d06f1d6e675e40b132e10f52c9f31, type: 3}
   CalmTile: {fileID: 21300000, guid: bfba79e36a037bc40818387f86ca4b98, type: 3}
@@ -31815,6 +31927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -32704,6 +32817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -33378,6 +33492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -34644,6 +34759,16 @@ Prefab:
       propertyPath: m_CullingMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114056354944170284, guid: e305c2c90e580a74cbce669036b69a3a,
+        type: 2}
+      propertyPath: IsPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95399844059610456, guid: e305c2c90e580a74cbce669036b69a3a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e305c2c90e580a74cbce669036b69a3a, type: 2}
   m_IsPrefabParent: 0
@@ -35329,6 +35454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -36211,6 +36337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -36382,6 +36509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -37774,6 +37902,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a41ede2700905e48980ab5eee663008, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1541562710
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 449196560}
+    m_Modifications:
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.19900513
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.1000061
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_RootOrder
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635310373991710, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_Name
+      value: CastleBot (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947526876794774, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 16367a7a89d18c84686f92ab0a773cfe, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1542021636
 Prefab:
   m_ObjectHideFlags: 0
@@ -38169,6 +38351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -38281,6 +38464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -38612,6 +38796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -39161,6 +39346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -39273,6 +39459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -39459,6 +39646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -39824,6 +40012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -40617,6 +40806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -40862,6 +41052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -41543,6 +41734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -42666,6 +42858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -43623,6 +43816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -43794,6 +43988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -44201,6 +44396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -45073,6 +45269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -45693,6 +45890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -45850,6 +46048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: 327679bb3e0db4e48ad6c746e29327bc, type: 3}
   FestTile: {fileID: 21300000, guid: 526d06f1d6e675e40b132e10f52c9f31, type: 3}
   CalmTile: {fileID: 21300000, guid: bfba79e36a037bc40818387f86ca4b98, type: 3}
@@ -46181,6 +46380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -46757,6 +46957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -47563,6 +47764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -47729,6 +47931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -49146,6 +49349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -49569,6 +49773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -49691,6 +49896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -50176,6 +50382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -50823,6 +51030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -50935,6 +51143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -51894,6 +52103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}
@@ -52060,6 +52270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: d34220a6bde71ad4b9d5c05daabebd41, type: 3}
   FestTile: {fileID: 21300000, guid: 26338c50dd0e4aa44a57d7c3078ef3f7, type: 3}
   CalmTile: {fileID: 21300000, guid: 8c8f1d80d51df7a4f96218ea603e08ea, type: 3}

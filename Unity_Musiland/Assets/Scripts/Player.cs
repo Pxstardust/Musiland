@@ -165,13 +165,15 @@ public class Player : MonoBehaviour {
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
         // == AUDIO == //
 
+        //animation["Hell_Dash"].speed = 0.5f; // "f" is for C#
+
     }
 
     // ========================================================================================================= //
     // =========================================== UPDATE ====================================================== //
     // ========================================================================================================= //
     void Update () {
-
+        if (anim == null) anim = GetComponent<Animator>();
         PlayerScreenPos = maincamera.WorldToScreenPoint(this.transform.position);
         PlayerViewportPos = maincamera.WorldToViewportPoint(this.transform.position);
         
@@ -199,10 +201,12 @@ public class Player : MonoBehaviour {
                     {
                         ChangeHitbox(false);
                         IsSliding = false;
+                        anim.SetBool("A_IsSlide", false);
                     }
                     else
                     {
                         DoSlide();
+                        anim.SetBool("A_IsSlide", true);
                     }
 
                 }
@@ -213,10 +217,12 @@ public class Player : MonoBehaviour {
                     {
                         ChangeHitbox(false);
                         IsSliding = false;
+                        anim.SetBool("A_IsSlide", false);
                     }
                     else
                     {
                         DoSlide();
+                        anim.SetBool("A_IsSlide", true);
                     }
                 }
 
@@ -224,9 +230,7 @@ public class Player : MonoBehaviour {
 
             // ========================================= //
             // =============== DASHES ================== //
-            if (doubletapCDDash > 0) { doubletapCDDash -= Time.deltaTime; }
-            if (doubletapCDVDash > 0) { doubletapCDVDash -= Time.deltaTime; }
-            if (bRun && Time.time > LastDashStart + DureeDash) { bRun = false; rigid.velocity = new Vector2(0, 0); } // Si on est en dash horizontal dpeuis un certain temps : stop
+            if (bRun && Time.time > LastDashStart + DureeDash) { bRun = false; rigid.velocity = new Vector2(0, 0); anim.SetBool("A_IsDash", false); } // Si on est en dash horizontal dpeuis un certain temps : stop
             if (bVDash && Time.time > LastVDashStart + DureeVDash) { bVDash = false; } // Si on est en V Dash depuis un certain temps :stop
             if (bRun)
             {
@@ -329,7 +333,11 @@ public class Player : MonoBehaviour {
                 {
                     // Son slide frottement contre mur
                     isWallSliding = true;
+                    anim.SetBool("A_IsWallSlide", true);
                     rigid.velocity = new Vector2(0, WallSlideSpeed);
+                } else
+                {
+                    anim.SetBool("A_IsWallSlide", false);
                 }
             }
 
@@ -533,18 +541,21 @@ public class Player : MonoBehaviour {
                     if (Time.time > LastSlideEnd + SlideCD)
                     {
                         DoSlide();
+                        anim.SetBool("A_IsSlide", true);
                     }
                 }
-
+                
+                // ----- (H) DASH -----
                 if (playercurrentstyle == EnumList.StyleMusic.Hell && !bInAir && canMove)
                 {
                     if (Time.time > LastDashEnd + DashCD)
                     {
+                        anim.SetBool("A_IsDash", true);
                         bRun = true;
                         LastDashStart = Time.time;
                     }
                 }
-
+               
             }
 
             // ============================= //
@@ -958,6 +969,7 @@ public class Player : MonoBehaviour {
 
     public void DoSlide()
     {
+  
         IsSliding = true;
         if (sprite.flipX) SlideDestination = transform.position.x - SlideLength;
         else SlideDestination = transform.position.x + SlideLength;
