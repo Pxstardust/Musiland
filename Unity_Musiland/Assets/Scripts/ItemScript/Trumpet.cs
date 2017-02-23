@@ -117,7 +117,10 @@ public class Trumpet : Entity
 			fleeCloud = true;
 			fleeingPoint = transform.position + new Vector3 (-5, 0, 0);
 		}
+
 	}
+
+
 
 	IEnumerator CalmModeFocus(){
 		yield return new WaitForSeconds (2);

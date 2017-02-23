@@ -9,6 +9,7 @@ TagManager:
   - Slow
   - Goal
   - GM
+  - SoundMaker
   layers:
   - Default
   - TransparentFX

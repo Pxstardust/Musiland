@@ -20,13 +20,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4142675054759044}
   - component: {fileID: 212307794614621938}
-  - component: {fileID: 50083829306507314}
-  - component: {fileID: 58231811671283320}
   - component: {fileID: 114267283430892698}
   - component: {fileID: 114827500136649536}
+  - component: {fileID: 50233448785278846}
+  - component: {fileID: 61730790321796828}
+  - component: {fileID: 58869029156233838}
   m_Layer: 0
   m_Name: Klaxon
-  m_TagString: Untagged
+  m_TagString: SoundMaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,14 +38,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1628982579306112}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 135.3, y: 4.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: -13.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50083829306507314
+--- !u!50 &50233448785278846
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -63,9 +64,23 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &58231811671283320
+  m_Constraints: 4
+--- !u!58 &58869029156233838
 CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628982579306112}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 20
+--- !u!61 &61730790321796828
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,7 +92,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Size: {x: 1.2, y: 1.16}
 --- !u!114 &114267283430892698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,10 +116,15 @@ MonoBehaviour:
   isstaying: 0
   TimeAllowedToStayAway: 0
   newfollowradius: 5
-  newspeed: 5
+  newspeed: 8
   newrotaspeed: 0
   target: {fileID: 0}
   maincamera: {fileID: 0}
+  scarePoint1: {x: 375, y: 3.5, z: 0}
+  scarePoint2: {x: 390, y: 3.5, z: 0}
+  stopCrowd: 0
+  scared: 0
+  fleeCloud: 0
 --- !u!114 &114827500136649536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 21300000, guid: a45b137125a0ddb4dab6a4de389f8b49, type: 3}
   FestTile: {fileID: 21300000, guid: a45b137125a0ddb4dab6a4de389f8b49, type: 3}
   CalmTile: {fileID: 21300000, guid: a45b137125a0ddb4dab6a4de389f8b49, type: 3}
@@ -125,7 +146,7 @@ MonoBehaviour:
   Hell_Anim: {fileID: 0}
   Fest_Anim: {fileID: 0}
   Calm_Anim: {fileID: 0}
-  Maincollider: {fileID: 58231811671283320}
+  Maincollider: {fileID: 61730790321796828}
   currentstyle: 1
 --- !u!212 &212307794614621938
 SpriteRenderer:

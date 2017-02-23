@@ -19,6 +19,7 @@ public class Sound
     public float randomPitch = 0.1f;
 
     private AudioSource source;
+    float currenttime = 0f;
 
     public void SetSource(AudioSource _source)
     {
@@ -34,6 +35,14 @@ public class Sound
         source.Play();
     }
 
+    public void PlayAtTime(float _time)
+    {
+        source.time = _time;
+        source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
+        source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomPitch / 2f));
+        source.Play();
+    }
+
     public void Stop()
     {
         source.Stop();
@@ -43,6 +52,16 @@ public class Sound
     {
         if (source.isPlaying) return true;
         else return false;
+    }
+
+    public float GetTime()
+    {
+        return source.time;
+    }
+
+    public void PrintTime()
+    {
+        Debug.Log(source.time);
     }
 }
 
@@ -183,6 +202,32 @@ public class AudioManager : MonoBehaviour {
             }
         }
         return false;
+    }
+
+    public float GetSoundTime(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name)
+            {
+                return sounds[i].GetTime();
+                
+            }
+        }
+        return 0;
+
+    }
+
+    public void PlaySoundAtTime (string _name, float _time)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name)
+            {
+                sounds[i].PlayAtTime(_time);
+
+            }
+        }
     }
 
 }
