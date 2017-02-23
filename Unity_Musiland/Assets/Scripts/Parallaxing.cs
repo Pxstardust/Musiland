@@ -40,7 +40,7 @@ public class Parallaxing : MonoBehaviour {
             float backgroundTargetPosX = backgrounds[i].position.x + parallax  ;
             //float backgroundTargetPosY = backgrounds[i].position.y - parallax;
             Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, backgrounds[i].position.y, backgrounds[i].position.z);
-            print(parallax);
+            
             // fade entre pos et target pos
             backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, backgroundTargetPos, smoothing * Time.deltaTime);
         }

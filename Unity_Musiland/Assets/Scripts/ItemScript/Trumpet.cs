@@ -16,9 +16,8 @@ public class Trumpet : Entity
     GameObject target;
     [SerializeField]
     Camera maincamera;
-	[SerializeField]
+
 	Vector3 scarePoint1;
-	[SerializeField]
 	Vector3 scarePoint2;
 
     MusicSwitcher ThisMusicSwitcher;
@@ -40,7 +39,7 @@ public class Trumpet : Entity
         // Entity_Stay(Position1);
         //followradius = newfollowradius;
 		rigid2D = gameObject.GetComponent<Rigidbody2D>();
-		rigid2D.constraints = RigidbodyConstraints2D.FreezeAll;
+		//rigid2D.constraints = RigidbodyConstraints2D.FreezeAll;
 
     }
 
@@ -108,14 +107,14 @@ public class Trumpet : Entity
 		}
 
 		if (collision.gameObject.name == "ScareCrowd") {
-			scared = true;
-
-			Destroy (collision.gameObject);
+            scarePoint1 = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+            scarePoint2 = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+            Destroy (collision.gameObject);
 		}
 
 		if (collision.gameObject.name == "YellowCloud1" && ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Hell) {
-			fleeCloud = true;
-			fleeingPoint = transform.position + new Vector3 (-5, 0, 0);
+
+
 		}
 
 	}

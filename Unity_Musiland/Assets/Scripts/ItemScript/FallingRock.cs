@@ -15,6 +15,9 @@ public class FallingRock : Entity {
 	[SerializeField]
 	GameObject crowdCheck;
 
+    [SerializeField]
+    Collider2D collider;
+
 
 	MusicSwitcher ThisMusicSwitcher;
 	bool fall = false;
@@ -35,15 +38,24 @@ public class FallingRock : Entity {
 	protected override void Update()
 	{
 
-		Vector3 positioncamera = maincamera.WorldToViewportPoint(this.transform.position);
+	
 		base.Update();
-		if (positioncamera.x > 0 && positioncamera.x < 1 && positioncamera.y > -1 && positioncamera.y < 0.1f)
-		{
-			if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Hell) {
-				StartCoroutine (checkHellDuration ());
-			}
-		}
 	}
+
+
+   void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (collision.gameObject.transform.position.y > transform.position.y)
+            {
+                Entity_GoTo(fallPoint, 0);
+                Destroy(crowdCheck.gameObject);
+                trumpet.stopCrowd = false;
+            }
+
+        }
+    }
 
 	IEnumerator checkHellDuration(){
 		

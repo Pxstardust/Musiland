@@ -9,12 +9,16 @@ public class SpecificDestruct : MonoBehaviour {
 	EnumList.StyleMusic styleNeeded;
 	[SerializeField]
 	GameObject joueur;
+    float radiusdedestruction;
+    [SerializeField]
+    CircleCollider2D MainCollider;
 
 	MusicSwitcher ThisMusicSwitcher;
 
 	// Use this for initialization
 	void Start () {
 		ThisMusicSwitcher = joueur.GetComponent<MusicSwitcher> ();
+        radiusdedestruction = MainCollider.radius;
 	}
 	
 	// Update is called once per frame
@@ -26,9 +30,41 @@ public class SpecificDestruct : MonoBehaviour {
     {
         if (collision.gameObject == Tueur)
         {
-			if (styleNeeded == ThisMusicSwitcher.currentstyle) {
-				Destroy(gameObject);
-			}
+            print("he"+collision.gameObject.transform.position);
+            print("cloud"+transform.position);
+            if ( (collision.gameObject.transform.position.x > transform.position.x-9) &&
+                (collision.gameObject.transform.position.x < transform.position.x+9) &&
+                (collision.gameObject.transform.position.y > transform.position.y-9) &&
+                (collision.gameObject.transform.position.y < transform.position.y + 9))
+            {
+                if (styleNeeded == ThisMusicSwitcher.currentstyle)
+                {
+                    Destroy(gameObject);
+                }
+            }
+
+            // Ajouter animation
+            // Ajouter son
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject == Tueur)
+        {
+            print("he" + collision.gameObject.transform.position);
+            print("cloud" + transform.position);
+            if ((collision.gameObject.transform.position.x > transform.position.x - radiusdedestruction) &&
+                (collision.gameObject.transform.position.x < transform.position.x + radiusdedestruction) &&
+                (collision.gameObject.transform.position.y > transform.position.y - radiusdedestruction) &&
+                (collision.gameObject.transform.position.y < transform.position.y + radiusdedestruction))
+            {
+                if (styleNeeded == ThisMusicSwitcher.currentstyle)
+                {
+                    Destroy(gameObject);
+                }
+            }
+
             // Ajouter animation
             // Ajouter son
         }

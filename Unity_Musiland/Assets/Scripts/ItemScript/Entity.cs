@@ -9,6 +9,8 @@ public class Entity : MonoBehaviour {
     float radius;
     public float follow_porteemax;
     public float follow_porteemin;
+    [SerializeField]
+    Collider2D Maincollider;
 
     // == GoTo
     public float speed;
@@ -26,6 +28,7 @@ public class Entity : MonoBehaviour {
     bool isrotating = false;
     float PatrolRota1;
 
+
     // == Follow & Fleeing
     public bool isfollowing=false;
     GameObject CurrentFollowTarget;
@@ -38,6 +41,7 @@ public class Entity : MonoBehaviour {
     public bool isstaying;
     public float TimeAllowedToStayAway;
     float Timeaway;
+    public HitDirection hitside;
 
     // Use this for initialization
     void Start()
@@ -54,9 +58,15 @@ public class Entity : MonoBehaviour {
         float step = speed * Time.deltaTime;
         float rotastep = rotaspeed * Time.deltaTime;
 
-        // ========== Si mode one way ==========
-        if (isgoto)
+            // ========== Si mode one way ==========
+            if (isgoto)
         {
+            if ( (CurrentDestination.x > transform.position.x && hitside == HitDirection.Right) ||
+                (CurrentDestination.x < transform.position.x && hitside == HitDirection.Left)) {
+                isgoto = false;
+                isfleeing = false;
+                isfollowing = false;
+            }
             transform.position = Vector3.MoveTowards(transform.position, CurrentDestination, step);
             if (transform.position == CurrentDestination)
             {
@@ -120,9 +130,20 @@ public class Entity : MonoBehaviour {
         {
             if (Vector3.Distance(transform.position, CurrentFollowTarget.transform.position) < follow_porteemax)
             {
+
                 float dirx = transform.position.x - CurrentFollowTarget.transform.position.x;
-                Vector3 dir = new Vector3(dirx, 0,0);
-                transform.Translate(dir * speed * Time.deltaTime);
+                dirx = dirx / (Mathf.Abs(dirx));
+                Vector3 dir = new Vector3(transform.position.x + dirx, transform.position.y, transform.position.z);
+                if ((dir.x > transform.position.x && hitside != HitDirection.Right) ||
+                    (dir.x < transform.position.x && hitside != HitDirection.Left))
+                {
+
+                    //print(dirx);
+                    //Vector3 dir = new Vector3(dirx, 0, 0);
+                    Entity_GoTo(new Vector3(transform.position.x+dirx, transform.position.y, transform.position.z), transform.rotation.z);
+                    
+                } else {  }
+               
             }
         }
 
@@ -204,6 +225,64 @@ public class Entity : MonoBehaviour {
     {
         ispatrol = false; isrotating = false; isgoto = false; isfollowing = false;
         isfleeing = false; isstaying = false;
+    }
+
+
+    // ================================ //
+    // =========== COLLISION ========== //
+
+
+    // =========================================
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (ReturnDirection(collision.gameObject, this.gameObject) == HitDirection.Left || ReturnDirection(collision.gameObject, this.gameObject) == HitDirection.Right)
+        {
+            hitside = ReturnDirection(collision.gameObject, this.gameObject);
+            if (isgoto)
+            {
+
+            }
+        }
+    }
+    // =========================================
+    void OnCollisionStay2D(Collision2D collision)
+    {
+    }
+    // =========================================
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (ReturnDirection(collision.gameObject, this.gameObject) == HitDirection.Left || ReturnDirection(collision.gameObject, this.gameObject) == HitDirection.Right)
+        {
+            hitside = HitDirection.None;
+        }
+    }
+
+    // ========== COLLISION ============ //
+    public enum HitDirection { None, Top, Bottom, Left, Right }
+    private HitDirection ReturnDirection(GameObject Object, GameObject ObjectHit)
+    {
+
+        HitDirection hitDirection = HitDirection.None;
+        RaycastHit MyRayHit;
+        Vector3 direction = (Object.transform.position - ObjectHit.transform.position).normalized;
+        Ray MyRay = new Ray(ObjectHit.transform.position, direction);
+
+        if (Physics.Raycast(MyRay, out MyRayHit))
+        {
+
+            if (MyRayHit.collider != null)
+            {
+
+                Vector3 MyNormal = MyRayHit.normal;
+                MyNormal = MyRayHit.transform.TransformDirection(MyNormal);
+
+                if (MyNormal == MyRayHit.transform.up) { hitDirection = HitDirection.Top; }
+                if (MyNormal == -MyRayHit.transform.up) { hitDirection = HitDirection.Bottom; }
+                if (MyNormal == MyRayHit.transform.right) { hitDirection = HitDirection.Right; }
+                if (MyNormal == -MyRayHit.transform.right) { hitDirection = HitDirection.Left; }
+            }
+        }
+        return hitDirection;
     }
 
 }
