@@ -78,7 +78,7 @@ public class Player : MonoBehaviour {
 	float jumpForceHell = 600;
 	float jumpForceFest = 650;
 	float jumpForceCalm = 700;
-	float wallJumpForceFest = 550;
+	float wallJumpForceFest = 600;
 
 
     // === Keys === //
@@ -1046,6 +1046,8 @@ public class Player : MonoBehaviour {
 		canMove = true;
 
 	}
+
+	//public bool 
 
     public bool TestColliderTop()
     {
