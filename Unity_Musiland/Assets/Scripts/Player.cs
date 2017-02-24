@@ -67,7 +67,7 @@ public class Player : MonoBehaviour {
 
     float maxSpeedCalm = 5; // Vitesse max Calm
     float maxSpeedFest = 6; // Vitesse max Fest
-	float maxSpeedHell = 7; // Vitesse max Hell
+	float maxSpeedHell = 8; // Vitesse max Hell
 
     float gravityScaleCalm = 1.2f;
     float gravityScaleFest = 1.5f;
@@ -107,6 +107,7 @@ public class Player : MonoBehaviour {
     float DashCD = 2; // CD entre deux dash
     float LastDashEnd, LastDashStart; // Moments clé du dernier dash
     float DureeDash = 0.15f; // Durée du dash
+	bool airDash = false;
     // -- V Dash -- //
     float doubletapCDVDash = 0.5f; // Durée max entre deux tap pour un double tap
     float VerticalTapCount = 0; // Nb de tap pour le double tap
@@ -174,6 +175,18 @@ public class Player : MonoBehaviour {
     // =========================================== UPDATE ====================================================== //
     // ========================================================================================================= //
     void Update () {
+
+		// ================================================ //
+		// ===============Controle de bInAir=============== //
+		if (!Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("ground")))
+			bInAir = true;
+		else {
+			bInAir = false;
+			airDash = false;
+		}
+			
+
+
         if (anim == null) anim = GetComponent<Animator>();
         PlayerScreenPos = maincamera.WorldToScreenPoint(this.transform.position);
         PlayerViewportPos = maincamera.WorldToViewportPoint(this.transform.position);
@@ -360,7 +373,7 @@ public class Player : MonoBehaviour {
 
             if (Input.GetButtonDown("ChangeMusicPlus") && canMove)
             {
-                StartCoroutine(Freeze());
+				StartCoroutine(Freeze(rigid.velocity));
                 ChangeMusictoNext();
                 HUDManager.ChangeAllTiles();
                 ApplyStyleCarac(playercurrentstyle);
@@ -370,7 +383,7 @@ public class Player : MonoBehaviour {
             // ===== PREVIOUS MUSIC ===== //
             if (Input.GetButtonDown("ChangeMusicMinus") && canMove)
             {
-                StartCoroutine(Freeze());
+				StartCoroutine(Freeze(rigid.velocity));
                 ChangeMusictoPrevious();
                 HUDManager.ChangeAllTiles();
                 ApplyStyleCarac(playercurrentstyle);
@@ -413,10 +426,8 @@ public class Player : MonoBehaviour {
 
                     //} else if 
                     if (Time.time > timelastjump + mintimejump)
-                    { // Jump
-                      //bInAir = true; === Problème with colliders
+					{ // Jump !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))
                         IsVDashDone = false;
-                        StartCoroutine(setJump());
                         switch (playercurrentstyle)
                         {
                             case EnumList.StyleMusic.Calm:
@@ -514,22 +525,27 @@ public class Player : MonoBehaviour {
             // =============== FIN JUMP  ========== //
             // ==================================== //
 
+			// ========================== //
+			// ========== Down ========== //
+			if ((Input.GetAxis ("Vertical") < -0.5f || Input.GetButton ("Down")) && canMove && !bVDash) {
+				IsHoldingDown = true; // HOlding down
+
+				// ----- FAST FALL -----
+				if (bInAir)
+				{
+					anim.SetBool("A_IsFalling", true);
+					rigid.gravityScale = 3f; // FAST FALL
+				}
+			}
+
             // ========================== //
-            // ========== Down ========== //
+            // ========== Action ========== //
+
             //if ((Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) && canMove && !bVDash)
 			if(Input.GetButtonDown("Action") && canMove && !bVDash)
             {
 
-                IsHoldingDown = true; // HOlding down
-
-                // ----- FAST FALL -----
-                if (bInAir)
-                {
-                    anim.SetBool("A_IsFalling", true);
-                    rigid.gravityScale = 3f; // FAST FALL
-                }
-
-                // ----- (C) SE CACHER SOUS LA NEIGE ------
+               	// ----- (C) SE CACHER SOUS LA NEIGE ------
                 if (playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir)
                 {
                     HideUnderSnow();
@@ -540,7 +556,7 @@ public class Player : MonoBehaviour {
                 // ----- (F) SLIDE -----
                 if (playercurrentstyle == EnumList.StyleMusic.Fest && !bInAir && !IsSliding)
                 {
-                    if (Time.time > LastSlideEnd + SlideCD)
+                    //if (Time.time > LastSlideEnd + SlideCD)
                     {
                         DoSlide();
                         anim.SetBool("A_IsSlide", true);
@@ -550,12 +566,20 @@ public class Player : MonoBehaviour {
                 // ----- (H) DASH -----
                 if (playercurrentstyle == EnumList.StyleMusic.Hell && !bRun && canMove)
                 {
-                    if (Time.time > LastDashEnd + DashCD)
-                    {
-                        anim.SetBool("A_IsDash", true);
-                        bRun = true;
-                        LastDashStart = Time.time;
-                    }
+                    //if (Time.time > LastDashEnd + DashCD)
+					if (bInAir) {
+						if(!airDash){
+							anim.SetBool ("A_IsDash", true);
+							bRun = true;
+							LastDashStart = Time.time;
+							airDash = true;
+						}
+
+					} else {
+						anim.SetBool ("A_IsDash", true);
+						bRun = true;
+						LastDashStart = Time.time;
+					}
                 }
                
             }
@@ -741,7 +765,6 @@ public class Player : MonoBehaviour {
 
         bVDash = false;
 		if ((collision.gameObject.tag == "Sol") && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))) {
-			bInAir = false;
             anim.SetBool("A_IsInAir", false);
             anim.SetBool("A_IsFalling", false);
             IsFalling = false;
@@ -755,11 +778,10 @@ public class Player : MonoBehaviour {
     void OnCollisionStay2D(Collision2D collision) // Empêche de ne plus pouvoir jump si atterrissage alors que bouton Jump maintenu
     {
 		//=== Cela provoque un bug avec le jump (collision stay better than condition)
-        //if ((collision.gameObject.tag == "Sol")) { bInAir = false; anim.SetBool("isjump", false); }
+        //if ((collision.gameObject.tag == "Sol")) { anim.SetBool("isjump", false); }
 		if (collision.gameObject.tag == "Damage")// && (Time.time > lastDamage + recoveryTime))
         {
             /*hp--;
-            bInAir = true;
             rigid.AddForce(new Vector3(0, 200, 0));
             lastDamage = Time.time;*/
 			PlayerRespawn ();
@@ -971,13 +993,6 @@ public class Player : MonoBehaviour {
         transform.position = destination;
     }
 
-    // =============== //
-    // ===== ??? ===== //
-	IEnumerator setJump(){
-		yield return new WaitForSeconds (0.1f);
-		bInAir = true;
-	}
-
     // ================ //
     // ===== DASH ===== //
 	IEnumerator Dash()
@@ -1020,12 +1035,16 @@ public class Player : MonoBehaviour {
     }
 
 	// ==== Freeze du joueur lors des transitions musicales ==== //
-	IEnumerator Freeze(){
+	IEnumerator Freeze(Vector2 velocity){
 		rigid.constraints = RigidbodyConstraints2D.FreezeAll;
 		canMove = false;
 		yield return new WaitForSeconds (0.5f);
 		rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+		rigid.velocity = velocity;
+		if(bInAir)
+			yield return new WaitForSeconds (0.5f);
 		canMove = true;
+
 	}
 
     public bool TestColliderTop()
