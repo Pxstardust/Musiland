@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class Sound
@@ -7,13 +8,14 @@ public class Sound
     public bool loop;
     public string name;
     public AudioClip clip;
+    public int groupid;
 
-    [Range(0f,10f)]
-    public float volume=0.7f;
+    [Range(0f, 10f)]
+    public float volume = 0.7f;
     [Range(0.5f, 1.5f)]
-    public float pitch=1f;
+    public float pitch = 1f;
 
-    [Range(0f,0.5f)]
+    [Range(0f, 0.5f)]
     public float randomVolume = 0.1f;
     [Range(0f, 0.5f)]
     public float randomPitch = 0.1f;
@@ -30,7 +32,7 @@ public class Sound
 
     public void Play()
     {
-        source.volume = volume*(1+Random.Range(-randomVolume/2f, randomVolume/2f));
+        source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
         source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomPitch / 2f));
         source.Play();
     }
@@ -69,7 +71,8 @@ public class Sound
 // ======================================= //
 // ======================================= //
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour
+{
 
     public static AudioManager instance;
 
@@ -86,13 +89,14 @@ public class AudioManager : MonoBehaviour {
                 Destroy(gameObject);
             }
             Debug.LogError("Il existe plus d'un AudioManager");
-        } else {
+        }
+        else {
             instance = this;
             DontDestroyOnLoad(this);
         }
         instance = this;
 
-    
+
     }
 
     // ======================================= //
@@ -100,7 +104,7 @@ public class AudioManager : MonoBehaviour {
     {
         for (int i = 0; i < sounds.Length; i++)
         {
-            GameObject _go = new GameObject("Sound_"+i+"_"+sounds[i].name);
+            GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
             _go.transform.SetParent(this.transform);
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
@@ -121,7 +125,7 @@ public class AudioManager : MonoBehaviour {
     // ========== JOUE UN SON ========== //
     public void PlaySound(string _name)
     {
-        for (int i=0; i<sounds.Length; i++)
+        for (int i = 0; i < sounds.Length; i++)
         {
             if (sounds[i].name == _name)
             {
@@ -130,7 +134,7 @@ public class AudioManager : MonoBehaviour {
             }
         }
         // Pas de son avec ce nom
-        Debug.LogWarning("AudioManager : Son manquant ou non incorrect :"+_name);
+        Debug.LogWarning("AudioManager : Son manquant ou non incorrect :" + _name);
     }
 
     // ===================================================== //
@@ -146,7 +150,7 @@ public class AudioManager : MonoBehaviour {
                     sounds[i].Play();
                     return;
                 }
-              
+
             }
         }
     }
@@ -188,7 +192,7 @@ public class AudioManager : MonoBehaviour {
 
     // ======================================== //
     // ========== CHECKS SI SON JOUE ========== //
-    public bool IsSoundPlaying (string _name)
+    public bool IsSoundPlaying(string _name)
     {
         for (int i = 0; i < sounds.Length; i++)
         {
@@ -211,14 +215,14 @@ public class AudioManager : MonoBehaviour {
             if (sounds[i].name == _name)
             {
                 return sounds[i].GetTime();
-                
+
             }
         }
         return 0;
 
     }
 
-    public void PlaySoundAtTime (string _name, float _time)
+    public void PlaySoundAtTime(string _name, float _time)
     {
         for (int i = 0; i < sounds.Length; i++)
         {
@@ -227,6 +231,23 @@ public class AudioManager : MonoBehaviour {
                 sounds[i].PlayAtTime(_time);
 
             }
+        }
+    }
+
+    public void PlayRandomFromArray(int _idarray)
+    {
+        List<Sound> arraysound = new List<Sound>();
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].groupid == _idarray)
+            {
+                arraysound.Add(sounds[i]);
+            }
+        }
+
+        if (arraysound.Count > 0)
+        {
+            arraysound[Random.Range(0, arraysound.Count)].Play(); ;
         }
     }
 

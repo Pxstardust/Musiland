@@ -187,11 +187,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
   - {x: -4.9213657, y: -1.5475473}
-  - {x: -4.719843, y: -1.2761574}
+  - {x: -4.3538437, y: -1.2753439}
   - {x: 3.00243, y: -1.3327551}
-  - {x: 3.533043, y: -1.358223}
-  - {x: 4.053688, y: -1.5490084}
-  - {x: 4.00458, y: -1.5678223}
+  - {x: 3.449379, y: -1.400054}
+  - {x: 3.7191696, y: -1.5651121}
+  - {x: 4.0359535, y: -1.7560625}
 --- !u!95 &95531172028578096
 Animator:
   serializedVersion: 3
@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 0}
   FestTile: {fileID: 0}
   CalmTile: {fileID: 21300000, guid: c814bbb6297b462458b9b0f9b78fb2f3, type: 3}
@@ -242,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   HellTile: {fileID: 0}
   FestTile: {fileID: 0}
   CalmTile: {fileID: 0}

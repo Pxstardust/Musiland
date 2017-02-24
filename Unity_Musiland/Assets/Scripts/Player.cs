@@ -64,7 +64,7 @@ public class Player : MonoBehaviour {
     float changeTime = 1; // Cooldown pour le changement de style
     public bool istransiting = false;
     float transitime = 0;
-
+    public bool canSwitch = true;
     float maxSpeedCalm = 5; // Vitesse max Calm
     float maxSpeedFest = 6; // Vitesse max Fest
 	float maxSpeedHell = 8; // Vitesse max Hell
@@ -160,7 +160,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		//rigid.transform.position = new Vector2 (160,4); // Déplacement initial
+		rigid.transform.position = new Vector2 (400,4); // Déplacement initial
 
         // == AUDIO == //
         audioManager = AudioManager.instance;
@@ -176,10 +176,15 @@ public class Player : MonoBehaviour {
     // ========================================================================================================= //
     void Update () {
 
-		// ================================================ //
-		// ===============Controle de bInAir=============== //
-		if (!Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("ground")))
-			bInAir = true;
+        // ================================================ //
+        // ===============Controle de bInAir=============== //
+        
+        if (!Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
+        {
+            bInAir = true;
+            anim.SetBool("A_IsInAir", true);
+        }
+
 		else {
 			bInAir = false;
 			airDash = false;
@@ -216,6 +221,7 @@ public class Player : MonoBehaviour {
                         ChangeHitbox(false);
                         IsSliding = false;
                         anim.SetBool("A_IsSlide", false);
+                        canSwitch = true;
                     }
                     else
                     {
@@ -232,6 +238,7 @@ public class Player : MonoBehaviour {
                         ChangeHitbox(false);
                         IsSliding = false;
                         anim.SetBool("A_IsSlide", false);
+                        canSwitch = true;
                     }
                     else
                     {
@@ -301,7 +308,7 @@ public class Player : MonoBehaviour {
                     else { bVDash = false; }
 
                 }
-            }
+            } 
 
 
             if (bVDash)  // ====== V DASH ====== //
@@ -356,9 +363,10 @@ public class Player : MonoBehaviour {
             }
 
             // == DEBUG == //
-            if (Input.GetButton("DebugKey"))
+            if (Input.GetButtonDown("DebugKey"))
             {
-                audioManager.GetSoundTime("Hell_BGM");
+               // audioManager.PlayRandomFromArray(1);
+               // audioManager.GetSoundTime("Hell_BGM");
             }
             // == DEBUG == //
 
@@ -371,8 +379,9 @@ public class Player : MonoBehaviour {
             // === NOTE : PAS DE PRINT ICI, LIMITER CE QU'ON MET POUR EVITER LE FREEZE === //
             // =========================================================================== //
 
-            if (Input.GetButtonDown("ChangeMusicPlus") && canMove)
+            if (Input.GetButtonDown("ChangeMusicPlus") && canMove && canSwitch)
             {
+         
 				StartCoroutine(Freeze(rigid.velocity));
                 ChangeMusictoNext();
                 HUDManager.ChangeAllTiles();
@@ -381,7 +390,7 @@ public class Player : MonoBehaviour {
             }
 
             // ===== PREVIOUS MUSIC ===== //
-            if (Input.GetButtonDown("ChangeMusicMinus") && canMove)
+            if (Input.GetButtonDown("ChangeMusicMinus") && canMove && canSwitch)
             {
 				StartCoroutine(Freeze(rigid.velocity));
                 ChangeMusictoPrevious();
@@ -1008,7 +1017,7 @@ public class Player : MonoBehaviour {
 
     public void DoSlide()
     {
-  
+        canSwitch = false;
         IsSliding = true;
         if (sprite.flipX) SlideDestination = transform.position.x - SlideLength;
         else SlideDestination = transform.position.x + SlideLength;

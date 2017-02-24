@@ -30,8 +30,7 @@ public class SpecificDestruct : MonoBehaviour {
     {
         if (collision.gameObject == Tueur)
         {
-            print("he"+collision.gameObject.transform.position);
-            print("cloud"+transform.position);
+
             if ( (collision.gameObject.transform.position.x > transform.position.x-9) &&
                 (collision.gameObject.transform.position.x < transform.position.x+9) &&
                 (collision.gameObject.transform.position.y > transform.position.y-9) &&
@@ -52,8 +51,7 @@ public class SpecificDestruct : MonoBehaviour {
     {
         if (collision.gameObject == Tueur)
         {
-            print("he" + collision.gameObject.transform.position);
-            print("cloud" + transform.position);
+
             if ((collision.gameObject.transform.position.x > transform.position.x - radiusdedestruction) &&
                 (collision.gameObject.transform.position.x < transform.position.x + radiusdedestruction) &&
                 (collision.gameObject.transform.position.y > transform.position.y - radiusdedestruction) &&

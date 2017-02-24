@@ -61,6 +61,7 @@ public class Entity : MonoBehaviour {
             // ========== Si mode one way ==========
             if (isgoto)
         {
+
             if ( (CurrentDestination.x > transform.position.x && hitside == HitDirection.Right) ||
                 (CurrentDestination.x < transform.position.x && hitside == HitDirection.Left)) {
                 isgoto = false;
@@ -70,6 +71,7 @@ public class Entity : MonoBehaviour {
             transform.position = Vector3.MoveTowards(transform.position, CurrentDestination, step);
             if (transform.position == CurrentDestination)
             {
+
                 isgoto = false;
             }
         } // ========================================
