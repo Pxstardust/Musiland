@@ -491,7 +491,7 @@ public class Player : MonoBehaviour {
                 { // Si on est en l'air
                     audioManager.PlaySoundIfNoPlaying("Calm_Glide");
                     anim.SetBool("A_IsPlan", true);
-                    rigid.gravityScale = 0.15f;
+                    rigid.gravityScale = 0.10f;
                     rigid.AddForce((new Vector3(0.0f, 0.6f, 0)));
                 }
             }
@@ -516,7 +516,8 @@ public class Player : MonoBehaviour {
 
             // ========================== //
             // ========== Down ========== //
-            if ((Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) && canMove && !bVDash)
+            //if ((Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) && canMove && !bVDash)
+			if(Input.GetButtonDown("Action") && canMove && !bVDash)
             {
 
                 IsHoldingDown = true; // HOlding down
@@ -547,7 +548,7 @@ public class Player : MonoBehaviour {
                 }
                 
                 // ----- (H) DASH -----
-                if (playercurrentstyle == EnumList.StyleMusic.Hell && !bInAir && canMove)
+                if (playercurrentstyle == EnumList.StyleMusic.Hell && !bRun && canMove)
                 {
                     if (Time.time > LastDashEnd + DashCD)
                     {
@@ -561,17 +562,18 @@ public class Player : MonoBehaviour {
 
             // ============================= //
             // ========== UP JUMP ========== //
-            if (Input.GetButtonUp("Down"))
+            if (Input.GetButtonUp("Action"))
             {
                 IsHoldingDown = false;
                 if (hideUnderSnow) UnhideUnderSnow();
             }
 
-            if (Input.GetAxis("Vertical") > -0.5f && hiddedByJoystick)
+			//Joystick check no more usefull for buttons
+           /* if (Input.GetAxis("Vertical") > -0.5f && hiddedByJoystick)
             {
                 hiddedByJoystick = false;
                 if (hideUnderSnow) UnhideUnderSnow();
-            }
+            }*/
             // =============== //
 
         }
@@ -651,7 +653,7 @@ public class Player : MonoBehaviour {
                         break;
                 }
 				//Accélère en peut le joueur en mode calme afin qu'il soit moins lent à démarrer
-				if (Mathf.Abs(rigid.velocity.x) < 0.1f && playercurrentstyle == EnumList.StyleMusic.Calm) {
+				if (Mathf.Abs(rigid.velocity.x) < 0.1f && playercurrentstyle == EnumList.StyleMusic.Calm && !bInAir) {
 					rigid.velocity = new Vector3 (Mathf.Sign(Input.GetAxis ("Horizontal")) * 2, rigid.velocity.y, 0);
 				}
             }
