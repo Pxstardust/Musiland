@@ -160,7 +160,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		rigid.transform.position = new Vector2 (400,4); // Déplacement initial
+		//rigid.transform.position = new Vector2 (400,4); // Déplacement initial
 
         // == AUDIO == //
         audioManager = AudioManager.instance;
@@ -273,20 +273,20 @@ public class Player : MonoBehaviour {
                 if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")))
                 {
                     Hit = Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"));
-                    Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
-                    if (Testdestruct) // Si l'objet touché est destructible 
+                    Destructible TestdestructLeft = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
+                    if (TestdestructLeft) // Si l'objet touché est destructible 
                     {
-                        Testdestruct.Destruction(); // On le détruit
+                        TestdestructLeft.Destruction(); // On le détruit
                     }
                 }
 
                 if (Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground")))
                 {
                     Hit = Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"));
-                    Destructible Testdestruct = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
-                    if (Testdestruct) // Si l'objet touché est destructible 
+                    Destructible TestdestructRight = Hit.collider.gameObject.GetComponent("Destructible") as Destructible;
+                    if (TestdestructRight) // Si l'objet touché est destructible 
                     {
-                        Testdestruct.Destruction(); // On le détruit
+                        TestdestructRight.Destruction(); // On le détruit
                     }
                 }
             }
@@ -1051,7 +1051,7 @@ public class Player : MonoBehaviour {
 		rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
 		rigid.velocity = velocity;
 		if(bInAir)
-			yield return new WaitForSeconds (0.5f);
+			yield return new WaitForSeconds (0.2f);
 		canMove = true;
 
 	}

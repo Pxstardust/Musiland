@@ -20,7 +20,13 @@ public class Zeball : Entity
     [SerializeField]
     GameObject target;
 
+	[SerializeField]
+	GameObject ignore1;
+	[SerializeField]
+	GameObject ignore2;
+
     MusicSwitcher ThisMusicSwitcher;
+	Collider2D coll;
 
 
     // Use this for initialization
@@ -33,7 +39,10 @@ public class Zeball : Entity
         //Entity_Flee(target);
        // Entity_Stay(Position1);
         //followradius = newfollowradius;
+		coll = GetComponent<Collider2D>();
 
+		Physics2D.IgnoreCollision (coll, ignore1.GetComponent<Collider2D>());
+		Physics2D.IgnoreCollision (coll, ignore2.GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -41,8 +50,12 @@ public class Zeball : Entity
     {
 
         base.Update();
- 
-        switch (ThisMusicSwitcher.currentstyle)
+		if (!base.ispatrol)
+		{
+			Entity_Patrol(Position1, Position2);
+
+		}
+        /*switch (ThisMusicSwitcher.currentstyle)
         {
             case EnumList.StyleMusic.Hell:
                 Entity_Stop();
@@ -61,7 +74,7 @@ public class Zeball : Entity
 
 
                 break;
-        }
+        }*/
 
 
     }
