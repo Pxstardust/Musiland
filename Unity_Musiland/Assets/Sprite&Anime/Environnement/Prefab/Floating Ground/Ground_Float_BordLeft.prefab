@@ -77,6 +77,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
+  DisableFestCollider: 0
+  DisableCalmCollider: 0
+  DisableHellCollider: 0
   HellTile: {fileID: 21300000, guid: 1b3924188be812a46bddfb90061129ad, type: 3}
   FestTile: {fileID: 21300000, guid: ce8fc99e649e1f8489f02bbaa3d30cd6, type: 3}
   CalmTile: {fileID: 21300000, guid: f50b31e9164802c4696cc82ac5454947, type: 3}

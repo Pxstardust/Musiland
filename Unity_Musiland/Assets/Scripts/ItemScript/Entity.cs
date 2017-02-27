@@ -25,8 +25,11 @@ public class Entity : MonoBehaviour {
     // == Rotation
     float CurrentDestinaRotation;
     public float rotaspeed;
-    bool isrotating = false;
+    public bool isrotating = false;
+    public bool isrotating2 = false;
     float PatrolRota1;
+    float PatrolRota2;
+    bool rotapatrolphase;
 
 
     // == Follow & Fleeing
@@ -44,7 +47,7 @@ public class Entity : MonoBehaviour {
     public HitDirection hitside;
 
     // Use this for initialization
-    void Start()
+    protected virtual void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
@@ -68,6 +71,8 @@ public class Entity : MonoBehaviour {
                 isfleeing = false;
                 isfollowing = false;
             }
+            FlipDatX(transform.position.x, CurrentDestination.x);
+
             transform.position = Vector3.MoveTowards(transform.position, CurrentDestination, step);
             if (transform.position == CurrentDestination)
             {
@@ -81,10 +86,12 @@ public class Entity : MonoBehaviour {
         
             if (patrolphase)
             {
+                FlipDatX(transform.position.x, PatrolDest1.x);
                 transform.position = Vector3.MoveTowards(transform.position, PatrolDest1, step);
                 if (transform.position == PatrolDest1) patrolphase = !patrolphase;
             }else
             {
+                FlipDatX(transform.position.x, PatrolDest2.x);
                 transform.position = Vector3.MoveTowards(transform.position, PatrolDest2, step);
                 if (transform.position == PatrolDest2) patrolphase = !patrolphase;
             }
@@ -93,18 +100,43 @@ public class Entity : MonoBehaviour {
         // ========== ROTATION ========== 
         if (isrotating)
         {
-			Vector3 to = new Vector3(0, 0, CurrentDestinaRotation);
+           
+            Vector3 to = new Vector3(0, 0, CurrentDestinaRotation);
             if (Vector3.Distance(transform.eulerAngles, to) > 0.01f)
             {
+                //print(this + "tryin");
                 transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, rotastep);
             }
             else
             {
+                //print(this + "sop");
                 transform.eulerAngles = to;
                 isrotating = false;
             }
             
         } // ========================================
+
+        if (isrotating2)
+        {
+            Vector3 to;
+            if (rotapatrolphase)
+            {
+                to = new Vector3(0, 0, PatrolRota1);
+            } else
+            {
+                to = new Vector3(0, 0, PatrolRota2);
+            }
+
+            if (Vector3.Distance(transform.eulerAngles, to) > 1f)
+            {
+                //print(this + "tryin");
+                transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, rotastep);
+            } else
+            {
+                rotapatrolphase = !rotapatrolphase;
+            }
+
+        }
 
         // ========== FOLLOW ========== 
         if (isfollowing)
@@ -119,6 +151,7 @@ public class Entity : MonoBehaviour {
                 }
                 else
                 {
+                    FlipDatX(transform.position.x, CurrentFollowTarget.transform.position.x);
                     Entity_GoTo(new Vector3 (CurrentFollowTarget.transform.position.x,transform.position.y, transform.position.z), transform.rotation.z);
                 }
             } else
@@ -142,6 +175,7 @@ public class Entity : MonoBehaviour {
 
                     //print(dirx);
                     //Vector3 dir = new Vector3(dirx, 0, 0);
+                    FlipDatX(CurrentFollowTarget.transform.position.x, transform.position.x);
                     Entity_GoTo(new Vector3(transform.position.x+dirx, transform.position.y, transform.position.z), transform.rotation.z);
                     
                 } else {  }
@@ -191,6 +225,13 @@ public class Entity : MonoBehaviour {
     {
         isrotating = true; isfollowing = false; isfleeing = false;
         PatrolRota1 = rotation1;
+    }
+
+    public void Entity_RotateBetween (float rotation1, float rotation2)
+    {
+        isrotating2 = true; isrotating = false;isfollowing = false;isfleeing = false;
+        PatrolRota1 = rotation1;
+        PatrolRota2 = rotation2;
     }
 
     // ===== L'entité suit une autre
@@ -286,6 +327,20 @@ public class Entity : MonoBehaviour {
         }
         return hitDirection;
     }
+
+    void FlipDatX(float currentx, float targetx)
+    {
+        if (sprite)
+        {
+            if (currentx < targetx)
+            {
+                sprite.flipX = false;
+            }
+            else sprite.flipX = true;
+        }
+
+    }
+
 
 }
 

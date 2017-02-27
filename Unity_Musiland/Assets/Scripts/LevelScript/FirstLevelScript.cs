@@ -10,6 +10,7 @@ public class FirstLevelScript : MonoBehaviour {
     TriggeredArea TriggerIncendie;
 
     bool OnceIncendie = false;
+    bool IsOnFire = true;
 
         [SerializeField]
     FallingThing Poutre;
@@ -27,11 +28,7 @@ public class FirstLevelScript : MonoBehaviour {
 
         if (Input.GetButtonDown("DebugKey"))
         {
-            FlameResize[] tabmagik = (FlameResize[])FindObjectsOfType(typeof(FlameResize)); // Recup' tout les items avec le script de changement
-            foreach (FlameResize themetile in tabmagik) // Parcours
-            {
-                themetile.Resize(new Vector3(0,0,0));
-            }
+
 
             Poutre.Fall();
         }
@@ -40,6 +37,16 @@ public class FirstLevelScript : MonoBehaviour {
         {
             Poutre.Fall();
             OnceIncendie = true;
+        }
+
+        if (OnceIncendie && player.playercurrentstyle == EnumList.StyleMusic.Calm && IsOnFire)
+        {
+            IsOnFire = false;
+            FlameResize[] tabmagik = (FlameResize[])FindObjectsOfType(typeof(FlameResize)); // Recup' tout les items avec le script de changement
+            foreach (FlameResize themetile in tabmagik) // Parcours
+            {
+                themetile.Resize(new Vector3(0, 0, 0));
+            }
         }
         
 	}

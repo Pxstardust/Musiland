@@ -12,8 +12,15 @@ public class MusicSwitcher : MonoBehaviour{
     [SerializeField]
     bool IsPlayer;
 
-    // ===== Les 3 sprites ===== //
     [SerializeField]
+    bool DisableFestCollider;
+    [SerializeField]
+    bool DisableCalmCollider;
+    [SerializeField]
+    bool DisableHellCollider;
+
+     // ===== Les 3 sprites ===== //
+     [SerializeField]
     Sprite HellTile;
     [SerializeField]
     Sprite FestTile;
@@ -94,6 +101,7 @@ public class MusicSwitcher : MonoBehaviour{
 
                 if (PhysicHell != null) CurrentPhysic = PhysicHell; // Si il y a une physique particulière à appliquer
                 else CurrentPhysic = null; // Sinon la met à nulle
+                if (DisableHellCollider) Maincollider.enabled = false;
                 break;
             // -------------------------- //
 
@@ -119,6 +127,7 @@ public class MusicSwitcher : MonoBehaviour{
 
                 if (PhysicFest != null) CurrentPhysic = PhysicFest;// Si il y a une physique particulière à appliquer
                 else CurrentPhysic = null; // Sinon la met à nulle
+                if (DisableFestCollider) Maincollider.enabled = false;
                 break;
             // -------------------------- //
 
@@ -144,6 +153,7 @@ public class MusicSwitcher : MonoBehaviour{
 
                 if (PhysicCalm != null) CurrentPhysic = PhysicCalm;// Si il y a une physique particulière à appliquer
                 else CurrentPhysic = null; // Sinon la met à nulle
+                if (DisableCalmCollider) Maincollider.enabled = false;
                 break;
 
         }

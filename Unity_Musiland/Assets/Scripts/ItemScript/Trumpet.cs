@@ -26,11 +26,13 @@ public class Trumpet : Entity
 	public bool scared = false;
 	public bool fleeCloud = false;
 	Vector3 fleeingPoint;
+    SpriteRenderer sprite;
 
 
     // Use this for initialization
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         ThisMusicSwitcher = GetComponent<MusicSwitcher>();
         speed = newspeed;
         rotaspeed = newrotaspeed;
@@ -38,6 +40,7 @@ public class Trumpet : Entity
         //Entity_Flee(target);
         // Entity_Stay(Position1);
         //followradius = newfollowradius;
+        
 		rigid2D = gameObject.GetComponent<Rigidbody2D>();
 		//rigid2D.constraints = RigidbodyConstraints2D.FreezeAll;
 
@@ -46,7 +49,6 @@ public class Trumpet : Entity
     // Update is called once per frame
     protected override void Update()
     {
-		
         Vector3 positioncamera = maincamera.WorldToViewportPoint(this.transform.position);
         base.Update();
 		if (!scared && !fleeCloud) {
@@ -107,6 +109,7 @@ public class Trumpet : Entity
 		}
 
 		if (collision.gameObject.name == "ScareCrowd") {
+            scared = true;
             scarePoint1 = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
             scarePoint2 = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
             Destroy (collision.gameObject);

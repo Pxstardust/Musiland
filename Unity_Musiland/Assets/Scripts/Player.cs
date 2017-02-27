@@ -161,7 +161,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		//rigid.transform.position = new Vector2 (140, 10); // Déplacement initial
+		//rigid.transform.position = new Vector2 (250, 5); // Déplacement initial
 
         // == AUDIO == //
         audioManager = AudioManager.instance;

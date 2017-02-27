@@ -5,12 +5,13 @@ using UnityEngine;
 public class FallingThing : Entity {
 
     [SerializeField]
-    Vector3 fallPoint;
+    float fallHeight;
     bool isfallen = false;
+    Vector3 fallPoint;
 
     // Use this for initialization
     void Start () {
-		
+        fallPoint = new Vector3(this.transform.position.x, fallHeight, this.transform.position.z);
 	}
 
     // Update is called once per frame
