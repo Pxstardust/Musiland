@@ -75,11 +75,11 @@ public class Player : MonoBehaviour {
 
     float moveForceHell = 20f;
 
-	float jumpForceHell = 600;
-	float jumpForceFest = 650;
-	float jumpForceCalm = 700;
-	float wallJumpForceFest = 600;
-
+	float jumpForceHell = 400;
+	float jumpForceFest = 450;
+	float jumpForceCalm = 500;
+	float wallJumpForceFest = 400;
+	float attenuationJumGap = 70;
 
     // === Keys === //
     private bool KeyShoot;
@@ -96,6 +96,7 @@ public class Player : MonoBehaviour {
     float mintimejump = 0.5f; // Durée entre deux sauts
     float timelastjump; // Date du dernier saut
 	bool canMove = true;
+	bool jumpGap = false;
     // -- Hide -- //
 	bool hideUnderSnow = false;
 	bool hiddedByJoystick = false;
@@ -160,7 +161,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		//rigid.transform.position = new Vector2 (400,4); // Déplacement initial
+		//rigid.transform.position = new Vector2 (140, 10); // Déplacement initial
 
         // == AUDIO == //
         audioManager = AudioManager.instance;
@@ -437,6 +438,8 @@ public class Player : MonoBehaviour {
                     if (Time.time > timelastjump + mintimejump)
 					{ // Jump !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))
                         IsVDashDone = false;
+						jumpGap = true;
+						StartCoroutine (JumpGapTime());
                         switch (playercurrentstyle)
                         {
                             case EnumList.StyleMusic.Calm:
@@ -470,14 +473,14 @@ public class Player : MonoBehaviour {
                     rigid.velocity = new Vector2(rigid.velocity.x, 0);
                 }
 
-
-
                 // ----- (F) WALLJUMP -----
                 if (isWallSliding)
                 {
                     bool wallatleft = false;
                     if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground"))) wallatleft = true;
-                    if (wallatleft)
+					jumpGap = true;
+					StartCoroutine (JumpGapTime());
+					if (wallatleft)
                     {
                         rigid.AddForce((new Vector3(400, wallJumpForceFest, 0)));
                         audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
@@ -501,6 +504,31 @@ public class Player : MonoBehaviour {
                 }
 
             } // ========== FIN BUTTON DOWN ========== //
+
+			// ========== BUTTON HOLDING FOR JUMPGAP ============ //
+			if (Input.GetButton ("Jump") && jumpGap) {
+				switch (playercurrentstyle)
+				{
+				case EnumList.StyleMusic.Calm:
+					rigid.AddForce((new Vector3(0.0f, jumpForceCalm / attenuationJumGap, 0)));
+					break;
+
+				case EnumList.StyleMusic.Fest:
+					rigid.AddForce((new Vector3(0.0f, jumpForceFest / attenuationJumGap, 0)));
+					break;
+
+				case EnumList.StyleMusic.Hell:
+					rigid.AddForce((new Vector3(0.0f, jumpForceHell / attenuationJumGap, 0)));
+					break;
+				}
+
+			}
+
+			// ========== BUTTON UP FOR JUMPGAP ============ //
+			// Si le joueur a relaché son bouton de saut alors il ne peut plus augmanter le force de celui çi en ré-appuyant
+			if (Input.GetButtonUp ("Jump")) {
+				jumpGap = false;
+			}
 
             // =========== BUTTON JUMP HOLDING =========== //
             if (Input.GetButton("Jump") && canMove)
@@ -1081,6 +1109,11 @@ public class Player : MonoBehaviour {
         audioManager.PlaySoundIfNoPlaying("Respawn");
         maincamera.transform.position = CurrentRespawnPoint + decalCamOrigine;
     }
+
+	IEnumerator JumpGapTime(){
+		yield return new WaitForSeconds (0.7f);
+		jumpGap = false;
+	}
 
     public void MusicDisturber(bool startorend, int id)
     {
