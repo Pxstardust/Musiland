@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\ItemScript\FallingRock.cs" />
      <Compile Include="Assets\Scripts\ItemScript\FallingThing.cs" />
      <Compile Include="Assets\Scripts\ItemScript\FlameResize.cs" />
+     <Compile Include="Assets\Scripts\ItemScript\Projo.cs" />
      <Compile Include="Assets\Scripts\ItemScript\SpecificDestruct.cs" />
      <Compile Include="Assets\Scripts\ItemScript\TriggeredArea.cs" />
      <Compile Include="Assets\Scripts\ItemScript\Trumpet.cs" />

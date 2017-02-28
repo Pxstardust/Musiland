@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114502915833631876}
   - component: {fileID: 60709333489164506}
   - component: {fileID: 82731057370920032}
+  - component: {fileID: 68342578335014324}
   m_Layer: 8
   m_Name: Hell_Rock
   m_TagString: Sol
@@ -50,7 +51,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483940630113970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -287,6 +288,28 @@ PolygonCollider2D:
       - {x: 1.4, y: -5.2799997}
       - {x: 1.51, y: -5.33}
       - {x: 1.78, y: -5.33}
+--- !u!68 &68342578335014324
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1483940630113970}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -4.29593, y: -3.3121307}
+  - {x: -3.978425, y: 0.43992627}
+  - {x: -4.3046274, y: 3.5863743}
+  - {x: -2.2249303, y: 4.4543133}
+  - {x: 0.9321139, y: 4.333928}
+  - {x: 3.903184, y: 2.4920583}
+  - {x: 3.475785, y: -0.08792021}
+  - {x: 3.448716, y: -3.2359483}
+  - {x: -4.1223917, y: -3.4041317}
 --- !u!82 &82731057370920032
 AudioSource:
   m_ObjectHideFlags: 1
@@ -378,6 +401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
+  DisableFestCollider: 0
+  DisableCalmCollider: 0
+  DisableHellCollider: 0
   HellTile: {fileID: 21300000, guid: fb227c2ddfa4bbc4f873916065afda8d, type: 3}
   FestTile: {fileID: 21300000, guid: b62b7e533d3fdc9419a0b74c9e385a91, type: 3}
   CalmTile: {fileID: 21300000, guid: 73a5cfeb17843ed41ab7abea96e23c11, type: 3}

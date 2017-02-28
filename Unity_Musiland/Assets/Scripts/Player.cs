@@ -107,7 +107,7 @@ public class Player : MonoBehaviour {
     float HorizontalTapCount = 0; // Nb de tap pour le double tap 
     float DashCD = 2; // CD entre deux dash
     float LastDashEnd, LastDashStart; // Moments clé du dernier dash
-    float DureeDash = 0.15f; // Durée du dash
+    float DureeDash = 0.2f; // Durée du dash
 	bool airDash = false;
     // -- V Dash -- //
     float doubletapCDVDash = 0.5f; // Durée max entre deux tap pour un double tap
@@ -1028,19 +1028,6 @@ public class Player : MonoBehaviour {
     {
         if (keepforce) rigid.velocity = new Vector2(0, 0);
         transform.position = destination;
-    }
-
-    // ================ //
-    // ===== DASH ===== //
-	IEnumerator Dash()
-    {
-		if (Time.time > LastDashEnd + DashCD)
-		{
-			bRun = true;
-			LastDashStart = Time.time;
-		}
-		yield return new WaitForSeconds (0.5f);
-		//bRun = false;
     }
 
     public void DoSlide()

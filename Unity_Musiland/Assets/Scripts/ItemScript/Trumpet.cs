@@ -26,7 +26,7 @@ public class Trumpet : Entity
 	public bool scared = false;
 	public bool fleeCloud = false;
 	Vector3 fleeingPoint;
-    SpriteRenderer sprite;
+    //SpriteRenderer sprite;
 
 
     // Use this for initialization
