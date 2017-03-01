@@ -44391,11 +44391,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 197.31
+      value: 197.4
       objectReference: {fileID: 0}
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.11
+      value: 6.99
       objectReference: {fileID: 0}
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalPosition.z
@@ -47222,8 +47222,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1485892573}
+  m_Children: []
   m_Father: {fileID: 1237142980}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47242,6 +47241,7 @@ MonoBehaviour:
   - loop: 1
     name: Calm_BGM
     clip: {fileID: 8300000, guid: 716d29d626121f64b8747e113a0d21bf, type: 3}
+    groupid: 0
     volume: 0.1
     pitch: 1
     randomVolume: 0
@@ -47249,6 +47249,7 @@ MonoBehaviour:
   - loop: 1
     name: Fest_BGM
     clip: {fileID: 8300000, guid: e7f80745467a58e46bac830c0b90df56, type: 3}
+    groupid: 0
     volume: 0.1
     pitch: 1
     randomVolume: 0
@@ -47256,6 +47257,7 @@ MonoBehaviour:
   - loop: 1
     name: Hell_BGM
     clip: {fileID: 8300000, guid: 57815fe4866ce614fb9d89f4538ffaa6, type: 3}
+    groupid: 0
     volume: 0.1
     pitch: 1
     randomVolume: 0
@@ -47263,6 +47265,7 @@ MonoBehaviour:
   - loop: 0
     name: Transition
     clip: {fileID: 8300000, guid: f2971338d83665e43a1c16742e64508a, type: 3}
+    groupid: 0
     volume: 0.2
     pitch: 1
     randomVolume: 0.5
@@ -47270,6 +47273,7 @@ MonoBehaviour:
   - loop: 0
     name: Calm_Step
     clip: {fileID: 8300000, guid: c4c639c1426839043adc76cad22b49db, type: 3}
+    groupid: 0
     volume: 0.3
     pitch: 1
     randomVolume: 0.5
@@ -47277,6 +47281,7 @@ MonoBehaviour:
   - loop: 0
     name: Fest_Step
     clip: {fileID: 8300000, guid: 176c40af181956f4bbeb1ee6f2dab366, type: 3}
+    groupid: 0
     volume: 0.3
     pitch: 1
     randomVolume: 0.5
@@ -47284,6 +47289,7 @@ MonoBehaviour:
   - loop: 0
     name: Hell_Step
     clip: {fileID: 8300000, guid: 3c1c0184ddd3f5a4585c2837f0653b76, type: 3}
+    groupid: 0
     volume: 0.3
     pitch: 1
     randomVolume: 0.5
@@ -47291,6 +47297,7 @@ MonoBehaviour:
   - loop: 0
     name: Calm_Jump
     clip: {fileID: 8300000, guid: 7e93aac4022b1bc42822767aa8e7839a, type: 3}
+    groupid: 0
     volume: 0.7
     pitch: 1
     randomVolume: 0.5
@@ -47298,6 +47305,7 @@ MonoBehaviour:
   - loop: 0
     name: Fest_Jump
     clip: {fileID: 8300000, guid: 7ccee9cd074f1a640ac015dc7e331a66, type: 3}
+    groupid: 0
     volume: 0.7
     pitch: 1
     randomVolume: 0.5
@@ -47305,6 +47313,7 @@ MonoBehaviour:
   - loop: 0
     name: Hell_Jump
     clip: {fileID: 8300000, guid: 588d127dbf40169439a45a85399aa6d4, type: 3}
+    groupid: 0
     volume: 0.7
     pitch: 1
     randomVolume: 0.5
@@ -47312,6 +47321,7 @@ MonoBehaviour:
   - loop: 1
     name: Calm_Glide
     clip: {fileID: 8300000, guid: f01705973efb9384082b85162f3b1553, type: 3}
+    groupid: 0
     volume: 1
     pitch: 1
     randomVolume: 0.5
@@ -47319,6 +47329,7 @@ MonoBehaviour:
   - loop: 0
     name: Fest_WallJump
     clip: {fileID: 8300000, guid: 4c7485e8f7ddef4468775f911592ff7a, type: 3}
+    groupid: 0
     volume: 0.7
     pitch: 1
     randomVolume: 0.5
@@ -47326,6 +47337,7 @@ MonoBehaviour:
   - loop: 0
     name: Hell_Dash
     clip: {fileID: 8300000, guid: ccb17003426e7d64eaefdcd7374e9ad5, type: 3}
+    groupid: 0
     volume: 1
     pitch: 1
     randomVolume: 0.5
@@ -47333,6 +47345,7 @@ MonoBehaviour:
   - loop: 0
     name: Calm_Hide
     clip: {fileID: 8300000, guid: 318dd3a628b7f934b85bfac0c93c744f, type: 3}
+    groupid: 0
     volume: 1
     pitch: 1
     randomVolume: 0.5
@@ -47340,6 +47353,7 @@ MonoBehaviour:
   - loop: 0
     name: Calm_Unhide
     clip: {fileID: 8300000, guid: 48d8655f6cceb544d942bc4baed63127, type: 3}
+    groupid: 0
     volume: 1
     pitch: 1
     randomVolume: 0.5
@@ -47347,6 +47361,7 @@ MonoBehaviour:
   - loop: 0
     name: Fest_Glide
     clip: {fileID: 8300000, guid: 3e0b38fb3a982bb4584230da09284668, type: 3}
+    groupid: 0
     volume: 1
     pitch: 1
     randomVolume: 0.5
@@ -47354,6 +47369,7 @@ MonoBehaviour:
   - loop: 0
     name: Respawn
     clip: {fileID: 8300000, guid: eae49db259ea2ff4d8e02ac4c7034b2a, type: 3}
+    groupid: 0
     volume: 1
     pitch: 1
     randomVolume: 0.5
@@ -47361,6 +47377,7 @@ MonoBehaviour:
   - loop: 0
     name: Pain_Sound
     clip: {fileID: 8300000, guid: 46f1759bf0815b64192340223e5ee644, type: 3}
+    groupid: 1
     volume: 1
     pitch: 1
     randomVolume: 0.5
@@ -47368,6 +47385,7 @@ MonoBehaviour:
   - loop: 0
     name: Checkpoint_Sound
     clip: {fileID: 8300000, guid: 311db586f1de35b43a2383c681d5e93b, type: 3}
+    groupid: 1
     volume: 0.5
     pitch: 1
     randomVolume: 0.5
@@ -47375,6 +47393,7 @@ MonoBehaviour:
   - loop: 1
     name: Hell_Foule
     clip: {fileID: 8300000, guid: 5b7580b79a7f3c84c8556d99827561b8, type: 3}
+    groupid: 0
     volume: 0.1
     pitch: 1
     randomVolume: 0
@@ -47382,6 +47401,7 @@ MonoBehaviour:
   - loop: 1
     name: Fest_Foule
     clip: {fileID: 8300000, guid: a6136d201745b194ea43979f1f608660, type: 3}
+    groupid: 0
     volume: 0.1
     pitch: 1
     randomVolume: 0
@@ -47389,12 +47409,11 @@ MonoBehaviour:
   - loop: 1
     name: Calm_Foule
     clip: {fileID: 8300000, guid: 7b3add84876ee5f4c83ff8c18d982b89, type: 3}
+    groupid: 0
     volume: 0.1
     pitch: 1
     randomVolume: 0
     randomPitch: 0
-  soundsarray:
-  - {fileID: 1485892574}
 --- !u!1001 &1248907430
 Prefab:
   m_ObjectHideFlags: 0
@@ -49271,11 +49290,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4048973402766902, guid: 0d1ee698cf653ca408a491d235a5825d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 192.92
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: 4048973402766902, guid: 0d1ee698cf653ca408a491d235a5825d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 24.22
+      value: 24.8
       objectReference: {fileID: 0}
     - target: {fileID: 4048973402766902, guid: 0d1ee698cf653ca408a491d235a5825d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -56838,49 +56857,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4569356714061252, guid: 1dd1c1c7474e7104cb0708e21d07c967,
     type: 2}
   m_PrefabInternal: {fileID: 1485872954}
---- !u!1 &1485892572
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1485892573}
-  - component: {fileID: 1485892574}
-  m_Layer: 0
-  m_Name: Audio_Array_CalmJump
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1485892573
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1485892572}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1248663979}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1485892574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1485892572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8442c72466050f74996de2f57af8567f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrayid: 3
-  israndom: 0
-  sounds: []
 --- !u!4 &1489770286 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4056054920542490, guid: 7a41ede2700905e48980ab5eee663008,
@@ -68179,11 +68155,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 194.03
+      value: 193.8
       objectReference: {fileID: 0}
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.22
+      value: 6.99
       objectReference: {fileID: 0}
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalPosition.z
@@ -74522,11 +74498,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.17
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 66.72
+      value: 74.1
       objectReference: {fileID: 0}
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalPosition.z
@@ -74558,11 +74534,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.9116392
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2.8758419
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542, type: 2}
       propertyPath: m_LocalScale.z
@@ -74583,11 +74559,6 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 60709333489164506, guid: 9d2015669bc6a0c47adfbd340edd1542,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 68342578335014324, guid: 9d2015669bc6a0c47adfbd340edd1542,
         type: 2}
       propertyPath: m_Enabled
       value: 1
