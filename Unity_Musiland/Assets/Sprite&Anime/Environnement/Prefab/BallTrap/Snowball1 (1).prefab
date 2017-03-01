@@ -91,7 +91,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isDangerous: 0
-  player: {fileID: 0}
 --- !u!114 &114439469517267784
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -25,8 +25,7 @@ public class BouncingPlatform : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject == player) {
+			playerRigid = collision.gameObject.GetComponent<Rigidbody2D> ();
 			playerRigid.AddForce (new Vector3(bouncingDirection, bouncingPower, 0));
-		}
 	}
 }
