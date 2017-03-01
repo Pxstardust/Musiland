@@ -75,7 +75,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BallTrap.cs" />
     <Compile Include="Assets\BouncingPlatform.cs" />
+    <Compile Include="Assets\LaunchTrap.cs" />
+    <Compile Include="Assets\Scripts\AudioArray.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Enum.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
