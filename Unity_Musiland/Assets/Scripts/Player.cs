@@ -78,7 +78,7 @@ public class Player : MonoBehaviour {
 	float jumpForceHell = 400;
 	float jumpForceFest = 450;
 	float jumpForceCalm = 500;
-	float wallJumpForceFest = 400;
+	float wallJumpForceFest = 600;
 	float attenuationJumGap = 70;
 
     // === Keys === //
@@ -161,7 +161,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		//rigid.transform.position = new Vector2 (250, 5); // Déplacement initial
+		rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
 
         // == AUDIO == //
         audioManager = AudioManager.instance;

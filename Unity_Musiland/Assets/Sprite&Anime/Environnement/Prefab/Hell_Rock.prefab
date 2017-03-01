@@ -414,7 +414,7 @@ MonoBehaviour:
   Hell_Anim: {fileID: 0}
   Fest_Anim: {fileID: 0}
   Calm_Anim: {fileID: 0}
-  Maincollider: {fileID: 60709333489164506}
+  Maincollider: {fileID: 68342578335014324}
   currentstyle: 1
 --- !u!114 &114878573991882066
 MonoBehaviour:
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleemitterGO: {fileID: 198129093582573494, guid: ff295d56bd599384ca417d87aee03c05,
     type: 2}
-  Maincollider: {fileID: 60709333489164506}
+  Maincollider: {fileID: 68342578335014324}
   theMS: {fileID: 114502915833631876}
   isdestroyed: 0
 --- !u!212 &212067434432337922
