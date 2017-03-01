@@ -707,10 +707,14 @@ public class Player : MonoBehaviour {
                             anim.SetBool("A_IsWalking", true);
                             rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime)); // Déplacement avec force, lent et flottant
                         }
-                        else if (bInAir && Mathf.Abs(rigid.velocity.x) < maxSpeedCalm)
+						else if (bInAir && rigid.velocity.x < maxSpeedCalm && Input.GetAxis("Horizontal") > 0)
                         {
                             rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime));
                         }
+						else if (bInAir && rigid.velocity.x > -maxSpeedCalm && Input.GetAxis("Horizontal") < 0)
+						{
+							rigid.AddForce((new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f) * maxSpeedCalm * 100 * Time.deltaTime));
+						}
                         break;
                 }
 				//Accélère en peut le joueur en mode calme afin qu'il soit moins lent à démarrer
