@@ -8,7 +8,6 @@ public class Sound
     public bool loop;
     public string name;
     public AudioClip clip;
-    public int groupid;
 
     [Range(0f, 10f)]
     public float volume = 0.7f;
@@ -78,6 +77,11 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     Sound[] sounds;
+
+    [SerializeField]
+    AudioArray[] soundsarray;
+
+    List<Sound> buffer = new List<Sound>();
 
     // ======================================= //
     void Awake()
@@ -234,21 +238,60 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayRandomFromArray(int _idarray)
+    /* public void PlayRandomFromArray(int _idarray)
+     {
+         List<Sound> arraysound = new List<Sound>();
+         for (int i = 0; i < sounds.Length; i++)
+         {
+             if (sounds[i].groupid == _idarray)
+             {
+                 arraysound.Add(sounds[i]);
+             }
+         }
+         if (arraysound.Count > 0)
+         {
+             arraysound[Random.Range(0, arraysound.Count)].Play(); ;
+         }
+     }*/
+
+    public void PlayArrayUntilDone(int _idarray)
     {
-        List<Sound> arraysound = new List<Sound>();
-        for (int i = 0; i < sounds.Length; i++)
+        AudioArray Theone = null;
+        bool shouldrandom = false;
+
+        // ===== RECUP ARRAY ===== //
+        for (int i = 0; i < soundsarray.Length; i++)
         {
-            if (sounds[i].groupid == _idarray)
+            if (soundsarray[i].arrayid == _idarray)
             {
-                arraysound.Add(sounds[i]);
+                Theone = soundsarray[i];
+                shouldrandom = soundsarray[i].israndom;
             }
         }
 
-        if (arraysound.Count > 0)
+        if (buffer.Count == 0)
         {
-            arraysound[Random.Range(0, arraysound.Count)].Play(); ;
+
+
+            // ===== Parcours du tableau pour le remplir ===== //
+            if (Theone && buffer.Count == 0)
+            {
+                for (int i = 0; i < Theone.sounds.Length; i++)
+                {
+                    buffer.Add(Theone.sounds[i]);
+                }
+            }
+
+        } // Fin remplir buffer
+
+        if (buffer.Count > 0)
+        {
+            int i = 0;
+            if (shouldrandom) i = Random.Range(0, buffer.Count);
+            buffer[0].Play();
+            buffer.RemoveAt(0);
         }
+
     }
 
 }
