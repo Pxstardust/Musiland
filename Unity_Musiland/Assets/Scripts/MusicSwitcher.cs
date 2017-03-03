@@ -62,6 +62,9 @@ public class MusicSwitcher : MonoBehaviour{
         //collider = GetComponent<BoxCollider2D>();
         ImageSRC = GetComponent<Image>();
         anim = GetComponent<Animator>();
+		if (!Maincollider && !IsPlayer) {
+			Maincollider = GetComponent<Collider2D> ();
+		}
     }
 
 
@@ -157,7 +160,7 @@ public class MusicSwitcher : MonoBehaviour{
                 break;
 
         }
-        if (Maincollider) Maincollider.sharedMaterial = CurrentPhysic;
+		if (Maincollider) Maincollider.sharedMaterial = CurrentPhysic;
     }
 
     public void ChangeImageSrc(EnumList.StyleMusic playerstyle)

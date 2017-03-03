@@ -78,7 +78,7 @@ public class Player : MonoBehaviour {
 	float jumpForceHell = 400;
 	float jumpForceFest = 450;
 	float jumpForceCalm = 500;
-	float wallJumpForceFest = 600;
+	float wallJumpForceFest = 500;
 	float attenuationJumGap = 70;
 
     // === Keys === //
@@ -161,7 +161,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
+		//rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
 
         // == AUDIO == //
         audioManager = AudioManager.instance;
@@ -169,7 +169,6 @@ public class Player : MonoBehaviour {
         // == AUDIO == //
 
         //animation["Hell_Dash"].speed = 0.5f; // "f" is for C#
-
     }
 
     // ========================================================================================================= //
@@ -380,7 +379,8 @@ public class Player : MonoBehaviour {
             // === NOTE : PAS DE PRINT ICI, LIMITER CE QU'ON MET POUR EVITER LE FREEZE === //
             // =========================================================================== //
 
-            if (Input.GetButtonDown("ChangeMusicPlus") && canMove && canSwitch)
+			// ===== NEXT MUSIC ===== //
+            /*if (Input.GetButtonDown("actionRight") && canMove && canSwitch)
             {
          
 				StartCoroutine(Freeze(rigid.velocity));
@@ -388,10 +388,10 @@ public class Player : MonoBehaviour {
                 HUDManager.ChangeAllTiles();
                 ApplyStyleCarac(playercurrentstyle);
                 UpdateBGM(playercurrentstyle);
-            }
+            }*/
 
             // ===== PREVIOUS MUSIC ===== //
-            if (Input.GetButtonDown("ChangeMusicMinus") && canMove && canSwitch)
+            /*if (Input.GetButtonDown("actionLeft") && canMove && canSwitch)
             {
 				StartCoroutine(Freeze(rigid.velocity));
                 ChangeMusictoPrevious();
@@ -399,7 +399,44 @@ public class Player : MonoBehaviour {
                 ApplyStyleCarac(playercurrentstyle);
                 UpdateBGM(playercurrentstyle);
 
-            }
+            }*/
+
+			// ===== CALM MUSIC ===== //
+			if (Input.GetButtonDown("calmMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Calm)
+			{
+
+				StartCoroutine(Freeze(rigid.velocity));
+				playercurrentstyle = EnumList.StyleMusic.Calm;
+				HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
+				HUDManager.ChangeAllTiles();
+				ApplyStyleCarac(playercurrentstyle);
+				UpdateBGM(playercurrentstyle);
+			}
+
+			// ===== FEST MUSIC ===== //
+			if (Input.GetButtonDown("festMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Fest)
+			{
+
+				StartCoroutine(Freeze(rigid.velocity));
+				playercurrentstyle = EnumList.StyleMusic.Fest;
+				HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
+				HUDManager.ChangeAllTiles();
+				ApplyStyleCarac(playercurrentstyle);
+				UpdateBGM(playercurrentstyle);
+			}
+
+			// ===== HELL MUSIC ===== //
+			if (Input.GetButtonDown("hellMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Hell)
+			{
+
+				StartCoroutine(Freeze(rigid.velocity));
+				playercurrentstyle = EnumList.StyleMusic.Hell;
+				HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
+				HUDManager.ChangeAllTiles();
+				ApplyStyleCarac(playercurrentstyle);
+				UpdateBGM(playercurrentstyle);
+			}
+
 
             // =========================================================================== //
             // ============================ I.2 MOUVEMENT ================================ //
@@ -579,7 +616,7 @@ public class Player : MonoBehaviour {
             // ========== Action ========== //
 
             //if ((Input.GetAxis("Vertical") < -0.5f || Input.GetButton("Down")) && canMove && !bVDash)
-			if(Input.GetButtonDown("Action") && canMove && !bVDash)
+			if((Input.GetButtonDown("actionRight") || Input.GetButtonDown("actionLeft")) && canMove && !bVDash)
             {
 
                	// ----- (C) SE CACHER SOUS LA NEIGE ------
@@ -591,7 +628,7 @@ public class Player : MonoBehaviour {
                 }
 
                 // ----- (F) SLIDE -----
-                if (playercurrentstyle == EnumList.StyleMusic.Fest && !bInAir && !IsSliding)
+				if (playercurrentstyle == EnumList.StyleMusic.Fest && !bInAir && !IsSliding)
                 {
                     //if (Time.time > LastSlideEnd + SlideCD)
                     {
@@ -623,7 +660,7 @@ public class Player : MonoBehaviour {
 
             // ============================= //
             // ========== UP JUMP ========== //
-            if (Input.GetButtonUp("Action"))
+			if (Input.GetButtonUp("actionRight") || Input.GetButtonUp("actionLeft"))
             {
                 IsHoldingDown = false;
                 if (hideUnderSnow) UnhideUnderSnow();
@@ -790,8 +827,6 @@ public class Player : MonoBehaviour {
         // =============================== MainCamera ======================================= //
         // ================================================================================== //
 
-
-
     }
 
 
@@ -847,12 +882,19 @@ public class Player : MonoBehaviour {
             MusicDisturber(true, 1);
             isdisturbed = true;
         }
+			
     }
 
     // =======================================
     void OnTriggerStay2D(Collider2D collision)
     {
-        
+		/*print(collision.gameObject.name);
+		if(collision.gameObject.name != "Background"){
+			ChangeHitbox(false);
+			IsSliding = false;
+			anim.SetBool("A_IsSlide", false);
+			canSwitch = true;
+		}*/
     }
 
     // =======================================
@@ -964,10 +1006,7 @@ public class Player : MonoBehaviour {
                 break;
         }
     }
-
-
-
-
+		
     
 	// ================================== //
 	// ===== Se cache sous la neige ===== //
@@ -976,7 +1015,7 @@ public class Player : MonoBehaviour {
 		rigid.velocity = new Vector2(0,0);
 		hideUnderSnow = true;
 		canMove = false;
-		GetComponent<Collider2D> ().enabled = false;
+		GetComponent<CapsuleCollider2D> ().enabled = false;
 		rigid.constraints = RigidbodyConstraints2D.FreezeAll;
         audioManager.PlaySoundIfNoPlaying("Calm_Hide");
         anim.SetBool("A_IsHide", true);
@@ -988,7 +1027,7 @@ public class Player : MonoBehaviour {
 	{
 		hideUnderSnow = false;				
 		canMove = true;
-		GetComponent<Collider2D> ().enabled = true;
+		GetComponent<CapsuleCollider2D> ().enabled = true;
 		rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
         audioManager.PlaySoundIfNoPlaying("Calm_Unhide");
         anim.SetBool("A_IsHide", false);
@@ -1051,7 +1090,7 @@ public class Player : MonoBehaviour {
         if (onoff)
         {
             characollider.size = SlideHitbox;
-            characollider.offset = new Vector2(0, 0.19f);
+            characollider.offset = new Vector2(0, -1.75f);
                 
         } else
         {
@@ -1091,14 +1130,20 @@ public class Player : MonoBehaviour {
     IEnumerator WaitingRespawn(float time)
     {
         ControlPause = true;
+		rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu
+		canMove = false;
+		bRun = false;
+		bVDash = false;
+		hideUnderSnow = false;
+		IsSliding = false;
         transform.position = CurrentRespawnPoint;
         yield return new WaitForSeconds(time);
-        rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu
         ControlPause = false;
+		canMove = true;
         sprite.enabled = true;
         
         audioManager.PlaySoundIfNoPlaying("Respawn");
-        maincamera.transform.position = CurrentRespawnPoint + decalCamOrigine;
+        //maincamera.transform.position = CurrentRespawnPoint + decalCamOrigine;
     }
 
 	IEnumerator JumpGapTime(){
