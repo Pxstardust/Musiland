@@ -48,6 +48,9 @@ public class MusicSwitcher : MonoBehaviour{
     [SerializeField]
 	Collider2D Maincollider;
 
+    [SerializeField]
+    bool NONJEVEUXPASDECOLLIDER;
+
     // ===== Things to add to each style ===== //
 
     // ===== VAR ===== //
@@ -62,7 +65,7 @@ public class MusicSwitcher : MonoBehaviour{
         //collider = GetComponent<BoxCollider2D>();
         ImageSRC = GetComponent<Image>();
         anim = GetComponent<Animator>();
-		if (!Maincollider && !IsPlayer) {
+		if (!Maincollider && !IsPlayer && !NONJEVEUXPASDECOLLIDER) {
 			Maincollider = GetComponent<Collider2D> ();
 		}
     }
