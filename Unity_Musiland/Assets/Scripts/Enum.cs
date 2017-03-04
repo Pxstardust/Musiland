@@ -9,4 +9,8 @@ public class EnumList : MonoBehaviour {
         Hell = 1, Fest = 2, Calm = 3
     }
     
+    public enum Emotion
+    {
+        Panic = 1, Angry = 2, Laugh = 3
+    }
 }

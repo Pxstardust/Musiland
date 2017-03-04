@@ -161,8 +161,8 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-        //rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
-        rigid.transform.position = new Vector2(100, 10); // Déplacement dragon
+        rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
+       //rigid.transform.position = new Vector2(100, 10); // Déplacement dragon
         // == AUDIO == //
         audioManager = AudioManager.instance;
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");

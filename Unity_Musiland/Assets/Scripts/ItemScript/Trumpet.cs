@@ -26,6 +26,11 @@ public class Trumpet : Entity
 	public bool scared = false;
 	public bool fleeCloud = false;
 	Vector3 fleeingPoint;
+
+    [SerializeField]
+    GameObject BulleMaison;
+
+    EmotionMaker emotionmaker;
     //SpriteRenderer sprite;
 
 
@@ -33,6 +38,7 @@ public class Trumpet : Entity
     protected override void Start()
     {
         base.Start();
+        emotionmaker = GetComponent<EmotionMaker>();
         ThisMusicSwitcher = GetComponent<MusicSwitcher>();
         speed = newspeed;
         rotaspeed = newrotaspeed;
@@ -58,26 +64,34 @@ public class Trumpet : Entity
 					if (!base.isfleeing && !base.isgoto && !stopCrowd) {  //Flee desactivé car on peut résoudre l'énigme d'une manière non prévue
 						Entity_Stop ();
 						Entity_Flee (target);
+                            emotionmaker.MakeEmotion(EnumList.Emotion.Panic);
 					}
 					break;
 
 				case EnumList.StyleMusic.Fest:
-					//rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-					if (!base.isfollowing && !stopCrowd) {
+
+                        emotionmaker.stopEmotion();
+                        emotionmaker.MakeEmotion(EnumList.Emotion.Laugh);
+                        //rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+                        if (!base.isfollowing && !stopCrowd) {
 						Entity_Stop ();
 						Entity_Follow (target);
+                            if (BulleMaison) Destroy(BulleMaison);
 					}
 
 					break;
 				case EnumList.StyleMusic.Calm:
-					Entity_Stop ();
+                        emotionmaker.stopEmotion();
+                        Entity_Stop ();
 					break;
 				}
 			}
 		}
 
 		if (scared) {
-			if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm) {
+            emotionmaker.stopEmotion();
+            emotionmaker.MakeEmotion(EnumList.Emotion.Panic);
+            if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm) {
 				StartCoroutine (CalmModeFocus ());
 			} else {
 				speed = 8;
@@ -135,6 +149,7 @@ public class Trumpet : Entity
 				if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm) {
 					scared = false;
 					speed = 5;
+                    emotionmaker.stopEmotion();
 				}
 			}
 		}
