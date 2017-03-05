@@ -838,14 +838,12 @@ public class Player : MonoBehaviour {
     // ======================================== //
     void OnCollisionEnter2D(Collision2D collision)
 	{
-
         bVDash = false;
 		if ((collision.gameObject.tag == "Sol") && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"))) {
             anim.SetBool("A_IsInAir", false);
             anim.SetBool("A_IsFalling", false);
             IsFalling = false;
             rigid.gravityScale = initialgravity; // Disable Fast Fall
-
 		}
 	}
 

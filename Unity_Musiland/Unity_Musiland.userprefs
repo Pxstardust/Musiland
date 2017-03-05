@@ -5,16 +5,15 @@
       <File FileName="Assets\Scripts\ItemScript\Trumpet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\Entity.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\SpecificDestruct.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="232" Column="18" />
-      <File FileName="Assets\Scripts\ItemScript\FallingRock.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\AngryBridge.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelScript\endProto.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HUDManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MusicSwitcher.cs" Line="65" Column="33" />
+      <File FileName="Assets\Scripts\MusicSwitcher.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\Zeball.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\BallTrap.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ItemScript\LaunchTrap.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ItemScript\BouncingPlatform.cs" Line="18" Column="1" />
+      <File FileName="Assets\Scripts\ItemScript\LaunchTrap.cs" Line="38" Column="41" />
+      <File FileName="Assets\Scripts\ItemScript\BouncingPlatform.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player.cs" Line="99" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

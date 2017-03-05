@@ -6,9 +6,10 @@ public class LaunchTrap : MonoBehaviour {
 
 	[SerializeField]
 	GameObject[] traps;
-	GameObject[] balls = new GameObject[6];
+	GameObject[] balls = new GameObject[4];
 
 	Player player;
+	bool cooldown = false;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +24,8 @@ public class LaunchTrap : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 
-		if (collision.gameObject.name == "Player" && player.GetComponent<Rigidbody2D>().velocity.x > 0) {
+		if (collision.gameObject.name == "Player" && player.GetComponent<Rigidbody2D>().velocity.x > 0 && !cooldown) {
+			cooldown = true;
 			if (balls[0] != null) {
 				Destroy (balls [0].gameObject);
 				Destroy (balls [1].gameObject);
@@ -44,5 +46,6 @@ public class LaunchTrap : MonoBehaviour {
 		balls[3] = Instantiate (traps[3], new Vector3(172, 45, 0), Quaternion.identity);
 		/*balls[4] = Instantiate (traps[3], new Vector3(172, 50, 0), Quaternion.identity);
 		balls[5] = Instantiate (traps[3], new Vector3(172, 55, 0), Quaternion.identity);*/
+		cooldown = false;
 	}
 }
