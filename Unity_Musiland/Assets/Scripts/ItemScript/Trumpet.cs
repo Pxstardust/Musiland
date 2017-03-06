@@ -31,6 +31,9 @@ public class Trumpet : Entity
     GameObject BulleMaison;
 
     EmotionMaker emotionmaker;
+
+    [SerializeField]
+    Collider2D foulecollider;
     //SpriteRenderer sprite;
 
 
@@ -48,7 +51,9 @@ public class Trumpet : Entity
         //followradius = newfollowradius;
         
 		rigid2D = gameObject.GetComponent<Rigidbody2D>();
-		//rigid2D.constraints = RigidbodyConstraints2D.FreezeAll;
+        //rigid2D.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        Physics2D.IgnoreCollision(target.GetComponent<Collider2D>(), foulecollider, true);
 
     }
 
@@ -64,14 +69,17 @@ public class Trumpet : Entity
 					if (!base.isfleeing && !base.isgoto && !stopCrowd) {  //Flee desactivé car on peut résoudre l'énigme d'une manière non prévue
 						Entity_Stop ();
 						Entity_Flee (target);
-                            emotionmaker.MakeEmotion(EnumList.Emotion.Panic);
-					}
-					break;
+
+                        }
+                        if (emotionmaker.currentemotion != EnumList.Emotion.Panic) emotionmaker.stopEmotion();
+                        emotionmaker.MakeEmotion(EnumList.Emotion.Panic);
+                        break;
 
 				case EnumList.StyleMusic.Fest:
 
-                        emotionmaker.stopEmotion();
+                        if (emotionmaker.currentemotion != EnumList.Emotion.Laugh) emotionmaker.stopEmotion();
                         emotionmaker.MakeEmotion(EnumList.Emotion.Laugh);
+                        
                         //rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
                         if (!base.isfollowing && !stopCrowd) {
 						Entity_Stop ();
@@ -89,7 +97,7 @@ public class Trumpet : Entity
 		}
 
 		if (scared) {
-            emotionmaker.stopEmotion();
+            if (emotionmaker.currentemotion != EnumList.Emotion.Panic) emotionmaker.stopEmotion();
             emotionmaker.MakeEmotion(EnumList.Emotion.Panic);
             if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm) {
 				StartCoroutine (CalmModeFocus ());

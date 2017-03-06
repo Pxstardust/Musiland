@@ -11,6 +11,6 @@ public class EnumList : MonoBehaviour {
     
     public enum Emotion
     {
-        Panic = 1, Angry = 2, Laugh = 3
+        Null= 0, Panic = 1, Angry = 2, Laugh = 3
     }
 }

@@ -28,6 +28,9 @@ public class Pondragon : Entity {
 
     [SerializeField]
     private Collider2D downcollider;
+
+    [SerializeField]
+    private Collider2D upcollider;
     private float Timebed;
 
 
@@ -107,7 +110,7 @@ public class Pondragon : Entity {
 
     public void SetDragonFlatCollider()
     {
-
+        upcollider.enabled = false;
         downcollider.enabled = true;
     }
 }

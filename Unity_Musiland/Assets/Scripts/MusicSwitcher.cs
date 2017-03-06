@@ -51,6 +51,8 @@ public class MusicSwitcher : MonoBehaviour{
     [SerializeField]
     bool NONJEVEUXPASDECOLLIDER;
 
+    public bool isdone;
+
     // ===== Things to add to each style ===== //
 
     // ===== VAR ===== //

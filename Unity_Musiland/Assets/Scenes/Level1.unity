@@ -211,6 +211,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &3823370
 SpriteRenderer:
@@ -303,6 +304,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &5617112
 SpriteRenderer:
@@ -395,6 +397,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &5840991
 SpriteRenderer:
@@ -608,6 +611,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &15213119
 SpriteRenderer:
@@ -765,6 +769,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &17400781
 SpriteRenderer:
@@ -1062,6 +1067,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &20908749
 SpriteRenderer:
@@ -1492,6 +1498,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &30699131
 SpriteRenderer:
@@ -1643,6 +1650,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &34287298
 SpriteRenderer:
@@ -2418,11 +2426,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4613065666590896, guid: 993116bffc079094f87978c94dbdfd38, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 60.09
+      value: 60.05
       objectReference: {fileID: 0}
     - target: {fileID: 4613065666590896, guid: 993116bffc079094f87978c94dbdfd38, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -14.38
+      value: -14.85
       objectReference: {fileID: 0}
     - target: {fileID: 4613065666590896, guid: 993116bffc079094f87978c94dbdfd38, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2521,6 +2529,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &57722077
 SpriteRenderer:
@@ -2677,6 +2686,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &62304968
 SpriteRenderer:
@@ -3439,6 +3449,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &79812188
 SpriteRenderer:
@@ -3803,6 +3814,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &87415418
 SpriteRenderer:
@@ -3895,6 +3907,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &87963709
 SpriteRenderer:
@@ -4353,6 +4366,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &93845868
 SpriteRenderer:
@@ -4496,6 +4510,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 93971979}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &93971981
 SpriteRenderer:
@@ -4576,6 +4591,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &96762298
 SpriteRenderer:
@@ -4681,6 +4697,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &97336733
 SpriteRenderer:
@@ -5011,6 +5028,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &110090932
 SpriteRenderer:
@@ -5178,6 +5196,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 114388066}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &114388068
 SpriteRenderer:
@@ -5396,6 +5415,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!1001 &121349337
 Prefab:
@@ -5507,6 +5527,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &124462139
 SpriteRenderer:
@@ -5751,6 +5772,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 132181238}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &132181240
 SpriteRenderer:
@@ -6079,6 +6101,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &139831117
 SpriteRenderer:
@@ -6226,6 +6249,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &141743377
 SpriteRenderer:
@@ -6578,6 +6602,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 160385564}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &160385566
 SpriteRenderer:
@@ -6722,6 +6747,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &161203328
 SpriteRenderer:
@@ -7164,6 +7190,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &172857054
 SpriteRenderer:
@@ -7256,6 +7283,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &176211706
 SpriteRenderer:
@@ -7407,6 +7435,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &181510800
 SpriteRenderer:
@@ -7578,7 +7607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ba1af45f952614f8cfbdd714b62183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resizeSpeed: 3
+  resizeSpeed: 0.5
+  done: 0
 --- !u!1 &185706922
 GameObject:
   m_ObjectHideFlags: 0
@@ -7635,6 +7665,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &185706925
 SpriteRenderer:
@@ -8026,6 +8057,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &205388430
 SpriteRenderer:
@@ -8196,6 +8228,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 209326255}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &209326257
 SpriteRenderer:
@@ -8435,6 +8468,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 219117753}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &219117755
 SpriteRenderer:
@@ -8528,6 +8562,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &219595589
 SpriteRenderer:
@@ -8625,6 +8660,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &223247423
 SpriteRenderer:
@@ -8859,6 +8895,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 225481836}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &225481838
 SpriteRenderer:
@@ -8952,6 +8989,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &227202016
 SpriteRenderer:
@@ -9370,6 +9408,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 231826094}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &231826096
 SpriteRenderer:
@@ -9594,6 +9633,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &236179157
 SpriteRenderer:
@@ -9923,6 +9963,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &244078626
 SpriteRenderer:
@@ -10158,6 +10199,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &247899804
 SpriteRenderer:
@@ -10324,6 +10366,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &248877010
 SpriteRenderer:
@@ -10506,6 +10549,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &250759188
 SpriteRenderer:
@@ -10785,6 +10829,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &254188460
 SpriteRenderer:
@@ -10892,7 +10937,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ba1af45f952614f8cfbdd714b62183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resizeSpeed: 3
+  resizeSpeed: 0.5
+  done: 0
 --- !u!1001 &254446444
 Prefab:
   m_ObjectHideFlags: 0
@@ -11209,6 +11255,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &263801146
 SpriteRenderer:
@@ -11355,6 +11402,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &268075864
 SpriteRenderer:
@@ -12110,6 +12158,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &287881005
 SpriteRenderer:
@@ -12231,6 +12280,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 291754913}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &291754915
 SpriteRenderer:
@@ -12402,6 +12452,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 296849314}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &296849316
 SpriteRenderer:
@@ -12741,6 +12792,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &310290414
 SpriteRenderer:
@@ -13094,6 +13146,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &317380543
 SpriteRenderer:
@@ -13387,6 +13440,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 322339603}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &322339605
 SpriteRenderer:
@@ -14021,6 +14075,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &339820517
 SpriteRenderer:
@@ -14113,6 +14168,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &342463050
 SpriteRenderer:
@@ -14243,6 +14299,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &352285195
 SpriteRenderer:
@@ -14478,6 +14535,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 358200927}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &358200929
 SpriteRenderer:
@@ -14730,6 +14788,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &365676079
 SpriteRenderer:
@@ -15279,6 +15338,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &394584743
 SpriteRenderer:
@@ -15371,6 +15431,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &398887836
 SpriteRenderer:
@@ -15546,6 +15607,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 402494927}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &402494929
 SpriteRenderer:
@@ -16030,6 +16092,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &414714522
 SpriteRenderer:
@@ -16329,6 +16392,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &428418495
 SpriteRenderer:
@@ -16628,6 +16692,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &435325431
 SpriteRenderer:
@@ -17087,6 +17152,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &460717513
 SpriteRenderer:
@@ -17192,6 +17258,152 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8649218d04250b43a47fa73d0fb903b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &464038526 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1792441097225698, guid: cbe3db7c80335e247b646820c0e8a010,
+    type: 2}
+  m_PrefabInternal: {fileID: 2139075837}
+--- !u!60 &464038532
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 464038526}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 5.31, y: -2.76}
+      - {x: 4.83, y: -2.78}
+      - {x: 4.8599997, y: -2.7}
+      - {x: 4.7999997, y: -2.58}
+      - {x: 4.52, y: -2.55}
+      - {x: 4.29, y: -2.54}
+      - {x: 4.2, y: -2.4099998}
+      - {x: 4.0699997, y: -2.36}
+      - {x: 3.79, y: -2.3}
+      - {x: 3.73, y: -2.24}
+      - {x: 3.55, y: -2.1499999}
+      - {x: 3.3799999, y: -2.08}
+      - {x: 3.1699998, y: -1.9699999}
+      - {x: 3.09, y: -1.92}
+      - {x: 3.07, y: -1.9}
+      - {x: 2.99, y: -1.8499999}
+      - {x: 2.97, y: -1.8299999}
+      - {x: 2.87, y: -1.76}
+      - {x: 2.7, y: -1.64}
+      - {x: 2.6299999, y: -1.61}
+      - {x: 2.55, y: -1.5}
+      - {x: 2.33, y: -1.27}
+      - {x: 2.24, y: -1.23}
+      - {x: 2.1599998, y: -1.2099999}
+      - {x: 2.12, y: -1.2099999}
+      - {x: 2.02, y: -1.02}
+      - {x: 1.9499999, y: -0.95}
+      - {x: 1.89, y: -0.66999996}
+      - {x: 1.8299999, y: -0.53999996}
+      - {x: 1.74, y: -0.44}
+      - {x: 1.73, y: -0.31}
+      - {x: 1.68, y: -0.03}
+      - {x: 1.65, y: 0.049999997}
+      - {x: 1.5999999, y: 0.11}
+      - {x: 1.49, y: 0.16}
+      - {x: 1.54, y: 0.22}
+      - {x: 1.6999999, y: 0.44}
+      - {x: 1.78, y: 0.62}
+      - {x: 1.8199999, y: 0.77}
+      - {x: 1.8399999, y: 1.03}
+      - {x: 1.8199999, y: 1.14}
+      - {x: 1.78, y: 1.24}
+      - {x: 1.68, y: 1.4499999}
+      - {x: 1.5999999, y: 1.55}
+      - {x: 1.4599999, y: 1.68}
+      - {x: 1.37, y: 1.74}
+      - {x: 1.24, y: 1.81}
+      - {x: 1.03, y: 1.8499999}
+      - {x: 0.96999997, y: 1.86}
+      - {x: 0.76, y: 1.86}
+      - {x: 0.62, y: 1.8299999}
+      - {x: 0.42, y: 1.73}
+      - {x: 0.26999998, y: 1.62}
+      - {x: 0.13, y: 1.5}
+      - {x: 0.049999997, y: 1.41}
+      - {x: -0.01, y: 1.4}
+      - {x: -0.14999999, y: 1.4699999}
+      - {x: -0.39999998, y: 1.53}
+      - {x: -0.59, y: 1.56}
+      - {x: -0.85999995, y: 1.56}
+      - {x: -0.93, y: 1.55}
+      - {x: -1.0699999, y: 1.52}
+      - {x: -1.1899999, y: 1.49}
+      - {x: -1.4, y: 1.37}
+      - {x: -1.4399999, y: 1.3299999}
+      - {x: -1.5, y: 1.1999999}
+      - {x: -1.53, y: 1.12}
+      - {x: -1.5699999, y: 0.96999997}
+      - {x: -1.5799999, y: 0.89}
+      - {x: -1.5799999, y: 0.68}
+      - {x: -1.55, y: 0.59999996}
+      - {x: -1.49, y: 0.45999998}
+      - {x: -1.51, y: 0.37}
+      - {x: -1.52, y: 0.26999998}
+      - {x: -1.51, y: -0.04}
+      - {x: -1.4, y: -0.19}
+      - {x: -1.26, y: -0.26}
+      - {x: -1.15, y: -0.29}
+      - {x: -0.96, y: -0.34}
+      - {x: -0.84999996, y: -0.35999998}
+      - {x: -0.39999998, y: -0.35}
+      - {x: -0.16, y: -0.35}
+      - {x: -0.14999999, y: -0.53999996}
+      - {x: -0.099999994, y: -0.81}
+      - {x: -0.17999999, y: -1}
+      - {x: -0.19, y: -1.14}
+      - {x: -0.04, y: -1.6999999}
+      - {x: 0.02, y: -1.73}
+      - {x: 0.07, y: -1.74}
+      - {x: 0.02, y: -1.8299999}
+      - {x: 0.02, y: -1.9799999}
+      - {x: 0.099999994, y: -2.1699998}
+      - {x: 0.28, y: -2.53}
+      - {x: 0.35, y: -2.59}
+      - {x: 0.39, y: -2.6599998}
+      - {x: 0.39, y: -2.77}
+      - {x: 0.41, y: -2.85}
+      - {x: 0.44, y: -2.9199998}
+      - {x: 0.52, y: -3.02}
+      - {x: 0.72999996, y: -3.26}
+      - {x: 0.88, y: -3.4499998}
+      - {x: 1, y: -3.47}
+      - {x: 1.03, y: -3.4399998}
+      - {x: 1.03, y: -3.6299999}
+      - {x: 1.0799999, y: -3.7099998}
+      - {x: 1.1899999, y: -3.82}
+      - {x: 1.62, y: -4.12}
+      - {x: 1.7199999, y: -4.2}
+      - {x: 1.8299999, y: -4.2}
+      - {x: 1.99, y: -4.36}
+      - {x: 2.3899999, y: -4.5499997}
+      - {x: 2.62, y: -4.64}
+      - {x: 2.72, y: -4.73}
+      - {x: 2.87, y: -4.7999997}
+      - {x: 3.1699998, y: -4.87}
+      - {x: 3.4199998, y: -4.95}
+      - {x: 3.52, y: -4.96}
+      - {x: 3.6799998, y: -5.1}
+      - {x: 3.77, y: -5.15}
+      - {x: 4.0099998, y: -5.17}
+      - {x: 4.24, y: -5.19}
+      - {x: 4.33, y: -5.2599998}
+      - {x: 4.4, y: -5.35}
+      - {x: 4.5099998, y: -5.4}
+      - {x: 5.35, y: -5.4}
+      - {x: 5.4, y: -5.35}
+      - {x: 5.4, y: -2.83}
 --- !u!1001 &464367449
 Prefab:
   m_ObjectHideFlags: 0
@@ -17587,6 +17799,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 472357201}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &472357203
 SpriteRenderer:
@@ -17909,6 +18122,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &481806673
 SpriteRenderer:
@@ -18143,6 +18357,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 484624320}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &484624322
 SpriteRenderer:
@@ -18270,6 +18485,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 487363343}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &487363345
 SpriteRenderer:
@@ -18506,6 +18722,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &492023890
 SpriteRenderer:
@@ -19022,6 +19239,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &502682604
 SpriteRenderer:
@@ -19225,6 +19443,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &512140901
 SpriteRenderer:
@@ -19376,6 +19595,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &512604246
 SpriteRenderer:
@@ -19999,6 +20219,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &531711556
 SpriteRenderer:
@@ -20091,6 +20312,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &537297187
 SpriteRenderer:
@@ -20336,6 +20558,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &541278730
 SpriteRenderer:
@@ -20574,6 +20797,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &545747222
 SpriteRenderer:
@@ -20631,7 +20855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ba1af45f952614f8cfbdd714b62183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resizeSpeed: 3
+  resizeSpeed: 0.5
+  done: 0
 --- !u!4 &550240165 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4487637996445036, guid: 06ee816b5c05dbe47b83df269d686cc7,
@@ -20811,6 +21036,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &553945927
 SpriteRenderer:
@@ -20913,6 +21139,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &560592455
 SpriteRenderer:
@@ -21034,6 +21261,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 566177042}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &566177044
 SpriteRenderer:
@@ -21320,6 +21548,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &573796074
 SpriteRenderer:
@@ -21775,6 +22004,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &588499243
 SpriteRenderer:
@@ -21867,6 +22097,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &589657632
 SpriteRenderer:
@@ -22033,6 +22264,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &591813538
 SpriteRenderer:
@@ -22295,6 +22527,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &601695806
 SpriteRenderer:
@@ -22423,6 +22656,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!61 &601856034
 BoxCollider2D:
@@ -22494,6 +22728,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &603159737
 SpriteRenderer:
@@ -22719,6 +22954,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &606325603
 SpriteRenderer:
@@ -23236,6 +23472,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &618384756
 SpriteRenderer:
@@ -23470,6 +23707,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 620727875}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &620727877
 SpriteRenderer:
@@ -23563,6 +23801,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &621415913
 SpriteRenderer:
@@ -23714,6 +23953,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &625587962
 SpriteRenderer:
@@ -23876,6 +24116,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &631934363
 SpriteRenderer:
@@ -23939,8 +24180,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 635366250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.77, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.06, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 834485847}
   m_RootOrder: 1
@@ -24036,6 +24277,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &642103240
 SpriteRenderer:
@@ -24157,6 +24399,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 645375431}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &645375433
 SpriteRenderer:
@@ -24255,6 +24498,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &649243784
 SpriteRenderer:
@@ -24774,6 +25018,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &663840923
 SpriteRenderer:
@@ -24925,6 +25170,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &667296848
 SpriteRenderer:
@@ -25017,6 +25263,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &669001842
 SpriteRenderer:
@@ -25109,6 +25356,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &669873194
 SpriteRenderer:
@@ -25206,6 +25454,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &673739029
 SpriteRenderer:
@@ -25375,6 +25624,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &675787913
 SpriteRenderer:
@@ -25482,6 +25732,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &679558665
 SpriteRenderer:
@@ -25574,6 +25825,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &681141817
 SpriteRenderer:
@@ -25666,6 +25918,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &683782902
 SpriteRenderer:
@@ -25825,6 +26078,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!114 &684704127
 MonoBehaviour:
@@ -25991,6 +26245,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &689993802
 SpriteRenderer:
@@ -26107,6 +26362,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 690649659}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &690649661
 SpriteRenderer:
@@ -26622,6 +26878,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &711359003
 SpriteRenderer:
@@ -26842,6 +27099,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &714014598
 SpriteRenderer:
@@ -27134,6 +27392,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &719231813
 SpriteRenderer:
@@ -27350,6 +27609,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &721921078
 SpriteRenderer:
@@ -27801,6 +28061,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 728420784}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &728420786
 SpriteRenderer:
@@ -27948,6 +28209,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &728839668
 SpriteRenderer:
@@ -28112,6 +28374,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &735488215
 SpriteRenderer:
@@ -28209,6 +28472,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &742649551
 SpriteRenderer:
@@ -28568,6 +28832,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &751223661
 SpriteRenderer:
@@ -28847,6 +29112,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &757306270
 SpriteRenderer:
@@ -29076,6 +29342,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &764401314
 SpriteRenderer:
@@ -29168,6 +29435,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &764681632
 SpriteRenderer:
@@ -29403,6 +29671,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &774361064
 SpriteRenderer:
@@ -29763,6 +30032,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &784044627
 SpriteRenderer:
@@ -29952,6 +30222,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 790648164}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &790648166
 SpriteRenderer:
@@ -30074,6 +30345,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 791735146}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &791735148
 SpriteRenderer:
@@ -30167,6 +30439,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &794308384
 SpriteRenderer:
@@ -30359,6 +30632,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 795555994}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &795555996
 SpriteRenderer:
@@ -30452,6 +30726,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &798014986
 SpriteRenderer:
@@ -30544,6 +30819,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &801350693
 SpriteRenderer:
@@ -30909,6 +31185,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &813382613
 SpriteRenderer:
@@ -31030,6 +31307,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 816519634}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &816519636
 SpriteRenderer:
@@ -31252,6 +31530,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 818708992}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &818708994
 SpriteRenderer:
@@ -31374,6 +31653,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 820352800}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &820352802
 SpriteRenderer:
@@ -31600,6 +31880,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &823791453
 SpriteRenderer:
@@ -31994,6 +32275,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!61 &834485844 stripped
+BoxCollider2D:
+  m_PrefabParentObject: {fileID: 61730790321796828, guid: ed89701ca5998414bbe32ee72e513f2e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1902918683}
 --- !u!114 &834485845 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114267283430892698, guid: ed89701ca5998414bbe32ee72e513f2e,
@@ -32021,6 +32307,25 @@ MonoBehaviour:
   - {fileID: 1061291872651190, guid: 081ca542169fc8341b1ad77bb5aa5bb4, type: 2}
   - {fileID: 1036989486003576, guid: a9b9c70078cf89d42a4e3222ec85f380, type: 2}
   - {fileID: 1776211069490342, guid: a01afe0f24b42f0479166eadef643aa3, type: 2}
+  scaleparticle: 2
+  currentemotion: 0
+--- !u!95 &834485850
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 834485841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 749220da8934f9d4093799b2131fceeb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &834735851 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4457567323985360, guid: aaa930b056ef74b47b6471ebcca4925d,
@@ -32082,6 +32387,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &835369416
 SpriteRenderer:
@@ -32238,6 +32544,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &840045456
 SpriteRenderer:
@@ -32591,6 +32898,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &852553499
 SpriteRenderer:
@@ -32811,6 +33119,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &857435825
 SpriteRenderer:
@@ -33173,6 +33482,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 871216447}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &871216449
 SpriteRenderer:
@@ -33394,6 +33704,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &877708785
 SpriteRenderer:
@@ -33540,6 +33851,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &878912489
 SpriteRenderer:
@@ -33632,6 +33944,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &879854298
 SpriteRenderer:
@@ -33831,6 +34144,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!4 &882421570 stripped
 Transform:
@@ -34025,6 +34339,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 885456948}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &885456950
 SpriteRenderer:
@@ -34182,6 +34497,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &886431653
 SpriteRenderer:
@@ -34274,6 +34590,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &886917357
 SpriteRenderer:
@@ -34390,6 +34707,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 886931689}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &886931691
 SpriteRenderer:
@@ -34646,6 +34964,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &888276079
 SpriteRenderer:
@@ -34743,6 +35062,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &889971304
 SpriteRenderer:
@@ -34864,6 +35184,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 893547599}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &893547601
 SpriteRenderer:
@@ -35039,6 +35360,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &898261902
 SpriteRenderer:
@@ -35136,6 +35458,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &901255058
 SpriteRenderer:
@@ -35468,6 +35791,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 909889552}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &909889554
 SpriteRenderer:
@@ -35623,6 +35947,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &913603359
 SpriteRenderer:
@@ -35715,6 +36040,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &913945672
 SpriteRenderer:
@@ -36078,6 +36404,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 927409085}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &927409087
 SpriteRenderer:
@@ -36227,6 +36554,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &937280456
 SpriteRenderer:
@@ -36803,6 +37131,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &961819665
 SpriteRenderer:
@@ -37428,6 +37757,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &984078189
 SpriteRenderer:
@@ -37579,6 +37909,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &989469094
 SpriteRenderer:
@@ -37671,6 +38002,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &992215587
 SpriteRenderer:
@@ -37763,6 +38095,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &992610613
 SpriteRenderer:
@@ -37975,6 +38308,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &997540257
 SpriteRenderer:
@@ -38126,6 +38460,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1002688928
 SpriteRenderer:
@@ -38395,6 +38730,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1004698193
 SpriteRenderer:
@@ -38546,6 +38882,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1008400118
 SpriteRenderer:
@@ -38638,6 +38975,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1008918805
 SpriteRenderer:
@@ -39287,6 +39625,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1031572923}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1031572925
 SpriteRenderer:
@@ -39654,6 +39993,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1038344703
 SpriteRenderer:
@@ -39751,6 +40091,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1043645395
 SpriteRenderer:
@@ -39912,6 +40253,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1045470528
 SpriteRenderer:
@@ -40082,6 +40424,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1049377178}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1049377180
 SpriteRenderer:
@@ -40269,6 +40612,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1053630509
 SpriteRenderer:
@@ -40683,6 +41027,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1061881241}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1061881243
 SpriteRenderer:
@@ -40855,6 +41200,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1072438101
 SpriteRenderer:
@@ -41016,6 +41362,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1076642460
 SpriteRenderer:
@@ -41223,6 +41570,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1082539661
 SpriteRenderer:
@@ -41315,6 +41663,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1086645013
 SpriteRenderer:
@@ -41481,6 +41830,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1090440147
 SpriteRenderer:
@@ -41573,6 +41923,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1091122132
 SpriteRenderer:
@@ -41898,6 +42249,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1101857148
 SpriteRenderer:
@@ -41990,6 +42342,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1106111218
 SpriteRenderer:
@@ -42136,6 +42489,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1110143655
 SpriteRenderer:
@@ -42520,6 +42874,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1116769942
 SpriteRenderer:
@@ -42612,6 +42967,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1117513688
 SpriteRenderer:
@@ -43035,6 +43391,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1137848258
 SpriteRenderer:
@@ -43132,6 +43489,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1141103782
 SpriteRenderer:
@@ -43224,6 +43582,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1141757777
 SpriteRenderer:
@@ -43399,6 +43758,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1146008382}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1146008384
 SpriteRenderer:
@@ -43556,6 +43916,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1149104281
 SpriteRenderer:
@@ -43894,6 +44255,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1158189648
 SpriteRenderer:
@@ -44226,6 +44588,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1166049759
 SpriteRenderer:
@@ -44696,6 +45059,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1171451390
 SpriteRenderer:
@@ -44788,6 +45152,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1176050847
 SpriteRenderer:
@@ -44994,6 +45359,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1185205099
 SpriteRenderer:
@@ -45091,6 +45457,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1190298135
 SpriteRenderer:
@@ -45183,6 +45550,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1190540369
 SpriteRenderer:
@@ -45275,6 +45643,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1191514247
 SpriteRenderer:
@@ -45544,6 +45913,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1208465434
 SpriteRenderer:
@@ -45924,6 +46294,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1211115590}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1211115592
 SpriteRenderer:
@@ -46081,6 +46452,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1220244974
 SpriteRenderer:
@@ -46251,6 +46623,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1223953995}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1223953997
 SpriteRenderer:
@@ -46349,6 +46722,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1229327886
 SpriteRenderer:
@@ -46660,6 +47034,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1239874443
 SpriteRenderer:
@@ -46907,6 +47282,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1247481426
 SpriteRenderer:
@@ -47266,6 +47642,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1250279323
 SpriteRenderer:
@@ -47483,6 +47860,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1260618465
 SpriteRenderer:
@@ -47575,6 +47953,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1261768967
 SpriteRenderer:
@@ -47833,6 +48212,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1277236557}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1277236559
 SpriteRenderer:
@@ -48062,6 +48442,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1282019517
 SpriteRenderer:
@@ -48287,6 +48668,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1295218857
 SpriteRenderer:
@@ -48550,6 +48932,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1301328377
 SpriteRenderer:
@@ -48726,6 +49109,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1304820395
 SpriteRenderer:
@@ -48842,6 +49226,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1305923149}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1305923151
 SpriteRenderer:
@@ -49171,6 +49556,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1312299417}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!114 &1312299419
 MonoBehaviour:
@@ -49284,6 +49670,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1314709497}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1314709499
 SpriteRenderer:
@@ -49746,6 +50133,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1334174953
 SpriteRenderer:
@@ -49897,6 +50285,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1336591936
 SpriteRenderer:
@@ -50328,6 +50717,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1355227097}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1355227099
 SpriteRenderer:
@@ -50431,6 +50821,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1358760333
 SpriteRenderer:
@@ -50982,6 +51373,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1373240435}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1373240437
 SpriteRenderer:
@@ -51441,6 +51833,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1384745876
 SpriteRenderer:
@@ -51921,6 +52314,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1397663360
 SpriteRenderer:
@@ -52205,6 +52599,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1406450921
 SpriteRenderer:
@@ -53354,6 +53749,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1437375211
 SpriteRenderer:
@@ -53470,6 +53866,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1438279386}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1438279388
 SpriteRenderer:
@@ -54000,6 +54397,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1448781176
 SpriteRenderer:
@@ -54391,6 +54789,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!1 &1457707020
 GameObject:
@@ -54489,6 +54888,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1461414201
 SpriteRenderer:
@@ -54586,6 +54986,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1462930085
 SpriteRenderer:
@@ -54786,6 +55187,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1468506178
 SpriteRenderer:
@@ -54878,6 +55280,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1468856222
 SpriteRenderer:
@@ -54975,6 +55378,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1470190866
 SpriteRenderer:
@@ -55091,6 +55495,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1474404810}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1474404812
 SpriteRenderer:
@@ -55243,6 +55648,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1474569486
 SpriteRenderer:
@@ -55335,6 +55741,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1474641382
 SpriteRenderer:
@@ -55451,6 +55858,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1474719886}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1474719888
 SpriteRenderer:
@@ -55544,6 +55952,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1477974233
 SpriteRenderer:
@@ -56200,6 +56609,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1498099168
 SpriteRenderer:
@@ -56292,6 +56702,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1499887548
 SpriteRenderer:
@@ -56384,6 +56795,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1501724136
 SpriteRenderer:
@@ -56476,6 +56888,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1504599481
 SpriteRenderer:
@@ -56568,6 +56981,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1506685522
 SpriteRenderer:
@@ -56895,6 +57309,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1519398347
 SpriteRenderer:
@@ -57506,6 +57921,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1532072320
 SpriteRenderer:
@@ -57937,6 +58353,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1545795513
 SpriteRenderer:
@@ -58029,6 +58446,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1546089042
 SpriteRenderer:
@@ -58278,6 +58696,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1552017644}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1552017646
 SpriteRenderer:
@@ -58395,6 +58814,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1552680200}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1552680202
 SpriteRenderer:
@@ -58488,6 +58908,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1554239553
 SpriteRenderer:
@@ -58580,6 +59001,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1556253180
 SpriteRenderer:
@@ -58736,6 +59158,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1564366094
 SpriteRenderer:
@@ -58838,6 +59261,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1572744558
 SpriteRenderer:
@@ -58935,6 +59359,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1574395004
 SpriteRenderer:
@@ -59037,6 +59462,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1577662902
 SpriteRenderer:
@@ -59129,6 +59555,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1578526285
 SpriteRenderer:
@@ -59245,6 +59672,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1582939385}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1582939387
 SpriteRenderer:
@@ -59338,6 +59766,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1583516974
 SpriteRenderer:
@@ -59430,6 +59859,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1583914561
 SpriteRenderer:
@@ -59717,6 +60147,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1587799522
 SpriteRenderer:
@@ -59809,6 +60240,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1588768235
 SpriteRenderer:
@@ -60084,6 +60516,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1593505082
 SpriteRenderer:
@@ -60264,6 +60697,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1598739485}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1598739487
 SpriteRenderer:
@@ -60381,6 +60815,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1600296265}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1600296267
 SpriteRenderer:
@@ -60577,6 +61012,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1601838185}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1601838187
 SpriteRenderer:
@@ -60802,6 +61238,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1607775275
 SpriteRenderer:
@@ -60974,6 +61411,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1612041494}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1612041496
 SpriteRenderer:
@@ -61205,6 +61643,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1619795209
 SpriteRenderer:
@@ -61539,6 +61978,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1637616451
 SpriteRenderer:
@@ -61636,6 +62076,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1643608544
 SpriteRenderer:
@@ -61856,6 +62297,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1649142309
 SpriteRenderer:
@@ -62040,6 +62482,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1657986326
 SpriteRenderer:
@@ -62188,6 +62631,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1660174547
 SpriteRenderer:
@@ -62378,6 +62822,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1663977320}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1663977322
 SpriteRenderer:
@@ -62564,7 +63009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ba1af45f952614f8cfbdd714b62183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resizeSpeed: 3
+  resizeSpeed: 0.5
+  done: 0
 --- !u!4 &1667714072 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4677005405531612, guid: 9d2015669bc6a0c47adfbd340edd1542,
@@ -62650,6 +63096,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1668941853}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1668941855
 SpriteRenderer:
@@ -63112,6 +63559,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1683949854
 SpriteRenderer:
@@ -63263,6 +63711,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1684835027
 SpriteRenderer:
@@ -63512,6 +63961,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1693003714}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1693003716
 SpriteRenderer:
@@ -64129,6 +64579,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1714011494
 SpriteRenderer:
@@ -64296,6 +64747,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1720570870
 SpriteRenderer:
@@ -64388,6 +64840,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1720837706
 SpriteRenderer:
@@ -64769,6 +65222,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1729671598
 SpriteRenderer:
@@ -64920,6 +65374,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1730783247
 SpriteRenderer:
@@ -65293,6 +65748,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1735964543}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1735964545
 SpriteRenderer:
@@ -65386,6 +65842,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1737235702
 SpriteRenderer:
@@ -65478,6 +65935,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1740995732
 SpriteRenderer:
@@ -66151,6 +66609,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1765677701
 SpriteRenderer:
@@ -66564,6 +67023,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1772788041
 SpriteRenderer:
@@ -66735,6 +67195,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1775204142}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1775204144
 SpriteRenderer:
@@ -66847,7 +67308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ba1af45f952614f8cfbdd714b62183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resizeSpeed: 3
+  resizeSpeed: 0.5
+  done: 0
 --- !u!4 &1775673510 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4767694553619264, guid: ff57863ed440cdb43a0078a92c8fc21c,
@@ -66997,6 +67459,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1776951570}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1776951572
 SpriteRenderer:
@@ -67254,6 +67717,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1787001151
 SpriteRenderer:
@@ -67432,6 +67896,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1788894646
 SpriteRenderer:
@@ -67597,6 +68062,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1791527156
 SpriteRenderer:
@@ -68264,6 +68730,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1819424487
 SpriteRenderer:
@@ -68474,6 +68941,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1820988337
 SpriteRenderer:
@@ -68750,6 +69218,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1828480091
 SpriteRenderer:
@@ -68866,6 +69335,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1828927413}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1828927415
 SpriteRenderer:
@@ -69219,6 +69689,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1838247563
 SpriteRenderer:
@@ -69649,6 +70120,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1852753414}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1852753416
 SpriteRenderer:
@@ -69799,6 +70271,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1861455167
 SpriteRenderer:
@@ -70081,6 +70554,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1871034233
 SpriteRenderer:
@@ -70173,6 +70647,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1871557040
 SpriteRenderer:
@@ -70342,6 +70817,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1875126566
 SpriteRenderer:
@@ -70468,6 +70944,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1879003059}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1879003061
 SpriteRenderer:
@@ -70566,6 +71043,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1879457601
 SpriteRenderer:
@@ -71191,6 +71669,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1900053120
 SpriteRenderer:
@@ -71376,6 +71855,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1902103276}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1902103278
 SpriteRenderer:
@@ -71422,11 +71902,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4142675054759044, guid: ed89701ca5998414bbe32ee72e513f2e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 148.5
+      value: 149.93
       objectReference: {fileID: 0}
     - target: {fileID: 4142675054759044, guid: ed89701ca5998414bbe32ee72e513f2e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -14.52
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 4142675054759044, guid: ed89701ca5998414bbe32ee72e513f2e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -71519,6 +71999,65 @@ Prefab:
       propertyPath: BulleMaison
       value: 
       objectReference: {fileID: 591936002}
+    - target: {fileID: 212307794614621938, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2978966baef353444a9f3e908e84fd07,
+        type: 3}
+    - target: {fileID: 61730790321796828, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 61730790321796828, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114827500136649536, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: HellTile
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114827500136649536, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: FestTile
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114827500136649536, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: CalmTile
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114827500136649536, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: Hell_Anim
+      value: 
+      objectReference: {fileID: 9100000, guid: 8dc0d564e3d0f374aa78d28ec26dd98e, type: 2}
+    - target: {fileID: 114827500136649536, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: Fest_Anim
+      value: 
+      objectReference: {fileID: 9100000, guid: 749220da8934f9d4093799b2131fceeb, type: 2}
+    - target: {fileID: 114827500136649536, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: Calm_Anim
+      value: 
+      objectReference: {fileID: 9100000, guid: 6f26127131e26af428f576e7c8cff41b, type: 2}
+    - target: {fileID: 4142675054759044, guid: ed89701ca5998414bbe32ee72e513f2e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142675054759044, guid: ed89701ca5998414bbe32ee72e513f2e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267283430892698, guid: ed89701ca5998414bbe32ee72e513f2e,
+        type: 2}
+      propertyPath: foulecollider
+      value: 
+      objectReference: {fileID: 834485844}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -72187,6 +72726,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1924551876
 SpriteRenderer:
@@ -72377,6 +72917,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1926842272}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1926842274
 SpriteRenderer:
@@ -72470,6 +73011,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1927397706
 SpriteRenderer:
@@ -72562,6 +73104,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1928004485
 SpriteRenderer:
@@ -72732,6 +73275,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 1933544270}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &1933544272
 SpriteRenderer:
@@ -72860,7 +73404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ba1af45f952614f8cfbdd714b62183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resizeSpeed: 3
+  resizeSpeed: 0.5
+  done: 0
 --- !u!1001 &1939661319
 Prefab:
   m_ObjectHideFlags: 0
@@ -72942,13 +73487,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1939870649}
-  m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 274.9, y: -1.29, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.07323822, w: 0.9973145}
+  m_LocalPosition: {x: 274.79, y: -3.31, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 472481499}
   m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.4}
 --- !u!212 &1939870651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73204,6 +73749,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1943277618
 SpriteRenderer:
@@ -73261,7 +73807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ba1af45f952614f8cfbdd714b62183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resizeSpeed: 3
+  resizeSpeed: 0.5
+  done: 0
 --- !u!1 &1945036800
 GameObject:
   m_ObjectHideFlags: 0
@@ -73360,6 +73907,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1947122560
 SpriteRenderer:
@@ -73956,6 +74504,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1974057086
 SpriteRenderer:
@@ -74048,6 +74597,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1974637432
 SpriteRenderer:
@@ -74260,6 +74810,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1977882772
 SpriteRenderer:
@@ -74682,6 +75233,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &1983904155
 SpriteRenderer:
@@ -75119,6 +75671,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 2000284334}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &2000284336
 SpriteRenderer:
@@ -75419,7 +75972,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ba1af45f952614f8cfbdd714b62183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resizeSpeed: 3
+  resizeSpeed: 0.5
+  done: 0
 --- !u!4 &2007754764 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4958593665707726, guid: ec4256059797b0b44a5d967c0983a12c,
@@ -75486,6 +76040,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2009586485
 SpriteRenderer:
@@ -75666,6 +76221,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 2014510602}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &2014510604
 SpriteRenderer:
@@ -75815,6 +76371,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2018336446
 SpriteRenderer:
@@ -76386,6 +76943,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 2033027103}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &2033027105
 SpriteRenderer:
@@ -76479,6 +77037,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2034548029
 SpriteRenderer:
@@ -76776,6 +77335,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2046760032
 SpriteRenderer:
@@ -77173,6 +77733,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 2059820494}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &2059820496
 SpriteRenderer:
@@ -77290,6 +77851,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 2061865920}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &2061865922
 SpriteRenderer:
@@ -77452,6 +78014,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2066628413
 SpriteRenderer:
@@ -77731,6 +78294,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2069889680
 SpriteRenderer:
@@ -77874,6 +78438,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2071477894
 SpriteRenderer:
@@ -78565,6 +79130,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2088702267
 SpriteRenderer:
@@ -78760,6 +79326,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 2090491285}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &2090491287
 SpriteRenderer:
@@ -78931,6 +79498,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 2091759924}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &2091759926
 SpriteRenderer:
@@ -79088,6 +79656,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2092846643
 SpriteRenderer:
@@ -79431,6 +80000,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2103765961
 SpriteRenderer:
@@ -79528,6 +80098,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2110768624
 SpriteRenderer:
@@ -79712,6 +80283,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2114366321
 SpriteRenderer:
@@ -79929,6 +80501,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2120667217
 SpriteRenderer:
@@ -80021,6 +80594,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2123435421
 SpriteRenderer:
@@ -80229,6 +80803,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2126243857
 SpriteRenderer:
@@ -80321,6 +80896,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2129369174
 SpriteRenderer:
@@ -80597,6 +81173,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2138377232
 SpriteRenderer:
@@ -80682,6 +81259,17 @@ Prefab:
       propertyPath: trumpet
       value: 
       objectReference: {fileID: 834485845}
+    - target: {fileID: 212021761334171652, guid: cbe3db7c80335e247b646820c0e8a010,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 396eb99d7e27aec49aa0263745001493,
+        type: 3}
+    - target: {fileID: 60729522960231266, guid: cbe3db7c80335e247b646820c0e8a010,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbe3db7c80335e247b646820c0e8a010, type: 2}
   m_IsPrefabParent: 0
@@ -80987,6 +81575,7 @@ MonoBehaviour:
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 0}
   NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &2146513589
 SpriteRenderer:

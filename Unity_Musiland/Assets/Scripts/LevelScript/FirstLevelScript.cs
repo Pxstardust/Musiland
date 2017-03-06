@@ -11,6 +11,7 @@ public class FirstLevelScript : MonoBehaviour {
 
     bool OnceIncendie = false;
     bool IsOnFire = true;
+    bool Startedcalm = false;
 
         [SerializeField]
     FallingThing Poutre;
@@ -41,11 +42,35 @@ public class FirstLevelScript : MonoBehaviour {
 
         if (OnceIncendie && player.playercurrentstyle == EnumList.StyleMusic.Calm && IsOnFire)
         {
-            IsOnFire = false;
+            Startedcalm = true;
+            //IsOnFire = false;
             FlameResize[] tabmagik = (FlameResize[])FindObjectsOfType(typeof(FlameResize)); // Recup' tout les items avec le script de changement
             foreach (FlameResize themetile in tabmagik) // Parcours
             {
                 themetile.Resize(new Vector3(0, 0, 0));
+            }
+        }
+
+        if (Startedcalm & IsOnFire)
+        {
+            FlameResize[] tabmagik = (FlameResize[])FindObjectsOfType(typeof(FlameResize)); // Recup' tout les items avec le script de changement
+            foreach (FlameResize themetile in tabmagik) // Parcours
+            {
+               if (themetile.done)
+                {
+                    IsOnFire = false;
+                    break;
+                }
+            }
+        }
+
+        // Si flamme pas éteinte et switch musique
+        if (Startedcalm && IsOnFire && player.playercurrentstyle != EnumList.StyleMusic.Calm)
+        {
+            FlameResize[] tabmagik = (FlameResize[])FindObjectsOfType(typeof(FlameResize)); // Recup' tout les items avec le script de changement
+            foreach (FlameResize themetile in tabmagik) // Parcours
+            {
+                themetile.Resetsize();
             }
         }
         

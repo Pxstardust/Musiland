@@ -161,8 +161,9 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-        rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
-       //rigid.transform.position = new Vector2(100, 10); // Déplacement dragon
+         rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
+        //rigid.transform.position = new Vector2(100, 10); // Déplacement dragon
+        //rigid.transform.position = new Vector2(325, 10);
         // == AUDIO == //
         audioManager = AudioManager.instance;
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
@@ -1059,6 +1060,15 @@ public class Player : MonoBehaviour {
     {
         // ==== Ajouter mise en scène : son, anim... ===== //
         sprite.enabled = false;
+        ControlPause = true;
+        rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu
+        canMove = false;
+        bRun = false;
+        bVDash = false;
+        hideUnderSnow = false;
+        IsSliding = false;
+        anim.enabled = false;
+        transform.position = CurrentRespawnPoint;
         StartCoroutine(WaitingRespawn(2));
 
     }
@@ -1103,7 +1113,7 @@ public class Player : MonoBehaviour {
 	IEnumerator Freeze(Vector2 velocity){
 		rigid.constraints = RigidbodyConstraints2D.FreezeAll;
 		canMove = false;
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (0.3f);
 		rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
 		rigid.velocity = velocity;
 		if(bInAir)
@@ -1127,18 +1137,11 @@ public class Player : MonoBehaviour {
 
     IEnumerator WaitingRespawn(float time)
     {
-        ControlPause = true;
-		rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu
-		canMove = false;
-		bRun = false;
-		bVDash = false;
-		hideUnderSnow = false;
-		IsSliding = false;
-        transform.position = CurrentRespawnPoint;
         yield return new WaitForSeconds(time);
         ControlPause = false;
 		canMove = true;
         sprite.enabled = true;
+        anim.enabled = true;
         
         audioManager.PlaySoundIfNoPlaying("Respawn");
         //maincamera.transform.position = CurrentRespawnPoint + decalCamOrigine;

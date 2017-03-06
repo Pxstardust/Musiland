@@ -84,6 +84,7 @@ public class HUDManager : MonoBehaviour {
         MusicSwitcher[] tabmagik = (MusicSwitcher[])FindObjectsOfType(typeof(MusicSwitcher)); // Recup' tout les items avec le script de changement
         foreach (MusicSwitcher themetile in tabmagik) // Parcours
         {
+            themetile.isdone = false;
             if (themetile.gameObject.transform.position.x <= farleft) farleft = themetile.gameObject.transform.position.x; // Objet le plus à gauche 
             if (themetile.gameObject.transform.position.x >= farright) farright = themetile.gameObject.transform.position.x; // Objet le plus à droite
         }
@@ -118,8 +119,13 @@ public class HUDManager : MonoBehaviour {
                 (themetile.gameObject.transform.position.y < (Theplayer.sprite.transform.position.y + cap))
                 )
             {
-                script.ChangeTheme(Theplayer.playercurrentstyle);
-                OrnementScript.ChangeImageSrc(Theplayer.playercurrentstyle);
+                if (!script.isdone)
+                {
+                    script.isdone = true;
+                    script.ChangeTheme(Theplayer.playercurrentstyle);
+                    OrnementScript.ChangeImageSrc(Theplayer.playercurrentstyle);
+                }
+
             }
         }
 
