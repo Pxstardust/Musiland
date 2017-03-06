@@ -149,7 +149,7 @@ public class Player : MonoBehaviour {
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         hp = 5;
-        decalCamOrigine = maincamera.transform.position - transform.position;
+		decalCamOrigine = maincamera.transform.position - transform.position;
         anim = GetComponent<Animator>();
        // anim.enabled = true;
         CurrentRespawnPoint = sprite.transform.position;
@@ -811,8 +811,8 @@ public class Player : MonoBehaviour {
         
         if (outscreenx)
         {
-            if (outscreeny)  maincamera.transform.position = new Vector3(translatx, translaty, -10);
-            else maincamera.transform.position = new Vector3(translatx, maincamera.transform.position.y, -10);
+			if (outscreeny)  maincamera.transform.position = new Vector3(translatx, translaty, -10);
+			else maincamera.transform.position = new Vector3(translatx, maincamera.transform.position.y, -10);
         } else if (outscreeny) maincamera.transform.position = new Vector3(maincamera.transform.position.x, translaty, -10);
 
 
