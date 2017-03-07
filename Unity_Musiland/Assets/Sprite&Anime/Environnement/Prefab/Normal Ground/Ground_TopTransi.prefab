@@ -35,8 +35,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151912081920110}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 300.9, y: -15.92, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,11 +57,24 @@ EdgeCollider2D:
   m_Points:
   - {x: 0.27618408, y: -5.361408}
   - {x: 0.3213234, y: -3.5499992}
-  - {x: -0.48617935, y: -1.7915745}
-  - {x: -1.1767464, y: -0.17898941}
-  - {x: -1.8174019, y: 0.35847282}
-  - {x: -1.946228, y: 0.59851265}
-  - {x: -2.4560013, y: 1.9800377}
+  - {x: -0.08215332, y: -2.9356384}
+  - {x: -0.5648804, y: -2.3364716}
+  - {x: -0.9737549, y: -1.949398}
+  - {x: -1.0551758, y: -1.3703842}
+  - {x: -1.3919067, y: -1.0357246}
+  - {x: -1.4056396, y: -0.7146454}
+  - {x: -1.6773071, y: -0.29484558}
+  - {x: -1.9855957, y: 0.041683197}
+  - {x: -2.2219238, y: 0.2677307}
+  - {x: -2.234497, y: 0.3763237}
+  - {x: -2.338684, y: 0.67700005}
+  - {x: -2.668335, y: 0.88301086}
+  - {x: -2.7871704, y: 1.1244926}
+  - {x: -2.9873657, y: 1.2168617}
+  - {x: -3.0114746, y: 1.4369583}
+  - {x: -3.2409058, y: 1.7184124}
+  - {x: -3.507141, y: 1.9271431}
+  - {x: -3.8032837, y: 2.0925465}
   - {x: -5.461258, y: 2.316845}
 --- !u!114 &114773132870494786
 MonoBehaviour:
@@ -74,6 +87,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
+  DisableFestCollider: 0
+  DisableCalmCollider: 0
+  DisableHellCollider: 0
   HellTile: {fileID: 21300000, guid: 01361741da29ddb4ca55a0b887cbd43f, type: 3}
   FestTile: {fileID: 21300000, guid: a9b0b3644aa769e47b9b2c7da21fbe0f, type: 3}
   CalmTile: {fileID: 21300000, guid: 800d75e14a2059e4591a1dda026f17e5, type: 3}
@@ -84,6 +101,8 @@ MonoBehaviour:
   Fest_Anim: {fileID: 0}
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 68884328219341816}
+  NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &212957456815946760
 SpriteRenderer:

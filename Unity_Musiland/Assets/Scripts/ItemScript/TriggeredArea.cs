@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggeredArea : MonoBehaviour {
     [SerializeField]
-    GameObject[] Triggerer;
+    public GameObject[] Triggerer;
 
     public bool IAMTRIGGERED=false;
 
@@ -21,12 +21,13 @@ public class TriggeredArea : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-
+       
         foreach (GameObject triggerer in Triggerer)
         {
+            //print(collision.gameObject + "__" + triggerer);
             if (collision.gameObject == triggerer)
             {
-
+                //print("found");
                 IAMTRIGGERED = true;
             }
         }

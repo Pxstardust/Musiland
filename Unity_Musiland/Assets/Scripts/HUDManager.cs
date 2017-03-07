@@ -92,7 +92,7 @@ public class HUDManager : MonoBehaviour {
         if (Mathf.Abs(starttransipoint - farleft) > Mathf.Abs(starttransipoint - farright)) farest = Mathf.Abs(starttransipoint - farleft);
         else farest = Mathf.Abs(starttransipoint - farright);
        
-        transitime = 10f;
+        transitime = 9.5f;
     }
 
     // ======================================================================================================== //

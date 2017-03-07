@@ -161,9 +161,10 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-         rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
+        rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
         //rigid.transform.position = new Vector2(100, 10); // Déplacement dragon
-        //rigid.transform.position = new Vector2(325, 10);
+        //rigid.transform.position = new Vector2(325, 10); // Déplacement end
+        //rigid.transform.position = new Vector2(400, 10); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
@@ -205,7 +206,7 @@ public class Player : MonoBehaviour {
             {
                 audioManager.PlaySoundIfNoPlaying("Fest_Glide");
                 LastSlideEnd = Time.time;
-                transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, Time.time - SlideTimeStart), SlideStartY, 0);
+                transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, Time.deltaTime*5), SlideStartY, 0);
                 if (TestColliderTop()) // ----- Permet d'avoir une glissade plus fluide sous les objets ----- 
                 {
                     if (sprite.flipX) SlideDestination -= 0.1f;
@@ -226,7 +227,7 @@ public class Player : MonoBehaviour {
                     }
                     else
                     {
-                        DoSlide();
+                        //DoSlide();
                         anim.SetBool("A_IsSlide", true);
                     }
 
@@ -243,7 +244,7 @@ public class Player : MonoBehaviour {
                     }
                     else
                     {
-                        DoSlide();
+                       // DoSlide();
                         anim.SetBool("A_IsSlide", true);
                     }
                 }
@@ -633,7 +634,7 @@ public class Player : MonoBehaviour {
                 {
                     //if (Time.time > LastSlideEnd + SlideCD)
                     {
-                        DoSlide();
+                        DoSlidebis();
                         anim.SetBool("A_IsSlide", true);
                     }
                 }
@@ -1090,6 +1091,34 @@ public class Player : MonoBehaviour {
         SlideTimeStart = Time.time;
         SlideStartY = transform.position.y;
         ChangeHitbox(true);
+    }
+
+    public void DoSlidebis()
+    {
+
+        if (sprite.flipX) SlideDestination = transform.position.x - SlideLength;
+        else SlideDestination = transform.position.x + SlideLength;
+        if (!Physics2D.Linecast(transform.position, new Vector2(SlideDestination, transform.position.y), 1 << LayerMask.NameToLayer("ground")))
+        {
+            while (Physics2D.Linecast(new Vector2(SlideDestination, transform.position.y), new Vector2(SlideDestination, transform.position.y+3.07f), 1 << LayerMask.NameToLayer("ground")))
+            {
+                if (sprite.flipX) SlideDestination -= 0.5f;
+                else SlideDestination += 0.5f;
+            }
+            canSwitch = false;
+            IsSliding = true;
+            SlideTimeStart = Time.time;
+            SlideStartY = transform.position.y;
+            ChangeHitbox(true);
+        } else
+        {
+            canSwitch = false;
+            IsSliding = true;
+            SlideTimeStart = Time.time;
+            SlideStartY = transform.position.y;
+            ChangeHitbox(true);
+        }
+
     }
 
     // ==== Changement Hitbox ===== //

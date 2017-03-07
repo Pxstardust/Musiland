@@ -7,11 +7,19 @@ public class FirstLevelScript : MonoBehaviour {
     Player player;
 
     [SerializeField]
+    Trumpet foule;
+
+    [SerializeField]
     TriggeredArea TriggerIncendie;
+    [SerializeField]
+    TriggeredArea TriggerHouseEnd;
 
     bool OnceIncendie = false;
     bool IsOnFire = true;
     bool Startedcalm = false;
+    bool OnceHouse = false;
+
+
 
         [SerializeField]
     FallingThing Poutre;
@@ -29,11 +37,10 @@ public class FirstLevelScript : MonoBehaviour {
 
         if (Input.GetButtonDown("DebugKey"))
         {
-
-
-            Poutre.Fall();
         }
 
+        // ============================= //
+        // ========= INCENDIE ========== //
         if (TriggerIncendie.IAMTRIGGERED && !OnceIncendie)
         {
             Poutre.Fall();
@@ -73,6 +80,18 @@ public class FirstLevelScript : MonoBehaviour {
                 themetile.Resetsize();
             }
         }
-        
-	}
+
+        // ============================= //
+        // ============================= //
+
+        // =========================== //
+        // ========== HOUSE ========== //
+
+        if (TriggerHouseEnd.IAMTRIGGERED && !OnceHouse)
+        {
+            foule.Housefound = true;
+            foule.target = TriggerHouseEnd.gameObject;
+        }
+
+    }
 }

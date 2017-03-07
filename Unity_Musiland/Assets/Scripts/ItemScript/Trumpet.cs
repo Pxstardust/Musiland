@@ -13,7 +13,7 @@ public class Trumpet : Entity
     [SerializeField]
     float newrotaspeed;
     [SerializeField]
-    GameObject target;
+    public GameObject target;
     [SerializeField]
     Camera maincamera;
 
@@ -36,6 +36,8 @@ public class Trumpet : Entity
     Collider2D foulecollider;
     //SpriteRenderer sprite;
 
+    public bool Housefound = false;
+    bool once = false;
 
     // Use this for initialization
     protected override void Start()
@@ -62,7 +64,12 @@ public class Trumpet : Entity
     {
         Vector3 positioncamera = maincamera.WorldToViewportPoint(this.transform.position);
         base.Update();
-		if (!scared && !fleeCloud) {
+
+        if (Housefound) {
+            if (!once) { once = true; Entity_Stop(); }
+            Entity_GoTo(target.transform.position, 0);
+        }
+        else if (!scared && !fleeCloud) {
 			if (positioncamera.x > 0 && positioncamera.x < 1 && positioncamera.y > 0 && positioncamera.y < 1) {
 				switch (ThisMusicSwitcher.currentstyle) {
 				case EnumList.StyleMusic.Hell:
