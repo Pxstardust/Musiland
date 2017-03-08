@@ -18,6 +18,12 @@ public class FallingRock : Entity {
     [SerializeField]
     Collider2D collider;
 
+	[SerializeField]
+	FallingRock fallingRock1;
+	[SerializeField]
+	FallingRock fallingRock2;
+
+
 
 	MusicSwitcher ThisMusicSwitcher;
 	bool fall = false;
@@ -49,13 +55,18 @@ public class FallingRock : Entity {
         {
             if (collision.gameObject.transform.position.y > transform.position.y)
             {
-                Entity_GoTo(fallPoint, 0);
+				fallingRock1.Fall ();
+				fallingRock2.Fall ();
                 Destroy(crowdCheck.gameObject);
                 trumpet.stopCrowd = false;
             }
 
         }
     }
+
+	public void Fall(){
+		Entity_GoTo(fallPoint, 0);
+	}
 
 	IEnumerator checkHellDuration(){
 		

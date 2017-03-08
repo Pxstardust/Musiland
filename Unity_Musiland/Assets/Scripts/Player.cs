@@ -39,6 +39,13 @@ public class Player : MonoBehaviour {
     float espacex = 0.1f;
     float espacey = 0.1f ;
     float verticaljumpview = 5;
+	float goRight = 0;
+	float goLeft = 0;
+	float goDecal = 0.15f;
+	bool goFall = false;
+	float fallDecal = 0.1f;
+	float goUp = 0;
+	float goDown = 0;
 
 
     // ================= //
@@ -161,9 +168,9 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-        rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
-        //rigid.transform.position = new Vector2(100, 10); // Déplacement dragon
-        //rigid.transform.position = new Vector2(325, 10); // Déplacement end
+		//rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
+		//rigid.transform.position = new Vector2(100, 10); // Déplacement dragon
+        rigid.transform.position = new Vector2(325, 10); // Déplacement end
         //rigid.transform.position = new Vector2(400, 10); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
@@ -280,6 +287,10 @@ public class Player : MonoBehaviour {
                     {
                         TestdestructLeft.Destruction(); // On le détruit
                     }
+					DestructAll TestDesctructAll = Hit.collider.gameObject.GetComponent<DestructAll> () as DestructAll;
+					if (TestDesctructAll) {
+						TestDesctructAll.Launch ();
+					}
                 }
 
                 if (Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground")))
@@ -290,6 +301,10 @@ public class Player : MonoBehaviour {
                     {
                         TestdestructRight.Destruction(); // On le détruit
                     }
+					DestructAll TestDesctructAll = Hit.collider.gameObject.GetComponent<DestructAll> () as DestructAll;
+					if (TestDesctructAll) {
+						TestDesctructAll.Launch ();
+					}
                 }
             }
 
@@ -308,6 +323,12 @@ public class Player : MonoBehaviour {
                         Testdestruct.Destruction(); // On le détruit
                     }
                     else { bVDash = false; }
+
+					DestructAll TestDesctructAll = Hit.collider.gameObject.GetComponent<DestructAll> () as DestructAll;
+					if (TestDesctructAll) {
+						
+						TestDesctructAll.Launch ();
+					}
 
                 }
             } 
@@ -808,13 +829,52 @@ public class Player : MonoBehaviour {
              translaty = Mathf.Lerp(maincamera.transform.position.y, transform.position.y, Time.deltaTime);
 
         }
+
+		//------------------- Replacement de la camera en fonction de la direction de joueur --------------------//
         
+		if (!sprite.flipX) {
+			goRight++;
+			goLeft = 0;
+		}
+
+		if(sprite.flipX){
+			goLeft++;
+			goRight = 0;
+		}
+
+		if (goRight > 100) {
+			goDecal = 0.15f;
+		}
+		if(goLeft > 100){
+			goDecal = -0.15f;
+		}
+
+		//------------------- Replacement de la caméra si on tombe ou non --------------------//
+
+		if (rigid.velocity.y > -0.1f) {
+			goUp++;
+			goDown = 0;
+		}
+
+		if (rigid.velocity.y < -0.1f) {
+			goDown++;
+			goUp = 0;
+		}
+
+
+		if (goDown > 50) {
+			fallDecal = -0.1f;
+		}
+
+		if (goUp > 50){
+			fallDecal = 0.1f;
+		}
         
         if (outscreenx)
         {
-			if (outscreeny)  maincamera.transform.position = new Vector3(translatx, translaty, -10);
-			else maincamera.transform.position = new Vector3(translatx, maincamera.transform.position.y, -10);
-        } else if (outscreeny) maincamera.transform.position = new Vector3(maincamera.transform.position.x, translaty, -10);
+			if (outscreeny)  maincamera.transform.position = new Vector3(translatx + goDecal, translaty + fallDecal, -10);
+			else maincamera.transform.position = new Vector3(translatx + goDecal, maincamera.transform.position.y + fallDecal, -10);
+		} else if (outscreeny) maincamera.transform.position = new Vector3(maincamera.transform.position.x + goDecal, translaty + fallDecal, -10);
 
 
         /*
@@ -1100,7 +1160,7 @@ public class Player : MonoBehaviour {
         else SlideDestination = transform.position.x + SlideLength;
         if (!Physics2D.Linecast(transform.position, new Vector2(SlideDestination, transform.position.y), 1 << LayerMask.NameToLayer("ground")))
         {
-            while (Physics2D.Linecast(new Vector2(SlideDestination, transform.position.y), new Vector2(SlideDestination, transform.position.y+3.07f), 1 << LayerMask.NameToLayer("ground")))
+            while (Physics2D.Linecast(new Vector2(SlideDestination, transform.position.y), new Vector2(SlideDestination, transform.position.y+1.07f), 1 << LayerMask.NameToLayer("ground")))
             {
                 if (sprite.flipX) SlideDestination -= 0.5f;
                 else SlideDestination += 0.5f;
