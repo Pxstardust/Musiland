@@ -42,10 +42,11 @@ public class Player : MonoBehaviour {
 	float goRight = 0;
 	float goLeft = 0;
 	float goDecal = 0.15f;
-	bool goFall = false;
-	float fallDecal = 0.1f;
+	float fallDecal = 0.0f;
 	float goUp = 0;
 	float goDown = 0;
+	float zoomCamera = -10;
+	bool isGliding = false;
 
 
     // ================= //
@@ -169,8 +170,8 @@ public class Player : MonoBehaviour {
 		ApplyStyleCarac(playercurrentstyle);
 
 		//rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
-		//rigid.transform.position = new Vector2(100, 10); // Déplacement dragon
-        rigid.transform.position = new Vector2(325, 10); // Déplacement end
+		//rigid.transform.position = new Vector2(94, 10); // Déplacement dragon
+        //rigid.transform.position = new Vector2(225, 10); // Déplacement end
         //rigid.transform.position = new Vector2(400, 10); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
@@ -601,6 +602,7 @@ public class Player : MonoBehaviour {
                     anim.SetBool("A_IsPlan", true);
                     rigid.gravityScale = 0.10f;
                     rigid.AddForce((new Vector3(0.0f, 0.6f, 0)));
+					isGliding = true;
                 }
             }
             else {
@@ -608,6 +610,7 @@ public class Player : MonoBehaviour {
                 if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm)
                 { // Si on est en l'air
                     rigid.gravityScale = gravityScaleCalm;
+					isGliding = false;
                 }
             }
             // ========== FIN HOLDING JUMP ============ //
@@ -708,13 +711,13 @@ public class Player : MonoBehaviour {
    
         // ================= //
         // ===== Death ===== //
-        if (sprite.transform.position.y < deathheight) hp = 0; // Mort si en dessous certaine hauteur
+        /*if (sprite.transform.position.y < deathheight) hp = 0; // Mort si en dessous certaine hauteur
 
         if (hp == 0)
         {
             UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit();
-        }
+        }*/
         // ================= //
     } // ================================== FIN UPDATE ========================================================= //
 
@@ -806,11 +809,11 @@ public class Player : MonoBehaviour {
 
         if (!IsFalling)
         {
-            if ((PlayerViewportPos.y > 0.4 + espacey) || (PlayerViewportPos.y < 0.4 - espacey)) outscreeny = true;
+            if ((PlayerViewportPos.y > 0.4 + espacey) || (PlayerViewportPos.y < 0.5 - espacey)) outscreeny = true;
             else outscreeny = false;
         } else
         {
-            if ((PlayerViewportPos.y > 0.4 + espacey) || (PlayerViewportPos.y < 0.4 - espacey)) outscreeny = true;
+            if ((PlayerViewportPos.y > 0.8) || (PlayerViewportPos.y < 0.2)) outscreeny = true;
             else outscreeny = false;
         }
 
@@ -851,30 +854,29 @@ public class Player : MonoBehaviour {
 
 		//------------------- Replacement de la caméra si on tombe ou non --------------------//
 
-		if (rigid.velocity.y > -0.1f) {
-			goUp++;
-			goDown = 0;
+		if (!IsFalling) {
+			//fallDecal = 0;
 		}
 
-		if (rigid.velocity.y < -0.1f) {
-			goDown++;
-			goUp = 0;
+		if (IsFalling) {
+			//fallDecal = Mathf.Round (rigid.velocity.y) / 20;
 		}
 
 
-		if (goDown > 50) {
-			fallDecal = -0.1f;
-		}
+		if (rigid.velocity.y < -5 || isGliding) {
+			fallDecal = -0.15f;
+		} else
+			fallDecal = 0.05f;
 
 		if (goUp > 50){
-			fallDecal = 0.1f;
+			//fallDecal = 0.0f;
 		}
         
         if (outscreenx)
         {
-			if (outscreeny)  maincamera.transform.position = new Vector3(translatx + goDecal, translaty + fallDecal, -10);
-			else maincamera.transform.position = new Vector3(translatx + goDecal, maincamera.transform.position.y + fallDecal, -10);
-		} else if (outscreeny) maincamera.transform.position = new Vector3(maincamera.transform.position.x + goDecal, translaty + fallDecal, -10);
+			if (outscreeny)  maincamera.transform.position = new Vector3(translatx + goDecal, translaty + fallDecal, zoomCamera);
+			else maincamera.transform.position = new Vector3(translatx + goDecal, maincamera.transform.position.y + fallDecal, zoomCamera);
+		} else if (outscreeny) maincamera.transform.position = new Vector3(maincamera.transform.position.x + goDecal, translaty + fallDecal, zoomCamera);
 
 
         /*
