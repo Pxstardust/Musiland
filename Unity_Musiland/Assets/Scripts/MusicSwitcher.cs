@@ -21,11 +21,11 @@ public class MusicSwitcher : MonoBehaviour{
 
      // ===== Les 3 sprites ===== //
      [SerializeField]
-    Sprite HellTile;
+    public Sprite HellTile;
     [SerializeField]
-    Sprite FestTile;
+    public Sprite FestTile;
     [SerializeField]
-    Sprite CalmTile;
+    public Sprite CalmTile;
     
     // ===== Les 3 Physiques ===== //
     [SerializeField]

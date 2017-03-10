@@ -10,13 +10,18 @@ public class BallTrap : MonoBehaviour {
 	[SerializeField]
 	bool isDangerous;
 
+	[SerializeField]
+	GameObject pike;
+
 	// Use this for initialization
 	void Start () {
 		rigid = GetComponent<Rigidbody2D> ();
+		Physics2D.IgnoreCollision (GetComponent<Collider2D>(), pike.GetComponent<Collider2D>());
 		if (!isDangerous) {
 			Player player = (Player)FindObjectOfType (typeof(Player));
 			Physics2D.IgnoreCollision (GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
 		}
+		StartCoroutine (DestroySelf());
 	}
 	
 	// Update is called once per frame
@@ -33,6 +38,11 @@ public class BallTrap : MonoBehaviour {
 
 	void OnCollisionStay2D(Collision2D collision)
 	{
-		rigid.AddForce (new Vector3(-2, 0, 0));
+		rigid.AddForce (new Vector3 (-2, 0, 0));
+	}
+
+	IEnumerator DestroySelf(){
+		yield return new WaitForSeconds (15);
+		Destroy (gameObject);
 	}
 }

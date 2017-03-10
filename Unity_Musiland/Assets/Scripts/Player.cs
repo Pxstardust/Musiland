@@ -74,8 +74,8 @@ public class Player : MonoBehaviour {
     float transitime = 0;
     public bool canSwitch = true;
     float maxSpeedCalm = 5; // Vitesse max Calm
-    float maxSpeedFest = 6; // Vitesse max Fest
-	float maxSpeedHell = 8; // Vitesse max Hell
+    float maxSpeedFest = 7; // Vitesse max Fest
+	float maxSpeedHell = 10; // Vitesse max Hell
 
     float gravityScaleCalm = 1.2f;
     float gravityScaleFest = 1.5f;
@@ -170,7 +170,7 @@ public class Player : MonoBehaviour {
 		ApplyStyleCarac(playercurrentstyle);
 
 		//rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
-		//rigid.transform.position = new Vector2(94, 10); // Déplacement dragon
+		rigid.transform.position = new Vector2(100, -7); // Déplacement dragon
         //rigid.transform.position = new Vector2(225, 10); // Déplacement end
         //rigid.transform.position = new Vector2(400, 10); // Déplacement end
         // == AUDIO == //
@@ -322,6 +322,7 @@ public class Player : MonoBehaviour {
                     if (Testdestruct) // Si l'objet touché est destructible 
                     {
                         Testdestruct.Destruction(); // On le détruit
+						bVDash = false; //On détruit les rochers uns par uns
                     }
                     else { bVDash = false; }
 
@@ -944,6 +945,12 @@ public class Player : MonoBehaviour {
             MusicDisturber(true, 1);
             isdisturbed = true;
         }
+
+		/*if (collision.gameObject.tag == "Damage")// && (Time.time > lastDamage + recoveryTime))
+		{
+			PlayerRespawn ();
+			audioManager.PlaySoundIfNoPlaying("Pain_Sound");
+		}*/
 			
     }
 
@@ -1122,6 +1129,7 @@ public class Player : MonoBehaviour {
     public void PlayerRespawn()
     {
         // ==== Ajouter mise en scène : son, anim... ===== //
+		sprite.flipX = false;
         sprite.enabled = false;
         ControlPause = true;
         rigid.velocity = new Vector2(0, 0); // Annule toutes les forces en jeu

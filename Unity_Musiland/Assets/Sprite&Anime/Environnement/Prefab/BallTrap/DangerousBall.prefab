@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1343728771258762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 165.4, y: 51.61, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.75460625}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.75460625}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -103,6 +103,8 @@ MonoBehaviour:
   Fest_Anim: {fileID: 0}
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 58601014216521862}
+  NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!114 &114711548415775228
 MonoBehaviour:
@@ -117,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isDangerous: 1
+  pike: {fileID: 1541917532642348, guid: 993116bffc079094f87978c94dbdfd38, type: 2}
 --- !u!212 &212422371069744014
 SpriteRenderer:
   m_ObjectHideFlags: 1

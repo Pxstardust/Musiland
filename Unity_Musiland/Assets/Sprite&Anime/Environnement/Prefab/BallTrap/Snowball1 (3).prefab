@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114454245343360934}
   m_Layer: 0
   m_Name: Snowball1 (3)
-  m_TagString: Damage
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isDangerous: 0
+  pike: {fileID: 1541917532642348, guid: 993116bffc079094f87978c94dbdfd38, type: 2}
 --- !u!114 &114526824568895676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,6 +117,8 @@ MonoBehaviour:
   Fest_Anim: {fileID: 0}
   Calm_Anim: {fileID: 0}
   Maincollider: {fileID: 58750458891959242}
+  NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 3
 --- !u!212 &212927673977289282
 SpriteRenderer:

@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AvoidBalls.cs" />
      <Compile Include="Assets\DestructAll.cs" />
      <Compile Include="Assets\Scripts\AudioArray.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
