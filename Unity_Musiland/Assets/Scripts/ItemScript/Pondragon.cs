@@ -49,7 +49,7 @@ public class Pondragon : Entity {
         base.Update();
         if (!sleeping)
         {
-            if (positioncamera.x > 0 && positioncamera.x < 1.2f && positioncamera.y > -1 && positioncamera.y < 2)
+            if (positioncamera.x > 0 && positioncamera.x < 0.7f && positioncamera.y > -1 && positioncamera.y < 2)
             {
                 if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm)
                 {

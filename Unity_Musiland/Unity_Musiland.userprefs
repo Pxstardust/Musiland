@@ -13,9 +13,10 @@
       <File FileName="Assets\Scripts\ItemScript\BallTrap.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\LaunchTrap.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\BouncingPlatform.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="720" Column="12" />
+      <File FileName="Assets\Scripts\Player.cs" Line="173" Column="5" />
       <File FileName="Assets\Scripts\ItemScript\FallingRock.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\Destructible.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemScript\Pondragon.cs" Line="52" Column="63" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
