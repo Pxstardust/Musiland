@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114502915833631876}
   - component: {fileID: 60709333489164506}
   - component: {fileID: 82731057370920032}
-  - component: {fileID: 68321192022910396}
+  - component: {fileID: 61026725053856276}
   m_Layer: 8
   m_Name: Hell_Rock
   m_TagString: Sol
@@ -288,8 +288,8 @@ PolygonCollider2D:
       - {x: 1.4, y: -5.2799997}
       - {x: 1.51, y: -5.33}
       - {x: 1.78, y: -5.33}
---- !u!68 &68321192022910396
-EdgeCollider2D:
+--- !u!61 &61026725053856276
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -300,20 +300,8 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-  - {x: -4.457597, y: -3.2312973}
-  - {x: -4.482133, y: -0.69948214}
-  - {x: -4.0592203, y: 1.3290905}
-  - {x: -4.043417, y: 3.499306}
-  - {x: -1.9637412, y: 4.018969}
-  - {x: 1.0191873, y: 4.0727215}
-  - {x: 3.3807666, y: 3.3627405}
-  - {x: 3.475785, y: -0.08792021}
-  - {x: 3.411303, y: -2.346774}
-  - {x: 2.9106147, y: -4.1729937}
-  - {x: 1.3131565, y: -4.1126575}
-  - {x: -2.1989446, y: -4.307474}
-  - {x: -4.1223917, y: -3.4041317}
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8}
 --- !u!82 &82731057370920032
 AudioSource:
   m_ObjectHideFlags: 1
@@ -418,7 +406,7 @@ MonoBehaviour:
   Hell_Anim: {fileID: 0}
   Fest_Anim: {fileID: 0}
   Calm_Anim: {fileID: 0}
-  Maincollider: {fileID: 68321192022910396}
+  Maincollider: {fileID: 61026725053856276}
   NONJEVEUXPASDECOLLIDER: 0
   isdone: 0
   currentstyle: 1
@@ -435,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleemitterGO: {fileID: 198129093582573494, guid: ff295d56bd599384ca417d87aee03c05,
     type: 2}
-  Maincollider: {fileID: 68321192022910396}
+  Maincollider: {fileID: 61026725053856276}
   theMS: {fileID: 114502915833631876}
   isdestroyed: 0
 --- !u!212 &212067434432337922

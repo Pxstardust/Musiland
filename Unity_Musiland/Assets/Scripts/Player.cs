@@ -171,7 +171,7 @@ public class Player : MonoBehaviour {
 
 		//rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
 		//rigid.transform.position = new Vector2(100, -7); // Déplacement dragon
-        //rigid.transform.position = new Vector2(225, 10); // Déplacement end
+        rigid.transform.position = new Vector2(291, 30); // Déplacement end
         //rigid.transform.position = new Vector2(400, 10); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
