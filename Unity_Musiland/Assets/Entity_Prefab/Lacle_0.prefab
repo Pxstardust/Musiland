@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4562430925627296}
   - component: {fileID: 212804579964617588}
+  - component: {fileID: 58949492637851882}
+  - component: {fileID: 114117542134167324}
   m_Layer: 0
   m_Name: Lacle_0
   m_TagString: Untagged
@@ -51,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1771060009928156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 486.4, y: 17, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4825078532585910}
@@ -71,6 +73,20 @@ Transform:
   m_Father: {fileID: 4562430925627296}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58949492637851882
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771060009928156}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.7
 --- !u!95 &95417979448447338
 Animator:
   serializedVersion: 3
@@ -88,6 +104,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114117542134167324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771060009928156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b25d961019a4b4eb9cbb32fcfa9421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212689110860599220
 SpriteRenderer:
   m_ObjectHideFlags: 1

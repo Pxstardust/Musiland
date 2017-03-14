@@ -171,8 +171,9 @@ public class Player : MonoBehaviour {
 
 		//rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
 		//rigid.transform.position = new Vector2(100, -7); // Déplacement dragon
-        rigid.transform.position = new Vector2(291, 30); // Déplacement end
-        //rigid.transform.position = new Vector2(400, 10); // Déplacement end
+        //rigid.transform.position = new Vector2(291, 30); // Déplacement end
+        //rigid.transform.position = new Vector2(380, 10); // Déplacement foule
+        //rigid.transform.position = new Vector2(450, 30); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
@@ -324,7 +325,9 @@ public class Player : MonoBehaviour {
                         Testdestruct.Destruction(); // On le détruit
 						bVDash = false; //On détruit les rochers uns par uns
                     }
-                    else { bVDash = false; }
+                    else { bVDash = false;
+                        audioManager.PlaySound("DiveOnGround");
+                    }
 
 					DestructAll TestDesctructAll = Hit.collider.gameObject.GetComponent<DestructAll> () as DestructAll;
 					if (TestDesctructAll) {
@@ -380,6 +383,8 @@ public class Player : MonoBehaviour {
                     // Son slide frottement contre mur
                     isWallSliding = true;
                     anim.SetBool("A_IsWallSlide", true);
+                    if (Physics2D.Linecast(transform.position, leftCheck.position, 1 << LayerMask.NameToLayer("ground")))  sprite.flipX = false;
+                    if (Physics2D.Linecast(transform.position, rightCheck.position, 1 << LayerMask.NameToLayer("ground"))) sprite.flipX = true;
                     rigid.velocity = new Vector2(0, WallSlideSpeed);
                 } else
                 {
@@ -429,37 +434,37 @@ public class Player : MonoBehaviour {
 			// ===== CALM MUSIC ===== //
 			if (Input.GetButtonDown("calmMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Calm)
 			{
-
+                EnumList.StyleMusic oldone = playercurrentstyle;
 				StartCoroutine(Freeze(rigid.velocity));
 				playercurrentstyle = EnumList.StyleMusic.Calm;
-				HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
+				HUDManager.ScaleCircleTransition(35, PlayerScreenPos, oldone, playercurrentstyle);
 				HUDManager.ChangeAllTiles();
 				ApplyStyleCarac(playercurrentstyle);
-				UpdateBGM(playercurrentstyle);
+				UpdateBGM(playercurrentstyle, oldone);
 			}
 
 			// ===== FEST MUSIC ===== //
 			if (Input.GetButtonDown("festMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Fest)
 			{
-
-				StartCoroutine(Freeze(rigid.velocity));
+                EnumList.StyleMusic oldone = playercurrentstyle;
+                StartCoroutine(Freeze(rigid.velocity));
 				playercurrentstyle = EnumList.StyleMusic.Fest;
-				HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
+				HUDManager.ScaleCircleTransition(35, PlayerScreenPos, oldone, playercurrentstyle);
 				HUDManager.ChangeAllTiles();
 				ApplyStyleCarac(playercurrentstyle);
-				UpdateBGM(playercurrentstyle);
+				UpdateBGM(playercurrentstyle, oldone);
 			}
 
 			// ===== HELL MUSIC ===== //
 			if (Input.GetButtonDown("hellMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Hell)
 			{
-
-				StartCoroutine(Freeze(rigid.velocity));
+                EnumList.StyleMusic oldone = playercurrentstyle;
+                StartCoroutine(Freeze(rigid.velocity));
 				playercurrentstyle = EnumList.StyleMusic.Hell;
-				HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
+				HUDManager.ScaleCircleTransition(35, PlayerScreenPos, oldone, playercurrentstyle);
 				HUDManager.ChangeAllTiles();
 				ApplyStyleCarac(playercurrentstyle);
-				UpdateBGM(playercurrentstyle);
+				UpdateBGM(playercurrentstyle, oldone);
 			}
 
 
@@ -942,7 +947,7 @@ public class Player : MonoBehaviour {
     {
         if (collision.gameObject.tag == "SoundMaker")
         {
-            MusicDisturber(true, 1);
+            //MusicDisturber(true, 1);
             isdisturbed = true;
         }
 
@@ -971,7 +976,7 @@ public class Player : MonoBehaviour {
     {
         if (collision.gameObject.tag == "SoundMaker")
         {
-            MusicDisturber(false, 1);
+            //MusicDisturber(false, 1);
             isdisturbed = false;
         }
     }
@@ -1000,7 +1005,7 @@ public class Player : MonoBehaviour {
                 else { playercurrentstyle++; }
             }
             
-            HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
+            //HUDManager.ScaleCircleTransition(35, PlayerScreenPos, oldone, playercurrentstyle);
         }
     }
 
@@ -1024,19 +1029,50 @@ public class Player : MonoBehaviour {
                 else { playercurrentstyle++; }
             }
 
-            HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
+            //HUDManager.ScaleCircleTransition(35, PlayerScreenPos);
         }
 
     }
 
     // ============================================= //
     // ===== Mise à jour de la musique de fond ===== //
-    public void UpdateBGM(EnumList.StyleMusic newstyle)
+    public void UpdateBGM(EnumList.StyleMusic newstyle, EnumList.StyleMusic oldstyle)
     {
-        audioManager.PlaySound("Transition");
+        float avancement=5;
+       
+
+        // Recup avancement
+        switch (oldstyle)
+        {
+
+            case EnumList.StyleMusic.Hell:
+
+                avancement = audioManager.GetSoundTime("Hell_BGM");
+                if (newstyle == EnumList.StyleMusic.Calm) avancement = avancement * (2.5f); // OK
+                else if (newstyle == EnumList.StyleMusic.Fest) avancement = avancement * (1.25f); // OK
+
+                break;
+            case EnumList.StyleMusic.Fest:
+
+                avancement = audioManager.GetSoundTime("Fest_BGM");
+                if (newstyle == EnumList.StyleMusic.Calm) avancement = avancement * 2; // OK
+                else if (newstyle == EnumList.StyleMusic.Hell) avancement = avancement * (0.8f);
+                break;
+            case EnumList.StyleMusic.Calm:
+                
+                avancement = audioManager.GetSoundTime("Calm_BGM");
+                if (newstyle == EnumList.StyleMusic.Fest) avancement = avancement * (0.5f); 
+                else if (newstyle == EnumList.StyleMusic.Hell) avancement = avancement * (0.4f); 
+                break;
+        }
+
+        //
+
         switch(newstyle)
         {
 		case EnumList.StyleMusic.Hell:
+                audioManager.PlaySound("Transition_Hell");
+                
                 if (!audioManager.IsSoundPlaying("Hell_BGM"))
                 {
                     audioManager.StopSound("Fest_Foule");
@@ -1044,12 +1080,13 @@ public class Player : MonoBehaviour {
                     audioManager.StopSound("Hell_Foule");
                     audioManager.StopSound("Calm_BGM");
                     audioManager.StopSound("Fest_BGM");
-                    if (isdisturbed) audioManager.PlaySound("Hell_Foule");
-                    else audioManager.PlaySound("Hell_BGM");
+                    // if (isdisturbed) audioManager.PlaySound("Hell_Foule");
+                    audioManager.PlaySoundAtTime("Hell_BGM", avancement);
                 }
 
             break;
 		case EnumList.StyleMusic.Fest:
+                audioManager.PlaySound("Transition_Fest");
                 if (!audioManager.IsSoundPlaying("Fest_BGM"))
                 {
                     audioManager.StopSound("Fest_Foule");
@@ -1057,11 +1094,12 @@ public class Player : MonoBehaviour {
                     audioManager.StopSound("Hell_Foule");
                     audioManager.StopSound("Calm_BGM");
                     audioManager.StopSound("Hell_BGM");
-                    if (isdisturbed) audioManager.PlaySound("Fest_Foule");
-                    else audioManager.PlaySound("Fest_BGM");
+                    // if (isdisturbed) audioManager.PlaySound("Fest_Foule");
+                    audioManager.PlaySoundAtTime("Fest_BGM", avancement);
                 }
                 break;
 		case EnumList.StyleMusic.Calm:
+                audioManager.PlaySound("Transition_Calm");
                 if (!audioManager.IsSoundPlaying("Calm_BGM"))
                 {
                     audioManager.StopSound("Fest_Foule");
@@ -1069,8 +1107,8 @@ public class Player : MonoBehaviour {
                     audioManager.StopSound("Hell_Foule");
                     audioManager.StopSound("Fest_BGM");
                     audioManager.StopSound("Hell_BGM");
-                    if (isdisturbed) audioManager.PlaySound("Calm_Foule");
-                    else audioManager.PlaySound("Calm_BGM");
+                    // if (isdisturbed) audioManager.PlaySound("Calm_Foule");
+                    audioManager.PlaySoundAtTime("Calm_BGM", avancement);
                 }
                 break;
         }

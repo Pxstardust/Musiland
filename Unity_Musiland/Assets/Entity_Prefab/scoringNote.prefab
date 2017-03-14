@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285601427101044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.9, y: 26.5, z: -1}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: 42.9, y: 1.4, z: 0}
+  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,16 +97,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
+  DisableFestCollider: 0
+  DisableCalmCollider: 0
+  DisableHellCollider: 0
   HellTile: {fileID: 21300000, guid: 65a05b2c8aee6c642844c1c43361faff, type: 3}
   FestTile: {fileID: 21300000, guid: 7beb7f4744dbdfc45896bac6f2441cc6, type: 3}
   CalmTile: {fileID: 21300000, guid: 7beb7f4744dbdfc45896bac6f2441cc6, type: 3}
   PhysicHell: {fileID: 0}
   PhysicFest: {fileID: 0}
   PhysicCalm: {fileID: 0}
-  Hell_Anim: {fileID: 9100000, guid: b5d670ec37a57834780d577d422f6db0, type: 2}
-  Fest_Anim: {fileID: 9100000, guid: b5d670ec37a57834780d577d422f6db0, type: 2}
-  Calm_Anim: {fileID: 9100000, guid: b5d670ec37a57834780d577d422f6db0, type: 2}
+  Hell_Anim: {fileID: 9100000, guid: de73e311ae94e7e49a523714d2a862a0, type: 2}
+  Fest_Anim: {fileID: 9100000, guid: de73e311ae94e7e49a523714d2a862a0, type: 2}
+  Calm_Anim: {fileID: 9100000, guid: de73e311ae94e7e49a523714d2a862a0, type: 2}
   Maincollider: {fileID: 0}
+  NONJEVEUXPASDECOLLIDER: 0
+  isdone: 0
   currentstyle: 1
 --- !u!212 &212351294058372200
 SpriteRenderer:
@@ -139,7 +145,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7beb7f4744dbdfc45896bac6f2441cc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61ef27d669cf0f14480c85732792fb68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

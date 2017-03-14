@@ -13,6 +13,8 @@ public class FirstLevelScript : MonoBehaviour {
     TriggeredArea TriggerIncendie;
     [SerializeField]
     TriggeredArea TriggerHouseEnd;
+    [SerializeField]
+    TriggeredArea TriggerInferno;
 
     bool OnceIncendie = false;
     bool IsOnFire = true;
@@ -20,8 +22,11 @@ public class FirstLevelScript : MonoBehaviour {
     bool OnceHouse = false;
 
 
+    // ================= //
+    // ===== AUDIO ===== //
+    AudioManager audioManager;
 
-        [SerializeField]
+    [SerializeField]
     FallingThing Poutre;
 
 	// Use this for initialization
@@ -29,7 +34,11 @@ public class FirstLevelScript : MonoBehaviour {
         //player.IsFestActivable = false;
         //player.IsHellActivable = false;
         player.IsCalmActivable = true;
-	}
+
+        // == AUDIO == //
+        audioManager = AudioManager.instance;
+        if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -56,6 +65,12 @@ public class FirstLevelScript : MonoBehaviour {
             {
                 themetile.Resize(new Vector3(0, 0, 0));
             }
+
+            FadeOut[] tab2 = (FadeOut[])FindObjectsOfType(typeof(FadeOut));
+            foreach (FadeOut fadetile in tab2)
+            {
+                fadetile.Fadeto(0);
+            }
         }
 
         if (Startedcalm & IsOnFire)
@@ -65,6 +80,8 @@ public class FirstLevelScript : MonoBehaviour {
             {
                if (themetile.done)
                 {
+                    audioManager.StopSoundIfPlaying("Inferno");
+                    //print("ok");
                     IsOnFire = false;
                     break;
                 }
@@ -91,6 +108,16 @@ public class FirstLevelScript : MonoBehaviour {
         {
             foule.Housefound = true;
             foule.target = TriggerHouseEnd.gameObject;
+        }
+
+        if (TriggerInferno.IAMTRIGGERED && IsOnFire)
+        {
+            audioManager.PlaySoundIfNoPlaying("Inferno");
+        }
+
+        if (!TriggerInferno.IAMTRIGGERED)
+        {
+            audioManager.StopSoundIfPlaying("Inferno");
         }
 
     }

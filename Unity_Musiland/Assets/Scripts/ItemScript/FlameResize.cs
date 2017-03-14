@@ -10,12 +10,15 @@ public class FlameResize : MonoBehaviour {
     Vector3 initsize;
     bool isok=false;
     public bool done;
+
+
  
 
 	// Use this for initialization
 	void Start () {
         initsize = this.transform.localScale;
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,8 +32,9 @@ public class FlameResize : MonoBehaviour {
             }
             else isok = false;
         }
-
-        if (transform.localScale.x < 1) { done = true; }
+           
+       
+        if (transform.localScale.x < (initsize.x*0.01)) { done = true;  }
 	}
 
 

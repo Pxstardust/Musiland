@@ -9,8 +9,21 @@ public class FallingThing : Entity {
     bool isfallen = false;
     Vector3 fallPoint;
 
+    [SerializeField]
+    public string SprotchSongName;
+    [SerializeField]
+    public string FallSongName;
+
+    // ================= //
+    // ===== AUDIO ===== //
+    AudioManager audioManager;
+
     // Use this for initialization
     void Start () {
+        // == AUDIO == //
+        audioManager = AudioManager.instance;
+        if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
+
         fallPoint = new Vector3(this.transform.position.x, fallHeight, this.transform.position.z);
 	}
 
@@ -27,9 +40,18 @@ public class FallingThing : Entity {
     {
        if (!isfallen)
         {
+            StartCoroutine(FallSound());
             Entity_GoTo(fallPoint, 140);
             isfallen = true;
         }
 
+
+    }
+
+    IEnumerator FallSound()
+    {
+        audioManager.PlaySound(FallSongName);
+        yield return new WaitForSeconds(0.35f);
+        audioManager.PlaySound(SprotchSongName);
     }
 }

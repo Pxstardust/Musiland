@@ -10,6 +10,9 @@ public class MusicSwitcher : MonoBehaviour{
     Animator anim;
 
     [SerializeField]
+    public bool skip;
+
+    [SerializeField]
     bool IsPlayer;
 
     [SerializeField]
