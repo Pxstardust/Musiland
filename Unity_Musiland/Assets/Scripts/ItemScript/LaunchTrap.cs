@@ -29,9 +29,9 @@ public class LaunchTrap : MonoBehaviour {
 		if (collision.gameObject.name == "Player" && player.GetComponent<Rigidbody2D>().velocity.x > 0 && !cooldown) {
 			cooldown = true;
 
-			balls[0] = Instantiate (traps[0], new Vector3(119, 3, 0), Quaternion.identity);
-			balls[1] = Instantiate (traps[1], new Vector3(120, 3, 0), Quaternion.identity);
-			balls[2] = Instantiate (traps[2], new Vector3(121, 3, 0), Quaternion.identity);
+			balls[0] = Instantiate (traps[0], new Vector3(125, 3, 0), Quaternion.identity);
+			balls[1] = Instantiate (traps[1], new Vector3(126, 3, 0), Quaternion.identity);
+			balls[2] = Instantiate (traps[2], new Vector3(127, 3, 0), Quaternion.identity);
 
 			if (player.playercurrentstyle == EnumList.StyleMusic.Calm) {
 				renderer = balls [0].gameObject.GetComponent<SpriteRenderer> ();
@@ -64,7 +64,7 @@ public class LaunchTrap : MonoBehaviour {
 
 	IEnumerator LaunchDangerousBall(){
 		yield return new WaitForSeconds (1f);
-		balls[3] = Instantiate (traps[3], new Vector3(128, 5, 0), Quaternion.identity);
+		balls[3] = Instantiate (traps[3], new Vector3(134, 5, 0), Quaternion.identity);
 		if (player.playercurrentstyle == EnumList.StyleMusic.Calm) {
 			renderer = balls [3].gameObject.GetComponent<SpriteRenderer> ();
 			renderer.sprite = balls[3].GetComponent<MusicSwitcher> ().CalmTile;

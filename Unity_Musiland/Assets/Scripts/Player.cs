@@ -169,7 +169,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		//rigid.transform.position = new Vector2 (152, 23); // Déplacement initial
+		rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
 		//rigid.transform.position = new Vector2(100, -7); // Déplacement dragon
         //rigid.transform.position = new Vector2(291, 30); // Déplacement end
         //rigid.transform.position = new Vector2(380, 10); // Déplacement foule
