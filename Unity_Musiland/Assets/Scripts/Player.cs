@@ -398,6 +398,17 @@ public class Player : MonoBehaviour {
                // audioManager.PlayRandomFromArray(1);
                // audioManager.GetSoundTime("Hell_BGM");
             }
+
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                Application.LoadLevel("Level1");
+            }
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                PlayerRespawn();
+                audioManager.PlaySoundIfNoPlaying("Pain_Sound");
+            }
             // == DEBUG == //
 
             // ================================================================================ //
