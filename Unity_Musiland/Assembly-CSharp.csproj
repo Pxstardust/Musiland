@@ -72,7 +72,10 @@
      <Compile Include="Assets\Scripts\ItemScript\UnlockSphere.cs" />
      <Compile Include="Assets\Scripts\ItemScript\Zeball.cs" />
      <Compile Include="Assets\Scripts\ItemScript\musicNote.cs" />
+     <Compile Include="Assets\Scripts\LevelScript\EndLevel.cs" />
      <Compile Include="Assets\Scripts\LevelScript\FirstLevelScript.cs" />
+     <Compile Include="Assets\Scripts\LevelScript\Quit.cs" />
+     <Compile Include="Assets\Scripts\LevelScript\Restart.cs" />
      <Compile Include="Assets\Scripts\LevelScript\endProto.cs" />
      <Compile Include="Assets\Scripts\Manager\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
