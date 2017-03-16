@@ -162,12 +162,12 @@ public class Player : MonoBehaviour {
         anim = GetComponent<Animator>();
        // anim.enabled = true;
         CurrentRespawnPoint = sprite.transform.position;
-        HUDManager = (HUDManager)HUDManagerGO.GetComponent(typeof(HUDManager));
+        if (HUDManagerGO) HUDManager = (HUDManager)HUDManagerGO.GetComponent(typeof(HUDManager));
         characollider = GetComponent<CapsuleCollider2D>();
 
 		//On commence en mode calme
 		playercurrentstyle = EnumList.StyleMusic.Calm;
-		HUDManager.ChangeAllTiles();
+		if (HUDManager) HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
 		//rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
@@ -724,7 +724,7 @@ public class Player : MonoBehaviour {
         // =========================================================================== //
         // =============================== HUD ======================================= //
         // =========================================================================== //
-        backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
+        if (backgroundsplash) backgroundsplash.transform.position = new Vector3(maincamera.transform.position.x, maincamera.transform.position.y, 0);
 
    
         // ================= //

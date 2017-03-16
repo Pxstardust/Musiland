@@ -186,6 +186,7 @@ public class MusicSwitcher : MonoBehaviour{
                 else CurrentPhysic = null; // Sinon la met à nulle
                 break;
             case EnumList.StyleMusic.Calm:
+
                ImageSRC.sprite = CalmTile; // Change le sprite
                 if (PhysicCalm != null) CurrentPhysic = PhysicCalm;// Si il y a une physique particulière à appliquer
                 else CurrentPhysic = null; // Sinon la met à nulle

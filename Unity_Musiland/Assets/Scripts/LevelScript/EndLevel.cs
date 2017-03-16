@@ -21,7 +21,8 @@ public class EndLevel : MonoBehaviour {
 
         if (Restart.IAMTRIGGERED)
         {
-            Application.LoadLevel("TitleScreen");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
+            print("hi");
         }
 
         if (Quit.IAMTRIGGERED)
