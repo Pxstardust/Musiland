@@ -50,6 +50,7 @@
      <Compile Include="Assets\DestructAll.cs" />
      <Compile Include="Assets\Scripts\AudioArray.cs" />
      <Compile Include="Assets\Scripts\AutoEnabled.cs" />
+     <Compile Include="Assets\Scripts\DemiPlayer.cs" />
      <Compile Include="Assets\Scripts\EmotionMaker.cs" />
      <Compile Include="Assets\Scripts\Enum.cs" />
      <Compile Include="Assets\Scripts\ItemScript\AngryBridge.cs" />
@@ -76,10 +77,12 @@
      <Compile Include="Assets\Scripts\LevelScript\FirstLevelScript.cs" />
      <Compile Include="Assets\Scripts\LevelScript\Quit.cs" />
      <Compile Include="Assets\Scripts\LevelScript\Restart.cs" />
+     <Compile Include="Assets\Scripts\LevelScript\Title.cs" />
      <Compile Include="Assets\Scripts\LevelScript\endProto.cs" />
      <Compile Include="Assets\Scripts\Manager\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\HUDManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\HUDManager2.cs" />
      <Compile Include="Assets\Scripts\Manager\Parallaxing.cs" />
      <Compile Include="Assets\Scripts\MusicSwitcher.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
@@ -160,6 +163,9 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -174,6 +180,9 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Purchasing">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
