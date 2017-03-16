@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
 	float goDown = 0;
 	float zoomCamera = -10;
 	bool isGliding = false;
+	bool glideCamera = false;
 
 
     // ================= //
@@ -169,7 +170,7 @@ public class Player : MonoBehaviour {
 		HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
-		rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
+		//rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
 		//rigid.transform.position = new Vector2(100, -7); // Déplacement dragon
         //rigid.transform.position = new Vector2(291, 30); // Déplacement end
         //rigid.transform.position = new Vector2(320, 10); // Déplacement foule
@@ -873,14 +874,19 @@ public class Player : MonoBehaviour {
 
 		if (!IsFalling) {
 			//fallDecal = 0;
+			glideCamera = false;
 		}
 
 		if (IsFalling) {
 			//fallDecal = Mathf.Round (rigid.velocity.y) / 20;
 		}
 
+		if (isGliding) {
+			StartCoroutine (GlideCheck());
+		}
 
-		if (rigid.velocity.y < -5 || isGliding) {
+
+		if (rigid.velocity.y < -5 || glideCamera) {
 			fallDecal = -0.15f;
 		} else
 			fallDecal = 0.05f;
@@ -1298,6 +1304,14 @@ public class Player : MonoBehaviour {
 	IEnumerator JumpGapTime(){
 		yield return new WaitForSeconds (0.7f);
 		jumpGap = false;
+	}
+
+	IEnumerator GlideCheck(){
+		yield return new WaitForSeconds (1.5f);
+		print ("gatcha");	
+		if (isGliding) {
+			glideCamera = true;
+		}
 	}
 
     public void MusicDisturber(bool startorend, int id)
