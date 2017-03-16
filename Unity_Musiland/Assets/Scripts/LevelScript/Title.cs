@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Title : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,12 +12,12 @@ public class Title : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     public void NewGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Control");
     }
 
     public void QuitGame()

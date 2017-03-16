@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class KeyItem : MonoBehaviour {
 
-    
+    [SerializeField]
+    Camera camera;
+
     HUDManager manager;
 
     // ================= //
@@ -36,7 +38,16 @@ public class KeyItem : MonoBehaviour {
             //manager.notesQuantity++;
             audioManager.PlaySound("Reward");
             Destroy(gameObject);
+            StartCoroutine(End());
         }
 
+    }
+
+    IEnumerator End()
+    {
+        var fader = GameObject.FindObjectOfType<SceneFadeInOut>();
+        fader.MakeItFade(2);
+        yield return new WaitForSeconds(1.5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndScreen");
     }
 }
