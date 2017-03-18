@@ -78,12 +78,15 @@
      <Compile Include="Assets\Scripts\LevelScript\Quit.cs" />
      <Compile Include="Assets\Scripts\LevelScript\Restart.cs" />
      <Compile Include="Assets\Scripts\LevelScript\Title.cs" />
+     <Compile Include="Assets\Scripts\LevelScript\controlscreenscript.cs" />
      <Compile Include="Assets\Scripts\LevelScript\endProto.cs" />
      <Compile Include="Assets\Scripts\Manager\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\CameraManager.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\HUDManager.cs" />
      <Compile Include="Assets\Scripts\Manager\HUDManager2.cs" />
      <Compile Include="Assets\Scripts\Manager\Parallaxing.cs" />
+     <Compile Include="Assets\Scripts\Manager\SceneFadeInOut.cs" />
      <Compile Include="Assets\Scripts\MusicSwitcher.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
