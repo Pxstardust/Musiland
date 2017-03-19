@@ -16,6 +16,9 @@ public class HUDManager : MonoBehaviour {
 	public Text score;
 
     [SerializeField]
+    public CameraManager CM;
+
+    [SerializeField]
     public GameObject[] halotab;
     [SerializeField]
     public GameObject[] innerhalotab;
@@ -43,6 +46,7 @@ public class HUDManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         particlesplashimage = particlesplash.GetComponent<Image>();
+        
 	}
 	
 	// Update is called once per frame
@@ -55,7 +59,7 @@ public class HUDManager : MonoBehaviour {
             
             circletransitingtimer -= Time.deltaTime;
             float initscale = cercletransition.transform.localScale.x;
-            float Currentscale = Mathf.Lerp(cercletransition.transform.localScale.x, circletransitingscale, 1-(circletransitingtimer/9f));
+            float Currentscale = Mathf.Lerp(cercletransition.transform.localScale.x, circletransitingscale, ((Time.time - startTime)/9f));
             cercletransition.transform.localScale = new Vector3(Currentscale, Currentscale, 1);
             float t = (Time.time - startTime) / duration;
             foreach (GameObject halo in halotab)
@@ -76,7 +80,6 @@ public class HUDManager : MonoBehaviour {
         {
             //Theplayer.istransiting = false;
             particlesplash.SetActive(false);
-           
         }
     }
 
@@ -136,6 +139,7 @@ public class HUDManager : MonoBehaviour {
     // ===== Fonction qui peret d'initialiser la transition en analysant la map ===== //
     public void ChangeAllTiles()
     {
+        
         starttransipoint = Theplayer.sprite.transform.position.x;
         farleft = 10; farright = -10; transitime = 0.5f;
 
@@ -159,6 +163,7 @@ public class HUDManager : MonoBehaviour {
     // ===== Fonction qui permet d'avoir une transformation des tiles en forme de cercle depuis le joueur ===== //
     public void TransitionChangement()
     {
+       
         particlesplash.SetActive(true);
         OrnementScript = (MusicSwitcher)particlesplash.GetComponent(typeof(MusicSwitcher));
         
@@ -195,6 +200,8 @@ public class HUDManager : MonoBehaviour {
 
             } */
         }
+
+       
 
     }
 

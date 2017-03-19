@@ -48,11 +48,15 @@ public class Player : MonoBehaviour {
 	float zoomCamera = -10;
 	bool isGliding = false;
 	bool glideCamera = false;
+    
+
 
 
     // ================= //
     // ===== AUDIO ===== //
     AudioManager audioManager;
+    [SerializeField]
+    public CameraManager CM;
 
     // ===================== //
     // ===== VARIABLES ===== //
@@ -133,6 +137,7 @@ public class Player : MonoBehaviour {
     float SlideStartY;
 	float SlideCD = 1.5f;
 	float LastSlideEnd;
+    float SlideDuration = 1f;
 
     // =============== //
     // ===== HUD ===== //
@@ -216,9 +221,10 @@ public class Player : MonoBehaviour {
             {
                 audioManager.PlaySoundIfNoPlaying("Fest_Glide");
                 LastSlideEnd = Time.time;
-                transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, Time.deltaTime*5), SlideStartY, 0);
+                transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, ((Time.time-SlideTimeStart)/SlideDuration)), SlideStartY, 0);
                 if (TestColliderTop()) // ----- Permet d'avoir une glissade plus fluide sous les objets ----- 
                 {
+                    SlideDuration += 0.5f;
                     if (sprite.flipX) SlideDestination -= 0.1f;
                     else SlideDestination += 0.1f;
                 }
@@ -366,9 +372,6 @@ public class Player : MonoBehaviour {
                 rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y / 1.1f);
             }
 
-
-
-
             // =========================================== //
             // ================ WALL JUMP ================ //
             bool isWallSliding = false;
@@ -421,31 +424,10 @@ public class Player : MonoBehaviour {
             // === NOTE : PAS DE PRINT ICI, LIMITER CE QU'ON MET POUR EVITER LE FREEZE === //
             // =========================================================================== //
 
-			// ===== NEXT MUSIC ===== //
-            /*if (Input.GetButtonDown("actionRight") && canMove && canSwitch)
-            {
-         
-				StartCoroutine(Freeze(rigid.velocity));
-                ChangeMusictoNext();
-                HUDManager.ChangeAllTiles();
-                ApplyStyleCarac(playercurrentstyle);
-                UpdateBGM(playercurrentstyle);
-            }*/
-
-            // ===== PREVIOUS MUSIC ===== //
-            /*if (Input.GetButtonDown("actionLeft") && canMove && canSwitch)
-            {
-				StartCoroutine(Freeze(rigid.velocity));
-                ChangeMusictoPrevious();
-                HUDManager.ChangeAllTiles();
-                ApplyStyleCarac(playercurrentstyle);
-                UpdateBGM(playercurrentstyle);
-
-            }*/
-
 			// ===== CALM MUSIC ===== //
 			if (Input.GetButtonDown("calmMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Calm)
 			{
+                CM.SwitchBloomOn(5, 0.3f, 2);
                 EnumList.StyleMusic oldone = playercurrentstyle;
 				StartCoroutine(Freeze(rigid.velocity));
 				playercurrentstyle = EnumList.StyleMusic.Calm;
@@ -458,6 +440,8 @@ public class Player : MonoBehaviour {
 			// ===== FEST MUSIC ===== //
 			if (Input.GetButtonDown("festMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Fest)
 			{
+                //CM.BetaBloomOn(true, 3);
+                CM.SwitchBloomOn(5, 0.3f, 2);
                 EnumList.StyleMusic oldone = playercurrentstyle;
                 StartCoroutine(Freeze(rigid.velocity));
 				playercurrentstyle = EnumList.StyleMusic.Fest;
@@ -470,6 +454,7 @@ public class Player : MonoBehaviour {
 			// ===== HELL MUSIC ===== //
 			if (Input.GetButtonDown("hellMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Hell)
 			{
+                CM.SwitchBloomOn(5, 0.3f, 2);
                 EnumList.StyleMusic oldone = playercurrentstyle;
                 StartCoroutine(Freeze(rigid.velocity));
 				playercurrentstyle = EnumList.StyleMusic.Hell;
@@ -676,6 +661,7 @@ public class Player : MonoBehaviour {
                 {
                     //if (Time.time > LastSlideEnd + SlideCD)
                     {
+
                         DoSlidebis();
                         anim.SetBool("A_IsSlide", true);
                     }
@@ -1220,13 +1206,16 @@ public class Player : MonoBehaviour {
 
     public void DoSlidebis()
     {
+        SlideDuration = 1;
 
         if (sprite.flipX) SlideDestination = transform.position.x - SlideLength;
         else SlideDestination = transform.position.x + SlideLength;
-        if (!Physics2D.Linecast(transform.position, new Vector2(SlideDestination, transform.position.y), 1 << LayerMask.NameToLayer("ground")))
+        
+        if (!Physics2D.Linecast(transform.position, new Vector2(SlideDestination, transform.position.y), 1 << LayerMask.NameToLayer("ground"))) // Si la destination est dégagée
         {
             while (Physics2D.Linecast(new Vector2(SlideDestination, transform.position.y), new Vector2(SlideDestination, transform.position.y+1.07f), 1 << LayerMask.NameToLayer("ground")))
             {
+                
                 if (sprite.flipX) SlideDestination -= 0.5f;
                 else SlideDestination += 0.5f;
             }
@@ -1235,8 +1224,11 @@ public class Player : MonoBehaviour {
             SlideTimeStart = Time.time;
             SlideStartY = transform.position.y;
             ChangeHitbox(true);
-        } else
+        } else // Sinon, on slide quand même et on arrêtera le machin avant
         {
+            RaycastHit2D hit = Physics2D.Linecast(transform.position, new Vector2(SlideDestination, transform.position.y), 1 << LayerMask.NameToLayer("ground"));
+            SlideDestination = hit.transform.position.x;
+
             canSwitch = false;
             IsSliding = true;
             SlideTimeStart = Time.time;
