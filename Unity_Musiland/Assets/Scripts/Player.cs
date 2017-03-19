@@ -177,9 +177,9 @@ public class Player : MonoBehaviour {
 
 		//rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
 		//rigid.transform.position = new Vector2(150, 10); // Déplacement dragon
-        //rigid.transform.position = new Vector2(291, 30); // Déplacement end
+        //rigid.transform.position = new Vector2(220, 30); // Déplacement end
         //rigid.transform.position = new Vector2(320, 10); // Déplacement foule
-        rigid.transform.position = new Vector2(450, 30); // Déplacement end
+        //rigid.transform.position = new Vector2(450, 30); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
@@ -817,7 +817,7 @@ public class Player : MonoBehaviour {
             else outscreeny = false;
         } else
         {
-            if ((PlayerViewportPos.y > 0.8) || (PlayerViewportPos.y < 0.2)) outscreeny = true;
+            if ((PlayerViewportPos.y > 0.7) || (PlayerViewportPos.y < 0.3)) outscreeny = true;
             else outscreeny = false;
         }
 
@@ -858,14 +858,8 @@ public class Player : MonoBehaviour {
 
 		//------------------- Replacement de la caméra si on tombe ou non --------------------//
 
-		if (!IsFalling) {
-			//fallDecal = 0;
+		if (rigid.velocity.y >= 0)
 			glideCamera = false;
-		}
-
-		if (IsFalling) {
-			//fallDecal = Mathf.Round (rigid.velocity.y) / 20;
-		}
 
 		if (isGliding) {
 			StartCoroutine (GlideCheck());
