@@ -176,10 +176,10 @@ public class Player : MonoBehaviour {
 		ApplyStyleCarac(playercurrentstyle);
 
 		//rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
-		//rigid.transform.position = new Vector2(100, -7); // Déplacement dragon
+		//rigid.transform.position = new Vector2(150, 10); // Déplacement dragon
         //rigid.transform.position = new Vector2(291, 30); // Déplacement end
         //rigid.transform.position = new Vector2(320, 10); // Déplacement foule
-        //rigid.transform.position = new Vector2(450, 30); // Déplacement end
+        rigid.transform.position = new Vector2(450, 30); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
@@ -1169,6 +1169,7 @@ public class Player : MonoBehaviour {
     // ===== Fonction qui permet au joueur de respawn ===== //
     public void PlayerRespawn()
     {
+        CM.SwitchNoiseOn(0.5f, 5, 2);
         // ==== Ajouter mise en scène : son, anim... ===== //
 		sprite.flipX = false;
         sprite.enabled = false;

@@ -51,6 +51,11 @@ public class EmotionMaker : MonoBehaviour {
                     id = 2;
                     currentemotion = EnumList.Emotion.Panic;
                     break;
+
+                case EnumList.Emotion.Sleepy:
+                    id = 3;
+                    currentemotion = EnumList.Emotion.Sleepy;
+                    break;
             }
 
             GameObject prefab = prefablist[id];

@@ -26,8 +26,13 @@ public class Pondragon : Entity {
     private PolygonCollider2D[] colliders;
     private int currentColliderIndex = 0;
 
+    EmotionMaker emotionmaker;
+
     [SerializeField]
     private Collider2D downcollider;
+
+    [SerializeField]
+    GameObject EmotionSpawn;
 
     [SerializeField]
     private Collider2D upcollider;
@@ -37,6 +42,7 @@ public class Pondragon : Entity {
     // Use this for initialization
     protected override void Start () {
         base.Start();
+        emotionmaker = GetComponent<EmotionMaker>();
         ThisMusicSwitcher = GetComponent<MusicSwitcher>();
         anim = GetComponent<Animator>();
         downcollider.enabled = false;
@@ -45,10 +51,26 @@ public class Pondragon : Entity {
     protected override void Update()
     {
 
+
+        if (emotionmaker.currentemotion != EnumList.Emotion.Angry &&
+            ThisMusicSwitcher.currentstyle != EnumList.StyleMusic.Calm) {
+            emotionmaker.stopEmotion();
+            emotionmaker.MakeEmotion(EnumList.Emotion.Angry);
+        }  
+
+        if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm)
+        {
+            if (emotionmaker.currentemotion== EnumList.Emotion.Angry) { emotionmaker.stopEmotion(); }
+        }
+
+        
         Vector3 positioncamera = maincamera.WorldToViewportPoint(this.transform.position);
         base.Update();
         if (!sleeping)
         {
+            if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Hell) { anim.SetBool("IsRaging", true); }
+            else { anim.SetBool("IsRaging", false); }
+
             if (positioncamera.x > 0 && positioncamera.x < 0.7f && positioncamera.y > -1 && positioncamera.y < 2)
             {
                 if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm)
@@ -66,6 +88,7 @@ public class Pondragon : Entity {
                     timerdozing = 0;
                     dozing = false;
                     anim.SetBool("IsDrooling", false);
+                    if (emotionmaker.currentemotion == EnumList.Emotion.Sleepy) { emotionmaker.stopEmotion();}
                 }
 
             }
@@ -79,6 +102,7 @@ public class Pondragon : Entity {
             if (Timebed > 1.02)
             {
                 SetDragonFlatCollider();
+                EmotionSpawn.transform.localPosition = new Vector3(-3.6f, -3.2f, 0);
             }
         }
 
@@ -103,6 +127,8 @@ public class Pondragon : Entity {
         if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm)
         {
             //lauch destruction animation
+
+            emotionmaker.MakeEmotion(EnumList.Emotion.Sleepy);
             anim.SetBool("IsDrooling", true);
             dozing = true;
         }

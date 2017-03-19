@@ -13,6 +13,9 @@ public class BouncingPlatform : MonoBehaviour {
 	GameObject player;
 	Rigidbody2D playerRigid;
 
+    [SerializeField]
+    GameObject KillerZone;
+    MusicSwitcher ThisMusicSwitcher;
 
     // ================= //
     // ===== AUDIO ===== //
@@ -20,7 +23,8 @@ public class BouncingPlatform : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		playerRigid = player.GetComponent<Rigidbody2D> ();
+        ThisMusicSwitcher = GetComponent<MusicSwitcher>();
+        playerRigid = player.GetComponent<Rigidbody2D> ();
         // == AUDIO == //
         audioManager = AudioManager.instance;
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
@@ -28,7 +32,18 @@ public class BouncingPlatform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (KillerZone)
+        {
+            if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Fest)
+            {
+                KillerZone.SetActive(true);
+            }
+            else
+            {
+                KillerZone.SetActive(false);
+            }
+        }
+
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -37,4 +52,5 @@ public class BouncingPlatform : MonoBehaviour {
         audioManager.PlaySound("Bounce");
 			playerRigid.AddForce (new Vector3(bouncingDirection, bouncingPower, 0));
 	}
+
 }
