@@ -912,6 +912,10 @@ public class Player : MonoBehaviour {
             IsFalling = false;
             rigid.gravityScale = initialgravity; // Disable Fast Fall
 		}
+
+		if (collision.gameObject.tag == "Bounce") {
+			airDash = false;
+		}
 	}
 
     

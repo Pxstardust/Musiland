@@ -10,6 +10,7 @@ TagManager:
   - Goal
   - GM
   - SoundMaker
+  - Bounce
   layers:
   - Default
   - TransparentFX

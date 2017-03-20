@@ -163,7 +163,7 @@ public class Trumpet : Entity
 				yield return new WaitForSeconds (2);
 				if (ThisMusicSwitcher.currentstyle == EnumList.StyleMusic.Calm) {
 					scared = false;
-					speed = 5;
+					speed = 8;
                     emotionmaker.stopEmotion();
 				}
 			}

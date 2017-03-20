@@ -34,6 +34,9 @@ public class BallTrap : MonoBehaviour {
 		/*if (collision.gameObject.tag != "Sol" && collision.gameObject.tag != "Player") {
 			Physics2D.IgnoreCollision (GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
 		}*/
+		if (collision.gameObject.tag == "Player") {
+			rigid.AddForce (new Vector3 (-700, 0, 0));
+		}
 	}
 
 	void OnCollisionStay2D(Collision2D collision)
