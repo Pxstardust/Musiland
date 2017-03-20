@@ -178,8 +178,8 @@ public class Player : MonoBehaviour {
 		//rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
 		//rigid.transform.position = new Vector2(150, 10); // Déplacement dragon
         //rigid.transform.position = new Vector2(220, 30); // Déplacement end
-        rigid.transform.position = new Vector2(320, 10); // Déplacement foule
-        //rigid.transform.position = new Vector2(450, 30); // Déplacement end
+        //rigid.transform.position = new Vector2(320, 10); // Déplacement foule
+        rigid.transform.position = new Vector2(450, 30); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
@@ -192,6 +192,7 @@ public class Player : MonoBehaviour {
     // =========================================== UPDATE ====================================================== //
     // ========================================================================================================= //
     void Update () {
+
 
         // ================================================ //
         // ===============Controle de bInAir=============== //
@@ -399,8 +400,9 @@ public class Player : MonoBehaviour {
             // == DEBUG == //
             if (Input.GetButtonDown("DebugKey"))
             {
-               // audioManager.PlayRandomFromArray(1);
-               // audioManager.GetSoundTime("Hell_BGM");
+                
+                // audioManager.PlayRandomFromArray(1);
+                // audioManager.GetSoundTime("Hell_BGM");
             }
 
             if (Input.GetKeyDown(KeyCode.N))

@@ -64,7 +64,11 @@ public class HUDManager : MonoBehaviour {
             float t = (Time.time - startTime) / duration;
             foreach (GameObject halo in halotab)
             {
-               halo.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Mathf.SmoothStep(maximum, minimum, t));
+                if (halo.GetComponent<SpriteRenderer>())
+                {
+                    halo.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, Mathf.SmoothStep(maximum, minimum, t));
+                } else { halo.GetComponent<Image>().color = new Color(1f, 1f, 1f, Mathf.SmoothStep(maximum, minimum, t)); }
+    
             }
         }
 
