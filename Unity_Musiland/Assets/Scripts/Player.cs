@@ -1163,7 +1163,7 @@ public class Player : MonoBehaviour {
     // ===== Fonction qui permet au joueur de respawn ===== //
     public void PlayerRespawn()
     {
-        CM.SwitchNoiseOn(0.5f, 5, 2);
+        CM.SwitchNoiseOn(0.5f, 2.5f, 2);
         // ==== Ajouter mise en scène : son, anim... ===== //
 		sprite.flipX = false;
         sprite.enabled = false;

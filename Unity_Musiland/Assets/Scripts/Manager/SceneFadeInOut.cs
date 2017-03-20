@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class SceneFadeInOut : MonoBehaviour
 {
-    private RawImage _image;
+    [SerializeField]
+    RawImage _image;
 
     private void Awake()
     {
-        _image = GetComponent<RawImage>();
+        //_image = GetComponent<RawImage>();
     }
 
     public void MakeItFade(float value)

@@ -47,7 +47,7 @@ public class KeyItem : MonoBehaviour {
     {
         var fader = GameObject.FindObjectOfType<SceneFadeInOut>();
         fader.MakeItFade(2);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         UnityEngine.SceneManagement.SceneManager.LoadScene("EndScreen");
     }
 }

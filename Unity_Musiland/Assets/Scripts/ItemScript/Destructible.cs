@@ -19,6 +19,10 @@ public class Destructible : MonoBehaviour {
     [SerializeField]
     MusicSwitcher theMS;
     public bool isdestroyed;
+
+    [SerializeField]
+    bool dontplaymysound;
+
     // Use this for initialization
     void Start () {
         spriterenderer = GetComponent<SpriteRenderer>();
@@ -65,7 +69,7 @@ public class Destructible : MonoBehaviour {
             Destroy(theMS);
             spriterenderer.sprite = null;
             Maincollider.enabled = false;
-            audio.Play();
+            if (!dontplaymysound) audio.Play();
 
             if (particleemitterGO)
             {
