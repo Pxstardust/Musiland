@@ -178,8 +178,8 @@ public class Player : MonoBehaviour {
 		//rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
 		//rigid.transform.position = new Vector2(150, 10); // Déplacement dragon
         //rigid.transform.position = new Vector2(220, 30); // Déplacement end
-        //rigid.transform.position = new Vector2(320, 10); // Déplacement foule
-        rigid.transform.position = new Vector2(450, 30); // Déplacement end
+        rigid.transform.position = new Vector2(320, 10); // Déplacement foule
+        //rigid.transform.position = new Vector2(450, 30); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
         if (audioManager == null) Debug.LogError(this + " n'a pas trouvé d'AudioManager");
@@ -206,6 +206,7 @@ public class Player : MonoBehaviour {
 		else {
 			bInAir = false;
 			airDash = false;
+            audioManager.ResetThatArray(4);
 		}
 			
 
@@ -274,15 +275,15 @@ public class Player : MonoBehaviour {
             if (bVDash && Time.time > LastVDashStart + DureeVDash) { bVDash = false; } // Si on est en V Dash depuis un certain temps :stop
             if (bRun)
             {
-                sprite.color = new Color32(0, 255, 0, 255);
+                sprite.color = new Color32(150, 00, 0, 255);
             }
             else if (bVDash)
             {
-                sprite.color = new Color32(0, 255, 0, 255);
+                sprite.color = new Color32(150, 00, 0, 255);
             }
             else if (hideUnderSnow)
             {
-                sprite.color = new Color32(0, 0, 255, 255);
+                sprite.color = new Color32(255,255,255, 100);
             }
             else sprite.color = new Color32(255, 255, 255, 255); ;
 
@@ -535,7 +536,7 @@ public class Player : MonoBehaviour {
                 }
                 else if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < -4f)
                 { // On ralenti le joueur dans sa chute s'il commence à planner
-                    audioManager.PlaySoundIfNoPlaying("Calm_Glide");
+                    //audioManager.PlaySoundIfNoPlaying("Calm_Glide");
                     rigid.velocity = new Vector2(rigid.velocity.x, 0);
                 }
 
@@ -603,7 +604,9 @@ public class Player : MonoBehaviour {
                 // ----- (C) PLANER ----- 
                 if (bInAir && playercurrentstyle == EnumList.StyleMusic.Calm && rigid.velocity.y < 0)
                 { // Si on est en l'air
-                    audioManager.PlaySoundIfNoPlaying("Calm_Glide");
+                    audioManager.PlayArrayUntilDone(4);
+
+                    //audioManager.PlaySoundIfNoPlaying("Calm_Glide");
                     anim.SetBool("A_IsPlan", true);
                     rigid.gravityScale = 0.10f;
                     rigid.AddForce((new Vector3(0.0f, 0.6f, 0)));
@@ -621,7 +624,8 @@ public class Player : MonoBehaviour {
             // ========== FIN HOLDING JUMP ============ //
             if (Input.GetButtonUp("Jump"))
             {
-                audioManager.StopSoundIfPlaying("Calm_Glide");
+                //audioManager.StopSoundIfPlaying("Calm_Glide");
+                audioManager.StopThatArray(4);
                 anim.SetBool("A_IsPlan", false);
                 //anim.SetBool("A_IsJump", false);
             }
@@ -1301,7 +1305,7 @@ public class Player : MonoBehaviour {
 
 	IEnumerator GlideCheck(){
 		yield return new WaitForSeconds (1.5f);
-		print ("gatcha");	
+
 		if (isGliding) {
 			glideCamera = true;
 		}

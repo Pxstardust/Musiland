@@ -8,6 +8,10 @@ public class Sound
     public bool loop;
     public string name;
     public AudioClip clip;
+    public int ArrayHoldingNumber;
+   
+
+    public int currentholding;
 
     [Range(0f, 10f)]
     public float volume = 0.7f;
@@ -81,7 +85,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     AudioArray[] soundsarray;
 
-    List<Sound> buffer = new List<Sound>();
+    public bool holdonbaby;
+
+
+    List<List<Sound>> bufferlist = new List<List<Sound>>();
+    
 
     // ======================================= //
     void Awake()
@@ -112,6 +120,20 @@ public class AudioManager : MonoBehaviour
             _go.transform.SetParent(this.transform);
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
+
+        for (int i=0; i < soundsarray.Length; i++)
+        {
+            for (int j = 0; j < soundsarray[i].sounds.Length; j++)
+            {
+                GameObject _go = new GameObject("Sound_" + i + "_" + soundsarray[i].sounds[j].name);
+                _go.transform.SetParent(this.transform);
+                soundsarray[i].sounds[j].SetSource(_go.AddComponent<AudioSource>());
+                List<Sound> buffer = new List<Sound>();
+                bufferlist.Add(buffer);
+            }
+        }
+
+       
 
         PlaySound("Calm_BGM");
     }
@@ -254,6 +276,33 @@ public class AudioManager : MonoBehaviour
          }
      }*/
 
+    public void StopThatArray(int _idarray)
+    {
+        AudioArray Theone = null;
+
+        // ===== RECUP ARRAY ===== //
+        for (int i = 0; i < soundsarray.Length; i++)
+        {
+            if (soundsarray[i].arrayid == _idarray)
+            {
+                for (int j =0; j < soundsarray[i].sounds.Length; j++)
+                {
+                    soundsarray[i].sounds[j].Stop();
+                }
+            }
+        }
+
+        holdonbaby = true;
+
+
+    }
+
+    public void ResetThatArray(int _idarray)
+    {
+        holdonbaby = false;
+        bufferlist[_idarray].Clear();
+    }
+
     public void PlayArrayUntilDone(int _idarray)
     {
         AudioArray Theone = null;
@@ -267,29 +316,82 @@ public class AudioManager : MonoBehaviour
                 Theone = soundsarray[i];
                 shouldrandom = soundsarray[i].israndom;
             }
-        }
+        } // ===================== //
 
-        if (buffer.Count == 0)
+        // ========== BUFFER ========== //
+        if (bufferlist[_idarray].Count == 0)
         {
 
-
             // ===== Parcours du tableau pour le remplir ===== //
-            if (Theone && buffer.Count == 0)
+            if (Theone && bufferlist[_idarray].Count == 0)
             {
                 for (int i = 0; i < Theone.sounds.Length; i++)
                 {
-                    buffer.Add(Theone.sounds[i]);
+                    bufferlist[_idarray].Add(Theone.sounds[i]);
                 }
             }
 
-        } // Fin remplir buffer
+        } // ========================== //
 
-        if (buffer.Count > 0)
+
+        
+       
+        for (int z=0; z < bufferlist[_idarray].Count; z++)
+        {
+            //print(id_array+" -- "+bufferlist[_idarray][z].name);
+        }
+
+
+
+        if (bufferlist[_idarray].Count > 0)
         {
             int i = 0;
-            if (shouldrandom) i = Random.Range(0, buffer.Count);
-            buffer[0].Play();
-            buffer.RemoveAt(0);
+
+            if (bufferlist[_idarray][0].IsPlaying()) // Si son joué
+            {
+                
+            } else // Si son terminé
+            {
+                if (holdonbaby)
+                {
+                    holdonbaby = false;
+                    if (bufferlist[_idarray][0].loop != true && // Si musique qui loop pas
+                        bufferlist[_idarray][0].currentholding >= bufferlist[_idarray][0].ArrayHoldingNumber) // qui a été trop jouée
+                    {
+                        bufferlist[_idarray][0].currentholding = 0;
+                        bufferlist[_idarray].RemoveAt(0);
+                        if (shouldrandom) i = Random.Range(0, bufferlist[_idarray].Count);
+                        else i = 0;
+                        bufferlist[_idarray][i].Play();
+                    }
+                    else // Musique qui loop ou musique pas assez jouée
+                    {
+                        bufferlist[_idarray][0].Play();
+                        bufferlist[_idarray][0].currentholding++;
+                    }
+                } else
+                {
+                    if (bufferlist[_idarray][0].loop != true) // qui a été trop jouée
+                    {
+                        bufferlist[_idarray][0].currentholding = 0;
+                        bufferlist[_idarray].RemoveAt(0);
+                        if (shouldrandom) i = Random.Range(0, bufferlist[_idarray].Count);
+                        else i = 0;
+                        bufferlist[_idarray][i].Play();
+                    }
+                    else // Musique qui loop ou musique pas assez jouée
+                    {
+                        bufferlist[_idarray][0].Play();
+                        bufferlist[_idarray][0].currentholding++;
+                    }
+                }
+
+
+                
+
+            }
+
+
         }
 
     }
