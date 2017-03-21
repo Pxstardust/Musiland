@@ -89,7 +89,7 @@ public class Player : MonoBehaviour {
     float moveForceHell = 20f;
 
 	float jumpForceHell = 500;
-	float jumpForceFest = 500;
+	float jumpForceFest = 600;
 	float jumpForceCalm = 450;
 	float wallJumpForceFest = 500;
 	float attenuationJumGap = 70;
