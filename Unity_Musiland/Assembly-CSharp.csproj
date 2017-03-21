@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\ItemScript\KeyItem.cs" />
      <Compile Include="Assets\Scripts\ItemScript\LaunchTrap.cs" />
      <Compile Include="Assets\Scripts\ItemScript\Pondragon.cs" />
+     <Compile Include="Assets\Scripts\ItemScript\Potataupe.cs" />
      <Compile Include="Assets\Scripts\ItemScript\Projo.cs" />
      <Compile Include="Assets\Scripts\ItemScript\SpecificDestruct.cs" />
      <Compile Include="Assets\Scripts\ItemScript\TriggeredArea.cs" />

@@ -83,14 +83,14 @@ public class Player : MonoBehaviour {
 	float maxSpeedHell = 10; // Vitesse max Hell
 
     float gravityScaleCalm = 1.2f;
-    float gravityScaleFest = 1.5f;
-    float gravityScaleHell = 1.5f;
+    float gravityScaleFest = 2f;
+    float gravityScaleHell = 3f;
 
     float moveForceHell = 20f;
 
-	float jumpForceHell = 400;
-	float jumpForceFest = 450;
-	float jumpForceCalm = 500;
+	float jumpForceHell = 500;
+	float jumpForceFest = 500;
+	float jumpForceCalm = 450;
 	float wallJumpForceFest = 500;
 	float attenuationJumGap = 70;
 
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour {
     public bool bRun;
     bool IsHoldingDown = false;
     float lastchange = 0; // Date du dernier changement
-    float initialgravity = 1; // Gravity Scale 
+    float initialgravity = 1.2f; // Gravity Scale 
     float deathheight = -10; // Hauteur avant de mourir
     float mintimejump = 0.5f; // Durée entre deux sauts
     float timelastjump; // Date du dernier saut
@@ -178,7 +178,7 @@ public class Player : MonoBehaviour {
 		//rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
 		//rigid.transform.position = new Vector2(150, 10); // Déplacement dragon
         //rigid.transform.position = new Vector2(220, 30); // Déplacement end
-        rigid.transform.position = new Vector2(320, 10); // Déplacement foule
+        //rigid.transform.position = new Vector2(320, 10); // Déplacement foule
         //rigid.transform.position = new Vector2(450, 30); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
@@ -193,6 +193,7 @@ public class Player : MonoBehaviour {
     // ========================================================================================================= //
     void Update () {
 
+		print (rigid.gravityScale);
 
         // ================================================ //
         // ===============Controle de bInAir=============== //
@@ -363,7 +364,7 @@ public class Player : MonoBehaviour {
                     rigid.velocity = new Vector2(moveForceHell, 0);
 
             }
-            else {
+			else if(playercurrentstyle == EnumList.StyleMusic.Hell){
                 rigid.gravityScale = gravityScaleHell;
             }
 
