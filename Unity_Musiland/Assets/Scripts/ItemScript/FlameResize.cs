@@ -34,7 +34,7 @@ public class FlameResize : MonoBehaviour {
         }
            
        
-        if (transform.localScale.x < (initsize.x*0.01)) { done = true;  }
+        if (transform.localScale.x < (initsize.x*0.05)) { done = true;  }
 	}
 
 

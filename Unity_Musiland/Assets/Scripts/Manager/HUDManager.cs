@@ -36,7 +36,7 @@ public class HUDManager : MonoBehaviour {
 
     // == HALO == //
     public float minimum = 0.0f;
-    public float maximum = 1f;
+    public float maximum = 0.5f;
     public float duration = 0.5f;
     private float startTime;
 

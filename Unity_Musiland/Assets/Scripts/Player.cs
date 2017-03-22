@@ -176,10 +176,11 @@ public class Player : MonoBehaviour {
 		if (HUDManager) HUDManager.ChangeAllTiles();
 		ApplyStyleCarac(playercurrentstyle);
 
+        //rigid.transform.position = new Vector3(60, 50); // Déplacement rocher
 		//rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
 		//rigid.transform.position = new Vector2(150, 10); // Déplacement dragon
         //rigid.transform.position = new Vector2(220, 30); // Déplacement end
-        //rigid.transform.position = new Vector2(320, 10); // Déplacement foule
+        rigid.transform.position = new Vector2(320, 10); // Déplacement foule
         //rigid.transform.position = new Vector2(450, 30); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
@@ -501,7 +502,7 @@ public class Player : MonoBehaviour {
 				StartCoroutine (HelpJump());
 			} else {
 				if (!helpJump) {
-					print ("gatcha");
+
 					canJump = false;
 				}
 			}
