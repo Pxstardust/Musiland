@@ -48,8 +48,6 @@ public class Player : MonoBehaviour {
 	float zoomCamera = -10;
 	bool isGliding = false;
 	bool glideCamera = false;
-    
-
 
 
     // ================= //
@@ -93,6 +91,9 @@ public class Player : MonoBehaviour {
 	float jumpForceCalm = 450;
 	float wallJumpForceFest = 500;
 	float attenuationJumGap = 70;
+
+	bool canJump = false;
+	bool helpJump = false;
 
     // === Keys === //
     private bool KeyShoot;
@@ -192,8 +193,6 @@ public class Player : MonoBehaviour {
     // =========================================== UPDATE ====================================================== //
     // ========================================================================================================= //
     void Update () {
-
-		print (rigid.gravityScale);
 
         // ================================================ //
         // ===============Controle de bInAir=============== //
@@ -494,10 +493,24 @@ public class Player : MonoBehaviour {
             // =============== Jump  ============== //
 
             // ========== BUTTON DOWN ============ //
+
+			// On permet au joueur de sauter même s'il vient tout juste de quitter un bord, //
+			//sinon il ne peut sauter que lorsqu'il touche le sol //
+			if (Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("ground"))) {
+				canJump = true;
+				StartCoroutine (HelpJump());
+			} else {
+				if (!helpJump) {
+					print ("gatcha");
+					canJump = false;
+				}
+			}
+				
+
             if (Input.GetButtonDown("Jump") && canMove)
             {
                 // ----- (F) SLIDE -----
-                if (!bInAir && Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
+				if (canJump)
                 {
                     //if (IsHoldingDown && !IsSliding && playercurrentstyle == EnumList.StyleMusic.Fest) { // SLIDE
                     //DoSlide ();
@@ -508,6 +521,7 @@ public class Player : MonoBehaviour {
                         IsVDashDone = false;
 						jumpGap = true;
 						StartCoroutine (JumpGapTime());
+						rigid.velocity = new Vector3 (rigid.velocity.x, 0, 0);
                         switch (playercurrentstyle)
                         {
                             case EnumList.StyleMusic.Calm:
@@ -1272,6 +1286,14 @@ public class Player : MonoBehaviour {
 			yield return new WaitForSeconds (0.2f);
 		canMove = true;
 
+	}
+
+	//On laisse au joueur un petit délai pour sauter sur le bord des platerformes
+
+	IEnumerator HelpJump(){
+		helpJump = true;
+		yield return new WaitForSeconds (1f);
+		helpJump = false;
 	}
 
 	//public bool 
