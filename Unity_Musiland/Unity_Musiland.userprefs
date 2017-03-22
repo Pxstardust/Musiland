@@ -12,7 +12,7 @@
       <File FileName="Assets\Scripts\ItemScript\BallTrap.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\LaunchTrap.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\BouncingPlatform.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="497" Column="86" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1298" Column="39" />
       <File FileName="Assets\Scripts\ItemScript\FallingRock.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\Destructible.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemScript\Pondragon.cs" Line="1" Column="1" />

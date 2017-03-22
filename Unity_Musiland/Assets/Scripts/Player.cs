@@ -495,14 +495,16 @@ public class Player : MonoBehaviour {
 
             // ========== BUTTON DOWN ============ //
 
+			print (canJump);
 			// On permet au joueur de sauter même s'il vient tout juste de quitter un bord, //
 			//sinon il ne peut sauter que lorsqu'il touche le sol //
 			if (Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("ground"))) {
 				canJump = true;
-				StartCoroutine (HelpJump());
 			} else {
-				if (!helpJump) {
-
+				if (canJump) {
+					StartCoroutine (HelpJump());
+				}
+				else {
 					canJump = false;
 				}
 			}
@@ -937,6 +939,7 @@ public class Player : MonoBehaviour {
 
 		if (collision.gameObject.tag == "Bounce") {
 			airDash = false;
+			rigid.gravityScale = gravityScaleFest;
 		}
 	}
 
@@ -1292,9 +1295,8 @@ public class Player : MonoBehaviour {
 	//On laisse au joueur un petit délai pour sauter sur le bord des platerformes
 
 	IEnumerator HelpJump(){
-		helpJump = true;
-		yield return new WaitForSeconds (1f);
-		helpJump = false;
+		yield return new WaitForSeconds (0.5f);
+		canJump = false;
 	}
 
 	//public bool 
