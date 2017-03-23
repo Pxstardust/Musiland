@@ -93,10 +93,10 @@ public class Player : MonoBehaviour {
 
     float moveForceHell = 20f;
 
-	float jumpForceHell = 500;
+	float jumpForceHell = 600;
 	float jumpForceFest = 600;
 	float jumpForceCalm = 450;
-	float wallJumpForceFest = 500;
+	float wallJumpForceFest = 550;
 	float attenuationJumGap = 70;
 
 	bool canJump = false;
@@ -185,7 +185,7 @@ public class Player : MonoBehaviour {
 		//rigid.transform.position = new Vector2 (168, -2); // Déplacement initial
 		//rigid.transform.position = new Vector2(150, 10); // Déplacement dragon
         //rigid.transform.position = new Vector2(220, 30); // Déplacement end
-       // rigid.transform.position = new Vector2(320, 10); // Déplacement foule
+        //rigid.transform.position = new Vector2(320, 10); // Déplacement foule
         //rigid.transform.position = new Vector2(450, 30); // Déplacement end
         // == AUDIO == //
         audioManager = AudioManager.instance;
