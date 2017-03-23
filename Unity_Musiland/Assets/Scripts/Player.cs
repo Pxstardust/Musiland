@@ -15,6 +15,11 @@ public class Player : MonoBehaviour {
     public SpriteRenderer sprite;
     Animator anim;
 
+    // ================= //
+    // ====== SON ====== //
+    int compteurhide = 0;
+    float timerjump;
+    float lasttouchgroundafterjump;
 
     // ============================ //
     // ===== Collider Checker ===== //
@@ -26,6 +31,7 @@ public class Player : MonoBehaviour {
     public Vector2 SlideHitbox = new Vector2(0.21f, 0.2f);
     public CapsuleCollider2D characollider;
     RaycastHit2D Hit;
+   
 
     // ================== //
     // ===== Camera ===== //
@@ -194,9 +200,23 @@ public class Player : MonoBehaviour {
     // ========================================================================================================= //
     void Update () {
 
+
         // ================================================ //
         // ===============Controle de bInAir=============== //
-        
+
+
+        if (bInAir && !Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
+        {
+            lasttouchgroundafterjump = Time.time;
+        }
+
+        if (lasttouchgroundafterjump < Time.time - 0.7f)
+        {
+            audioManager.ResetThatArray(10);
+            audioManager.ResetThatArray(11);
+            audioManager.ResetThatArray(12);
+        }
+
         if (!Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground")))
         {
             bInAir = true;
@@ -208,8 +228,6 @@ public class Player : MonoBehaviour {
 			airDash = false;
             audioManager.ResetThatArray(4);
 		}
-			
-
 
         if (anim == null) anim = GetComponent<Animator>();
         PlayerScreenPos = maincamera.WorldToScreenPoint(this.transform.position);
@@ -221,7 +239,7 @@ public class Player : MonoBehaviour {
             // =============== Slide =============== //
             if (IsSliding)
             {
-                audioManager.PlaySoundIfNoPlaying("Fest_Glide");
+                //audioManager.PlaySoundIfNoPlaying("Fest_Glide");
                 LastSlideEnd = Time.time;
                 transform.position = new Vector3(Mathf.Lerp(transform.position.x, SlideDestination, ((Time.time-SlideTimeStart)/SlideDuration)), SlideStartY, 0);
                 if (TestColliderTop()) // ----- Permet d'avoir une glissade plus fluide sous les objets ----- 
@@ -432,6 +450,8 @@ public class Player : MonoBehaviour {
 			// ===== CALM MUSIC ===== //
 			if (Input.GetButtonDown("calmMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Calm)
 			{
+                audioManager.ResetThatArray(11);
+                audioManager.ResetThatArray(12);
                 CM.SwitchBloomOn(5, 0.3f, 2);
                 EnumList.StyleMusic oldone = playercurrentstyle;
 				StartCoroutine(Freeze(rigid.velocity));
@@ -446,6 +466,8 @@ public class Player : MonoBehaviour {
 			if (Input.GetButtonDown("festMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Fest)
 			{
                 //CM.BetaBloomOn(true, 3);
+                audioManager.ResetThatArray(11);
+                audioManager.ResetThatArray(10);
                 CM.SwitchBloomOn(5, 0.3f, 2);
                 EnumList.StyleMusic oldone = playercurrentstyle;
                 StartCoroutine(Freeze(rigid.velocity));
@@ -459,6 +481,8 @@ public class Player : MonoBehaviour {
 			// ===== HELL MUSIC ===== //
 			if (Input.GetButtonDown("hellMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Hell)
 			{
+                audioManager.ResetThatArray(10);
+                audioManager.ResetThatArray(12);
                 CM.SwitchBloomOn(5, 0.3f, 2);
                 EnumList.StyleMusic oldone = playercurrentstyle;
                 StartCoroutine(Freeze(rigid.velocity));
@@ -530,21 +554,24 @@ public class Player : MonoBehaviour {
                         {
                             case EnumList.StyleMusic.Calm:
                                 rigid.AddForce((new Vector3(0.0f, jumpForceCalm, 0)));
-                                audioManager.PlaySoundIfNoPlaying("Calm_Jump");
+                                audioManager.ImmediatelyPAUD(10);
+                                //audioManager.PlaySoundIfNoPlaying("Calm_Jump");
                                 anim.SetBool("A_IsJump", true);
                                 anim.SetBool("A_IsInAir", true);
                                 break;
 
                             case EnumList.StyleMusic.Fest:
                                 rigid.AddForce((new Vector3(0.0f, jumpForceFest, 0)));
-                                audioManager.PlaySoundIfNoPlaying("Fest_Jump");
+                                audioManager.ImmediatelyPAUD(12);
+                                //audioManager.PlaySoundIfNoPlaying("Fest_Jump");
                                 anim.SetBool("A_IsJump", true);
                                 anim.SetBool("A_IsInAir", true);
                                 break;
 
                             case EnumList.StyleMusic.Hell:
                                 rigid.AddForce((new Vector3(0.0f, jumpForceHell, 0)));
-                                audioManager.PlaySoundIfNoPlaying("Hell_Jump");
+                                audioManager.ImmediatelyPAUD(11);
+                                //audioManager.PlaySoundIfNoPlaying("Hell_Jump");
                                 anim.SetBool("A_IsJump", true);
                                 anim.SetBool("A_IsInAir", true);
                                 break;
@@ -569,14 +596,16 @@ public class Player : MonoBehaviour {
 					if (wallatleft)
                     {
                         rigid.AddForce((new Vector3(400, wallJumpForceFest, 0)));
-                        audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
+                        //audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
+                        audioManager.ImmediatelyPAUD(8);
                         // ANim
 
                     }
                     else
                     {
                         rigid.AddForce((new Vector3(-400, wallJumpForceFest, 0)));
-                        audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
+                        audioManager.ImmediatelyPAUD(8);
+                        // audioManager.PlaySoundIfNoPlaying("Fest_WallJump");
                         // ANim
                     }
                 } // ---------- 
@@ -584,7 +613,9 @@ public class Player : MonoBehaviour {
                 // ----- (H) V DASH -----
                 if (bInAir && playercurrentstyle == EnumList.StyleMusic.Hell)
                 {
-                    audioManager.PlaySoundIfNoPlaying("Hell_Dash");
+                    //audioManager.PlaySoundIfNoPlaying("Hell_Dash");
+                    audioManager.StopThatArray(9);
+                    audioManager.ImmediatelyPAUD(9);
                     LastVDashStart = Time.time;
                     bVDash = true;
                     anim.SetBool("A_IsVDash", true);
@@ -700,14 +731,18 @@ public class Player : MonoBehaviour {
 					if (bInAir) {
 						if(!airDash){
 							anim.SetBool ("A_IsDash", true);
-							bRun = true;
+                            audioManager.StopThatArray(9);
+                            audioManager.ImmediatelyPAUD(9);
+                            bRun = true;
 							LastDashStart = Time.time;
 							airDash = true;
 						}
 
 					} else {
 						anim.SetBool ("A_IsDash", true);
-						bRun = true;
+                        audioManager.StopThatArray(9);
+                        audioManager.ImmediatelyPAUD(9);
+                        bRun = true;
 						LastDashStart = Time.time;
 					}
                 }
@@ -1147,6 +1182,13 @@ public class Player : MonoBehaviour {
 	// ===== Se cache sous la neige ===== //
 	public void HideUnderSnow()
 	{
+        if(compteurhide ==2)
+        {
+            compteurhide = 0;
+            audioManager.ResetThatArray(6);
+        }
+
+        compteurhide++;
 		rigid.velocity = new Vector2(0,0);
 		hideUnderSnow = true;
 		canMove = false;
@@ -1154,12 +1196,14 @@ public class Player : MonoBehaviour {
 		rigid.constraints = RigidbodyConstraints2D.FreezeAll;
         audioManager.PlaySoundIfNoPlaying("Calm_Hide");
         anim.SetBool("A_IsHide", true);
+        audioManager.ImmediatelyPAUD(6);
     }
 
 	// ================================== //
 	// ===== Sort de sous la neige ===== //
 	public void UnhideUnderSnow()
 	{
+        audioManager.StopThatArray(6);
 		hideUnderSnow = false;				
 		canMove = true;
 		GetComponent<CapsuleCollider2D> ().enabled = true;
@@ -1233,7 +1277,7 @@ public class Player : MonoBehaviour {
     public void DoSlidebis()
     {
         SlideDuration = 1;
-
+        audioManager.ImmediatelyPAUD(7);
         if (sprite.flipX) SlideDestination = transform.position.x - SlideLength;
         else SlideDestination = transform.position.x + SlideLength;
         

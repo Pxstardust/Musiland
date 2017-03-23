@@ -248,6 +248,10 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    // =========================================================//
+    // =========================================================//
+    // =========================================================//
+
     public void PlaySoundAtTime(string _name, float _time)
     {
         for (int i = 0; i < sounds.Length; i++)
@@ -260,21 +264,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    /* public void PlayRandomFromArray(int _idarray)
-     {
-         List<Sound> arraysound = new List<Sound>();
-         for (int i = 0; i < sounds.Length; i++)
-         {
-             if (sounds[i].groupid == _idarray)
-             {
-                 arraysound.Add(sounds[i]);
-             }
-         }
-         if (arraysound.Count > 0)
-         {
-             arraysound[Random.Range(0, arraysound.Count)].Play(); ;
-         }
-     }*/
+
+    // =========================================================//
+    // =========================================================//
+    // =========================================================//
 
     public void StopThatArray(int _idarray)
     {
@@ -297,15 +290,24 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    // =========================================================//
+    // =========================================================//
+    // =========================================================//
+
     public void ResetThatArray(int _idarray)
     {
         holdonbaby = false;
         bufferlist[_idarray].Clear();
     }
 
+
+    // =========================================================//
+    // =========================================================//
+    // =========================================================//
+
     public void ImmediatelyPAUD(int _idarray)
     {
-        print(bufferlist[_idarray].Count);
+        //print(bufferlist[_idarray].Count);
         AudioArray Theone = null;
         bool shouldrandom = false;
 
@@ -334,16 +336,12 @@ public class AudioManager : MonoBehaviour
 
         } // ========================== //
 
-
-
-
+       
         for (int z = 0; z < bufferlist[_idarray].Count; z++)
         {
             //print(id_array+" -- "+bufferlist[_idarray][z].name);
         }
-
-
-
+        
         if (bufferlist[_idarray].Count > 0)
         {
             int i = 0;
@@ -355,24 +353,30 @@ public class AudioManager : MonoBehaviour
                         if (bufferlist[_idarray].Count == 0)
                             {
                                 ImmediatelyPAUD(_idarray);
+                    
                             } else
                             {
                                 if (shouldrandom) i = Random.Range(0, bufferlist[_idarray].Count);
                                 else i = 0;
                                 bufferlist[_idarray][i].Play();
-                            }
+                    //print(bufferlist[_idarray][i].name);
+                }
 
                     }
                     else // Musique qui loop ou musique pas assez jouée
                     {
                         bufferlist[_idarray][0].Play();
-                bufferlist[_idarray].RemoveAt(0);
+                print(bufferlist[_idarray][i].name);
+                //bufferlist[_idarray].RemoveAt(0);
                         
                     }
 
         } // Fin sur buffer pas vide
     } // FIN IPAUD
 
+    // =========================================================//
+    // =========================================================//
+    // =========================================================//
     public void PlayArrayUntilDone(int _idarray)
     {
         AudioArray Theone = null;
@@ -385,6 +389,7 @@ public class AudioManager : MonoBehaviour
             {
                 Theone = soundsarray[i];
                 shouldrandom = soundsarray[i].israndom;
+
             }
         } // ===================== //
 
@@ -402,16 +407,11 @@ public class AudioManager : MonoBehaviour
             }
 
         } // ========================== //
-
-
-        
        
         for (int z=0; z < bufferlist[_idarray].Count; z++)
         {
             //print(id_array+" -- "+bufferlist[_idarray][z].name);
         }
-
-
 
         if (bufferlist[_idarray].Count > 0)
         {
