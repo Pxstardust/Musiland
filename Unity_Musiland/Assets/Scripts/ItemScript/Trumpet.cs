@@ -62,6 +62,8 @@ public class Trumpet : Entity
     // Update is called once per frame
     protected override void Update()
     {
+
+		print (stopCrowd);
         Vector3 positioncamera = maincamera.WorldToViewportPoint(this.transform.position);
         base.Update();
 

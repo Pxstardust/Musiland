@@ -910,10 +910,10 @@ public class Player : MonoBehaviour {
 			goRight = 0;
 		}
 
-		if (goRight > 100) {
+		if (goRight > 80) {
 			goDecal = 0.15f;
 		}
-		if(goLeft > 100){
+		if(goLeft > 80){
 			goDecal = -0.15f;
 		}
 
