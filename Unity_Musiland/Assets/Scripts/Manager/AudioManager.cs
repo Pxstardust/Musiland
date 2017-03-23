@@ -9,7 +9,7 @@ public class Sound
     public string name;
     public AudioClip clip;
     public int ArrayHoldingNumber;
-   
+    public bool should_loop_in_array;
 
     public int currentholding;
 
@@ -305,6 +305,7 @@ public class AudioManager : MonoBehaviour
 
     public void ImmediatelyPAUD(int _idarray)
     {
+        print(bufferlist[_idarray].Count);
         AudioArray Theone = null;
         bool shouldrandom = false;
 
@@ -350,16 +351,23 @@ public class AudioManager : MonoBehaviour
                     if (bufferlist[_idarray][0].loop != true) // qui a été trop jouée
                     {
                         bufferlist[_idarray][0].currentholding = 0;
-                        bufferlist[_idarray].RemoveAt(0);
-                        if (shouldrandom) i = Random.Range(0, bufferlist[_idarray].Count);
-                        else i = 0;
-                        bufferlist[_idarray][i].Play();
+                        if (!bufferlist[_idarray][0].should_loop_in_array) bufferlist[_idarray].RemoveAt(0);
+                        if (bufferlist[_idarray].Count == 0)
+                            {
+                                ImmediatelyPAUD(_idarray);
+                            } else
+                            {
+                                if (shouldrandom) i = Random.Range(0, bufferlist[_idarray].Count);
+                                else i = 0;
+                                bufferlist[_idarray][i].Play();
+                            }
+
                     }
                     else // Musique qui loop ou musique pas assez jouée
                     {
                         bufferlist[_idarray][0].Play();
                 bufferlist[_idarray].RemoveAt(0);
-                        bufferlist[_idarray][0].currentholding++;
+                        
                     }
 
         } // Fin sur buffer pas vide

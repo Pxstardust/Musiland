@@ -311,7 +311,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2e0002927d5a3ce419641e7a6398a4f4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ebd2080a856441349a6bdc1c83e15b6c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203924df87fd38d4785a8d44c474a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skip: 0
   IsPlayer: 0
   DisableFestCollider: 0
   DisableCalmCollider: 0
@@ -426,6 +427,7 @@ MonoBehaviour:
   Maincollider: {fileID: 61026725053856276}
   theMS: {fileID: 114502915833631876}
   isdestroyed: 0
+  dontplaymysound: 0
 --- !u!212 &212067434432337922
 SpriteRenderer:
   m_ObjectHideFlags: 1

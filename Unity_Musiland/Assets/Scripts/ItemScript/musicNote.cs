@@ -30,7 +30,7 @@ public class musicNote : MonoBehaviour {
 	{
 		if (collision.gameObject.name == "Player") {
 			manager.notesQuantity++;
-            if (player.timerlastnote < Time.time - 2) { audioManager.ResetThatArray(5); }
+            if (player.timerlastnote < Time.time - 1.2f) { audioManager.ResetThatArray(5); }
             player.timerlastnote = Time.time;
             audioManager.ImmediatelyPAUD(5);
 
