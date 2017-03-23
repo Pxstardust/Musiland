@@ -450,6 +450,7 @@ public class Player : MonoBehaviour {
 			// ===== CALM MUSIC ===== //
 			if (Input.GetButtonDown("calmMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Calm)
 			{
+
                 audioManager.ResetThatArray(11);
                 audioManager.ResetThatArray(12);
                 CM.SwitchBloomOn(5, 0.3f, 2);
@@ -466,6 +467,7 @@ public class Player : MonoBehaviour {
 			if (Input.GetButtonDown("festMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Fest)
 			{
                 //CM.BetaBloomOn(true, 3);
+
                 audioManager.ResetThatArray(11);
                 audioManager.ResetThatArray(10);
                 CM.SwitchBloomOn(5, 0.3f, 2);
@@ -481,6 +483,7 @@ public class Player : MonoBehaviour {
 			// ===== HELL MUSIC ===== //
 			if (Input.GetButtonDown("hellMusic") && canMove && canSwitch && playercurrentstyle != EnumList.StyleMusic.Hell)
 			{
+
                 audioManager.ResetThatArray(10);
                 audioManager.ResetThatArray(12);
                 CM.SwitchBloomOn(5, 0.3f, 2);
@@ -1109,21 +1112,23 @@ public class Player : MonoBehaviour {
         {
 
             case EnumList.StyleMusic.Hell:
-
-                avancement = audioManager.GetSoundTime("Hell_BGM");
+                if (isdisturbed) avancement = audioManager.GetSoundTime("Hell_Foule");
+                else avancement = audioManager.GetSoundTime("Hell_BGM");
                 if (newstyle == EnumList.StyleMusic.Calm) avancement = avancement * (2.5f); // OK
                 else if (newstyle == EnumList.StyleMusic.Fest) avancement = avancement * (1.25f); // OK
 
                 break;
             case EnumList.StyleMusic.Fest:
 
-                avancement = audioManager.GetSoundTime("Fest_BGM");
+                if (isdisturbed) avancement = audioManager.GetSoundTime("Fest_Foule");
+                else avancement = audioManager.GetSoundTime("Fest_BGM");
                 if (newstyle == EnumList.StyleMusic.Calm) avancement = avancement * 2; // OK
                 else if (newstyle == EnumList.StyleMusic.Hell) avancement = avancement * (0.8f);
                 break;
             case EnumList.StyleMusic.Calm:
-                
-                avancement = audioManager.GetSoundTime("Calm_BGM");
+
+                if (isdisturbed) avancement = audioManager.GetSoundTime("Hell_Foule");
+                else avancement = audioManager.GetSoundTime("Hell_BGM");
                 if (newstyle == EnumList.StyleMusic.Fest) avancement = avancement * (0.5f); 
                 else if (newstyle == EnumList.StyleMusic.Hell) avancement = avancement * (0.4f); 
                 break;
@@ -1175,6 +1180,7 @@ public class Player : MonoBehaviour {
                 }
                 break;
         }
+        isdisturbed = false;
     }
 		
     

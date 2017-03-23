@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Trumpet : Entity
 {
-
+    [SerializeField]
+    Player player;
 
     [SerializeField]
     float newfollowradius;
@@ -39,6 +40,10 @@ public class Trumpet : Entity
     public bool Housefound = false;
     bool once = false;
 
+    // ================= //
+    // ===== AUDIO ===== //
+    AudioManager audioManager;
+
     // Use this for initialization
     protected override void Start()
     {
@@ -51,8 +56,11 @@ public class Trumpet : Entity
         //Entity_Flee(target);
         // Entity_Stay(Position1);
         //followradius = newfollowradius;
-        
-		rigid2D = gameObject.GetComponent<Rigidbody2D>();
+
+        // == AUDIO == //
+        audioManager = AudioManager.instance;
+
+        rigid2D = gameObject.GetComponent<Rigidbody2D>();
         //rigid2D.constraints = RigidbodyConstraints2D.FreezeAll;
 
         Physics2D.IgnoreCollision(target.GetComponent<Collider2D>(), foulecollider, true);
@@ -63,7 +71,6 @@ public class Trumpet : Entity
     protected override void Update()
     {
 
-		print (stopCrowd);
         Vector3 positioncamera = maincamera.WorldToViewportPoint(this.transform.position);
         base.Update();
 
@@ -151,7 +158,76 @@ public class Trumpet : Entity
 
 		}
 
+        if (collision.gameObject.tag == "Player")
+        {
+
+            if (!player.isdisturbed)
+            {
+                player.isdisturbed = true;
+                float avancement = 5;
+                switch (ThisMusicSwitcher.currentstyle)
+                {
+                    case EnumList.StyleMusic.Hell:
+                        avancement = audioManager.GetSoundTime("Hell_BGM");
+                        audioManager.StopSound("Hell_BGM");
+                        audioManager.PlaySoundAtTime("Hell_Foule", avancement);
+                        break;
+
+                    case EnumList.StyleMusic.Fest:
+                        avancement = audioManager.GetSoundTime("Fest_BGM");
+                        audioManager.StopSound("Fest_BGM");
+                        audioManager.PlaySoundAtTime("Fest_Foule", avancement);
+                        break;
+
+                    case EnumList.StyleMusic.Calm:
+                        avancement = audioManager.GetSoundTime("Calm_BGM");
+                        audioManager.StopSound("Calm_BGM");
+                        audioManager.PlaySoundAtTime("Calm_Foule", avancement);
+                        break;
+                }
+                
+            }
+
+        }
+
 	}
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+
+            if (player.isdisturbed)
+            {
+                player.isdisturbed = false;
+                float avancement = 5;
+                switch (ThisMusicSwitcher.currentstyle)
+                {
+                    case EnumList.StyleMusic.Hell:
+                        avancement = audioManager.GetSoundTime("Hell_Foule");
+                        audioManager.PlaySoundAtTime("Hell_BGM",avancement);
+                        audioManager.StopSound("Hell_Foule");
+                        break;
+
+                    case EnumList.StyleMusic.Fest:
+                        avancement = audioManager.GetSoundTime("Fest_Foule");
+                        audioManager.PlaySoundAtTime("Fest_BGM", avancement);
+                        audioManager.StopSound("Fest_Foule");
+                        break;
+
+                    case EnumList.StyleMusic.Calm:
+                        avancement = audioManager.GetSoundTime("Calm_Foule");
+                        audioManager.PlaySoundAtTime("Calm_BGM", avancement);
+                        audioManager.StopSound("Calm_Foule");
+                        break;
+                }
+                
+            }
+
+        }
+    }
+
+
 
 
 
