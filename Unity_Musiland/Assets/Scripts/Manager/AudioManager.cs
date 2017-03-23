@@ -303,6 +303,68 @@ public class AudioManager : MonoBehaviour
         bufferlist[_idarray].Clear();
     }
 
+    public void ImmediatelyPAUD(int _idarray)
+    {
+        AudioArray Theone = null;
+        bool shouldrandom = false;
+
+        // ===== RECUP ARRAY ===== //
+        for (int i = 0; i < soundsarray.Length; i++)
+        {
+            if (soundsarray[i].arrayid == _idarray)
+            {
+                Theone = soundsarray[i];
+                shouldrandom = soundsarray[i].israndom;
+            }
+        } // ===================== //
+
+        // ========== BUFFER ========== //
+        if (bufferlist[_idarray].Count == 0)
+        {
+
+            // ===== Parcours du tableau pour le remplir ===== //
+            if (Theone && bufferlist[_idarray].Count == 0)
+            {
+                for (int i = 0; i < Theone.sounds.Length; i++)
+                {
+                    bufferlist[_idarray].Add(Theone.sounds[i]);
+                }
+            }
+
+        } // ========================== //
+
+
+
+
+        for (int z = 0; z < bufferlist[_idarray].Count; z++)
+        {
+            //print(id_array+" -- "+bufferlist[_idarray][z].name);
+        }
+
+
+
+        if (bufferlist[_idarray].Count > 0)
+        {
+            int i = 0;
+
+                    if (bufferlist[_idarray][0].loop != true) // qui a été trop jouée
+                    {
+                        bufferlist[_idarray][0].currentholding = 0;
+                        bufferlist[_idarray].RemoveAt(0);
+                        if (shouldrandom) i = Random.Range(0, bufferlist[_idarray].Count);
+                        else i = 0;
+                        bufferlist[_idarray][i].Play();
+                    }
+                    else // Musique qui loop ou musique pas assez jouée
+                    {
+                        bufferlist[_idarray][0].Play();
+                bufferlist[_idarray].RemoveAt(0);
+                        bufferlist[_idarray][0].currentholding++;
+                    }
+
+        } // Fin sur buffer pas vide
+    } // FIN IPAUD
+
     public void PlayArrayUntilDone(int _idarray)
     {
         AudioArray Theone = null;

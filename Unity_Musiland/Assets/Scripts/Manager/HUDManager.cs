@@ -30,7 +30,7 @@ public class HUDManager : MonoBehaviour {
     public float circletransitingscale;
     public float transitime;
     float departtransi;
-    float farleft, farright, starttransipoint, farest;
+    float farleft, farright, starttransipoint;
 
 	public int notesQuantity = 0;
 
@@ -156,9 +156,6 @@ public class HUDManager : MonoBehaviour {
             if (themetile.gameObject.transform.position.x <= farleft) farleft = themetile.gameObject.transform.position.x; // Objet le plus à gauche 
             if (themetile.gameObject.transform.position.x >= farright) farright = themetile.gameObject.transform.position.x; // Objet le plus à droite
         }
-
-        if (Mathf.Abs(starttransipoint - farleft) > Mathf.Abs(starttransipoint - farright)) farest = Mathf.Abs(starttransipoint - farleft);
-        else farest = Mathf.Abs(starttransipoint - farright);
        
         transitime = 9.5f;
     }

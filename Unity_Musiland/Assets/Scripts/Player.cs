@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     public SpriteRenderer sprite;
     Animator anim;
 
+
     // ============================ //
     // ===== Collider Checker ===== //
 	public Transform groundCheck;
@@ -64,8 +65,8 @@ public class Player : MonoBehaviour {
     float ypos = 0;
     float recoveryTime = 1.5f;
     float lastDamage;
-    int hp;
-    int hpmax = 5;
+    public float timerlastnote;
+    
 
     // === Style Var === //
     public EnumList.StyleMusic playercurrentstyle = EnumList.StyleMusic.Hell;
@@ -124,8 +125,7 @@ public class Player : MonoBehaviour {
     float DureeDash = 0.2f; // Durée du dash
 	bool airDash = false;
     // -- V Dash -- //
-    float doubletapCDVDash = 0.5f; // Durée max entre deux tap pour un double tap
-    float VerticalTapCount = 0; // Nb de tap pour le double tap
+   
     float LastVDashStart, LastVDashEnd; // Moments clé du dernier Vdash
     bool IsVDashDone = false; // Si le joueur a déjà fait un VDash durant son saut1
     public bool bVDash = false; // Si le joueur est en train de Vdash 
@@ -163,7 +163,6 @@ public class Player : MonoBehaviour {
     void Start () {
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        hp = 5;
 		decalCamOrigine = maincamera.transform.position - transform.position;
         anim = GetComponent<Animator>();
        // anim.enabled = true;
@@ -273,14 +272,14 @@ public class Player : MonoBehaviour {
             // ========================================= //
             // =============== DASHES ================== //
             if (bRun && Time.time > LastDashStart + DureeDash) { bRun = false; rigid.velocity = new Vector2(0, 0); anim.SetBool("A_IsDash", false); } // Si on est en dash horizontal dpeuis un certain temps : stop
-            if (bVDash && Time.time > LastVDashStart + DureeVDash) { bVDash = false; } // Si on est en V Dash depuis un certain temps :stop
+            if (bVDash && Time.time > LastVDashStart + DureeVDash) { bVDash = false; anim.SetBool("A_IsVDash", false); } // Si on est en V Dash depuis un certain temps :stop
             if (bRun)
             {
                 sprite.color = new Color32(150, 00, 0, 255);
             }
             else if (bVDash)
             {
-                sprite.color = new Color32(150, 00, 0, 255);
+                //sprite.color = new Color32(150, 00, 0, 255);
             }
             else if (hideUnderSnow)
             {
@@ -337,6 +336,7 @@ public class Player : MonoBehaviour {
                     }
                     else { bVDash = false;
                         audioManager.PlaySound("DiveOnGround");
+                        anim.SetBool("A_IsVDash", false);
                     }
 
 					DestructAll TestDesctructAll = Hit.collider.gameObject.GetComponent<DestructAll> () as DestructAll;
@@ -351,6 +351,7 @@ public class Player : MonoBehaviour {
 
             if (bVDash)  // ====== V DASH ====== //
             {
+                anim.SetBool("A_IsVDash", true);
                 rigid.velocity = new Vector2(0, -moveForceHell);
             }
 
@@ -495,7 +496,7 @@ public class Player : MonoBehaviour {
 
             // ========== BUTTON DOWN ============ //
 
-			print (canJump);
+			//print (canJump);
 			// On permet au joueur de sauter même s'il vient tout juste de quitter un bord, //
 			//sinon il ne peut sauter que lorsqu'il touche le sol //
 			if (Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("ground"))) {
@@ -586,6 +587,7 @@ public class Player : MonoBehaviour {
                     audioManager.PlaySoundIfNoPlaying("Hell_Dash");
                     LastVDashStart = Time.time;
                     bVDash = true;
+                    anim.SetBool("A_IsVDash", true);
                 }
 
             } // ========== FIN BUTTON DOWN ========== //
